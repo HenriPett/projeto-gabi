@@ -97,7 +97,7 @@ describe("preços — cenários das fixtures", () => {
     expect(ids).toEqual(["ficticio-rascunho", "ficticio-ambar", "ficticio-dois-frascos", "ficticio-single-bond-2", "exemplo-universal"]);
   });
 
-  it.fails("BUG-005: em produção, catalogo().ofertas não inclui ofertas de rascunho (vazaria em Melhores preços → link 404)", () => {
+  it("BUG-005: em produção, catalogo().ofertas não inclui ofertas de rascunho (vazaria em Melhores preços → link 404)", () => {
     process.env.INCLUIR_RASCUNHOS = "0";
     const c = catalogoDasPaginas();
     expect(c.produtos.map((p) => p.id)).not.toContain("ficticio-rascunho");
@@ -110,13 +110,13 @@ describe("preços — cenários das fixtures", () => {
 });
 
 describe("validação de URL de compra", () => {
-  it.fails("BUG-002: rejeita http:// (sem TLS)", () => {
+  it("BUG-002: rejeita http:// (sem TLS)", () => {
     expect(validarUrlDeProduto("dental-cremer", "http://www.dentalcremer.com.br/produto-x")).not.toBeNull();
   });
-  it.fails("BUG-003: rejeita página de busca da loja (não é página de produto)", () => {
+  it("BUG-003: rejeita página de busca da loja (não é página de produto)", () => {
     expect(validarUrlDeProduto("dental-cremer", "https://www.dentalcremer.com.br/busca?q=ambar")).not.toBeNull();
   });
-  it.fails("BUG-003: rejeita variações da home (/index.html, //)", () => {
+  it("BUG-003: rejeita variações da home (/index.html, //)", () => {
     expect(validarUrlDeProduto("dental-cremer", "https://www.dentalcremer.com.br/index.html")).not.toBeNull();
     expect(validarUrlDeProduto("dental-cremer", "https://www.dentalcremer.com.br//")).not.toBeNull();
   });
@@ -124,7 +124,7 @@ describe("validação de URL de compra", () => {
     expect(validarUrlDeProduto("dental-cremer", "https://www.fakedentalcremer.com.br/x")).not.toBeNull();
     expect(validarUrlDeProduto("dental-cremer", "https://dentalcremer.com.br.evil.com/x")).not.toBeNull();
   });
-  it.fails("BUG-004: rejeita consultadoEm no futuro", () => {
+  it("BUG-004: rejeita consultadoEm no futuro", () => {
     const arq = JSON.parse(
       fs.readFileSync(
         path.resolve(__dirname, "../fixtures/dados/materiais/sistemas-adesivos/ofertas/ficticio-ambar.json"),
@@ -155,10 +155,10 @@ describe("busca — cenários das fixtures", () => {
       expect.arrayContaining(["ficticio-ambar", "ficticio-single-bond-2", "ficticio-prime-bond-2-1", "ficticio-dois-frascos"]),
     );
   });
-  it.fails("BUG-001: '3 passos' não traz produto de 2 passos só porque o fabricante é '3M'", () => {
+  it("BUG-001: '3 passos' não traz produto de 2 passos só porque o fabricante é '3M'", () => {
     expect(ids("3 passos")).toEqual(["ficticio-multiuso-3p"]);
   });
-  it.fails("BUG-001: '1 passo' não traz 'Prime&Bond 2.1' (2 passos) por causa do '.1'", () => {
+  it("BUG-001: '1 passo' não traz 'Prime&Bond 2.1' (2 passos) por causa do '.1'", () => {
     expect(ids("1 passo")).toEqual(["ficticio-tudo-em-um"]);
   });
   it("B-10/U-05: universal aparece uma vez", () => {

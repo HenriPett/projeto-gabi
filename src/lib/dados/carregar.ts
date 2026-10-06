@@ -138,6 +138,9 @@ export function catalogo(): Catalogo {
     );
   }
   const visiveis = incluirRascunhos() ? c.produtos : c.produtos.filter((p) => p.revisao.status === "publicado");
-  cache = { ...c, produtos: visiveis };
+  const ids = new Set(visiveis.map((p) => p.id));
+  // Ofertas seguem o produto: rascunho oculto ⇒ ofertas ocultas (senão vazam p/ "Melhores preços").
+  const ofertas = new Map([...c.ofertas].filter(([id]) => ids.has(id)));
+  cache = { ...c, produtos: visiveis, ofertas };
   return cache;
 }

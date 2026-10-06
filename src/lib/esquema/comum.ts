@@ -11,8 +11,14 @@ export const Slug = z
   .string()
   .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "use kebab-case ASCII (ex.: single-bond-universal)");
 
-/** Data ISO "AAAA-MM-DD". Exibida na UI como DD/MM/AAAA. */
-export const DataISO = z.iso.date();
+/**
+ * Data ISO "AAAA-MM-DD" de algo que já aconteceu (consulta, acesso, revisão).
+ * Exibida na UI como DD/MM/AAAA. Comparada com a data UTC, que nunca está
+ * atrás da data de Brasília — não rejeita um registro feito hoje.
+ */
+export const DataISO = z.iso
+  .date()
+  .refine((d) => d <= new Date().toISOString().slice(0, 10), "data no futuro");
 
 export const Url = z.url({ protocol: /^https?$/ });
 

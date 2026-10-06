@@ -38,13 +38,39 @@ export function itemDeBusca(p: Produto): ItemBusca {
   return { id: p.id, nome: p.nomeComercial, fabricante: p.fabricante.nome, texto: normalizar(partes.join(" ")) };
 }
 
+type Termo = (texto: string) => boolean;
+
+const escapar = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const palavraInteira = (s: string) => new RegExp(`(^| )${s}( |$)`);
+
+/**
+ * Converte a consulta em termos:
+ * - "N passo(s)" é uma expressão só ("3 passos" ≠ "3M" + "2 passos");
+ * - número solto casa só palavra inteira ("1" não casa "2.1" nem "3m");
+ * - demais termos: substring, também sem espaços ("prime bond" acha "Prime&Bond").
+ */
+function termosDe(consulta: string): Termo[] {
+  const palavras = normalizar(consulta).split(" ").filter(Boolean);
+  const termos: Termo[] = [];
+  for (let i = 0; i < palavras.length; i++) {
+    const p = palavras[i];
+    if (/^\d+$/.test(p) && /^passos?$/.test(palavras[i + 1] ?? "")) {
+      const re = palavraInteira(`${p} passos?`);
+      termos.push((t) => re.test(t));
+      i++;
+    } else if (/^\d+$/.test(p)) {
+      const re = palavraInteira(escapar(p));
+      termos.push((t) => re.test(t));
+    } else {
+      termos.push((t) => t.includes(p) || t.replace(/ /g, "").includes(p));
+    }
+  }
+  return termos;
+}
+
 /** Todos os termos da consulta precisam aparecer (AND). */
 export function buscar(itens: readonly ItemBusca[], consulta: string): ItemBusca[] {
-  const termos = normalizar(consulta).split(" ").filter(Boolean);
+  const termos = termosDe(consulta);
   if (!termos.length) return [];
-  // "prime bond" deve achar "Prime&Bond" e "primebond": compara também sem espaços
-  return itens.filter((i) => {
-    const compacto = i.texto.replace(/ /g, "");
-    return termos.every((t) => i.texto.includes(t) || compacto.includes(t));
-  });
+  return itens.filter((i) => termos.every((casa) => casa(i.texto)));
 }
