@@ -1,0 +1,109 @@
+{
+  "$schema": "../../../../../../data/schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas (texto fictício).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "imagens": [],
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "IFU fictícia",
+      "url": "https://example.com/ifu.pdf",
+      "acessadoEm": "2026-10-01"
+    },
+    {
+      "id": "ficha",
+      "tipo": "ficha-tecnica",
+      "titulo": "Ficha técnica fictícia",
+      "url": "https://example.com/ficha.pdf",
+      "acessadoEm": "2026-10-01"
+    }
+  ],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-01",
+    "responsavel": "fixture-sonda"
+  },
+  "id": "ficticio-rascunho",
+  "nomeComercial": "Rascunho Fictício",
+  "fabricante": {
+    "id": "fabricante-beta",
+    "nome": "Fabricante Beta"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ficha"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ficha"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado"
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado"
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "protocolos": [],
+  "apresentacoes": [
+    {
+      "id": "frasco-4ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 4 mL",
+      "quantidade": 1,
+      "volumeMl": 4,
+      "fontes": [
+        "ficha"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-4ml"
+}

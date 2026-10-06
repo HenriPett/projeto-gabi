@@ -1,0 +1,51 @@
+{
+  "$schema": "../../../../../../data/schemas/ofertas.schema.json",
+  "produtoId": "ficticio-dois-frascos",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "kit-primer-adesivo",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/produto-ficticio-kit-primer-adesivo",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 25000
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "kit-primer-adesivo",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/produto-ficticio-kit-primer-adesivo",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 28000
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "refil-adesivo-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/produto-ficticio-refil-adesivo-5ml",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 12000
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "kit-primer-adesivo",
+      "status": "nao-encontrado",
+      "consultadoEm": "2026-10-01"
+    }
+  ]
+}

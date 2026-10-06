@@ -1,0 +1,45 @@
+{
+  "$schema": "../../../../../../data/schemas/ofertas.schema.json",
+  "produtoId": "ficticio-tudo-em-um",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/produto-ficticio-frasco-5ml",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 5000
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/produto-ficticio-frasco-5ml",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 5000
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/produto-ficticio-frasco-5ml",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 5000
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    }
+  ]
+}

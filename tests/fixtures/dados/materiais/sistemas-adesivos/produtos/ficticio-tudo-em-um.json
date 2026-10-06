@@ -1,0 +1,167 @@
+{
+  "$schema": "../../../../../../data/schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas (texto fictício).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "imagens": [],
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "IFU fictícia",
+      "url": "https://example.com/ifu.pdf",
+      "acessadoEm": "2026-10-01"
+    },
+    {
+      "id": "ficha",
+      "tipo": "ficha-tecnica",
+      "titulo": "Ficha técnica fictícia",
+      "url": "https://example.com/ficha.pdf",
+      "acessadoEm": "2026-10-01"
+    }
+  ],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-01",
+    "responsavel": "fixture-sonda"
+  },
+  "id": "ficticio-tudo-em-um",
+  "nomeComercial": "Tudo-em-Um Fictício",
+  "fabricante": {
+    "id": "kuraray-ficticia",
+    "nome": "Kuraray Fictícia"
+  },
+  "classificacao": {
+    "grupo": "autocondicionante",
+    "subcategorias": [
+      {
+        "id": "autocondicionante-1-passo",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "10-MDP",
+        "fontes": [
+          "ficha"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ficha"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado"
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "protocolos": [
+    {
+      "id": "ac-1p",
+      "titulo": "Autocondicionante 1 passo",
+      "aplicaA": [
+        "autocondicionante-1-passo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação com fricção",
+          "descricao": "Texto fictício (Aplicação com fricção).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Jato de ar",
+          "descricao": "Texto fictício (Jato de ar).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Texto fictício (Fotopolimerização).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "ficha"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "../../../../../../data/schemas/ofertas.schema.json",
+  "produtoId": "ficticio-single-bond-2",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/produto-ficticio-frasco-6g",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 9990
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/produto-ficticio-frasco-6g",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 9990
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/produto-ficticio-frasco-6g",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 11990
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    }
+  ]
+}
