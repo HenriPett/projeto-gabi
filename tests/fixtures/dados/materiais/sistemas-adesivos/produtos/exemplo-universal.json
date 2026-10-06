@@ -1,0 +1,73 @@
+{
+  "$schema": "../../../../../../data/schemas/produto-sistema-adesivo.schema.json",
+  "id": "exemplo-universal",
+  "material": "sistemas-adesivos",
+  "nomeComercial": "Exemplo Universal (FICTÍCIO)",
+  "fabricante": { "id": "fabricante-ficticio", "nome": "Fabricante Fictício" },
+  "aliases": ["EXU"],
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      { "id": "universal-condicionamento-total", "fontes": ["ifu"] },
+      { "id": "universal-autocondicionante", "fontes": ["ifu"] }
+    ]
+  },
+  "estrategiaAdesiva": { "texto": "Adesivo universal em frasco único.", "fontes": ["ifu"] },
+  "composicao": {
+    "componentes": [
+      { "nome": "10-MDP", "funcao": "monômero funcional", "fontes": ["ficha"] },
+      { "nome": "Etanol", "fontes": ["ficha"] }
+    ],
+    "mdp": { "valor": "sim", "fontes": ["ficha"] },
+    "hema": { "valor": "nao-informado" },
+    "silano": { "valor": "nao", "fontes": ["ficha"] },
+    "solventes": { "valor": ["etanol"], "fontes": ["ficha"] },
+    "polimerizacao": { "valor": "fotopolimerizavel", "fontes": ["ifu"] }
+  },
+  "indicacoes": [{ "texto": "Restaurações diretas (texto fictício).", "fontes": ["ifu"] }],
+  "protocolos": [
+    {
+      "id": "total",
+      "titulo": "Condicionamento total",
+      "aplicaA": ["universal-condicionamento-total"],
+      "fontes": ["ifu"],
+      "etapas": [
+        { "tipo": "condicionamento-acido", "titulo": "Condicionamento", "descricao": "Texto fictício.", "parametros": [{ "tipo": "tempo", "texto": "15 s" }], "fontes": ["ifu"] },
+        { "tipo": "aplicacao-adesivo", "titulo": "Aplicação do adesivo", "descricao": "Texto fictício.", "fontes": ["ifu"] },
+        { "tipo": "fotopolimerizacao", "titulo": "Fotopolimerização", "descricao": "Texto fictício.", "parametros": [{ "tipo": "tempo", "texto": "10 s" }], "fontes": ["ifu"] }
+      ]
+    },
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": ["universal-autocondicionante"],
+      "fontes": ["ifu"],
+      "etapas": [
+        { "tipo": "aplicacao-adesivo", "titulo": "Aplicação com fricção", "descricao": "Texto fictício.", "parametros": [{ "tipo": "tempo", "texto": "20 s" }], "fontes": ["ifu"] },
+        { "tipo": "fotopolimerizacao", "titulo": "Fotopolimerização", "descricao": "Texto fictício.", "fontes": ["ifu"] }
+      ]
+    }
+  ],
+  "apresentacoes": [
+    { "id": "frasco-5ml", "tipo": "frasco", "descricao": "Frasco 5 mL", "quantidade": 1, "volumeMl": 5, "fontes": ["site"] },
+    { "id": "frasco-3ml", "tipo": "frasco", "descricao": "Frasco 3 mL", "quantidade": 1, "volumeMl": 3, "fontes": ["site"] }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "imagens": [],
+  "fontes": [
+    { "id": "ifu", "tipo": "ifu", "titulo": "IFU fictícia", "url": "https://example.com/ifu.pdf", "acessadoEm": "2026-10-01" },
+    { "id": "ficha", "tipo": "ficha-tecnica", "titulo": "Ficha técnica fictícia", "url": "https://example.com/ficha.pdf", "acessadoEm": "2026-10-01" },
+    { "id": "site", "tipo": "site-fabricante", "titulo": "Página fictícia", "url": "https://example.com/produto", "acessadoEm": "2026-10-01" }
+  ],
+  "divergencias": [
+    {
+      "campo": "composicao.hema",
+      "descricao": "Fontes discordam sobre presença de HEMA (exemplo fictício).",
+      "versoes": [
+        { "valor": "contém HEMA", "fontes": ["ficha"] },
+        { "valor": "livre de HEMA", "fontes": ["site"] }
+      ]
+    }
+  ],
+  "revisao": { "status": "publicado", "atualizadoEm": "2026-10-01", "responsavel": "fixture" }
+}

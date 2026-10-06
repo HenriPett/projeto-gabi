@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../../../../data/schemas/ofertas.schema.json",
+  "produtoId": "exemplo-universal",
+  "ofertas": [
+    { "lojaId": "dental-cremer", "apresentacaoId": "frasco-5ml", "status": "disponivel", "url": "https://www.dentalcremer.com.br/produto-ficticio-5ml", "precos": [{ "tipo": "padrao", "centavos": 15990 }, { "tipo": "pix", "centavos": 15190, "condicao": "5% no Pix" }], "consultadoEm": "2026-10-01" },
+    { "lojaId": "dental-speed", "apresentacaoId": "frasco-5ml", "status": "disponivel", "url": "https://www.dentalspeed.com/produto-ficticio-5ml", "precos": [{ "tipo": "padrao", "centavos": 14990 }], "consultadoEm": "2026-10-01" },
+    { "lojaId": "dental-med-sul", "apresentacaoId": "frasco-5ml", "status": "nao-encontrado", "consultadoEm": "2026-10-01" },
+    { "lojaId": "dental-med-sul", "apresentacaoId": "frasco-3ml", "status": "disponivel", "url": "https://www.dentalmedsul.com.br/produto-ficticio-3ml", "precos": [{ "tipo": "padrao", "centavos": 9990 }], "consultadoEm": "2026-10-02" }
+  ]
+}

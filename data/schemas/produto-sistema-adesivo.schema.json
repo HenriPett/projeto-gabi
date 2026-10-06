@@ -1,0 +1,871 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "material": {
+      "type": "string",
+      "const": "sistemas-adesivos"
+    },
+    "nomeComercial": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fabricante": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "nome": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "nome"
+      ]
+    },
+    "aliases": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "classificacao": {
+      "type": "object",
+      "properties": {
+        "grupo": {
+          "type": "string",
+          "enum": [
+            "convencional",
+            "autocondicionante",
+            "universal"
+          ]
+        },
+        "subcategorias": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "convencional-2-passos",
+                  "convencional-3-passos",
+                  "autocondicionante-1-passo",
+                  "autocondicionante-2-passos",
+                  "universal-condicionamento-seletivo",
+                  "universal-condicionamento-total",
+                  "universal-autocondicionante"
+                ]
+              },
+              "fontes": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "fontes"
+            ]
+          }
+        },
+        "observacao": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "grupo",
+        "subcategorias"
+      ]
+    },
+    "estrategiaAdesiva": {
+      "type": "object",
+      "properties": {
+        "texto": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fontes": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        }
+      },
+      "required": [
+        "texto",
+        "fontes"
+      ]
+    },
+    "composicao": {
+      "type": "object",
+      "properties": {
+        "componentes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nome": {
+                "type": "string",
+                "minLength": 1
+              },
+              "funcao": {
+                "type": "string"
+              },
+              "frasco": {
+                "type": "string"
+              },
+              "fontes": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                }
+              }
+            },
+            "required": [
+              "nome",
+              "fontes"
+            ]
+          }
+        },
+        "mdp": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "enum": [
+                    "sim",
+                    "nao"
+                  ]
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor",
+                "fontes"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "const": "nao-informado"
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor"
+              ]
+            }
+          ]
+        },
+        "hema": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "enum": [
+                    "sim",
+                    "nao"
+                  ]
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor",
+                "fontes"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "const": "nao-informado"
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor"
+              ]
+            }
+          ]
+        },
+        "silano": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "enum": [
+                    "sim",
+                    "nao"
+                  ]
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor",
+                "fontes"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "const": "nao-informado"
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor"
+              ]
+            }
+          ]
+        },
+        "solventes": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor",
+                "fontes"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "const": "nao-informado"
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor"
+              ]
+            }
+          ]
+        },
+        "polimerizacao": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "enum": [
+                    "fotopolimerizavel",
+                    "dual",
+                    "autopolimerizavel"
+                  ]
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor",
+                "fontes"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "const": "nao-informado"
+                },
+                "observacao": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "valor"
+              ]
+            }
+          ]
+        },
+        "outros": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rotulo": {
+                "type": "string",
+                "minLength": 1
+              },
+              "valor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "fontes": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                }
+              }
+            },
+            "required": [
+              "rotulo",
+              "valor",
+              "fontes"
+            ]
+          }
+        }
+      },
+      "required": [
+        "componentes",
+        "mdp",
+        "hema",
+        "silano",
+        "solventes",
+        "polimerizacao"
+      ]
+    },
+    "indicacoes": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "texto": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fontes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          }
+        },
+        "required": [
+          "texto",
+          "fontes"
+        ]
+      }
+    },
+    "contraindicacoes": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "texto": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fontes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          }
+        },
+        "required": [
+          "texto",
+          "fontes"
+        ]
+      }
+    },
+    "protocolos": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "titulo": {
+            "type": "string",
+            "minLength": 1
+          },
+          "aplicaA": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "convencional-2-passos",
+                "convencional-3-passos",
+                "autocondicionante-1-passo",
+                "autocondicionante-2-passos",
+                "universal-condicionamento-seletivo",
+                "universal-condicionamento-total",
+                "universal-autocondicionante"
+              ]
+            }
+          },
+          "etapas": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "enum": [
+                    "condicionamento-acido",
+                    "lavagem",
+                    "secagem",
+                    "controle-umidade",
+                    "aplicacao-primer",
+                    "aplicacao-adesivo",
+                    "friccao",
+                    "nova-aplicacao",
+                    "evaporacao-solvente",
+                    "jato-de-ar",
+                    "fotopolimerizacao",
+                    "outro"
+                  ]
+                },
+                "titulo": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "descricao": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "parametros": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tipo": {
+                        "type": "string",
+                        "enum": [
+                          "tempo",
+                          "camadas",
+                          "friccao",
+                          "jato-de-ar",
+                          "luz",
+                          "substrato",
+                          "outro"
+                        ]
+                      },
+                      "texto": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "tipo",
+                      "texto"
+                    ]
+                  }
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                }
+              },
+              "required": [
+                "tipo",
+                "titulo",
+                "descricao",
+                "fontes"
+              ]
+            }
+          },
+          "observacoes": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "texto": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                }
+              },
+              "required": [
+                "texto",
+                "fontes"
+              ]
+            }
+          },
+          "fontes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "titulo",
+          "aplicaA",
+          "etapas",
+          "fontes"
+        ]
+      }
+    },
+    "apresentacoes": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "frasco",
+              "kit",
+              "refil",
+              "unidose",
+              "seringa",
+              "outro"
+            ]
+          },
+          "descricao": {
+            "type": "string",
+            "minLength": 1
+          },
+          "quantidade": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "volumeMl": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "massaG": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "itens": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "codigoFabricante": {
+            "type": "string"
+          },
+          "ean": {
+            "type": "string",
+            "pattern": "^\\d{8,14}$"
+          },
+          "fontes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "tipo",
+          "descricao",
+          "quantidade",
+          "fontes"
+        ]
+      }
+    },
+    "apresentacaoPrincipal": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "imagens": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "arquivo": {
+            "type": "string",
+            "pattern": "^\\/img\\/produtos\\/[a-z0-9-]+\\/[a-z0-9._-]+\\.(webp|png|jpe?g|avif)$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fontes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          },
+          "credito": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "arquivo",
+          "alt",
+          "fontes"
+        ]
+      }
+    },
+    "fontes": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "ifu",
+              "ficha-tecnica",
+              "fds",
+              "site-fabricante",
+              "embalagem",
+              "literatura",
+              "loja",
+              "outro"
+            ]
+          },
+          "titulo": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "acessadoEm": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "versao": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "tipo",
+          "titulo",
+          "url",
+          "acessadoEm"
+        ]
+      }
+    },
+    "divergencias": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "campo": {
+            "type": "string",
+            "minLength": 1
+          },
+          "descricao": {
+            "type": "string",
+            "minLength": 1
+          },
+          "versoes": {
+            "minItems": 2,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "valor": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "fontes": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                }
+              },
+              "required": [
+                "valor",
+                "fontes"
+              ]
+            }
+          }
+        },
+        "required": [
+          "campo",
+          "descricao",
+          "versoes"
+        ]
+      }
+    },
+    "revisao": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "rascunho",
+            "publicado"
+          ]
+        },
+        "atualizadoEm": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+        },
+        "responsavel": {
+          "type": "string"
+        },
+        "notas": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "atualizadoEm"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "material",
+    "nomeComercial",
+    "fabricante",
+    "classificacao",
+    "composicao",
+    "apresentacoes",
+    "apresentacaoPrincipal",
+    "fontes",
+    "revisao"
+  ]
+}
