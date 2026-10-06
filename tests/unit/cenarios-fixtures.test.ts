@@ -161,7 +161,7 @@ describe("busca — cenários das fixtures", () => {
   it("BUG-001: '1 passo' não traz 'Prime&Bond 2.1' (2 passos) por causa do '.1'", () => {
     expect(ids("1 passo")).toEqual(["ficticio-tudo-em-um"]);
   });
-  it.fails("BUG-006: '10-MDP' acha todo produto com MDP confirmado, mesmo cadastrado só como 'MDP'", () => {
+  it("BUG-006: '10-MDP' acha todo produto com MDP confirmado, mesmo cadastrado só como 'MDP'", () => {
     expect(ids("10-MDP")).toEqual(ids("MDP"));
   });
   it("BUG-001 (regressão): variações de 'N passos' e números em nomes", () => {

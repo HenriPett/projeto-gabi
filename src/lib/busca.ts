@@ -33,7 +33,8 @@ export function itemDeBusca(p: Produto): ItemBusca {
     GRUPO[p.classificacao.grupo].rotulo,
     ...subs.map((s) => s.rotulo),
     ...p.composicao.componentes.map((c) => c.nome),
-    p.composicao.mdp.valor === "sim" ? "MDP" : "",
+    // "MDP" e "10-MDP" são o mesmo monômero; indexa as duas grafias (BUG-006)
+    p.composicao.mdp.valor === "sim" ? "MDP 10-MDP" : "",
   ];
   return { id: p.id, nome: p.nomeComercial, fabricante: p.fabricante.nome, texto: normalizar(partes.join(" ")) };
 }
