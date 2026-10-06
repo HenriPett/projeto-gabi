@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5E2280">
+<title>Universal Exemplo U · Protótipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<div data-header></div>
+<main id="main">
+  <div class="container">
+    <nav class="crumbs" aria-label="Navegação estrutural">
+      <ol class="full"><li><a href="index.html">Sistemas Adesivos</a></li><li><a href="index.html#classificacao">Universais</a></li><li><a href="#">Condicionamento seletivo</a></li><li aria-current="page">Universal Exemplo U</li></ol>
+      <a class="back" href="index.html">‹ Universais · Cond. seletivo</a>
+    </nav>
+
+    <div class="prod">
+      <div class="prod__left">
+        <div class="prod__media"><svg viewBox="0 0 80 140" role="img" aria-label="Frasco do Universal Exemplo U — Fabricante 3"><use href="#bottle"/></svg></div>
+      </div>
+      <div class="stack">
+        <p class="overline" style="color:var(--gray-600)">Fabricante 3</p>
+        <h1>Universal Exemplo U</h1>
+        <span><span class="badge badge--univ">Universal</span></span>
+        <div class="prod__actions" style="margin-top:16px">
+          <a class="btn btn--cta btn--lg" href="#precos">Comparar preços</a>
+          <button class="btn btn--secondary btn--lg" data-cmp="u" aria-pressed="false" aria-label="Adicionar à comparação de produtos" style="min-width:52px"><span>+</span></button>
+        </div>
+
+        <!-- Seletor de estratégias — DESIGN.md §4.5 -->
+        <section class="selector" style="margin-top:24px" aria-labelledby="t-strat">
+          <h2 id="t-strat" style="font:600 var(--text-h3)/1.3 var(--font-sans);color:var(--color-text)">Escolha a estratégia de uso</h2>
+          <div class="selector__art">
+            <svg width="120" height="64" viewBox="0 0 120 64" aria-hidden="true">
+              <use href="#bottle" x="0" y="4" width="32" height="56"/>
+              <path d="M36 32 C60 32 70 10 112 10M36 32H112M36 32C60 32 70 54 112 54" fill="none" stroke="#B9A0D6" stroke-width="2"/>
+              <circle cx="112" cy="10" r="4" fill="#3D3A8F"/><circle cx="112" cy="32" r="4" fill="#3D3A8F"/><circle cx="112" cy="54" r="4" fill="#fff" stroke="#A19DAA" stroke-width="1.5" stroke-dasharray="2 2"/>
+            </svg>
+            <p class="small"><strong>Mesmo frasco, formas diferentes de usar.</strong><br><span class="muted">É um único produto — muda só a técnica de aplicação. Nome, composição e preço são os mesmos.</span></p>
+          </div>
+          <div class="seg" role="radiogroup" aria-label="Estratégia de uso">
+            <button role="radio" aria-checked="true" tabindex="0" data-value="seletivo">Seletivo</button>
+            <button role="radio" aria-checked="false" tabindex="-1" data-value="total">Total</button>
+            <button role="radio" aria-checked="false" tabindex="-1" data-value="auto" aria-disabled="true" aria-describedby="na-auto" aria-label="Autocondicionante">Autocond.</button>
+          </div>
+          <p id="na-auto" class="caption" style="margin-top:8px">Autocondicionante: não indicado pelo fabricante para este produto (exemplo de estado desabilitado).</p>
+        </section>
+
+        <dl class="dl" style="margin-top:24px">
+          <div><dt>Classificação</dt><dd>Universal</dd></div>
+          <div><dt>Estratégias indicadas</dt><dd><ul class="strat" aria-label="Estratégias indicadas"><li class="on">✓ Seletivo</li><li class="on">✓ Total</li><li class="off" aria-label="Não indicado para autocondicionante">— Autocond.</li></ul></dd></div>
+          <div><dt>Apresentação</dt><dd>Frasco</dd></div>
+          <div><dt>Volume</dt><dd class="num">5 mL</dd></div>
+          <div><dt>Fabricante</dt><dd>Fabricante 3</dd></div>
+        </dl>
+        <p class="source">Fonte: IFU do fabricante · acesso em DD/MM/AAAA</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="usage" aria-labelledby="t-uso">
+    <div class="usage__inner">
+      <div class="usage__head">
+        <p class="overline">Protocolo do fabricante</p>
+        <h2 id="t-uso">Modo de Uso</h2>
+        <p class="small muted">Segundo a IFU oficial do Fabricante 3. Cada estratégia tem seu próprio protocolo.</p>
+        <p id="usage-live" class="sr-only" aria-live="polite"></p>
+      </div>
+
+      <figure class="diagram" style="margin-bottom:24px;padding:16px">
+        <figcaption><span class="overline">Como identificar?</span><span class="sr-only">Universal: condicionamento seletivo, total ou autocondicionante. Mesmo adesivo.</span></figcaption>
+        <div class="paths" aria-hidden="true">
+          <div class="path is-current" data-path="seletivo"><div class="path__title">Seletivo</div><div class="step step--acid"><span class="step__glyph">H⁺</span>Ácido<span class="step__count">só esmalte</span></div><div class="arrow"><svg><use href="#i-arrow-down"/></svg></div><div class="step step--adh"><span class="step__glyph">A</span>Adesivo univ.</div></div>
+          <span class="or">OU</span>
+          <div class="path" data-path="total"><div class="path__title">Total</div><div class="step step--acid"><span class="step__glyph">H⁺</span>Ácido<span class="step__count">esm. + dent.</span></div><div class="arrow"><svg><use href="#i-arrow-down"/></svg></div><div class="step step--adh"><span class="step__glyph">A</span>Adesivo univ.</div></div>
+          <span class="or">OU</span>
+          <div class="path" data-path="auto"><div class="path__title">Autocond. <span style="font-weight:500;text-transform:none;letter-spacing:0">não indicado</span></div><div class="step step--adh"><span class="step__glyph">A</span>Adesivo univ.</div><p class="caption" style="margin-top:6px">sem ácido separado</p></div>
+        </div>
+      </figure>
+
+      <ol class="usteps" data-strategy-panel="seletivo">
+        <li class="ustep"><span class="ustep__n">01</span><div><h3>Condicionamento seletivo do esmalte</h3><p>[instrução da IFU — estratégia seletiva]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-clock"/></svg>00 s</li><li><svg aria-hidden="true"><use href="#i-tooth"/></svg>só esmalte</li></ul></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">02</span><div><h3>Lavagem e secagem</h3><p>[instrução da IFU]</p></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">03</span><div><h3>Aplicação do adesivo</h3><p>[instrução da IFU]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-hand"/></svg>fricção 00 s</li></ul></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">04</span><div><h3>Evaporação do solvente</h3><p>[instrução da IFU]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-air"/></svg>00 s</li></ul></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">05</span><div><h3>Fotopolimerização</h3><p>[instrução da IFU]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-light"/></svg>00 s</li></ul></div></li>
+      </ol>
+      <ol class="usteps" data-strategy-panel="total" hidden>
+        <li class="ustep"><span class="ustep__n">01</span><div><h3>Condicionamento total</h3><p>[instrução da IFU — estratégia total]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-clock"/></svg>00 s</li><li><svg aria-hidden="true"><use href="#i-tooth"/></svg>esmalte e dentina</li></ul></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">02</span><div><h3>Lavagem e controle da umidade</h3><p>[instrução da IFU]</p></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">03</span><div><h3>Aplicação do adesivo</h3><p>[instrução da IFU]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-layers"/></svg>0 camadas</li></ul></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">04</span><div><h3>Evaporação do solvente</h3><p>[instrução da IFU]</p></div></li>
+        <li class="uconn" aria-hidden="true"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="ustep"><span class="ustep__n">05</span><div><h3>Fotopolimerização</h3><p>[instrução da IFU]</p><ul class="params"><li><svg aria-hidden="true"><use href="#i-light"/></svg>00 s</li></ul></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section" id="precos" aria-labelledby="t-precos" tabindex="-1">
+      <h2 id="t-precos">Comparar preços</h2>
+      <p class="small muted" style="margin-top:8px">Estado demonstrado: lojas com apresentações diferentes.</p>
+      <div class="note note--warn" role="note" style="margin-top:16px">
+        <svg aria-hidden="true"><use href="#i-warn"/></svg>
+        <div>
+          <strong>Apresentações diferentes — comparação de preço não disponível.</strong>
+          <p style="margin-top:4px">As lojas vendem volumes diferentes deste produto. Mostramos cada oferta, sem ranking.</p>
+          <div class="otherpres"><ul>
+            <li><span><strong>Dental Cremer</strong> — Frasco 5 mL</span><span class="num">R$ 00,00 · <a href="#" target="_blank" rel="noopener sponsored">ver na loja ↗</a></span></li>
+            <li><span><strong>Dental Speed</strong> — Frasco 3 mL</span><span class="num">R$ 00,00 · <a href="#" target="_blank" rel="noopener sponsored">ver na loja ↗</a></span></li>
+            <li><span><strong>Dental Med Sul</strong></span><span>Não encontrado / indisponível</span></li>
+          </ul></div>
+          <p class="caption" style="margin-top:8px">Última atualização: DD/MM/AAAA</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer"><div class="container"><p>Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante.</p></div></footer>
+<div class="sticky-cta"><a class="btn btn--cta btn--lg btn--block" href="#precos">Comparar preços</a></div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<script src="proto.js"></script>
+</body>
+</html>

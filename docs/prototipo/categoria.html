@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5E2280">
+<title>Convencional — 2 passos · Protótipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<div data-header></div>
+<main id="main" class="container">
+  <nav class="crumbs" aria-label="Navegação estrutural">
+    <ol class="full"><li><a href="index.html">Sistemas Adesivos</a></li><li><a href="index.html#classificacao">Convencionais</a></li><li aria-current="page">2 passos</li></ol>
+    <a class="back" href="index.html">‹ Convencionais</a>
+  </nav>
+
+  <div class="pagehead">
+    <span><span class="badge badge--solid badge--conv">Convencional</span></span>
+    <h1>Convencional — 2 passos</h1>
+    <nav aria-label="Subcategorias de Convencionais"><div class="seg"><a href="categoria.html" aria-current="page">2 passos</a><a href="categoria.html">3 passos</a></div></nav>
+  </div>
+
+  <div class="split">
+    <figure class="diagram">
+      <figcaption>
+        <span class="overline">Como identificar?</span>
+        <span class="sr-only">Convencional de 2 passos: 1. Ácido, em frasco separado; 2. Primer e adesivo no mesmo frasco.</span>
+      </figcaption>
+      <ol aria-hidden="true">
+        <li class="step step--acid"><span class="step__glyph">H⁺</span>Ácido<span class="step__count">frasco 1</span></li>
+        <li class="arrow"><svg><use href="#i-arrow-down"/></svg></li>
+        <li class="step step--pa"><span class="step__glyph">P+A</span><span>Primer + Adesivo<span class="step--sub">mesmo frasco</span></span><span class="step__count">frasco 2</span></li>
+      </ol>
+    </figure>
+
+    <div class="stack prose">
+      <h2>O que caracteriza</h2>
+      <p>Sistema de condicionamento ácido prévio, seguido da aplicação de primer e adesivo, conforme a composição e protocolo específico do produto.</p>
+      <p class="source">Fonte: [referência bibliográfica] · acesso em DD/MM/AAAA <a href="#">↗<span class="sr-only"> (abre em nova aba)</span></a></p>
+      <p><a href="categoria.html">Comparar com 3 passos →</a></p>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="t-prod">
+    <p class="overline">Produtos disponíveis</p>
+    <div class="sechead" style="margin-top:4px"><h2 id="t-prod">5 produtos</h2></div>
+    <div class="toolbar">
+      <label class="sr-only" for="ord">Ordenar por</label>
+      <select class="select" id="ord"><option>Em destaque</option><option>Menor preço</option><option>A–Z</option></select>
+      <button class="fchip" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed')!=='true')">Fabricante 1</button>
+      <button class="fchip" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed')!=='true')">Fabricante 2</button>
+      <button class="fchip" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed')!=='true')">Contém MDP</button>
+    </div>
+
+    <div class="cards">
+      <article class="pcard">
+        <div class="pcard__media"><svg viewBox="0 0 80 140" role="img" aria-label="Frasco do Adesivo Exemplo A — Fabricante 1"><use href="#bottle"/></svg><span class="badge badge--conv">Conv. · 2 passos</span></div>
+        <button class="pcard__cmp" data-cmp="a" aria-pressed="false" aria-label="Adicionar Adesivo Exemplo A à comparação"><span>+</span></button>
+        <div class="pcard__body">
+          <span class="badge badge--conv">Conv. · 2 passos</span>
+          <span class="pcard__maker">Fabricante 1</span>
+          <h3 class="pcard__name"><a href="produto.html">Adesivo Exemplo A</a></h3>
+          <span class="pcard__meta">Frasco · 4 mL</span>
+          <span class="pcard__strategy">Condicionamento ácido + adesivo</span>
+          <ul class="chips" aria-label="Principais componentes"><li class="chip">HEMA</li><li class="chip">Etanol</li><li class="chip">+2</li></ul>
+          <p class="pcard__price">a partir de <strong>R$ 00,00</strong></p>
+        </div>
+        <div class="pcard__actions"><a class="btn btn--secondary" href="produto.html">Ver produto</a><a class="btn btn--cta" href="produto.html#precos">Comparar preços</a></div>
+      </article>
+      <article class="pcard">
+        <div class="pcard__media"><svg viewBox="0 0 80 140" role="img" aria-label="Frasco do Adesivo Exemplo B — Fabricante 2"><use href="#bottle"/></svg><span class="badge badge--conv">Conv. · 2 passos</span></div>
+        <button class="pcard__cmp" data-cmp="b" aria-pressed="false" aria-label="Adicionar Adesivo Exemplo B à comparação"><span>+</span></button>
+        <div class="pcard__body">
+          <span class="badge badge--conv">Conv. · 2 passos</span>
+          <span class="pcard__maker">Fabricante 2</span>
+          <h3 class="pcard__name"><a href="produto.html">Adesivo Exemplo B</a></h3>
+          <span class="pcard__meta">Frasco · 6 g</span>
+          <span class="pcard__strategy">Condicionamento ácido + adesivo</span>
+          <ul class="chips" aria-label="Principais componentes"><li class="chip">MDP</li><li class="chip">HEMA</li><li class="chip">Acetona</li></ul>
+          <p class="pcard__price">a partir de <strong>R$ 00,00</strong></p>
+        </div>
+        <div class="pcard__actions"><a class="btn btn--secondary" href="produto.html">Ver produto</a><a class="btn btn--cta" href="produto.html#precos">Comparar preços</a></div>
+      </article>
+      <article class="pcard">
+        <div class="pcard__media"><svg viewBox="0 0 80 140" role="img" aria-label="Imagem indisponível"><use href="#bottle" opacity=".35"/></svg><span class="badge badge--conv">Conv. · 2 passos</span></div>
+        <button class="pcard__cmp" data-cmp="e" aria-pressed="false" aria-label="Adicionar Adesivo Exemplo E à comparação"><span>+</span></button>
+        <div class="pcard__body">
+          <span class="badge badge--conv">Conv. · 2 passos</span>
+          <span class="pcard__maker">Fabricante 5</span>
+          <h3 class="pcard__name"><a href="produto.html">Adesivo Exemplo E (estado: sem foto e sem preço)</a></h3>
+          <span class="pcard__meta">Frasco · 5 mL</span>
+          <span class="pcard__strategy">Condicionamento ácido + adesivo</span>
+          <ul class="chips" aria-label="Principais componentes"><li class="chip">Etanol</li></ul>
+          <p class="pcard__price">Preço não encontrado</p>
+        </div>
+        <div class="pcard__actions"><a class="btn btn--secondary" href="produto.html">Ver produto</a><a class="btn btn--cta" href="produto.html#precos">Comparar preços</a></div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container"><p>Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante.</p></div></footer>
+<div class="tray" role="region" aria-label="Produtos selecionados para comparação"><div class="tray__inner"><div class="tray__thumbs"></div><span class="tray__count"></span><a class="btn btn--primary" href="comparar.html">Comparar</a></div></div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<script src="proto.js"></script>
+</body>
+</html>

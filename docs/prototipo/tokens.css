@@ -1,0 +1,71 @@
+/* Tokens — DESIGN.md §1. Copiar para o app (globals.css / tailwind theme). */
+:root {
+  /* primitivas */
+  --purple-900: #2E0F3D; --purple-800: #4A1A63; --purple-700: #5E2280; --purple-600: #7433A0;
+  --magenta-700: #8E1B5E; --magenta-600: #A8236E; --magenta-100: #FBE7F1;
+  --lilac-400: #B9A0D6; --lilac-200: #DDD0EE; --lilac-100: #EFE8F7; --lilac-50: #F8F4FC;
+  --gray-0: #FFFFFF; --gray-50: #F7F7F9; --gray-100: #EEEDF1; --gray-200: #E0DEE5;
+  --gray-400: #A19DAA; --gray-500: #858090; --gray-600: #5F5A68; --gray-900: #17141C;
+  --green-700: #1B6B45; --green-50: #E7F5EE;
+  --amber-800: #7A4B00; --amber-50: #FFF5E0;
+  --red-700: #B3261E; --red-50: #FDECEA;
+
+  /* semânticas */
+  --color-bg: var(--gray-0);
+  --color-bg-subtle: var(--gray-50);
+  --color-surface-atlas: var(--lilac-50);
+  --color-text: var(--gray-900);
+  --color-text-muted: var(--gray-600);
+  --color-border: var(--gray-200);
+  --color-border-input: var(--gray-500);
+  --color-border-accent: var(--lilac-400);
+  --color-primary: var(--purple-700);
+  --color-primary-hover: var(--purple-800);
+  --color-on-primary: #FFFFFF;
+  --color-cta: var(--magenta-600);
+  --color-cta-hover: var(--magenta-700);
+  --color-focus: var(--purple-600);
+  --color-best: var(--green-700); --color-best-bg: var(--green-50);
+  --color-warn: var(--amber-800); --color-warn-bg: var(--amber-50);
+  --color-error: var(--red-700); --color-error-bg: var(--red-50);
+
+  /* grupos */
+  --grp-conv-solid: #5E2280; --grp-conv-tint: #EFE8F7; --grp-conv-ink: #3B1352;
+  --grp-auto-solid: #A8236E; --grp-auto-tint: #FBE7F1; --grp-auto-ink: #6E1146;
+  --grp-univ-solid: #3D3A8F; --grp-univ-tint: #E9E8F7; --grp-univ-ink: #25236A;
+
+  /* etapas */
+  --step-acid-bg: var(--magenta-100); --step-acid-line: var(--magenta-600);
+  --step-primer-bg: var(--lilac-100); --step-primer-line: var(--purple-600);
+  --step-adh-bg: #E9E8F7; --step-adh-line: #3D3A8F;
+
+  /* tipografia */
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-display: 32px; --text-h1: 28px; --text-h2: 22px; --text-h3: 18px;
+  --text-overline: 12px; --text-body: 16px; --text-small: 14px; --text-caption: 12px; --text-price: 24px;
+
+  /* espaço / forma */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+  --gutter: 16px;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-full: 999px;
+  --shadow-1: 0 1px 2px rgb(23 20 28 / .06), 0 1px 3px rgb(23 20 28 / .08);
+  --shadow-2: 0 4px 12px rgb(46 15 61 / .12);
+  --shadow-3: 0 12px 32px rgb(46 15 61 / .18);
+
+  /* movimento */
+  --dur-fast: 120ms; --dur-base: 200ms; --dur-slow: 320ms;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+@media (min-width: 640px) { :root { --gutter: 24px; } }
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 32px;
+    --text-display: 48px; --text-h1: 36px; --text-h2: 28px; --text-h3: 20px;
+    --text-overline: 13px; --text-price: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; }
+}
