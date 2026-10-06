@@ -1,0 +1,178 @@
+{
+  "$schema": "../../../../../../data/schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas (texto fictício).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "imagens": [],
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "IFU fictícia",
+      "url": "https://example.com/ifu.pdf",
+      "acessadoEm": "2026-10-01"
+    },
+    {
+      "id": "ficha",
+      "tipo": "ficha-tecnica",
+      "titulo": "Ficha técnica fictícia",
+      "url": "https://example.com/ficha.pdf",
+      "acessadoEm": "2026-10-01"
+    }
+  ],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-01",
+    "responsavel": "fixture-sonda"
+  },
+  "id": "ficticio-dois-frascos",
+  "nomeComercial": "Dois Frascos Fictício",
+  "fabricante": {
+    "id": "fabricante-alfa",
+    "nome": "Fabricante Alfa"
+  },
+  "classificacao": {
+    "grupo": "autocondicionante",
+    "subcategorias": [
+      {
+        "id": "autocondicionante-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ficha"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ficha"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado"
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado"
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "protocolos": [
+    {
+      "id": "ac-2p",
+      "titulo": "Autocondicionante 2 passos",
+      "aplicaA": [
+        "autocondicionante-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "aplicacao-primer",
+          "titulo": "Primer autocondicionante",
+          "descricao": "Texto fictício (Primer autocondicionante).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Jato de ar",
+          "descricao": "Texto fictício (Jato de ar).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Texto fictício (Aplicação do adesivo).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Texto fictício (Fotopolimerização).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "apresentacoes": [
+    {
+      "id": "kit-primer-adesivo",
+      "tipo": "kit",
+      "descricao": "Kit: primer 6 mL + adesivo 5 mL",
+      "quantidade": 1,
+      "volumeMl": 11,
+      "fontes": [
+        "ficha"
+      ]
+    },
+    {
+      "id": "refil-adesivo-5ml",
+      "tipo": "refil",
+      "descricao": "Refil adesivo 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "ficha"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "kit-primer-adesivo"
+}

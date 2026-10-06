@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../../../../data/schemas/ofertas.schema.json",
+  "produtoId": "ficticio-multiuso-3p",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "kit-3-frascos",
+      "status": "indisponivel",
+      "url": "https://www.dentalcremer.com.br/kit-3-frascos-indisponivel-ficticio",
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "kit-3-frascos",
+      "status": "nao-encontrado",
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "kit-3-frascos",
+      "status": "nao-encontrado",
+      "consultadoEm": "2026-10-01"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../../../data/schemas/ofertas.schema.json",
+  "produtoId": "ficticio-prime-bond-2-1",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/produto-ficticio-frasco-4ml",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 7990
+        }
+      ],
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-4ml",
+      "status": "nao-encontrado",
+      "consultadoEm": "2026-10-01"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-4ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalmedsul.com.br/frasco-4ml-indisponivel-ficticio",
+      "consultadoEm": "2026-10-01"
+    }
+  ]
+}

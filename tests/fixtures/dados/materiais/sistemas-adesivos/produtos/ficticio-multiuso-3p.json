@@ -1,0 +1,174 @@
+{
+  "$schema": "../../../../../../data/schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas (texto fictício).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "imagens": [],
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "IFU fictícia",
+      "url": "https://example.com/ifu.pdf",
+      "acessadoEm": "2026-10-01"
+    },
+    {
+      "id": "ficha",
+      "tipo": "ficha-tecnica",
+      "titulo": "Ficha técnica fictícia",
+      "url": "https://example.com/ficha.pdf",
+      "acessadoEm": "2026-10-01"
+    }
+  ],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-01",
+    "responsavel": "fixture-sonda"
+  },
+  "id": "ficticio-multiuso-3p",
+  "nomeComercial": "Multiuso Fictício de Nome Comercial Propositalmente Muito Longo Para Testar Quebra",
+  "fabricante": {
+    "id": "fabricante-beta",
+    "nome": "Fabricante Beta"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-3-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ficha"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ficha"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado"
+    },
+    "hema": {
+      "valor": "nao-informado"
+    },
+    "silano": {
+      "valor": "nao-informado"
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ficha"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "protocolos": [
+    {
+      "id": "conv-3p",
+      "titulo": "Convencional 3 passos",
+      "aplicaA": [
+        "convencional-3-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento",
+          "descricao": "Texto fictício (Condicionamento).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Texto fictício (Lavagem).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-primer",
+          "titulo": "Aplicação do primer",
+          "descricao": "Texto fictício (Aplicação do primer).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Texto fictício (Aplicação do adesivo).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Texto fictício (Fotopolimerização).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "apresentacoes": [
+    {
+      "id": "kit-3-frascos",
+      "tipo": "kit",
+      "descricao": "Kit: ácido + primer + adesivo",
+      "quantidade": 1,
+      "volumeMl": 8,
+      "fontes": [
+        "ficha"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "kit-3-frascos"
+}
