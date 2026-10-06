@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/gerar-versao.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "validar:dados": "tsx scripts/validar-dados.ts",
     "gerar:json-schema": "tsx scripts/gerar-json-schema.ts",
-    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm validar:dados"
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm validar:dados",
+    "icons": "node scripts/gerar-icones.mjs",
+    "precos:atualizar": "tsx scripts/atualizar-precos.ts"
   },
   "dependencies": {
     "next": "16.4.0",

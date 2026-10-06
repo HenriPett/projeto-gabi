@@ -1,0 +1,72 @@
+# Atualização semanal de preços: revisita as páginas das lojas e abre/atualiza
+# um PR que só pode tocar em data/materiais/*/ofertas/. Merge = revisão humana.
+# Ver docs/DEPLOY.md §4. Rollback: git revert do PR mergeado.
+#
+# Configuração no GitHub (uma vez):
+#  - Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
+#  - Secret PRECOS_PR_TOKEN (fine-grained PAT ou GitHub App, contents+pull-requests: write)
+#    para que o CI rode no PR. Sem ele usa GITHUB_TOKEN, e PRs abertos por GITHUB_TOKEN
+#    não disparam o workflow ci (a Vercel ainda gera o preview).
+name: precos
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # segundas, 06h em Brasília
+  workflow_dispatch:
+    inputs:
+      produtos:
+        description: "IDs de produto separados por vírgula (vazio = todos)"
+        required: false
+
+concurrency:
+  group: precos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: consultar lojas
+        run: pnpm precos:atualizar
+        env:
+          PRECOS_SO: ${{ inputs.produtos }}
+          RELATORIO_PRECOS: ${{ runner.temp }}/relatorio.md
+
+      - name: garantir que só ofertas mudaram
+        run: |
+          fora=$(git status --porcelain | awk '{print $2}' | grep -Ev '^data/materiais/[^/]+/ofertas/[^/]+\.json$' || true)
+          if [ -n "$fora" ]; then
+            echo "::error::A atualização de preços alterou arquivos fora de ofertas/:"; echo "$fora"; exit 1
+          fi
+
+      - run: pnpm validar:dados
+      - run: pnpm test
+
+      - name: data
+        id: data
+        run: echo "hoje=$(TZ=America/Sao_Paulo date +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: abrir/atualizar PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.PRECOS_PR_TOKEN || secrets.GITHUB_TOKEN }}
+          branch: dados/precos-automatico
+          delete-branch: true
+          add-paths: data/materiais/*/ofertas/*.json
+          commit-message: "dados(precos): atualização automática ${{ steps.data.outputs.hoje }}"
+          title: "dados(precos): atualização automática ${{ steps.data.outputs.hoje }}"
+          body-path: ${{ runner.temp }}/relatorio.md
+          labels: precos, automatico
