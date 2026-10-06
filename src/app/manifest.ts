@@ -15,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     orientation: "portrait",
     background_color: "#FFFFFF",
-    theme_color: "#5E2280",
+    theme_color: "#5E2280", // --purple-700 (DESIGN.md §1.1); manter igual ao viewport do layout
     categories: ["education", "medical"],
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },

@@ -118,12 +118,14 @@ Princípio: **nunca inventar preço**; toda mudança passa por PR revisado.
 2. `pnpm precos:atualizar` (`scripts/atualizar-precos.ts`) visita a `url` de cada oferta cadastrada (ignora `nao-encontrado`), respeitando o `robots.txt` da loja e 3 s entre requisições por loja, com user-agent identificado (`SistemasAdesivosBot`).
 3. Lê o preço do **JSON-LD schema.org** (`Product` → `Offer`) da página (`scripts/precos/extrair.ts`, com testes unitários).
    - Em estoque → `disponivel` + preço `padrao`; fora de estoque → `indisponivel`; ambos com `consultadoEm` = hoje.
+   - A `url` cadastrada e a URL final após redirects passam por `validarUrlDeProduto`: redirect para home/categoria (comum quando o produto sai de linha) é **falha**, nunca `indisponivel`.
    - Página com variações de preço e sem `skuLoja` na oferta, SKU divergente, moeda ≠ BRL, HTTP ≠ 200, sem JSON-LD → **oferta fica como estava** (com a data antiga) e entra no relatório.
    - Pix/boleto não vêm no JSON-LD: são removidos quando o preço é reconsultado (não exibir valor velho com data nova) e o relatório avisa.
    - Variação > 30% é destacada para conferência.
    - Arquivo só é gravado se continuar válido no esquema zod.
 4. Guarda: o job falha se algo fora de `data/materiais/*/ofertas/*.json` mudou. Depois roda `validar:dados` e `test`.
-5. Abre/atualiza o PR `dados(precos): atualização automática AAAA-MM-DD` na branch `dados/precos-automatico`, com o relatório no corpo. A Vercel gera preview do PR; revisão humana → merge → produção.
+5. O corpo do PR traz um checklist de curadoria (Bula): confirmar por loja que o `price` do JSON-LD é o preço padrão ("por"), não Pix/boleto nem o "de" riscado; conferir variações; decidir ofertas redirecionadas.
+6. Abre/atualiza o PR `dados(precos): atualização automática AAAA-MM-DD` na branch `dados/precos-automatico`, com o relatório no corpo. A Vercel gera preview do PR; revisão humana → merge → produção.
 
 **Rollback:** `git revert` do merge do PR de preços.
 

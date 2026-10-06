@@ -12,7 +12,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { OfertasDoProduto } from "../src/lib/esquema";
+import { OfertasDoProduto, validarUrlDeProduto, type LojaId } from "../src/lib/esquema";
 import { extrairPreco, permitidoPorRobots } from "./precos/extrair";
 
 const AGENTE = "SistemasAdesivosBot/1.0 (+https://github.com/; atualizacao semanal de precos)";
@@ -27,7 +27,7 @@ const esperar = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const robotsCache = new Map<string, string>();
 const ultimoAcesso = new Map<string, number>();
 
-async function baixar(url: string): Promise<{ status: number; corpo: string }> {
+async function baixar(url: string): Promise<{ status: number; corpo: string; urlFinal: string }> {
   const host = new URL(url).host;
   const espera = (ultimoAcesso.get(host) ?? 0) + INTERVALO - Date.now();
   if (espera > 0) await esperar(espera);
@@ -37,7 +37,7 @@ async function baixar(url: string): Promise<{ status: number; corpo: string }> {
     redirect: "follow",
     signal: AbortSignal.timeout(20_000),
   });
-  return { status: resp.status, corpo: await resp.text() };
+  return { status: resp.status, corpo: await resp.text(), urlFinal: resp.url || url };
 }
 
 async function robotsPermite(url: string) {
@@ -76,11 +76,23 @@ async function main() {
       const rotulo = `\`${bruto.produtoId}\` · ${oferta.lojaId} · ${oferta.apresentacaoId}`;
       const falha = (motivo: string) => linhas.falhas.push(`- ${rotulo}: ${motivo} — [página](${oferta.url})`);
       try {
+        const urlInvalida = validarUrlDeProduto(oferta.lojaId as LojaId, oferta.url);
+        if (urlInvalida) {
+          falha(`url cadastrada inválida: ${urlInvalida}`);
+          continue;
+        }
         if (!(await robotsPermite(oferta.url))) {
           falha("bloqueado pelo robots.txt da loja (não consultado)");
           continue;
         }
-        const { status, corpo } = await baixar(oferta.url);
+        const { status, corpo, urlFinal } = await baixar(oferta.url);
+        // Produto fora de linha costuma redirecionar para home/categoria: é falha
+        // (curadoria decide), nunca "indisponivel".
+        const redirecionouPara = validarUrlDeProduto(oferta.lojaId as LojaId, urlFinal);
+        if (redirecionouPara) {
+          falha(`redirecionado para ${urlFinal} (${redirecionouPara})`);
+          continue;
+        }
         if (status !== 200) {
           falha(`HTTP ${status}`);
           continue;
@@ -136,6 +148,12 @@ async function main() {
     `- Ofertas com preço/status alterado: **${linhas.mudou.length}**`,
     `- Reconsultadas sem mudança (só data atualizada): **${linhas.igual}**`,
     `- Não atualizadas (mantidas com a data antiga): **${linhas.falhas.length}**`,
+    "",
+    "### Checklist de revisão (curadoria)",
+    "",
+    "- [ ] Para cada loja com mudança, abri ao menos uma página e confirmei que o preço lido do JSON-LD é o preço **padrão** (o \"por\"), e não o preço Pix/boleto nem o \"de\" riscado.",
+    "- [ ] Conferi apresentação/volume nas ofertas marcadas em \"Conferir\".",
+    "- [ ] Ofertas \"Não atualizadas\" por redirecionamento: decidi se viram `nao-encontrado` ou se a URL mudou.",
     "",
     ...(linhas.mudou.length ? ["### Mudanças", "", "| Oferta | Antes | Depois |", "|---|---|---|", ...linhas.mudou, ""] : []),
     ...(linhas.alertas.length ? ["### Conferir", "", ...linhas.alertas, ""] : []),
