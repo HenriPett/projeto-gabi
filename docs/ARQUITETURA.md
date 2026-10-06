@@ -11,7 +11,7 @@
 | Renderização | **100% estático (SSG)**: `generateStaticParams` + `dynamicParams = false` em toda rota dinâmica. Sem Server Actions, sem API routes, sem runtime. | Dados mudam por commit, não por requisição. Mais rápido, mais barato, funciona offline no PWA. |
 | Cache Components | **Desligado** | Não há dado de runtime; ele exige `generateStaticParams` não vazio (quebraria build com catálogo vazio). |
 | Dados | **JSON versionado em `data/`**, validado com **zod** no build, no CI e por `pnpm validar:dados`. Sem banco na v1. | Rastreabilidade (cada dado tem fonte + data; git dá histórico e revisão por PR), zero infra. Catálogo é de dezenas de produtos. |
-| Preços | Arquivo separado por produto (`ofertas/`), em **centavos inteiros**. | Atualização de preço (manual ou Action agendada que abre PR) só toca esses arquivos. Nada de float. |
+| Preços | Arquivo separado por produto (`ofertas/`), em **centavos inteiros**. | Preços são curados manualmente (Bula) — decisão do cliente: sem coleta automática. Revisão por diff só nesses arquivos. Nada de float. |
 | Estilo | **Tailwind v4** + tokens CSS do DESIGN.md §1 em `globals.css`. | Padrão do create-next-app; tokens são a ponte com o design. |
 | Busca | Índice gerado no build (`itemDeBusca`) + filtro no cliente (`buscar`). Sem biblioteca. | Dezenas de itens; substring normalizada (sem acento, `&`, espaços) basta. |
 | PWA | `app/manifest.ts` nativo + **service worker manual** `public/sw.js` (Ponte). Sem Serwist. | Menos acoplamento com o bundler; o site é estático, o SW é simples. |
@@ -29,7 +29,7 @@ data/
     sistemas-adesivos/
       categorias.json                # textos explicativos por grupo/subcategoria (com fonte)
       produtos/<id>.json             # 1 arquivo por produto  ← Bula
-      ofertas/<id>.json              # preços por loja/apresentação ← Bula / automação
+      ofertas/<id>.json              # preços por loja/apresentação ← Bula (curadoria manual)
 public/
   img/produtos/<id>/*.webp           # fotos dos frascos (com fonte no JSON do produto)
 scripts/
@@ -144,7 +144,7 @@ Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `
 
 ## 7. Git
 
-- `main` sempre verde e implantável (produção na Vercel). Trabalho em branches curtas: `feat/…`, `fix/…`, `dados/…`, `chore/…`, `docs/…`; merge após `pnpm check` + review do Tech Lead.
+- `main` sempre verde e implantável (produção na Vercel, plano Hobby, domínio *.vercel.app). Remote: `origin` (GitHub); após merge no main, `git push origin main`. Trabalho em branches curtas: `feat/…`, `fix/…`, `dados/…`, `chore/…`, `docs/…`; merge após `pnpm check` + review do Tech Lead.
 - **Conventional Commits** em português: `feat(produto): seção de preços`, `dados(ambar): ofertas 2026-10-06`.
 - Agentes trabalhando em paralelo no mesmo clone: cada um em **`git worktree`** próprio, para não trocar a branch do outro.
 
