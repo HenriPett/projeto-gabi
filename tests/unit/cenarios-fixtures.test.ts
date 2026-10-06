@@ -161,6 +161,16 @@ describe("busca — cenários das fixtures", () => {
   it("BUG-001: '1 passo' não traz 'Prime&Bond 2.1' (2 passos) por causa do '.1'", () => {
     expect(ids("1 passo")).toEqual(["ficticio-tudo-em-um"]);
   });
+  it.fails("BUG-006: '10-MDP' acha todo produto com MDP confirmado, mesmo cadastrado só como 'MDP'", () => {
+    expect(ids("10-MDP")).toEqual(ids("MDP"));
+  });
+  it("BUG-001 (regressão): variações de 'N passos' e números em nomes", () => {
+    expect(ids("2passos")).toEqual(ids("2 PASSOS"));
+    expect(ids("3passos")).toEqual(["ficticio-multiuso-3p"]);
+    expect(ids("Single Bond 2")).toEqual(["ficticio-single-bond-2"]);
+    expect(ids("2.1")).toEqual(["ficticio-prime-bond-2-1"]);
+    expect(ids("3M")).toEqual(["ficticio-single-bond-2", "ficticio-universal-triplo"]);
+  });
   it("B-10/U-05: universal aparece uma vez", () => {
     expect(ids("Universal Triplo")).toEqual(["ficticio-universal-triplo"]);
   });

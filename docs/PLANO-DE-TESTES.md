@@ -407,7 +407,24 @@ Vitest já inclui `tests/unit/**` (não pega `tests/e2e`). Playwright usa `testD
 
 ## 12. Bugs encontrados
 
-Provados por `tests/unit/cenarios-fixtures.test.ts` (marcados `it.fails`; quando corrigidos, o teste quebra e deve virar `it`). Dono: **Molar** (`src/lib`).
+Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; quando corrigido, o teste quebra e vira `it`). Dono: **Molar** (`src/lib`).
+
+| Bug | Sev. | Status | Correção / reverificação |
+|---|---|---|---|
+| BUG-001 | S2 | ✅ Corrigido `f1aa8a6` — reverificado 06/10 | "N passo(s)" virou expressão; número solto casa só palavra inteira. Regressão ok: `2passos`, `2 PASSOS`, `3passos`, `3M`, `Single Bond 2`, `2.1`. |
+| BUG-002 | S3 | ✅ Corrigido `f1aa8a6` — reverificado | https obrigatório no link de compra (fontes ainda aceitam http, por decisão). |
+| BUG-003 | S2 | ✅ Corrigido `f1aa8a6` + `591374a` — reverificado | Bloqueia `//`, `/index.*`, caminhos/params de busca; exige forma de página de produto por loja (Cremer/Speed `/<slug>.html`, Med Sul `/<slug>`). **Limitação conhecida:** Med Sul aceita categoria de 1 nível (ex.: `/adesivos`) — garantia é a revisão humana do link. |
+| BUG-004 | S3 | ✅ Corrigido `f1aa8a6` — reverificado | Toda `DataISO` ≤ hoje (UTC). |
+| BUG-005 | S1 | ✅ Corrigido `f1aa8a6` — reverificado | `catalogo()` oculta ofertas de rascunho. |
+| BUG-006 | S3 | 🔴 Aberto | ver abaixo |
+
+**Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
+
+### BUG-006 — "10-MDP" não acha produto com MDP cadastrado só como "MDP" · **S3**
+- **Passos:** `DADOS_DIR=tests/fixtures/dados`; buscar `"10-MDP"` e `"MDP"`.
+- **Esperado:** mesmos resultados (10-MDP é o nome técnico do MDP; o usuário digita qualquer um dos dois).
+- **Obtido:** `"MDP"` → `exemplo-universal, ficticio-tudo-em-um, ficticio-universal-triplo`; `"10-MDP"` → `exemplo-universal, ficticio-tudo-em-um` (falta `ficticio-universal-triplo`, que tem `mdp: sim` e componente "MDP"). Não é regressão — já ocorria antes de `f1aa8a6`.
+- **Sugestão:** em `itemDeBusca`, quando `composicao.mdp.valor === "sim"`, indexar `"MDP 10-MDP"`.
 
 ### BUG-001 — Busca por número de passos traz produtos da categoria errada · **S2**
 - **Passos:** `DADOS_DIR=tests/fixtures/dados`; `buscar(índice, "3 passos")` ou `buscar(índice, "1 passo")`.
