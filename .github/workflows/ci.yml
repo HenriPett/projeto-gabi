@@ -41,3 +41,9 @@ jobs:
         run: pnpm build
         env:
           DADOS_DIR: tests/fixtures/dados
+
+      - name: build (fixtures sem rascunhos — exclusão de rascunho não quebra a geração)
+        run: pnpm build
+        env:
+          DADOS_DIR: tests/fixtures/dados
+          INCLUIR_RASCUNHOS: "0"

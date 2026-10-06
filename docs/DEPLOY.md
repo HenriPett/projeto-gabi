@@ -102,6 +102,7 @@ Roda em todo `pull_request` e em `push` na `main`. A Vercel faz o build de deplo
 2. `pnpm check` = lint + typecheck + test + validar:dados.
 3. `pnpm build` com `VERCEL_ENV=production` — mesmo comportamento da produção (sem rascunhos).
 4. `DADOS_DIR=tests/fixtures/dados pnpm build` — garante que as páginas geram com catálogo preenchido, mesmo enquanto `data/` está vazio.
+5. `DADOS_DIR=tests/fixtures/dados INCLUIR_RASCUNHOS=0 pnpm build` — mesmo catálogo com rascunhos excluídos (como em produção): nenhuma rota pode depender de produto em rascunho.
 
 Configurar no GitHub (seção 7): proteção da `main` exigindo o check `ci` + status da Vercel.
 Fase 2: E2E Playwright + axe (Sonda) contra a URL de preview (`deployment_status`).
