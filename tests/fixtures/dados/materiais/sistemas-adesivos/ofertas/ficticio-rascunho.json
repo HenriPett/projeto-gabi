@@ -2,7 +2,7 @@
   "$schema": "../../../../../../data/schemas/ofertas.schema.json",
   "produtoId": "ficticio-rascunho",
   "ofertas": [
-    { "lojaId": "dental-cremer", "apresentacaoId": "frasco-4ml", "status": "disponivel", "url": "https://www.dentalcremer.com.br/produto-ficticio-rascunho", "precos": [{ "tipo": "padrao", "centavos": 5000 }], "consultadoEm": "2026-10-01" },
-    { "lojaId": "dental-speed", "apresentacaoId": "frasco-4ml", "status": "disponivel", "url": "https://www.dentalspeed.com/produto-ficticio-rascunho", "precos": [{ "tipo": "padrao", "centavos": 50000 }], "consultadoEm": "2026-10-01" }
+    { "lojaId": "dental-cremer", "apresentacaoId": "frasco-4ml", "status": "disponivel", "url": "https://www.dentalcremer.com.br/produto-ficticio-rascunho.html", "precos": [{ "tipo": "padrao", "centavos": 5000 }], "consultadoEm": "2026-10-01" },
+    { "lojaId": "dental-speed", "apresentacaoId": "frasco-4ml", "status": "disponivel", "url": "https://www.dentalspeed.com/produto-ficticio-rascunho.html", "precos": [{ "tipo": "padrao", "centavos": 50000 }], "consultadoEm": "2026-10-01" }
   ]
 }

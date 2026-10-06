@@ -6,7 +6,7 @@
       "lojaId": "dental-cremer",
       "apresentacaoId": "frasco-5ml",
       "status": "disponivel",
-      "url": "https://www.dentalcremer.com.br/produto-ficticio-frasco-5ml",
+      "url": "https://www.dentalcremer.com.br/produto-ficticio-frasco-5ml.html",
       "precos": [
         {
           "tipo": "padrao",
@@ -19,7 +19,7 @@
       "lojaId": "dental-speed",
       "apresentacaoId": "frasco-5ml",
       "status": "disponivel",
-      "url": "https://www.dentalspeed.com/produto-ficticio-frasco-5ml",
+      "url": "https://www.dentalspeed.com/produto-ficticio-frasco-5ml.html",
       "precos": [
         {
           "tipo": "padrao",

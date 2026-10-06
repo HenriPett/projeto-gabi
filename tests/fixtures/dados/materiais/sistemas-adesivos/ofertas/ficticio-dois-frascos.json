@@ -6,7 +6,7 @@
       "lojaId": "dental-cremer",
       "apresentacaoId": "kit-primer-adesivo",
       "status": "disponivel",
-      "url": "https://www.dentalcremer.com.br/produto-ficticio-kit-primer-adesivo",
+      "url": "https://www.dentalcremer.com.br/produto-ficticio-kit-primer-adesivo.html",
       "precos": [
         {
           "tipo": "padrao",
@@ -32,7 +32,7 @@
       "lojaId": "dental-speed",
       "apresentacaoId": "refil-adesivo-5ml",
       "status": "disponivel",
-      "url": "https://www.dentalspeed.com/produto-ficticio-refil-adesivo-5ml",
+      "url": "https://www.dentalspeed.com/produto-ficticio-refil-adesivo-5ml.html",
       "precos": [
         {
           "tipo": "padrao",

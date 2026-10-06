@@ -58,7 +58,7 @@ describe("esquema de ofertas", () => {
   });
   it("rejeita link de outra loja", () => {
     const o = ofertas();
-    o.ofertas[0].url = "https://www.dentalspeed.com/produto";
+    o.ofertas[0].url = "https://www.dentalspeed.com/produto.html";
     expect(erros(OfertasDoProduto.safeParse(o)).join()).toMatch(/não pertence/);
   });
   it("disponível exige preço padrão; preço não pode ser float", () => {
@@ -73,5 +73,29 @@ describe("esquema de ofertas", () => {
     const o = ofertas();
     o.ofertas[2].precos = [{ tipo: "padrao", centavos: 100 }];
     expect(OfertasDoProduto.safeParse(o).success).toBe(false);
+  });
+});
+
+describe("padrão de página de produto por loja", async () => {
+  const { validarUrlDeProduto } = await import("@/lib/esquema");
+  it.each([
+    ["dental-cremer", "https://www.dentalcremer.com.br/adesivo-exemplo-fgm-356588.html"],
+    ["dental-cremer", "https://www.dentalcremer.com.br/adesivo-exemplo-maquira.html"],
+    ["dental-speed", "https://www.dentalspeed.com/adesivo-exemplo-5ml-angelus-ang38251a.html"],
+    ["dental-med-sul", "https://www.dentalmedsul.com.br/adesivo-exemplo-4ml-fgm"],
+  ] as const)("aceita %s %s", (loja, url) => {
+    expect(validarUrlDeProduto(loja, url)).toBeNull();
+  });
+  it.each([
+    ["dental-cremer", "https://www.dentalcremer.com.br/dentistica-e-estetica/adesivo.html"],
+    ["dental-cremer", "https://www.dentalcremer.com.br/adesivo-exemplo"],
+    ["dental-speed", "https://www.dentalspeed.com/catalogsearch/result/?q=adesivo"],
+    ["dental-speed", "https://www.dentalspeed.com/dentistica-e-estetica/adesivo.html"],
+    ["dental-med-sul", "https://www.dentalmedsul.com.br/especialidades/dentistica"],
+    ["dental-med-sul", "https://www.dentalmedsul.com.br/catalogsearch/result/?q=adesivo"],
+    ["dental-med-sul", "https://www.dentalmedsul.com.br/media/catalog/product/a/b.jpg"],
+    ["dental-med-sul", "https://www.dentalmedsul.com.br/adesivo-exemplo.html"],
+  ] as const)("rejeita %s %s", (loja, url) => {
+    expect(validarUrlDeProduto(loja, url)).not.toBeNull();
   });
 });

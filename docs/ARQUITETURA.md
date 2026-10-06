@@ -94,7 +94,7 @@ ofertas[{
   lojaId: dental-cremer | dental-speed | dental-med-sul
   apresentacaoId           # EXATA; é a chave de comparação
   status: disponivel | indisponivel | nao-encontrado
-  url?                     # obrigatória salvo nao-encontrado; domínio da loja e ≠ home (validado)
+  url?                     # obrigatória salvo nao-encontrado; https, domínio da loja, forma de página de produto (validado)
   tituloNaLoja?, skuLoja?
   precos[{ tipo: padrao | pix | boleto, centavos, condicao? }]   # disponivel exige "padrao"
   consultadoEm             # → "Última atualização: DD/MM/AAAA"
@@ -104,6 +104,7 @@ ofertas[{
 - **Comparação só com o mesmo `apresentacaoId`**. A equivalência (fabricante + nome + volume + quantidade + SKU) é decidida na curadoria; anúncio que não bate com nenhuma apresentação → cadastrar nova apresentação no produto, nunca forçar.
 - Comparação usa **`padrao`** (preço vigente sem condição de pagamento). Pix/boleto são informativos.
 - Uma oferta por (loja, apresentação). Histórico de preço = histórico do git.
+- Link de compra (`validarUrlDeProduto`, padrões confirmados pelo Bula em 2026-10-06): Cremer e Speed `/<slug>.html` (um nível); Med Sul `/<slug>` (um nível, sem `.html`). Sempre bloqueados: home (`/`, `//`, `/index.*`), `catalogsearch`/busca, `especialidades`, `media`, params `q`/`s`/…. **Limite:** na Med Sul uma categoria de um nível tem a mesma forma de um produto — ali a revisão humana do link é a garantia.
 
 ## 4. Rotas
 
@@ -156,6 +157,5 @@ Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `
 ## 9. Em aberto
 
 - **"Produtos mais consultados"**: não há dado de acesso num site estático. Proposta v1: curadoria manual (`data/materiais/sistemas-adesivos/destaques.json`) com o rótulo honesto "Em destaque"; medir com Vercel Web Analytics e só então trocar para "mais consultados". Decisão do produto.
-- Domínios oficiais das lojas em `lojas.ts` — confirmar (Bula).
 - Formato do Guia rápido (Markdown com frontmatter de fontes, provavelmente).
 - Direitos de uso das fotos dos frascos.

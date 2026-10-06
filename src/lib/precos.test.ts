@@ -4,7 +4,7 @@ import { apresentacaoParaComparar, compararPrecos, maioresEconomias } from "./pr
 
 const oferta = (o: Partial<Oferta> & Pick<Oferta, "lojaId" | "apresentacaoId">): Oferta => ({
   status: "disponivel",
-  url: "https://www.dentalcremer.com.br/x",
+  url: "https://www.dentalcremer.com.br/x.html",
   precos: [],
   consultadoEm: "2026-10-01",
   ...o,

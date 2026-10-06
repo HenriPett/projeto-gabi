@@ -1,13 +1,32 @@
 /**
  * Lojas cobertas na v1 (BRIEFING: Dental Cremer, Dental Speed, Dental Med Sul).
- * `dominios` é usado para validar que todo link de compra aponta para a loja
- * certa — e nunca para a home (ver validarUrlDeProduto).
- * TODO(Bula): confirmar domínios oficiais das três lojas.
+ * Domínios e padrões de URL confirmados pelo Bula em 2026-10-06.
+ * `paginaDeProduto` = forma do caminho de uma página de produto. Med Sul não
+ * usa ".html", então o padrão não separa produto de categoria de um nível só:
+ * lá a revisão humana do link continua sendo a garantia.
  */
 export const LOJAS = [
-  { id: "dental-cremer", nome: "Dental Cremer", dominios: ["dentalcremer.com.br"] },
-  { id: "dental-speed", nome: "Dental Speed", dominios: ["dentalspeed.com"] },
-  { id: "dental-med-sul", nome: "Dental Med Sul", dominios: ["dentalmedsul.com.br"] },
+  {
+    id: "dental-cremer",
+    nome: "Dental Cremer",
+    dominios: ["dentalcremer.com.br"],
+    // /adesivo-ambar-fgm-356588.html · categoria /dentistica-e-estetica/adesivo.html tem 2 níveis
+    paginaDeProduto: /^\/[a-z0-9-]+\.html$/,
+  },
+  {
+    id: "dental-speed",
+    nome: "Dental Speed",
+    dominios: ["dentalspeed.com"],
+    // /adesivo-ankor-u-bond-5ml-angelus-ang38251a.html
+    paginaDeProduto: /^\/[a-z0-9-]+\.html$/,
+  },
+  {
+    id: "dental-med-sul",
+    nome: "Dental Med Sul",
+    dominios: ["dentalmedsul.com.br"],
+    // /adesivo-ambar-4ml-fgm · categorias em /especialidades/... (2+ níveis)
+    paginaDeProduto: /^\/[a-z0-9-]+$/,
+  },
 ] as const;
 
 export type LojaId = (typeof LOJAS)[number]["id"];
@@ -18,13 +37,12 @@ export function loja(id: LojaId) {
 }
 
 /** Caminhos/parâmetros de busca e listagem — não são página de produto. */
-const CAMINHO_DE_BUSCA = /(^|\/)(busca|buscar|search|catalogsearch|pesquisa)(\/|$)/i;
+const CAMINHO_DE_BUSCA = /(^|\/)(busca|buscar|search|catalogsearch|pesquisa|especialidades|media)(\/|$)/i;
 const PARAMETROS_DE_BUSCA = ["q", "s", "busca", "search", "ft", "termo"];
 
 /**
  * null se `url` é HTTPS, de um dos domínios da loja e parece página de produto;
  * senão, a mensagem do problema. Barra home (/, //, /index.html) e busca.
- * TODO(Bula): padrão de rota de produto por loja, quando confirmado.
  */
 export function validarUrlDeProduto(lojaId: LojaId, url: string): string | null {
   let u: URL;
@@ -45,6 +63,9 @@ export function validarUrlDeProduto(lojaId: LojaId, url: string): string | null 
   }
   if (CAMINHO_DE_BUSCA.test(caminho) || PARAMETROS_DE_BUSCA.some((p) => u.searchParams.has(p))) {
     return "URL aponta para uma busca da loja — use a página específica do produto";
+  }
+  if (!loja(lojaId).paginaDeProduto.test(caminho.toLowerCase())) {
+    return `caminho "${u.pathname}" não tem a forma de página de produto da ${loja(lojaId).nome}`;
   }
   return null;
 }
