@@ -42,3 +42,9 @@ next-env.d.ts
 
 # maestri
 /.maestri
+
+# env: só o exemplo é versionado
+!.env.example
+
+# gerado no build (scripts/gerar-versao.mjs)
+/public/version.json

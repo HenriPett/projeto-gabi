@@ -1,0 +1,43 @@
+# Gate de qualidade de todo PR e da main. A Vercel faz o build de deploy;
+# este workflow garante que nada quebrado chegue lá. Ver docs/DEPLOY.md §3.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4 # versão lida de packageManager
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      # lint + typecheck + test + validar:dados
+      - run: pnpm check
+
+      - name: build (dados reais, como produção)
+        run: pnpm build
+        env:
+          VERCEL_ENV: production # exclui rascunhos, igual ao deploy de produção
+
+      - name: build (fixtures — garante que o site gera páginas com catálogo preenchido)
+        run: pnpm build
+        env:
+          DADOS_DIR: tests/fixtures/dados
