@@ -1,0 +1,138 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "mdp",
+  "titulo": "O que é MDP?",
+  "resumo": "O monômero funcional 10-MDP, a ligação química com a hidroxiapatita e por que 'ter MDP' não basta.",
+  "ordem": 4,
+  "secoes": [
+    {
+      "titulo": "Um monômero funcional",
+      "paragrafos": [
+        {
+          "texto": "O 10-MDP (10-metacriloiloxidecil di-hidrogênio fosfato) é um monômero com três partes: uma extremidade metacrilato polimerizável, uma cadeia hidrofóbica longa de 10 carbonos e um grupo fosfato curto e hidrofílico.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "O MDP apareceu pela primeira vez no Clearfil New Bond (Kuraray) e faz parte do autocondicionante de 2 passos Clearfil SE Bond desde o fim dos anos 1990. Hoje está presente em muitos adesivos universais.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Como ele adere ao dente",
+      "paragrafos": [
+        {
+          "texto": "Pelo conceito de adesão-descalcificação, certos monômeros funcionais interagem ionicamente com a hidroxiapatita.",
+          "fontes": [
+            "yoshida-2012"
+          ]
+        },
+        {
+          "texto": "Em estudo comparativo, o 10-MDP aderiu prontamente à hidroxiapatita, e a ligação foi muito estável, já que seu sal de cálcio é pouco solúvel em água. O 4-MET teve potencial de ligação bem menor, e a ligação do phenyl-P não foi hidroliticamente estável.",
+          "fontes": [
+            "yoshida-2004"
+          ]
+        },
+        {
+          "texto": "Na interface, duas moléculas de MDP unidas por sais estáveis de MDP-cálcio se organizam em nanocamadas. Isso deve tornar a interface mais resistente à biodegradação e pode explicar a boa longevidade clínica dos adesivos à base de 10-MDP.",
+          "fontes": [
+            "yoshida-2012"
+          ]
+        },
+        {
+          "texto": "As nanocamadas se formaram no esmalte e na dentina, foram maiores na dentina e aumentaram quando o primer foi friccionado ativamente. Também cresceram com a concentração de 10-MDP no primer.",
+          "fontes": [
+            "yoshihara-2011"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "O que diz a revisão sistemática",
+      "paragrafos": [
+        {
+          "texto": "Uma revisão sistemática concluiu que os monômeros funcionais promovem interação química com o substrato, com forças de adesão maiores que as da adesão só micromecânica. O 10-MDP ainda protege as fibras colágenas, formando sais de MDP-cálcio, e cria uma zona resistente a desafios ácido-base.",
+          "fontes": [
+            "carrilho-2019"
+          ]
+        },
+        {
+          "texto": "A mesma revisão recomenda aplicar esses adesivos com fricção e dar tempo para que a solução infiltre, hibridize e forme o MDP-Ca.",
+          "fontes": [
+            "carrilho-2019"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Ter MDP não basta",
+      "paragrafos": [
+        {
+          "texto": "A presença do MDP não garante o efeito. Muitos universais com MDP não formam nanocamadas significativas, e o HEMA na mesma solução pode inibir essa formação. Segundo Perdigão (2020), ainda não está claro se o MDP melhora o comportamento clínico de longo prazo dos universais.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "A dentina condicionada com ácido fosfórico perde cálcio, e sem cálcio não está claro como o MDP se ligaria ionicamente a ela. Por isso, os adesivos autocondicionantes com MDP talvez devam ser aplicados apenas em dentina não condicionada.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "yoshida-2004",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Nagakane K, Fukuda R, et al. Comparative study on adhesive performance of functional monomers. J Dent Res. 2004;83(6):454-458.",
+      "url": "https://doi.org/10.1177/154405910408300604",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2012",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Yoshihara K, Nagaoka N, et al. Self-assembled nano-layering at the adhesive interface. J Dent Res. 2012;91(4):376-381.",
+      "url": "https://doi.org/10.1177/0022034512437375",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshihara-2011",
+      "tipo": "literatura",
+      "titulo": "Yoshihara K, Yoshida Y, Hayakawa S, et al. Nanolayering of phosphoric acid ester monomer on enamel and dentin. Acta Biomater. 2011;7(8):3187-3195.",
+      "url": "https://doi.org/10.1016/j.actbio.2011.04.026",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "carrilho-2019",
+      "tipo": "literatura",
+      "titulo": "Carrilho E, Cardoso M, Marques Ferreira M, et al. 10-MDP based dental adhesives: adhesive interface characterization and adhesive stability—a systematic review. Materials (Basel). 2019;12(5):790.",
+      "url": "https://doi.org/10.3390/ma12050790",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto."
+    }
+  ],
+  "relacionados": [
+    "adesivo-universal",
+    "camada-hibrida",
+    "condicionamento-seletivo"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
