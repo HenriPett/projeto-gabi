@@ -31,11 +31,24 @@ export interface CardProduto {
   estrategia?: string;
   componentes: string[];
   mdp: boolean;
-  /** Menor preço da apresentação comparada (vem ordenado de compararPrecos). */
-  aPartirDeCentavos?: number;
+  preco: PrecoCard;
   imagem?: ImagemDTO;
   rascunho: boolean;
 }
+
+/**
+ * Resumo de preço para card/comparador. Só há "a partir de" quando alguma
+ * apresentação é comparável (≥ 2 lojas, via compararPrecos) — e sempre com a
+ * apresentação (PLANO BUG-012).
+ */
+export type PrecoCard =
+  | { tipo: "comparavel"; centavos: number; apresentacao: string; principal: boolean }
+  | { tipo: "uma-loja"; centavos: number; apresentacao: string; principal: boolean }
+  | { tipo: "apresentacoes-diferentes" }
+  | { tipo: "sem-preco" };
+
+/** Centavos usados só para ORDENAR a lista (sem preço vai para o fim). */
+export const centavosParaOrdenar = (p: PrecoCard) => ("centavos" in p ? p.centavos : Infinity);
 
 /** Entrada do índice de busca do header (ItemBusca + o que as sugestões exibem). */
 export interface ItemIndice {

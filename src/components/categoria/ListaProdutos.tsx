@@ -6,7 +6,7 @@ import type { SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { EstadoVazio } from "../EstadoVazio";
 import { IconeFechar, IconeFiltro } from "../Icones";
 import { ProductCard } from "../ProductCard";
-import type { CardProduto } from "../tipos";
+import { centavosParaOrdenar, type CardProduto } from "../tipos";
 
 type Ordem = "destaque" | "preco" | "az";
 
@@ -26,8 +26,8 @@ export function filtrarEOrdenar(
   return [...filtrados].sort((a, b) => {
     if (ordem === "destaque" && rank(a) !== rank(b)) return rank(a) - rank(b);
     if (ordem === "preco") {
-      const pa = a.aPartirDeCentavos ?? Infinity;
-      const pb = b.aPartirDeCentavos ?? Infinity;
+      const pa = centavosParaOrdenar(a.preco);
+      const pb = centavosParaOrdenar(b.preco);
       if (pa !== pb) return pa - pb;
     }
     return porNome(a, b);

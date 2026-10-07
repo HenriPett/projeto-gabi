@@ -10,6 +10,7 @@ import type {
   DivergenciaDTO,
   FonteDTO,
   ItemIndice,
+  PrecoCard,
 } from "./tipos";
 
 /**
@@ -65,11 +66,28 @@ export function componentesChave(p: Produto): string[] {
   return chave.length ? chave : c.componentes.map((x) => x.nome);
 }
 
-/** Menor preço da apresentação que a página do produto compara por padrão. */
-function aPartirDe(p: Produto, ofertas: readonly Oferta[]): number | undefined {
-  const id = apresentacaoParaComparar(ofertas, p.apresentacaoPrincipal);
-  if (!id) return undefined;
-  return compararPrecos(ofertas, id).linhas.find((l) => l.centavos !== undefined)?.centavos;
+/** Resumo de preço do card a partir das comparações por apresentação (precos.ts). */
+function precoDoCard(p: Produto, ofertas: readonly Oferta[]): PrecoCard {
+  const comparacoes = comparacoesDePreco(p, ofertas);
+  const comPreco = comparacoes.filter((c) => c.comparacao.linhas.some((l) => l.centavos !== undefined));
+  const comparavel = comparacoes.find((c) => c.comparacao.comparavel);
+  if (comparavel)
+    return {
+      tipo: "comparavel",
+      centavos: comparavel.comparacao.menorCentavos!,
+      apresentacao: comparavel.descricao,
+      principal: comparavel.apresentacaoId === p.apresentacaoPrincipal,
+    };
+  if (comPreco.length > 1) return { tipo: "apresentacoes-diferentes" };
+  const unica = comPreco[0]?.comparacao.linhas.find((l) => l.centavos !== undefined);
+  if (unica)
+    return {
+      tipo: "uma-loja",
+      centavos: unica.centavos!,
+      apresentacao: comPreco[0].descricao,
+      principal: comPreco[0].apresentacaoId === p.apresentacaoPrincipal,
+    };
+  return { tipo: "sem-preco" };
 }
 
 export function cardDe(p: Produto, ofertas: readonly Oferta[] = []): CardProduto {
@@ -85,7 +103,7 @@ export function cardDe(p: Produto, ofertas: readonly Oferta[] = []): CardProduto
     estrategia: p.estrategiaAdesiva?.texto,
     componentes: componentesChave(p),
     mdp: p.composicao.mdp.valor === "sim",
-    aPartirDeCentavos: aPartirDe(p, ofertas),
+    preco: precoDoCard(p, ofertas),
     imagem: img ? { arquivo: img.arquivo, alt: img.alt } : undefined,
     rascunho: p.revisao.status === "rascunho",
   };
@@ -125,7 +143,8 @@ export function colunaComparador(p: Produto, ofertas: readonly Oferta[] = []): C
     silano: c.silano.valor,
     solventes: c.solventes.valor === "nao-informado" ? "nao-informado" : c.solventes.valor.map(capitalizar),
     polimerizacao: c.polimerizacao.valor === "nao-informado" ? "nao-informado" : POLIMERIZACAO[c.polimerizacao.valor],
-    volume: formatarVolume(apresentacaoPrincipal(p)),
+    // Todas as apresentações, principal primeiro (BUG-013).
+    volume: [...new Set([apresentacaoPrincipal(p), ...p.apresentacoes].map((a) => formatarVolume(a)))].join(" · "),
     divergencias: divergenciasDe(p),
   };
 }

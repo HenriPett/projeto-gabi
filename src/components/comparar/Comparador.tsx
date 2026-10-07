@@ -46,16 +46,26 @@ function ValorCelula({ c }: { c: Celula }) {
         ))}
       </ul>
     );
-  if (c.tipo === "preco")
-    return c.centavos !== undefined ? (
+  if (c.tipo === "preco") {
+    const ver = <Link href={`/produto/${c.produtoId}#precos`}>ver preços</Link>;
+    // Valor só quando a apresentação é comparável entre lojas, sempre com a apresentação (BUG-012).
+    if (c.preco.tipo === "comparavel")
+      return (
+        <>
+          <span className="num font-semibold">a partir de {formatarBRL(c.preco.centavos)}</span>
+          <span className="block caption">{c.preco.apresentacao}</span>
+          {ver}
+        </>
+      );
+    if (c.preco.tipo === "sem-preco") return <span className="ni">Preço não encontrado</span>;
+    return (
       <>
-        <span className="num font-semibold">a partir de {formatarBRL(c.centavos)}</span>
+        <span className="ni">{c.preco.tipo === "uma-loja" ? "Preço em uma só loja" : "Apresentações diferentes"}</span>
         <br />
-        <Link href={`/produto/${c.produtoId}#precos`}>ver preços</Link>
+        {ver}
       </>
-    ) : (
-      <span className="ni">Preço não encontrado</span>
     );
+  }
   return <>{c.texto}</>;
 }
 
@@ -169,7 +179,7 @@ export function Comparador({ colunas, indice }: { colunas: ColunaComparador[]; i
       <>
         {cabecalho}
         {avisos}
-        <EstadoVazio titulo="Selecione de 2 a 4 produtos para comparar.">
+        <EstadoVazio nivel={2} titulo="Selecione de 2 a 4 produtos para comparar.">
           {selecionadas.length === 1 && <p className="muted">Você selecionou {selecionadas[0].card.nome}. Adicione mais 1.</p>}
           <Link className="btn btn--primary" href="/#classificacao">
             Explorar categorias

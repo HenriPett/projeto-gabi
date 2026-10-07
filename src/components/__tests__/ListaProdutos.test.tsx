@@ -16,7 +16,7 @@ describe("<ListaProdutos> (DESIGN §4.2)", () => {
   });
 
   it("ordena por menor preço com 'sem preço' por último", () => {
-    const precos = filtrarEOrdenar(conv2(), "preco", [], false).map((c) => c.aPartirDeCentavos);
+    const precos = filtrarEOrdenar(conv2(), "preco", [], false).map((c) => ("centavos" in c.preco ? c.preco.centavos : undefined));
     const definidos = precos.filter((p) => p !== undefined) as number[];
     expect(definidos).toEqual([...definidos].sort((a, b) => a - b));
     expect(precos.indexOf(undefined)).toSatisfy((i: number) => i === -1 || precos.slice(i).every((p) => p === undefined));
