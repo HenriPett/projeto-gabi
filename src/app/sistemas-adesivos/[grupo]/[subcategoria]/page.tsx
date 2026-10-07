@@ -30,7 +30,7 @@ export default async function PaginaSubcategoria(props: PageProps<"/sistemas-ade
   if (!sub) notFound();
   const g = GRUPO[sub.grupo];
   const universal = sub.grupo === "universal";
-  const { produtos, ofertas, categorias } = catalogo();
+  const { produtos, ofertas, categorias, destaques } = catalogo();
   const cards = produtos
     .filter((p) => p.classificacao.subcategorias.some((s) => s.id === sub.id))
     .map((p) => cardDe(p, ofertas.get(p.id)));
@@ -100,7 +100,7 @@ export default async function PaginaSubcategoria(props: PageProps<"/sistemas-ade
             </span>
           </p>
         )}
-        <ListaProdutos cards={cards} subcategoria={sub.id} />
+        <ListaProdutos cards={cards} subcategoria={sub.id} destaques={destaques["sistemas-adesivos"] ?? []} />
         {universal && n > 0 && (
           <p className="caption mt-4">Exibindo produtos com indicação oficial do fabricante para esta estratégia.</p>
         )}

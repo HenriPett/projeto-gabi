@@ -4,7 +4,10 @@ import { catalogo } from "@/lib/dados/carregar";
 import { GRUPO, SUBCATEGORIA, type GrupoId } from "@/lib/esquema/taxonomia";
 import { formatarBRL, formatarData } from "@/lib/formato";
 import { maioresEconomias } from "@/lib/precos";
-import { Frasco, IconeLivro, IconeMoeda } from "@/components/Icones";
+import { Carrossel } from "@/components/Carrossel";
+import { cardDe } from "@/components/dados-de-tela";
+import { Frasco, IconeEstrela, IconeLivro, IconeMoeda } from "@/components/Icones";
+import { ProductCard } from "@/components/ProductCard";
 import { LegendaNotacao, Notacao } from "@/components/Notacao";
 import { MiniDiagram } from "@/components/StepDiagram";
 import { urlSubcategoria } from "@/components/rotulos";
@@ -22,7 +25,12 @@ const GUIA = [
 const plural = (n: number) => `${n} ${n === 1 ? "produto" : "produtos"}`;
 
 export default function Home() {
-  const { produtos, ofertas, categorias } = catalogo();
+  const { produtos, ofertas, categorias, destaques: curadoria } = catalogo();
+  // Curadoria manual: o rótulo é "Em destaque", nunca "mais consultados" (DESIGN §4.1 item 4).
+  const destaques = (curadoria["sistemas-adesivos"] ?? []).flatMap((id) => {
+    const p = produtos.find((x) => x.id === id);
+    return p ? [cardDe(p, ofertas.get(p.id))] : [];
+  });
   const conteudo = categorias["sistemas-adesivos"];
   const porSub = (id: string) => produtos.filter((p) => p.classificacao.subcategorias.some((s) => s.id === id)).length;
   const porGrupo = (g: GrupoId) => produtos.filter((p) => p.classificacao.grupo === g).length;
@@ -96,7 +104,23 @@ export default function Home() {
       </section>
       <LegendaNotacao />
 
-      {/* TODO: "Em destaque" (DESIGN §4.1 item 4) entra quando destaques.json tiver contrato no carregador. */}
+      {destaques.length > 0 && (
+        <section className="section" aria-labelledby="titulo-destaques">
+          <div className="sechead">
+            <h2 id="titulo-destaques">
+              <IconeEstrela />
+              Em destaque
+            </h2>
+          </div>
+          <Carrossel rotuloId="titulo-destaques">
+            {destaques.map((c) => (
+              <li key={c.id}>
+                <ProductCard card={c} />
+              </li>
+            ))}
+          </Carrossel>
+        </section>
+      )}
 
       <section className="section" aria-labelledby="titulo-precos" data-testid="best-prices">
         <div className="sechead">

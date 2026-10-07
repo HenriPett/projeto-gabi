@@ -263,6 +263,12 @@
   /* Carrossel */
   .rail { display: grid; grid-auto-flow: column; grid-auto-columns: 240px; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px var(--space-4); margin: 0 -4px; list-style: none; }
   .rail > * { scroll-snap-align: start; }
+  .carrossel { position: relative; }
+  .carrossel__setas { display: none; }
+  @media (min-width: 1024px) {
+    .carrossel__setas { display: flex; gap: 4px; position: absolute; right: 0; top: -60px; }
+    .carrossel__setas .icon-btn { font-size: 24px; border: 1.5px solid var(--color-border-input); border-radius: var(--radius-full); }
+  }
 
   /* Card de produto — §3.8 */
   .cards { display: grid; gap: var(--space-4); list-style: none; padding: 0; margin: 0; }
@@ -295,7 +301,7 @@
     .pcard { grid-template-columns: 1fr; padding: 0; overflow: hidden; }
     .pcard__media { border-radius: 0; aspect-ratio: 4/3.4; }
     .pcard__media .badge { display: inline-flex; position: absolute; left: 12px; top: 12px; }
-    .pcard__body .badge { display: none; }
+    .pcard__body .badge:not(.badge--draft) { display: none; }
     .pcard__body { padding: 0 var(--space-4); }
     .pcard__actions { padding: 0 var(--space-4) var(--space-4); }
     .pcard__cmp { top: 8px; right: 8px; }
@@ -303,7 +309,9 @@
   .rail .pcard { grid-template-columns: 1fr; padding: 0; overflow: hidden; }
   .rail .pcard__media { border-radius: 0; aspect-ratio: 4/3.4; }
   .rail .pcard__media .badge { display: inline-flex; position: absolute; left: 12px; top: 12px; }
-  .rail .pcard__body .badge { display: none; }
+  .rail .pcard__body .badge:not(.badge--draft) { display: none; }
+  /* selo da mídia não passa por baixo do toggle ⊕ (44px) */
+  .pcard__media .badge { max-width: calc(100% - 68px); white-space: normal; height: auto; min-height: 24px; padding-block: 3px; line-height: 1.2; }
   .rail .pcard__body { padding: 0 var(--space-4); }
   .rail .pcard__actions { padding: 0 var(--space-4) var(--space-4); }
 

@@ -15,6 +15,7 @@ import {
 } from "@/components/dados-de-tela";
 import { DivergenceNote } from "@/components/DivergenceNote";
 import { EstrategiasIndicadas } from "@/components/EstrategiasIndicadas";
+import { Carrossel } from "@/components/Carrossel";
 import { ProductCard } from "@/components/ProductCard";
 import { AcoesProduto } from "@/components/produto/AcoesProduto";
 import { EstrategiaProvider } from "@/components/produto/estrategia";
@@ -248,13 +249,13 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
             <div className="sechead">
               <h2 id="titulo-relacionados">Produtos da mesma categoria</h2>
             </div>
-            <ul className="rail" aria-roledescription="carrossel" aria-labelledby="titulo-relacionados">
+            <Carrossel rotuloId="titulo-relacionados">
               {relacionados.map((r) => (
                 <li key={r.id}>
                   <ProductCard card={r} />
                 </li>
               ))}
-            </ul>
+            </Carrossel>
           </section>
         )}
       </div>

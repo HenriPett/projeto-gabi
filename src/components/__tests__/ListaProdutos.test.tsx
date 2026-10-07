@@ -32,3 +32,17 @@ describe("<ListaProdutos> (DESIGN §4.2)", () => {
     expect(screen.getByText(/produtos? exibidos?$/)).toBeTruthy();
   });
 });
+
+describe("ordenação 'Em destaque' (curadoria)", () => {
+  it("curadoria primeiro, na ordem dada; resto A–Z; opção só existe com destaque na lista", () => {
+    const cards = conv2();
+    const ultimo = [...cards].sort((a, b) => b.nome.localeCompare(a.nome, "pt-BR"))[0];
+    expect(filtrarEOrdenar(cards, "destaque", [], false, [ultimo.id])[0].id).toBe(ultimo.id);
+    const { unmount } = render(<ListaProdutos cards={cards} subcategoria="convencional-2-passos" destaques={[ultimo.id]} />);
+    expect(screen.getAllByRole("option", { name: /Em destaque/ }).length).toBeGreaterThan(0);
+    expect(screen.getAllByTestId("product-card")[0]).toHaveAttribute("data-produto-id", ultimo.id);
+    unmount();
+    render(<ListaProdutos cards={cards} subcategoria="convencional-2-passos" />);
+    expect(screen.queryAllByRole("option", { name: /Em destaque/ })).toHaveLength(0);
+  });
+});
