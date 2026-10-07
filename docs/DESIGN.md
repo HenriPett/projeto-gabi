@@ -442,7 +442,7 @@ Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/
   6. O que é MDP? — "o monômero que aparece na composição"
   7. Como escolher a estratégia adesiva? — "a síntese, para decidir"
   (As frases curtas são de navegação, não afirmações científicas; se o artigo tiver `resumo`, a Pulpa pode usar a 1ª oração dele em vez da frase.)
-- Item: número em círculo de 28px (serif 700 14px, `--magenta-600`, borda 1.5px), título 15px 600 (link sublinhado só no hover; o item inteiro é o alvo, mín. 44px de altura), frase em caption muted. Linha vertical 2px `--lilac-200` ligando os círculos (estilo da Modo de Uso, versão mini).
+- Item: número em círculo de 28px (serif 700 14px, `--magenta-600`, borda 1.5px) + **só o título** 15px 600 (link sublinhado só no hover; o item inteiro é o alvo, mín. 44px de altura). **Sem resumo:** os cartões ao lado (e logo abaixo, no mobile) já mostram o resumo, e repeti-lo na trilha duplicava a lista (revisão de 06/10/2026). Linha vertical 2px `--lilac-200` ligando os círculos (estilo da Modo de Uso, versão mini).
 - Artigo ainda não publicado: item sem link, título `--gray-600`, selo "em preparação" (caption). **Não pula a numeração.**
 - Sem estado "lido" na v1 (não há conta; `localStorage` só se for pedido depois).
 
@@ -467,7 +467,8 @@ Contrato: `glossario.json` = `{ fontes[], termos[{ id, termo, sigla?, nomeComple
   - Sinônimos: caption muted "Também: lama dentinária, smear layer".
   - Definição: `--text-small` `--color-text`, 1–2 frases.
   - "Relacionados:" chips-link (28px, 13px) para outros termos (`relacionados` → `#termo-{id}`).
-  - Rodapé: `<SourceLink>` compacto (Autor Ano, DOI ↗) + "Leia mais: <título do artigo> →" por artigo (link sublinhado).
+  - Rodapé, **em uma linha só que quebra entre itens**: "Fonte: Perdigão 2020 ↗ · Silva e Souza Jr. 2010 ↗". O texto do link é **1º autor + ano**, derivado do campo de citação (sobrenome antes da 1ª vírgula + ano); a citação completa vai no `title` e num `aria-label` ("Fonte: <citação completa> (abre em nova aba)"). **Nunca a citação inteira visível no glossário**, porque ela triplicava a altura de cada termo; a citação completa continua nos artigos do guia. Depois, "Leia mais: <título do artigo> →" na mesma linha ou na seguinte.
+  - Nomes técnicos com hífen não quebram: "10‑MDP", "4‑MET", "Bis‑GMA", "1‑2". Use hífen inseparável (U+2011) quando o hífen fica entre dígito e letra/dígito ou numa sigla em maiúsculas. Compostos comuns ("di‑hidrogenofosfato", "self‑assembled") podem quebrar no hífen.
   - `:target`: fundo `--lilac-100` que some em 1,5s (sem animação em reduced-motion); com filtro ativo, o termo-alvo nunca é escondido.
 - Sem dado (ou só rascunho em produção): o bloco não aparece.
 
