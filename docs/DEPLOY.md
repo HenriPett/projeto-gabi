@@ -10,7 +10,8 @@
 ## 0. Premissas
 
 - **Vercel**, sem servidor próprio. **Next.js 16.4**, App Router, TypeScript strict, `src/`, Tailwind v4, Turbopack.
-- **Site 100% estático (SSG)**: `generateStaticParams` + `dynamicParams = false`; sem API routes, sem Server Actions, sem Functions. A Vercel serve tudo da CDN — não há região de Function a escolher nem runtime para monitorar.
+- **Páginas estáticas (SSG)**: `generateStaticParams` + `dynamicParams = false`; os dados mudam por commit, não por requisição.
+- **Runtime mínimo (desde 73cfb1c)**: acesso por senha — `src/proxy.ts` (Node) protege todas as rotas antes das páginas SSG, e os Route Handlers `/api/login` e `/api/logout` emitem/apagam o cookie de sessão (ARQUITETURA §4.1). Na Vercel isso vira Functions; não há banco nem estado no servidor.
 - **Node 24** (`.nvmrc` + `engines.node`), **pnpm 10** (`packageManager`, via Corepack).
 - Dados versionados em `data/**/*.json`, validados com zod (`pnpm validar:dados`) e no build — dado inválido quebra o build de propósito. Preços em `data/materiais/<material>/ofertas/<produto>.json`, em centavos.
 - **Rascunhos**: `catalogo()` exclui `revisao.status = "rascunho"` quando `VERCEL_ENV=production`; em preview/dev aparecem com selo. Forçar com `INCLUIR_RASCUNHOS=0|1`.
@@ -28,7 +29,7 @@
 | Install | `pnpm install --frozen-lockfile` (`vercel.json`) |
 | Build | `pnpm build` = `node scripts/gerar-versao.mjs && next build` |
 | Node.js | 24.x (lido de `engines`) |
-| Functions | nenhuma |
+| Functions | `src/proxy.ts` (todas as rotas, exceto `_next/static`/`_next/image`) + `/api/login`, `/api/logout`, na região padrão da Vercel; se a latência incomodar, mudar para `gru1` (São Paulo) em Settings → Functions |
 
 ### 1.2 Ambientes e previews por branch
 | Evento Git | Ambiente | `VERCEL_ENV` | Rascunhos | Indexável |
@@ -67,7 +68,7 @@ Modelo para dev local: [`.env.example`](../.env.example) → copiar para `.env.l
 
 ### 1.5 Plano e domínio
 - **Plano Hobby (gratuito)**, domínio `<projeto>.vercel.app` com HTTPS automático (requisito do PWA).
-- Cabe no Hobby porque o site é 100% estático: sem Functions, sem cron, só CDN e builds.
+- Cabe no Hobby: páginas estáticas na CDN + um proxy leve por requisição e duas rotas de login (sem banco, sem cron). As invocações contam na cota mensal do Hobby — folgada para o tráfego esperado; acompanhar em Usage.
 - Limites do Hobby a ter em mente: uso **não comercial** pelos termos da Vercel (se o site passar a ter fins comerciais — ex.: links de afiliado —, migrar para Pro); cotas mensais de banda/builds; um membro por time (o cliente é o dono da conta).
 - Domínio próprio no futuro: Project → Settings → Domains, e definir `NEXT_PUBLIC_SITE_URL`.
 
@@ -131,7 +132,7 @@ Decisão do cliente (06/10/2026): **sem coleta automática**. Preços são curad
 ## 5. Observabilidade
 
 - **Versão no ar**: `GET /version.json`, arquivo estático gerado no início do build (`scripts/gerar-versao.mjs`, não versionado) → `{ status, commit, branch, ambiente, geradoEm, ofertas, precosAtualizadosEm }`. Serve como healthcheck (200) e mostra quão velhos estão os preços. Um monitor externo gratuito pode checar o 200 e o campo `precosAtualizadosEm`.
-- **Logs**: Vercel Build Logs (erros de `validar:dados` aparecem aqui) e logs do GitHub Actions (`ci`). Não há Runtime Logs (sem Functions).
+- **Logs**: Vercel Build Logs (erros de `validar:dados` aparecem aqui), **Runtime Logs** (proxy e `/api/login`/`/api/logout`) e logs do GitHub Actions (`ci`).
 - **Preços envelhecendo**: `precosAtualizadosEm` em `/version.json` mostra a consulta mais recente; não há alerta automático.
 - **Métricas (proposta, aguarda ok do Tech Lead/produto)**: Vercel Web Analytics + Speed Insights — sem cookies; daria o dado real para "Produtos mais consultados" (ARQUITETURA §9).
 
@@ -152,6 +153,7 @@ Decisão do cliente (06/10/2026): **sem coleta automática**. Preços são curad
   | `ci.yml` / proteção da `main` | reverter o commit / desmarcar o check em Settings → Branches |
   | conexão com a Vercel | Project → Settings → Git → Disconnect (o site atual continua no ar até apagar o projeto) |
   | PWA inteiro | kill switch acima + remover `<RegistrarServiceWorker />` do layout |
+  | senha / segredo de sessão | editar ou remover a variável no painel + Redeploy (sem `SENHA_ACESSO` volta a senha combinada; trocar `SEGREDO_SESSAO` desloga todos) |
 
 ---
 
@@ -162,14 +164,23 @@ Pré-requisito: acesso ao repositório [`HenriPett/projeto-gabi`](https://github
 1. Acesse [vercel.com/signup](https://vercel.com/signup), escolha **Hobby** e entre com **Continue with GitHub**.
 2. No painel, clique em **Add New… → Project**.
 3. Em *Import Git Repository*, clique em **Install** / **Adjust GitHub App Permissions** e autorize a Vercel **apenas** no repositório `projeto-gabi`. Volte e clique em **Import** ao lado dele.
-4. Na tela *Configure Project*, **não altere nada**: Framework *Next.js*, Root Directory `./`, comandos de build/install vêm do `vercel.json`. Não é preciso adicionar variáveis de ambiente.
+4. Na tela *Configure Project*, **não altere** Framework (*Next.js*), Root Directory (`./`) nem os comandos (vêm do `vercel.json`).
    - O nome do projeto define o endereço: `projeto-gabi` → `https://projeto-gabi.vercel.app` (se o nome estiver ocupado, a Vercel acrescenta um sufixo).
-5. Clique em **Deploy** e aguarde (~1–2 min). Ao terminar, **Continue to Dashboard → Visit** abre o site.
-6. Conferências rápidas:
+5. Ainda nessa tela, abra **Environment Variables** e adicione as duas variáveis do acesso por senha (recomendado; sem elas vale a senha combinada no projeto):
+   - `SENHA_ACESSO` = a senha que os usuários vão digitar.
+   - `SEGREDO_SESSAO` = 64 caracteres aleatórios. Para gerar: `openssl rand -hex 32` no Terminal do Mac/Linux (ou um gerador de senhas com 64+ caracteres).
+   - Em cada uma, marque **Sensitive** e deixe **Production** e **Preview** selecionados.
+   - Guarde a senha num gerenciador de senhas: com *Sensitive* a Vercel não mostra o valor de novo.
+   - Já importou sem elas? Settings → **Environment Variables** → adicionar → **Deployments → ⋯ → Redeploy** no último deploy de produção (variável nova só vale após novo deploy).
+6. Clique em **Deploy** e aguarde (~1–2 min). Ao terminar, **Continue to Dashboard → Visit** abre o site, que pede a senha.
+7. Conferências rápidas:
    - Settings → **General → Node.js Version** = 24.x.
    - Settings → **Deployment Protection → Vercel Authentication** ligado (previews só para quem tem acesso).
    - Abrir `https://<projeto>.vercel.app/version.json` → `"ambiente": "production"` e o commit da `main`.
-   - No celular, abrir o site e usar **Adicionar à tela inicial**.
+   - Entrar com a senha definida; uma senha errada deve ser recusada.
+   - No celular, abrir o site, entrar e usar **Adicionar à tela inicial**.
+
+**Trocar a senha depois:** Settings → Environment Variables → editar `SENHA_ACESSO` → Redeploy. Para deslogar todos os aparelhos, troque também `SEGREDO_SESSAO`.
 
 A partir daí: todo merge na `main` publica produção; todo PR/branch ganha um preview com link comentado no PR.
 
