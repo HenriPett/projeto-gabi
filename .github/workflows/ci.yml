@@ -7,9 +7,12 @@ on:
   push:
     branches: [main]
 
+# Push na main: um grupo por commit (sem cancelamento) — com vários agentes
+# integrando seguido, cancelar fazia o e2e da main nunca terminar.
+# Outros eventos (PR/branches): cancela o run anterior da mesma ref.
 concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  group: ci-${{ github.ref == 'refs/heads/main' && github.sha || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 permissions:
   contents: read
