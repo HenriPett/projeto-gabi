@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { CHAVE_LOCAL } from "@/auth/cliente";
 import { avisoDoLogin, FormLogin, proximoSeguro } from "../login/FormLogin";
 
 const q = (s: string) => new URLSearchParams(s);
@@ -36,7 +37,7 @@ describe("login", () => {
   });
 
   it("sessão expirada: flag local presente mostra o aviso", async () => {
-    localStorage.setItem("sa:sessao", "1");
+    localStorage.setItem(CHAVE_LOCAL, "1");
     render(<FormLogin params={q("")} />);
     expect(await screen.findByText("Sua sessão expirou. Entre novamente.")).toBeTruthy();
   });

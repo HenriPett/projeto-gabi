@@ -2,10 +2,9 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { temSessaoLocal } from "@/auth/cliente";
 import { IconeAlerta, IconeInfo } from "../Icones";
 
-// TODO(Molar): importar CHAVE_LOCAL de src/auth/cliente.ts quando o núcleo do login estiver no main.
-const CHAVE_LOCAL = "sa:sessao";
 
 type Aviso = { tipo: "erro" | "info"; texto: string } | null;
 
@@ -21,14 +20,6 @@ export function avisoDoLogin(params: URLSearchParams, sessaoLocal: boolean): Avi
   return null;
 }
 
-function lerSessaoLocal() {
-  try {
-    return localStorage.getItem(CHAVE_LOCAL) !== null;
-  } catch {
-    return false;
-  }
-}
-
 /** Formulário (funciona sem JS: POST /api/login). Com JS, preenche `next` e mostra avisos da query. */
 export function FormLogin({ params }: { params?: URLSearchParams }) {
   const [sessaoLocal, setSessaoLocal] = useState(false);
@@ -39,7 +30,7 @@ export function FormLogin({ params }: { params?: URLSearchParams }) {
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage só existe no cliente
-    setSessaoLocal(lerSessaoLocal());
+    setSessaoLocal(temSessaoLocal());
     campo.current?.focus();
   }, []);
 
