@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { catalogo } from "@/lib/dados/carregar";
+import { formatarVolume } from "@/lib/formato";
 import { GRUPO, SUBCATEGORIA } from "@/lib/esquema/taxonomia";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ClassBadge, SeloRascunho } from "@/components/ClassBadge";
@@ -11,7 +12,6 @@ import {
   divergenciasDe,
   fontesDe,
   rotuloTipoApresentacao,
-  volumeDe,
 } from "@/components/dados-de-tela";
 import { DivergenceNote } from "@/components/DivergenceNote";
 import { EstrategiasIndicadas } from "@/components/EstrategiasIndicadas";
@@ -46,7 +46,8 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
   if (!p) notFound();
 
   const universal = p.classificacao.grupo === "universal";
-  const subs = p.classificacao.subcategorias.map((s) => s.id);
+  // Ordem fixa da taxonomia (Seletivo · Total · Autocond.), não a ordem do JSON.
+  const subs = GRUPO[p.classificacao.grupo].subcategorias.filter((id) => p.classificacao.subcategorias.some((s) => s.id === id));
   const g = GRUPO[p.classificacao.grupo];
   const a = apresentacaoPrincipal(p);
   const ofertasDoProduto = ofertas.get(p.id) ?? [];
@@ -73,7 +74,7 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
     c.mdp.valor === "sim" && "MDP",
     c.hema.valor === "sim" && "HEMA",
     c.silano.valor === "sim" && "Silano",
-    ...(c.solventes.valor === "nao-informado" ? [] : c.solventes.valor),
+    ...(c.solventes.valor === "nao-informado" ? [] : c.solventes.valor.map((x) => x.charAt(0).toUpperCase() + x.slice(1))),
   ].filter((x): x is string => !!x);
 
   const relacionados = produtos
@@ -146,7 +147,7 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
                 </div>
                 <div>
                   <dt>Volume</dt>
-                  <dd className="num">{volumeDe(a)}</dd>
+                  <dd className="num">{formatarVolume(a)}</dd>
                 </div>
                 <div>
                   <dt>Fabricante</dt>
