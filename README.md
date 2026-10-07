@@ -1,6 +1,6 @@
-# Sistemas Adesivos
+# Adesivologia
 
-Plataforma (PWA) de consulta, estudo e comparação de preços de sistemas adesivos odontológicos.
+Adesivologia: plataforma (PWA) de consulta, estudo e comparação de preços de sistemas adesivos odontológicos.
 
 - Produto: [docs/BRIEFING.md](docs/BRIEFING.md)
 - Arquitetura e modelo de dados: [docs/ARQUITETURA.md](docs/ARQUITETURA.md)

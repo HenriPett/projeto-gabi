@@ -9,9 +9,11 @@ const serif = Source_Serif_4({ variable: "--font-source-serif", subsets: ["latin
 
 export const metadata: Metadata = {
   metadataBase: new URL(urlDoSite()),
-  title: { default: "Sistemas Adesivos", template: "%s · Sistemas Adesivos" },
-  description: "Classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.",
-  appleWebApp: { capable: true, title: "Adesivos", statusBarStyle: "default" },
+  title: { default: "Adesivologia", template: "%s · Adesivologia" },
+  applicationName: "Adesivologia",
+  description: "Adesivologia: classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.",
+  openGraph: { siteName: "Adesivologia", title: "Adesivologia", description: "Adesivologia: classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.", locale: "pt_BR", type: "website" },
+  appleWebApp: { capable: true, title: "Adesivologia", statusBarStyle: "default" },
   // Site fechado por senha: nunca indexar (ver também src/app/robots.ts e o X-Robots-Tag do proxy).
   robots: { index: false, follow: false },
 };

@@ -1,4 +1,4 @@
-# Deploy, CI e Operação — Sistemas Adesivos
+# Deploy, CI e Operação — Adesivologia
 
 > Dono: Ponte (DevOps). Runtime/build alinhados com Molar (Tech Lead) — fonte técnica: [`ARQUITETURA.md`](./ARQUITETURA.md).
 > Produto: [`BRIEFING.md`](./BRIEFING.md).
@@ -77,7 +77,7 @@ Modelo para dev local: [`.env.example`](../.env.example) → copiar para `.env.l
 ## 2. PWA
 
 ### 2.1 Manifest — `src/app/manifest.ts`
-Servido em `/manifest.webmanifest` (o Next injeta o `<link rel="manifest">`). `name` "Sistemas Adesivos", `short_name` "Adesivos", `lang` pt-BR, `display` standalone, `start_url`/`scope` `/`, `theme_color` `#5E2280` (`--purple-700`), `background_color` `#FFFFFF`. iOS: `appleWebApp` + `viewport.themeColor` no layout.
+Servido em `/manifest.webmanifest` (o Next injeta o `<link rel="manifest">`). `name` "Adesivologia", `short_name` "Adesivologia", `lang` pt-BR, `display` standalone, `start_url`/`scope` `/`, `theme_color` `#5E2280` (`--purple-700`), `background_color` `#FFFFFF`. iOS: `appleWebApp` + `viewport.themeColor` no layout.
 
 ### 2.2 Ícones
 - Fonte única: `assets/icon.svg` (placeholder: três camadas ácido/primer/adesivo na paleta; Pulpa pode substituir).

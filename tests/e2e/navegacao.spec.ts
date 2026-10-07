@@ -6,6 +6,8 @@ test("H-01/H-03: home tem h1 e as 7 subcategorias linkando para as rotas certas"
   await page.goto("/");
   await expect(page.locator("h1")).toHaveCount(1);
   await expect(page.locator("h1")).toContainText(/sistemas adesivos/i);
+  // a categoria continua "Sistemas Adesivos" no h1; a marca do site é Adesivologia
+  await expect(page).toHaveTitle("Adesivologia");
   for (const s of SUBCATEGORIAS) await expect(page.locator(`main a[href="${s.url}"]`).first()).toBeVisible();
   const hrefs = await page.locator('main a[href^="/sistemas-adesivos/"]').evaluateAll((as) =>
     [...new Set(as.map((a) => new URL((a as HTMLAnchorElement).href).pathname))],

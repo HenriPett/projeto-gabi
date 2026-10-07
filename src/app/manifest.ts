@@ -5,9 +5,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "Sistemas Adesivos",
-    short_name: "Adesivos",
-    description: "Classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.",
+    name: "Adesivologia",
+    short_name: "Adesivologia",
+    description: "Adesivologia: classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.",
     lang: "pt-BR",
     dir: "ltr",
     start_url: "/",

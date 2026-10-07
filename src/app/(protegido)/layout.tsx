@@ -21,7 +21,7 @@ export default function LayoutSite({ children }: LayoutProps<"/">) {
       <footer className="footer">
         <div className="pagina">
           <p>
-            Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante. Preços sujeitos a
+            <strong>Adesivologia</strong> · Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante. Preços sujeitos a
             alteração nas lojas.
           </p>
           <nav aria-label="Rodapé">

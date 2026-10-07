@@ -1,4 +1,4 @@
-# Arquitetura — Plataforma de Sistemas Adesivos
+# Arquitetura — Adesivologia
 
 > Dono: Molar (Tech Lead). Fonte de verdade técnica. Produto: [`BRIEFING.md`](./BRIEFING.md) · Visual: [`DESIGN.md`](./DESIGN.md) · Deploy: [`DEPLOY.md`](./DEPLOY.md) · Testes: [`PLANO-DE-TESTES.md`](./PLANO-DE-TESTES.md).
 > Mudanças em **contratos** (esquema de dados, rotas, funções de `src/lib`) passam por mim antes de implementar.

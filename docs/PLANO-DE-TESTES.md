@@ -1,4 +1,4 @@
-# Plano de Testes — Plataforma de Sistemas Adesivos (v1)
+# Plano de Testes — Adesivologia (v1)
 
 > Autor: Sonda (QA). Fontes: `docs/BRIEFING.md` (produto, **§n** = item do prompt do cliente) e `docs/ARQUITETURA.md` (contratos e rotas — **vale sobre este plano em caso de conflito**).
 > Status (06/10/2026): scaffold `c0f3ca9`. Fixtures de borda e cenários unitários em `tests/unit/cenarios-fixtures.test.ts` prontos; E2E Playwright aguardando as telas (Pulpa) e os `data-testid` (seção 9). Bugs encontrados: seção 12.

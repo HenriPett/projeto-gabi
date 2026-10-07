@@ -1,4 +1,4 @@
-# DESIGN.md — Plataforma de Sistemas Adesivos
+# DESIGN.md — Adesivologia
 
 > Autor: Esmalte (Product Designer). Fonte de verdade visual e de interação para o Frontend.
 > Base: `docs/BRIEFING.md`. Rotas e modelo de dados: `docs/ARQUITETURA.md` (prevalece em caso de divergência). O cliente **não vai enviar** a imagem de referência; o time reuniu referências próprias em `docs/referencia/` (ver README de lá). **Revisão 2 (06/10/2026)** incorporou essas referências; as mudanças estão marcadas com **[R2]** e resumidas no §8.
@@ -210,7 +210,7 @@ Fora do escopo da v1 (público consulta em clínica/sala de aula, fundo branco �
 
 ### 3.1 Header + busca fixa (`<SearchBar>`)
 - Header `position: sticky; top: 0; z-index: 50`, bg branco, borda inferior `--color-border`, altura 56px (mobile) / 64px (≥1024).
-- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--ink-900`, `nowrap`) + botão "Comparar (n)" à direita (`nowrap`). **Abaixo de 360px:** o logotipo cai para 14px e o botão vira "Comparar" + contador num badge circular de 20px (`--color-primary`, texto branco 11px 700; `aria-label="Comparar, n produtos selecionados"`). Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
+- Mobile: linha 1 = logotipo (wordmark "Adesivologia", caixa alta via CSS, serif 18px 700 `--ink-900`, `nowrap`) + botão "Comparar (n)" à direita (`nowrap`). **Abaixo de 360px:** o logotipo cai para 14px e o botão vira "Comparar" + contador num badge circular de 20px (`--color-primary`, texto branco 11px 700; `aria-label="Comparar, n produtos selecionados"`). Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
 - ≥1024: uma linha só: logo · busca (máx. 560px, centro) · links "Classificação", "Comparar", "Guia".
 - Campo: `type="search"`, `role="combobox"`, `aria-expanded`, `aria-controls="search-listbox"`, placeholder **"Pesquisar sistema, marca ou produto"**, ícone lupa (SVG, não emoji) à esquerda 20px `--gray-600`, botão limpar (×) quando há texto, `aria-label="Limpar busca"`. bg `--gray-50`, borda 1.5px `--color-border-input`, raio `--radius-md`; foco: borda `--color-primary` + anel de foco.
 - Atalho `/` foca a busca (desktop).

@@ -9,6 +9,9 @@ test("PWA-01: manifest válido e ícones com o tamanho declarado", async ({ requ
   expect(m).toMatchObject({ lang: "pt-BR", start_url: "/", scope: "/", display: "standalone" });
   expect(m.name).toBeTruthy();
   expect(m.short_name).toBeTruthy();
+  // marca do site (pedido do cliente, 07/10/2026)
+  expect(m.name).toBe("Adesivologia");
+  expect(m.short_name).toBe("Adesivologia");
   expect(m.theme_color).toMatch(/^#[0-9a-f]{6}$/i);
   expect(m.background_color).toBeTruthy();
   const tamanhos = m.icons.map((i: { sizes: string }) => i.sizes);
