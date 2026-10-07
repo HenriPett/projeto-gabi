@@ -457,14 +457,17 @@ Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/
 - Rodapé da tabela (caption muted): a legenda da notação (`<LegendaNotacao>`), uma vez só.
 - Tudo vem da taxonomia + `categorias.json` + contagem do catálogo. **Nada digitado à mão.**
 
-**③ Glossário**
-- `<dl>` em 2 colunas (≥1024; 1 coluna abaixo), ordem alfabética, com âncora por termo (`id="termo-mdp"`) para outros textos linkarem.
-- Termo (`dt`): 15px 700 `--color-text`; sigla expandida em seguida, 14px 400 muted ("MDP — 10‑metacriloiloxidecil di‑hidrogenofosfato").
-- Definição (`dd`): **1 frase**, `--text-small`, máx. 220 caracteres + `<SourceLink>` compacto ("Fonte: Autor Ano ↗").
-- Se existir artigo do guia sobre o termo: link "Ler no guia →" no fim da definição.
-- Barra de filtro opcional acima do glossário (input de busca 40px "Filtrar termos") só se houver mais de 12 termos.
-- Conteúdo: **vem da Dentina**, com fonte por termo (mesma regra de correção científica do briefing). Termos mínimos: MDP, HEMA, camada híbrida, smear layer (lama dentinária), solvente, condicionamento seletivo, nanocamada (nanolayering), primer, silano, monômero funcional, condicionamento total, fibras colágenas. Proposta de dado: `data/materiais/sistemas-adesivos/glossario.json` (`[{termo, sigla?, definicao, fontes[], artigo?}]`), com contrato/validação a cargo do Molar.
-- Sem dado ainda: o bloco **não aparece** (nada de "em preparação" num glossário vazio).
+**③ Glossário** (decidido com a Dentina, ~20 termos)
+- **Mora em `/guia`**, no main, abaixo dos cartões. Não há página separada na v1: é o conteúdo que preenche a página, e as âncoras bastam para linkar. URL canônica de um termo: `/guia#termo-{id}` (ex.: `/guia#termo-mdp`). Os artigos linkam para lá.
+- **Índice A–Z** acima da lista: linha de chips 32px (`.fchip` menor, 13px 600), só as letras que têm termos, cada um âncora para o primeiro termo da letra. As letras sem termo não aparecem (nada de letras desabilitadas). Ao lado, input "Filtrar termos" (40px, `type="search"`) que filtra por termo, sigla e sinônimo, sem distinguir acento ou caixa, e mostra "Nenhum termo para “x”." quando vazio. `aria-live="polite"` anuncia a contagem.
+- **Lista:** `<dl>` em **2 colunas a partir de 1024px** (1 coluna abaixo), ordem alfabética, agrupada por letra com um separador (letra em serif 20px 700 `--purple-900` + filete `--lilac-200`). Cada termo é um bloco com `id="termo-{id}"` e `scroll-margin-top: 96px` (header sticky).
+  - `dt`: termo 16px 700 `--color-text`; a sigla, se houver, vem antes ("MDP"), e o nome por extenso em 14px 400 muted na mesma linha ou na seguinte.
+  - Sinônimos: linha caption muted "Também: lama dentinária, smear layer".
+  - `dd`: definição de **1 a 2 frases** (máx. ~300 caracteres), `--text-small` `--color-text`.
+  - Rodapé do termo: `<SourceLink>` compacto ("Fonte: Autor Ano ↗", DOI) + "Leia mais: <título do artigo> →" para cada artigo relacionado (links sublinhados).
+  - Termo alvo de âncora (`:target`): fundo `--lilac-100` que some em 1,5s (sem animação em reduced-motion).
+- Dado: `data/materiais/sistemas-adesivos/glossario.json` = `[{ id, termo, sigla?, nomeCompleto?, sinonimos[], definicao, fontes[], artigos[] }]` (contrato e validação com o Molar; `artigos` = slugs do guia).
+- Sem dado ainda: o bloco **não aparece**.
 
 **Acessibilidade:** ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → glossário). No desktop, `grid-template-areas` põe cartões e glossário no main e trilha e cola no aside. O leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha funciona como introdução. `aside` com `aria-label`, tabela com `caption`, um h2 por bloco.
 
