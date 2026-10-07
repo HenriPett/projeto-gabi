@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "como-escolher-estrategia",
+  "titulo": "Como escolher a estratégia adesiva?",
+  "resumo": "Convencional, autocondicionante ou universal: o que a literatura considera ao escolher a estratégia, do substrato à simplificação da técnica.",
+  "ordem": 1,
+  "secoes": [
+    {
+      "titulo": "As estratégias disponíveis",
+      "paragrafos": [
+        {
+          "texto": "A classificação mais aceita hoje divide os adesivos pela forma como interagem com o dente. Os convencionais (em inglês, etch-and-rinse) têm uma etapa de condicionamento com ácido fosfórico seguida de lavagem. Os autocondicionantes (self-etch) não têm etapa de condicionamento separada.",
+          "fontes": [
+            "van-meerbeek-2020",
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Os adesivos universais são de frasco único e podem ser usados em mais de uma estratégia: convencional, autocondicionante ou condicionamento seletivo do esmalte, sempre entre as estratégias recomendadas pelo fabricante do produto.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Comece pelo substrato",
+      "paragrafos": [
+        {
+          "texto": "O grande desafio é ser eficaz ao mesmo tempo em dois substratos de natureza oposta. A união ao esmalte condicionado com ácido fosfórico é confiável e sela as margens. Aderir de forma eficaz e durável à dentina, úmida e rica em matéria orgânica, é a tarefa mais difícil da odontologia adesiva.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Por isso, quanto mais esmalte houver na margem do preparo, mais pesa o condicionamento do esmalte com ácido fosfórico. Em adesivos universais, o condicionamento prévio com ácido fosfórico melhorou a união ao esmalte em duas meta-análises de estudos laboratoriais.",
+          "fontes": [
+            "rosa-2015",
+            "cuevas-suarez-2019"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "O que a evidência mostra",
+      "paragrafos": [
+        {
+          "texto": "Na maioria dos estudos revisados, os adesivos simplificados de passo único foram os menos duráveis. Os convencionais de 3 passos e os autocondicionantes de 2 passos mantiveram o melhor desempenho. Em outras palavras, simplificar a aplicação costuma custar eficácia de união.",
+          "fontes": [
+            "breschi-2008"
+          ]
+        },
+        {
+          "texto": "Em lesões cervicais não cariosas, uma revisão sistemática de estudos clínicos concluiu que a estratégia adesiva influencia significativamente a efetividade clínica. Ela também encontrou grande variação entre produtos de uma mesma classe. Ou seja, a classe não garante sozinha o resultado.",
+          "fontes": [
+            "peumans-2014"
+          ]
+        },
+        {
+          "texto": "Uma revisão de 2020 do grupo de Leuven recomenda o convencional de 3 passos completo. Como via preferida, aponta o condicionamento seletivo do esmalte combinado com um autocondicionante de 2 passos.",
+          "fontes": [
+            "van-meerbeek-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Simplicidade × desempenho",
+      "paragrafos": [
+        {
+          "texto": "Os clínicos preferem materiais mais simples e versáteis, mas há um custo: simplificar o adesivo, com menos frascos e passos, pesa no resultado clínico. Escolher a estratégia é equilibrar o tempo clínico, o substrato envolvido e o desempenho comprovado do produto.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Escolhida a estratégia, o protocolo é sempre o do produto: cada fabricante define os tempos, o número de camadas, a fricção, a evaporação do solvente e a fotopolimerização, e um universal só deve ser usado nas estratégias que o fabricante recomenda. Neste site, o modo de uso de cada produto segue a IFU oficial.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "van-meerbeek-2020",
+      "tipo": "literatura",
+      "titulo": "Van Meerbeek B, Yoshihara K, Van Landuyt K, et al. From Buonocore's pioneering acid-etch technique to self-adhering restoratives. A status perspective of rapidly advancing dental adhesive technology. J Adhes Dent. 2020;22(1):7-34.",
+      "url": "https://doi.org/10.3290/j.jad.a43994",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "rosa-2015",
+      "tipo": "literatura",
+      "titulo": "Rosa WL, Piva E, Silva AF. Bond strength of universal adhesives: a systematic review and meta-analysis. J Dent. 2015;43(7):765-776.",
+      "url": "https://doi.org/10.1016/j.jdent.2015.04.003",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "cuevas-suarez-2019",
+      "tipo": "literatura",
+      "titulo": "Cuevas-Suárez CE, da Rosa WLO, Lund RG, et al. Bonding performance of universal adhesives: an updated systematic review and meta-analysis. J Adhes Dent. 2019;21(1):7-26.",
+      "url": "https://doi.org/10.3290/j.jad.a41975",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "breschi-2008",
+      "tipo": "literatura",
+      "titulo": "Breschi L, Mazzoni A, Ruggeri A, et al. Dental adhesion review: aging and stability of the bonded interface. Dent Mater. 2008;24(1):90-101.",
+      "url": "https://doi.org/10.1016/j.dental.2007.02.009",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "peumans-2014",
+      "tipo": "literatura",
+      "titulo": "Peumans M, De Munck J, Mine A, Van Meerbeek B. Clinical effectiveness of contemporary adhesives for the restoration of non-carious cervical lesions. A systematic review. Dent Mater. 2014;30(10):1089-1103.",
+      "url": "https://doi.org/10.1016/j.dental.2014.07.007",
+      "acessadoEm": "2026-10-06"
+    }
+  ],
+  "relacionados": [
+    "convencional-x-autocondicionante",
+    "adesivo-universal",
+    "condicionamento-seletivo"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
