@@ -1,0 +1,312 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Single Bond 2",
+    "SB2",
+    "Adper SB2",
+    "3M Single Bond 2"
+  ],
+  "indicacoes": [
+    {
+      "texto": "União de todas as classes de restaurações diretas.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Procedimentos envolvendo porcelana e resina indireta; reparos em estruturas metálicas; amálgama adesivo.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Dessensibilização de raízes expostas e cimentação de facetas.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Contém acrilatos, incluindo HEMA: evitar o uso em pacientes alérgicos a acrilatos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas em esmalte e dentina",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar ácido fosfórico a 35-37% em esmalte e dentina e aguardar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar com abundância.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "pelo menos 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Remover o excesso de água com bolinha de algodão ou papel absorvente, mantendo a dentina úmida; a superfície deve aparecer brilhante. Não é recomendado usar ar comprimido para remover o excesso de água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Imediatamente após a secagem, aplicar duas camadas consecutivas de adesivo no esmalte e na dentina condicionados, agitando gentilmente o pincel saturado sobre a superfície.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas consecutivas"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "aplicação ativa 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Secar gentilmente para evaporar o solvente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Em outras indicações (facetas, reparos, dessensibilização, adesão a resina/amálgama) a IFU indica 2 a 3 camadas e secagem gentil por 5 s.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "O tempo de fotopolimerização depende do aparelho; a intensidade deve ser aferida com radiômetro.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 1. Imagens pendentes."
+  },
+  "id": "adper-single-bond-2",
+  "nomeComercial": "Adper Single Bond 2",
+  "fabricante": {
+    "id": "solventum",
+    "nome": "Solventum (3M)"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu",
+          "site"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"sistema adesivo de frasco único\"; \"O uso de condicionamento ácido é necessário tanto para estruturas de esmalte como de dentina.\""
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo de frasco único.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "HEMA (2-hidroxietilmetacrilato)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Sílica coloidal (10%, partículas de 5 nm)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "solvente"
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "solvente"
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita silano no adesivo (indica RelyX Agente Silano separado para cerâmica)."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "IFU: \"adesivo à base de etanol e água\"."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "outros": [
+      {
+        "rotulo": "Espessura de película",
+        "valor": "aproximadamente 10 µm",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-6g",
+      "tipo": "frasco",
+      "descricao": "Frasco 6 g",
+      "quantidade": 1,
+      "massaG": 6,
+      "codigoFabricante": "HB004505697",
+      "ean": "7891040117246",
+      "fontes": [
+        "site",
+        "loja-cremer-6g"
+      ]
+    },
+    {
+      "id": "frasco-3g",
+      "tipo": "frasco",
+      "descricao": "Frasco 3 g",
+      "quantidade": 1,
+      "massaG": 3,
+      "codigoFabricante": "HB004588230",
+      "ean": "7891040283026",
+      "fontes": [
+        "loja-cremer-3g"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-6g",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso 3M ESPE Adper Single Bond 2 Adesivo Fotopolimerizável",
+      "url": "https://cdn.dentalcremer.com.br/conteudos/instrucoes-de-uso-adesivo-adper-single-bond-2-solventum.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "FE0004 (1)",
+      "observacao": "IFU do fabricante (marca 3M ESPE) hospedada na Dental Cremer; portal oficial: eifu.solventum.com. Conferir se há revisão Solventum mais recente."
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Adper Single Bond 2 — Solventum Brasil",
+      "url": "https://www.solventum.com/pt-br/home/f/b5005137025/",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-6g",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Adper Single Bond 2 - Solventum (6 g)",
+      "url": "https://www.dentalcremer.com.br/adesivo-adpertm-single-bond-2-3m-solventum-267013.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN; código HB004505697 também na página."
+    },
+    {
+      "id": "loja-cremer-3g",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Adper Single Bond 2 3g - Solventum",
+      "url": "https://www.dentalcremer.com.br/adesivo-adper-single-bond-2-3g-3m-solventum.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Apresentação de 3 g não listada na página oficial pt-BR consultada."
+    }
+  ]
+}
