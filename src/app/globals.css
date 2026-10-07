@@ -127,7 +127,9 @@
   .header__nav { display: none; gap: var(--space-6); }
   .header__nav a { text-decoration: none; font-weight: 500; font-size: var(--text-small); color: var(--color-text); min-height: 44px; display: inline-flex; align-items: center; }
   .header__nav a:hover { color: var(--color-primary); }
-  .compare-link { min-height: 44px; font-size: 13px; }
+  .compare-link { min-height: 44px; font-size: 13px; white-space: nowrap; padding: 0 12px; }
+  .logo { white-space: nowrap; }
+  @media (max-width: 359px) { .logo { font-size: 16px; } }
   /* Mobile: ao rolar para baixo, a linha do logo colapsa e só a busca fica fixa. */
   @media (max-width: 1023px) {
     .header.is-collapsed { transform: translateY(-56px); }
@@ -280,9 +282,11 @@
   .pcard:has(.cmp-toggle[aria-pressed="true"]) { border: 2px solid var(--color-primary); }
   .pcard__media { position: relative; background: var(--color-bg-subtle); border-radius: var(--radius-sm); aspect-ratio: 4/5; display: grid; place-items: center; overflow: hidden; align-self: start; }
   .pcard__media img { object-fit: contain; padding: 16px; }
-  .pcard__media svg.bottle { height: 70%; width: auto; }
+  .pcard__media { grid-template-rows: 1fr auto; }
+  .pcard__media svg.bottle { height: 60%; width: auto; align-self: end; }
   .pcard__media .badge { display: none; }
-  .pcard__noimg { position: absolute; bottom: 6px; left: 0; right: 0; text-align: center; }
+  .pcard__noimg { text-align: center; padding: 4px 4px 8px; line-height: 1.2; }
+  .prod__media .pcard__noimg { position: absolute; bottom: 12px; left: 0; right: 0; }
   .pcard__body { min-width: 0; display: flex; flex-direction: column; gap: 4px; padding-right: 36px; }
   .pcard__body .badge { align-self: flex-start; margin-bottom: 2px; }
   .pcard__maker { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
@@ -294,7 +298,7 @@
   .pcard__price { margin-top: 6px; font-size: var(--text-small); color: var(--color-text-muted); }
   .pcard__price strong { color: var(--color-text); font-size: var(--text-h3); font-variant-numeric: tabular-nums; }
   .pcard__actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); align-self: end; }
-  .pcard__actions .btn { font-size: 13px; padding: 0 8px; text-transform: uppercase; }
+  .pcard__actions .btn { font-size: 14px; padding: 0 8px; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.15; }
   .pcard__cmp { position: absolute; top: 6px; right: 6px; z-index: 1; }
   @media (max-width: 639px) { .pcard .chips > li:nth-child(n + 3):not(.chips__extra) { display: none; } }
   @media (min-width: 640px) {
@@ -418,7 +422,18 @@
   .seg a:hover, .seg button:hover { color: var(--color-primary); }
   .seg [aria-current="page"], .seg [aria-checked="true"] { background: #fff; color: var(--purple-900); box-shadow: var(--shadow-1); }
   .seg [aria-disabled="true"] { color: var(--color-text-muted); cursor: not-allowed; text-decoration: line-through; text-decoration-color: var(--gray-400); }
+  /* Universais < 640px: 3 colunas iguais em vez de pílula com quebra (DESIGN §4.2). */
+  .seg__curto { display: none; }
+  @media (max-width: 639px) {
+    .seg--3 { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; border-radius: var(--radius-md); }
+    .seg--3 a { justify-content: center; padding: 0 6px; border-radius: 8px; }
+    .seg--3 .seg__longo { display: none; }
+    .seg--3 .seg__curto { display: inline; }
+  }
+  .nota-igual { display: flex; align-items: center; gap: 8px; font-size: var(--text-small); color: var(--color-text-muted); }
+  .nota-igual b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; font-size: 13px; line-height: 1; }
   .split { display: grid; gap: var(--space-6); }
+  .split > *, .prod > * { min-width: 0; }
   @media (min-width: 1024px) { .split { grid-template-columns: 5fr 7fr; gap: var(--space-10); align-items: start; } }
   .toolbar { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin-bottom: var(--space-4); }
   .toolbar__inline { display: none; }
@@ -573,6 +588,9 @@
   @media (min-width: 640px) { .guide { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) { .guide { grid-template-columns: repeat(3, 1fr); } }
   .gcard { display: flex; gap: 12px; padding: var(--space-4); background: var(--color-surface-atlas); border: 1px solid var(--lilac-200); border-radius: var(--radius-md); color: var(--color-text); height: 100%; }
+  /* Tópico sem conteúdo com fonte: não interativo, tracejado (DESIGN §4.1 item 6). */
+  .gcard--pendente { background: var(--color-bg-subtle); border-style: dashed; }
+  .gcard--pendente svg { color: var(--gray-500); }
   .gcard svg { width: 24px; height: 24px; color: var(--purple-600); flex: none; }
   .gcard h3 { font-size: 16px; }
   .gcard p { font-size: 14px; color: var(--color-text-muted); margin-top: 2px; }

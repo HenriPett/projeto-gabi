@@ -181,11 +181,11 @@ export default function Home() {
         <ul className="guide">
           {GUIA.map((t) => (
             <li key={t}>
-              <div className="gcard">
+              <div className="gcard gcard--pendente">
                 <IconeLivro />
                 <div>
                   <h3>{t}</h3>
-                  <p>Em preparação — conteúdo com fonte em breve.</p>
+                  <p className="caption">Em preparação</p>
                 </div>
               </div>
             </li>

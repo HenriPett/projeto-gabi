@@ -7,7 +7,7 @@ import { ClassBadge } from "@/components/ClassBadge";
 import { ListaProdutos } from "@/components/categoria/ListaProdutos";
 import { cardDe } from "@/components/dados-de-tela";
 import { IconeInfo } from "@/components/Icones";
-import { rotuloClassificacao, urlSubcategoria } from "@/components/rotulos";
+import { ESTRATEGIA_CURTA, rotuloClassificacao, urlSubcategoria } from "@/components/rotulos";
 import { SourceLink } from "@/components/SourceLink";
 import { StepDiagram } from "@/components/StepDiagram";
 
@@ -51,11 +51,12 @@ export default async function PaginaSubcategoria(props: PageProps<"/sistemas-ade
       <header className="pagehead">
         <ClassBadge grupo={sub.grupo} solid />
         <h1>{rotuloClassificacao(sub.id)}</h1>
-        <nav aria-label={universal ? "Estratégias dos universais" : `Subcategorias de ${g.rotulo.toLowerCase()}`}>
-          <div className="seg">
+        <nav className="w-full sm:w-auto" aria-label={universal ? "Estratégias dos universais" : `Subcategorias de ${g.rotulo.toLowerCase()}`}>
+          <div className={`seg${universal ? " seg--3" : ""}`}>
             {g.subcategorias.map((id) => (
-              <Link key={id} href={urlSubcategoria(id)} aria-current={id === sub.id ? "page" : undefined}>
-                {SUBCATEGORIA[id].rotulo}
+              <Link key={id} href={urlSubcategoria(id)} aria-current={id === sub.id ? "page" : undefined} aria-label={universal ? SUBCATEGORIA[id].rotulo : undefined}>
+                <span className="seg__longo">{SUBCATEGORIA[id].rotulo}</span>
+                {universal && <span className="seg__curto" aria-hidden="true">{ESTRATEGIA_CURTA[id]}</span>}
               </Link>
             ))}
           </div>

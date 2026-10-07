@@ -53,3 +53,12 @@ describe("<ProductCard> (DESIGN §3.8)", () => {
     expect(t).toHaveAccessibleName("Remover Âmbar Fictício da comparação");
   });
 });
+
+describe("selo curto no card (revisão de fidelidade 4)", () => {
+  it("mostra 'Conv. · 2 passos' e mantém o nome completo para leitor de tela", () => {
+    render(<ProductCard card={card("ficticio-ambar")} />);
+    const selo = screen.getAllByText("Conv. · 2 passos")[0].closest(".badge")!;
+    expect(selo).toHaveTextContent("Convencional, 2 passos");
+    expect(selo).toHaveAttribute("title", "Convencional, 2 passos");
+  });
+});

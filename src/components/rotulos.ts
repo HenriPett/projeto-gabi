@@ -18,6 +18,13 @@ export const GRUPO_SINGULAR: Record<GrupoId, string> = {
   universal: "Universal",
 };
 
+/** [Fidelidade 4] Rótulo curto do selo no card: "CONV. · 2 PASSOS". */
+export const GRUPO_CURTO: Record<GrupoId, string> = {
+  convencional: "Conv.",
+  autocondicionante: "Autocond.",
+  universal: "Universal",
+};
+
 /** Rótulos curtos das estratégias universais (cabem em 375px). */
 export const ESTRATEGIA_CURTA: Partial<Record<SubcategoriaId, string>> = {
   "universal-condicionamento-seletivo": "Seletivo",
@@ -56,7 +63,7 @@ const ETAPA: Record<PassoVisual, EtapaVisual> = {
     glifo: "P+A",
     rotulo: "Primer + Adesivo",
     sub: "mesmo frasco",
-    leitura: "primer e adesivo no mesmo frasco",
+    leitura: "primer e adesivo do mesmo frasco, aplicados juntos",
   },
   "primer-autocondicionante": {
     tipo: "primer",

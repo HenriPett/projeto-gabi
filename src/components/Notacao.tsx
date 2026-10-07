@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { LEGENDA_NOTACAO, NOTACAO } from "./rotulos";
 
@@ -20,10 +21,10 @@ export function LegendaNotacao({ className = "" }: { className?: string }) {
   return (
     <p className={`legenda-notacao ${className}`} aria-hidden="true">
       {LEGENDA_NOTACAO.map((item, i) => (
-        <span key={item} className="whitespace-nowrap">
+        <Fragment key={item}>
           {i > 0 && " · "}
-          {item}
-        </span>
+          <span className="whitespace-nowrap">{item}</span>
+        </Fragment>
       ))}
     </p>
   );

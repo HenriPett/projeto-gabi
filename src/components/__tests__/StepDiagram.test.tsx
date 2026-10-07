@@ -6,7 +6,7 @@ import { StepDiagram } from "../StepDiagram";
 
 describe("<StepDiagram> (DESIGN §3.7, PLANO C-01)", () => {
   it.each([
-    ["convencional-2-passos", "acido,primer+adesivo", /1\. ácido fosfórico, aplicado separadamente; 2\. primer e adesivo no mesmo frasco/],
+    ["convencional-2-passos", "acido,primer+adesivo", /1\. ácido fosfórico, aplicado separadamente; 2\. primer e adesivo do mesmo frasco, aplicados juntos/],
     ["convencional-3-passos", "acido,primer,adesivo", /1\. ácido.*2\. primer; 3\. adesivo/],
     ["autocondicionante-1-passo", "tudo-em-um", /ácido, primer e adesivo em uma única aplicação.*sem condicionamento ácido separado/],
     ["autocondicionante-2-passos", "primer-autocondicionante,adesivo", /1\. primer autocondicionante; 2\. adesivo/],

@@ -24,13 +24,13 @@ export function ProductCard({ card, subcategoriaAtual }: { card: CardProduto; su
     <article className="pcard" data-testid="product-card" data-produto-id={card.id} aria-labelledby={`card-${card.id}`}>
       <div className="pcard__media">
         <MidiaProduto imagem={card.imagem} nome={card.nome} fabricante={card.fabricante} sizes="(min-width: 640px) 300px, 96px" />
-        <ClassBadge grupo={card.grupo} subcategoria={sub} />
+        <ClassBadge grupo={card.grupo} subcategoria={sub} curto />
       </div>
       <div className="pcard__cmp">
         <CompareToggle id={card.id} nome={card.nome} />
       </div>
       <div className="pcard__body">
-        <ClassBadge grupo={card.grupo} subcategoria={sub} />
+        <ClassBadge grupo={card.grupo} subcategoria={sub} curto />
         {card.rascunho && <SeloRascunho />}
         <p className="pcard__maker">{card.fabricante}</p>
         <h3 className="pcard__name" id={`card-${card.id}`}>
