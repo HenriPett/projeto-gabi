@@ -1,10 +1,1 @@
-<!-- Marca Adesivologia — ícone grande (PWA 192/512, apple-icon). "A" serifado sobre as três camadas: ácido (azul) / primer (amarelo) / adesivo (laranja). DESIGN.md §0.1. Fonte única para `pnpm icons`. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#151515"/>
-  <g transform="translate(0 -20)">
-    <path fill-rule="evenodd" fill="#FFFFFF" d="M226 104h60l92 236h22v28h-104v-28h22l-17-46h-90l-17 46h22v28H112v-28h22zM256 160l-34 104h68z"/>
-    <rect x="136" y="384" width="240" height="16" rx="8" fill="#2563EB"/>
-    <rect x="136" y="408" width="240" height="16" rx="8" fill="#E9CA06"/>
-    <rect x="136" y="432" width="240" height="16" rx="8" fill="#DE811D"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#151515"/><g transform="translate(0 -20)"><path fill="#FFF" fill-rule="evenodd" d="M226 104h60l92 236h22v28h-104v-28h22l-17-46h-90l-17 46h22v28H112v-28h22zM256 160l-34 104h68z"/><rect width="240" height="16" x="136" y="384" fill="#2563EB" rx="8"/><rect width="240" height="16" x="136" y="408" fill="#E9CA06" rx="8"/><rect width="240" height="16" x="136" y="432" fill="#DE811D" rx="8"/></g></svg>
