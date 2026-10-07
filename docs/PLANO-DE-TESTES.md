@@ -508,3 +508,26 @@ Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja rece
 ### Ajustes — main `308375f`
 - Texto de ausência agora é "Informação ainda não verificada" (Pulpa ajustou E2E-02). Onde o plano diz "Não informado", ler este texto.
 - **P-02** coberto: a fixture `ficticio-multiuso-3p` aponta de propósito para `frasco-inexistente.webp`; o teste exige "Imagem ainda não disponível" e nenhuma `<img>` quebrada visível. O 404 dessa foto é o único erro de console tolerado (`apoio.ts`).
+
+## 14. Login por senha (em implementação — Molar)
+
+Contrato esperado: todas as páginas exigem login; cookie HttpOnly de longa duração + flag em `localStorage`. Os testes rodam com a senha de teste vinda do ambiente (nunca commitada). Os E2E existentes passam a logar uma vez (projeto `setup` do Playwright → `storageState`), salvo os testes desta seção, que começam sem sessão.
+
+| ID | Caso | Esperado | Sev. se falhar |
+|---|---|---|---|
+| LOG-01 | Sem cookie, abrir cada rota (`/`, 7 categorias, `/produto/{id}`, `/comparar?ids=a,b`, `/busca?q=Prime%26Bond`, `/guia`, `/metodologia`) | Redireciona para `/login?next=<rota original codificada, com query>` | S1 |
+| LOG-02 | `next` malicioso: `/login?next=https://evil.com`, `//evil.com`, `/\evil.com`, `javascript:alert(1)` | Após login fica no site (vai para `/`); nunca redireciona para fora | S1 |
+| LOG-03 | Senha errada, vazia, só espaços, 10 000 caracteres, unicode/emoji | Mensagem de erro em pt-BR, continua em `/login`, sem cookie de sessão, sem 500 | S1 |
+| LOG-04 | Senha certa | Vai para o destino do `next` (incluindo query e `#precos`); cookie `HttpOnly`, `Secure` (em https), `SameSite`, expiração longa | S1 |
+| LOG-05 | Recarregar; fechar o contexto e reabrir com o mesmo `storageState`; nova aba | Não pede login de novo | S2 |
+| LOG-06 | "Sair" | Cookie removido + flag de `localStorage` limpa; qualquer rota volta a exigir login; Voltar do navegador não mostra conteúdo protegido do cache | S1 |
+| LOG-07 | Sem cookie: `/manifest.webmanifest`, `/sw.js`, ícones, `/offline`, `/login`, `/robots.txt` | 200, sem redirect (PWA instalável antes do login) | S2 |
+| LOG-08 | Sem cookie, `request.get` em páginas protegidas (sem seguir redirect) | Nunca 200 com HTML da página; corpo não contém nome de produto/preço das fixtures | S1 |
+| LOG-09 | Service worker: logar, visitar páginas (vão para o cache), "Sair", ficar offline e abrir as mesmas páginas | Conteúdo protegido **não** é servido pelo SW sem sessão (cache limpo no logout ou SW checa a flag) | S1 |
+| LOG-10 | Flag em `localStorage` sem cookie (forjada) | Não libera nada: o servidor decide pelo cookie | S1 |
+| LOG-11 | Cookie com valor inválido/adulterado/expirado | Tratado como sem sessão (LOG-01) | S1 |
+| LOG-12 | Senha não está no cliente: `grep -r "<senha>" .next/static` e no HTML de `/login` | Nenhuma ocorrência (nem do hash, se o hash permitir login) | S1 |
+| LOG-13 | Duplo clique em Entrar; Enter no campo; teclado só | Um login só; formulário acessível (label, erro anunciado em `aria-live`, foco no erro) | S3 |
+| LOG-14 | Muitas tentativas erradas seguidas | Comportamento definido (atraso/limite) sem travar quem acerta depois | S3 |
+
+Perguntas ao Molar: nome da variável de ambiente da senha e do cookie; nome do campo/rota do formulário (`/login`, POST para onde?); se o login exige JS (Route Handler × Server Action); o que acontece com o SW no logout; rotas públicas definitivas.
