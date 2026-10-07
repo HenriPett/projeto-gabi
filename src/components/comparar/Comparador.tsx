@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { buscar } from "@/lib/busca";
 import { formatarBRL } from "@/lib/formato";
 import { ClassBadge } from "../ClassBadge";
+import { LegendaNotacao, Notacao } from "../Notacao";
 import { EstadoVazio } from "../EstadoVazio";
 import { Frasco, IconeAlerta, IconeFechar } from "../Icones";
 import type { ColunaComparador, ItemIndice, ValorSimNao } from "../tipos";
@@ -31,16 +32,40 @@ function SimNao({ valor }: { valor: ValorSimNao }) {
 
 function ValorCelula({ c }: { c: Celula }) {
   if (c.tipo === "simnao") return <SimNao valor={c.valor} />;
-  if (c.tipo === "preco")
-    return c.centavos !== undefined ? (
-      <>
-        <span className="num font-semibold">a partir de {formatarBRL(c.centavos)}</span>
-        <br />
-        <Link href={`/produto/${c.produtoId}#precos`}>ver preços</Link>
-      </>
-    ) : (
-      <span className="ni">Preço não encontrado</span>
+  if (c.tipo === "passos")
+    return (
+      <ul className="list-none p-0 m-0">
+        {c.itens.map((i) => (
+          <li key={i.subcategoria}>
+            {i.estrategia && <span className="muted">{i.estrategia}: </span>}
+            <span className="num">{i.n}</span>
+            <span className="sr-only"> {i.n === 1 ? "passo" : "passos"}</span>
+            <span aria-hidden="true"> · </span>
+            <Notacao subcategoria={i.subcategoria} />
+          </li>
+        ))}
+      </ul>
     );
+  if (c.tipo === "preco") {
+    const ver = <Link href={`/produto/${c.produtoId}#precos`}>ver preços</Link>;
+    // Valor só quando a apresentação é comparável entre lojas, sempre com a apresentação (BUG-012).
+    if (c.preco.tipo === "comparavel")
+      return (
+        <>
+          <span className="num font-semibold">a partir de {formatarBRL(c.preco.centavos)}</span>
+          <span className="block caption">{c.preco.apresentacao}</span>
+          {ver}
+        </>
+      );
+    if (c.preco.tipo === "sem-preco") return <span className="ni">Preço não encontrado</span>;
+    return (
+      <>
+        <span className="ni">{c.preco.tipo === "uma-loja" ? "Preço em uma só loja" : "Apresentações diferentes"}</span>
+        <br />
+        {ver}
+      </>
+    );
+  }
   return <>{c.texto}</>;
 }
 
@@ -154,7 +179,7 @@ export function Comparador({ colunas, indice }: { colunas: ColunaComparador[]; i
       <>
         {cabecalho}
         {avisos}
-        <EstadoVazio titulo="Selecione de 2 a 4 produtos para comparar.">
+        <EstadoVazio nivel={2} titulo="Selecione de 2 a 4 produtos para comparar.">
           {selecionadas.length === 1 && <p className="muted">Você selecionou {selecionadas[0].card.nome}. Adicione mais 1.</p>}
           <Link className="btn btn--primary" href="/#classificacao">
             Explorar categorias
@@ -247,6 +272,7 @@ export function Comparador({ colunas, indice }: { colunas: ColunaComparador[]; i
           ))}
         </table>
       </div>
+      <LegendaNotacao className="text-left" />
       {adicionar}
     </>
   );

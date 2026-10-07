@@ -52,9 +52,10 @@ describe("preços — cenários das fixtures", () => {
     expect(c.economiaCentavos).toBe(2000);
   });
 
-  it("PR-11: três preços iguais → todas menor preço, sem economia", () => {
+  it("PR-11: três preços iguais → nenhuma loja marcada como menor preço, sem economia", () => {
     const c = comparar("ficticio-tudo-em-um", "frasco-5ml");
     expect(c.comparavel).toBe(true);
+    expect(c.linhas.some((l) => l.menorPreco)).toBe(false);
     expect(c.economiaCentavos).toBeUndefined();
   });
 

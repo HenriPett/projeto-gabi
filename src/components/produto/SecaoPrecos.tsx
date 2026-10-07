@@ -33,9 +33,9 @@ function useCliqueUnico() {
   };
 }
 
-function LinhaDeLoja({ l, comparavel, onComprar }: { l: LinhaLoja; comparavel: boolean; onComprar: (e: React.MouseEvent) => void }) {
+function LinhaDeLoja({ l, onComprar }: { l: LinhaLoja; onComprar: (e: React.MouseEvent) => void }) {
   const temPreco = l.centavos !== undefined;
-  const melhor = comparavel && l.menorPreco;
+  const melhor = l.menorPreco;
   return (
     <li
       className={`store${melhor ? " store--best" : ""}${temPreco ? "" : " store--na"}`}
@@ -150,7 +150,8 @@ export function SecaoPrecos({ comparacoes }: { comparacoes: ComparacaoApresentac
         <>
           <ul className="stores">
             {c.linhas.map((l) => (
-              <LinhaDeLoja key={l.lojaId} l={l} comparavel={c.comparavel} onComprar={onComprar} />
+              // Todas iguais (sem economia): o selo em todas não informa nada — fica só o aviso abaixo.
+              <LinhaDeLoja key={l.lojaId} l={l} onComprar={onComprar} />
             ))}
           </ul>
           {c.economiaCentavos !== undefined && (
@@ -160,7 +161,12 @@ export function SecaoPrecos({ comparacoes }: { comparacoes: ComparacaoApresentac
               </span>
             </p>
           )}
-          {c.comparavel && c.economiaCentavos === undefined && <p className="note note--neutral mt-4">Mesmo preço nas lojas comparadas.</p>}
+          {c.comparavel && c.economiaCentavos === undefined && (
+            <p className="nota-igual mt-4">
+              <b aria-hidden="true">=</b>
+              Mesmo preço nas lojas comparadas.
+            </p>
+          )}
           {!temPreco(atual) && <p className="note note--neutral mt-4">Nenhuma das três lojas tem este produto disponível no momento.</p>}
           {outrasLinhas.length > 0 && (
             <div className="note note--warn mt-4" role="note">

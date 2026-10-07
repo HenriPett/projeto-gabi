@@ -16,7 +16,7 @@ describe("<ListaProdutos> (DESIGN §4.2)", () => {
   });
 
   it("ordena por menor preço com 'sem preço' por último", () => {
-    const precos = filtrarEOrdenar(conv2(), "preco", [], false).map((c) => c.aPartirDeCentavos);
+    const precos = filtrarEOrdenar(conv2(), "preco", [], false).map((c) => ("centavos" in c.preco ? c.preco.centavos : undefined));
     const definidos = precos.filter((p) => p !== undefined) as number[];
     expect(definidos).toEqual([...definidos].sort((a, b) => a - b));
     expect(precos.indexOf(undefined)).toSatisfy((i: number) => i === -1 || precos.slice(i).every((p) => p === undefined));
@@ -30,5 +30,19 @@ describe("<ListaProdutos> (DESIGN §4.2)", () => {
     await userEvent.click(screen.getAllByRole("button", { name: fab })[0]);
     expect(screen.getAllByTestId("product-card")).toHaveLength(cards.filter((c) => c.fabricante === fab).length);
     expect(screen.getByText(/produtos? exibidos?$/)).toBeTruthy();
+  });
+});
+
+describe("ordenação 'Em destaque' (curadoria)", () => {
+  it("curadoria primeiro, na ordem dada; resto A–Z; opção só existe com destaque na lista", () => {
+    const cards = conv2();
+    const ultimo = [...cards].sort((a, b) => b.nome.localeCompare(a.nome, "pt-BR"))[0];
+    expect(filtrarEOrdenar(cards, "destaque", [], false, [ultimo.id])[0].id).toBe(ultimo.id);
+    const { unmount } = render(<ListaProdutos cards={cards} subcategoria="convencional-2-passos" destaques={[ultimo.id]} />);
+    expect(screen.getAllByRole("option", { name: /Em destaque/ }).length).toBeGreaterThan(0);
+    expect(screen.getAllByTestId("product-card")[0]).toHaveAttribute("data-produto-id", ultimo.id);
+    unmount();
+    render(<ListaProdutos cards={cards} subcategoria="convencional-2-passos" />);
+    expect(screen.queryAllByRole("option", { name: /Em destaque/ })).toHaveLength(0);
   });
 });

@@ -6,20 +6,28 @@ import type { SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { EstadoVazio } from "../EstadoVazio";
 import { IconeFechar, IconeFiltro } from "../Icones";
 import { ProductCard } from "../ProductCard";
-import type { CardProduto } from "../tipos";
+import { centavosParaOrdenar, type CardProduto } from "../tipos";
 
-type Ordem = "az" | "preco";
+type Ordem = "destaque" | "preco" | "az";
 
-const ROTULO_ORDEM: Record<Ordem, string> = { az: "A–Z", preco: "Menor preço" };
+const ROTULO_ORDEM: Record<Ordem, string> = { destaque: "Em destaque", preco: "Menor preço", az: "A–Z" };
 
 /** Ordena/filtra só a apresentação (o preço já vem de compararPrecos). */
-export function filtrarEOrdenar(cards: readonly CardProduto[], ordem: Ordem, fabricantes: readonly string[], soMdp: boolean) {
+export function filtrarEOrdenar(
+  cards: readonly CardProduto[],
+  ordem: Ordem,
+  fabricantes: readonly string[],
+  soMdp: boolean,
+  destaques: readonly string[] = [],
+) {
   const filtrados = cards.filter((c) => (!fabricantes.length || fabricantes.includes(c.fabricante)) && (!soMdp || c.mdp));
   const porNome = (a: CardProduto, b: CardProduto) => a.nome.localeCompare(b.nome, "pt-BR");
+  const rank = (c: CardProduto) => (destaques.includes(c.id) ? destaques.indexOf(c.id) : Infinity);
   return [...filtrados].sort((a, b) => {
+    if (ordem === "destaque" && rank(a) !== rank(b)) return rank(a) - rank(b);
     if (ordem === "preco") {
-      const pa = a.aPartirDeCentavos ?? Infinity;
-      const pb = b.aPartirDeCentavos ?? Infinity;
+      const pa = centavosParaOrdenar(a.preco);
+      const pb = centavosParaOrdenar(b.preco);
       if (pa !== pb) return pa - pb;
     }
     return porNome(a, b);
@@ -27,6 +35,7 @@ export function filtrarEOrdenar(cards: readonly CardProduto[], ordem: Ordem, fab
 }
 
 function Controles({
+  ordens,
   ordem,
   setOrdem,
   todos,
@@ -36,6 +45,7 @@ function Controles({
   setSoMdp,
   idBase,
 }: {
+  ordens: Ordem[];
   ordem: Ordem;
   setOrdem: (o: Ordem) => void;
   todos: string[];
@@ -51,7 +61,7 @@ function Controles({
         Ordenar por
       </label>
       <select id={`${idBase}-ordem`} className="select" value={ordem} onChange={(e) => setOrdem(e.target.value as Ordem)}>
-        {(Object.keys(ROTULO_ORDEM) as Ordem[]).map((o) => (
+        {ordens.map((o) => (
           <option key={o} value={o}>
             Ordenar: {ROTULO_ORDEM[o]}
           </option>
@@ -86,16 +96,28 @@ function Controles({
 }
 
 /** Barra de ferramentas + grade de cards — DESIGN §4.2 item 4. */
-export function ListaProdutos({ cards, subcategoria }: { cards: CardProduto[]; subcategoria: SubcategoriaId }) {
-  const [ordem, setOrdem] = useState<Ordem>("az");
+export function ListaProdutos({
+  cards,
+  subcategoria,
+  destaques = [],
+}: {
+  cards: CardProduto[];
+  subcategoria: SubcategoriaId;
+  /** Ids da curadoria (catalogo().destaques), na ordem. */
+  destaques?: string[];
+}) {
+  // "Em destaque" só existe se a curadoria tiver produto desta lista.
+  const temDestaque = cards.some((c) => destaques.includes(c.id));
+  const ordens: Ordem[] = temDestaque ? ["destaque", "preco", "az"] : ["preco", "az"];
+  const [ordem, setOrdem] = useState<Ordem>(temDestaque ? "destaque" : "az");
   const [fabricantes, setFabricantes] = useState<string[]>([]);
   const [soMdp, setSoMdp] = useState(false);
   const sheet = useRef<HTMLDialogElement>(null);
 
   const todos = useMemo(() => [...new Set(cards.map((c) => c.fabricante))].sort((a, b) => a.localeCompare(b, "pt-BR")), [cards]);
-  const visiveis = useMemo(() => filtrarEOrdenar(cards, ordem, fabricantes, soMdp), [cards, ordem, fabricantes, soMdp]);
+  const visiveis = useMemo(() => filtrarEOrdenar(cards, ordem, fabricantes, soMdp, destaques), [cards, ordem, fabricantes, soMdp, destaques]);
   const filtrosAtivos = fabricantes.length + (soMdp ? 1 : 0);
-  const props = { ordem, setOrdem, todos, fabricantes, setFabricantes, soMdp, setSoMdp };
+  const props = { ordens, ordem, setOrdem, todos, fabricantes, setFabricantes, soMdp, setSoMdp };
 
   if (!cards.length) {
     return (

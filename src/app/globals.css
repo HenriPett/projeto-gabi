@@ -93,6 +93,8 @@
   body { background: var(--color-bg); color: var(--color-text); font: 400 var(--text-body) / 1.55 var(--font-sans); }
   a { color: var(--color-primary); }
   a:hover { color: var(--color-primary-hover); }
+  /* Link dentro de texto corrido: sublinhado, não só cor (WCAG 1.4.1; BUG-011). */
+  p a, li a:not(.btn):not(.chip):not(.fchip), dd a, .caption a, .small a { text-decoration: underline; text-underline-offset: 2px; }
   :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: 4px; }
   h1, h2 { font-family: var(--font-serif); color: var(--purple-900); }
   h1 { font-size: var(--text-h1); line-height: 1.2; font-weight: 700; }
@@ -127,7 +129,17 @@
   .header__nav { display: none; gap: var(--space-6); }
   .header__nav a { text-decoration: none; font-weight: 500; font-size: var(--text-small); color: var(--color-text); min-height: 44px; display: inline-flex; align-items: center; }
   .header__nav a:hover { color: var(--color-primary); }
-  .compare-link { min-height: 44px; font-size: 13px; }
+  .compare-link { min-height: 44px; font-size: 13px; white-space: nowrap; padding: 0 12px; }
+  .logo { white-space: nowrap; }
+  .compare-link__n { display: none; }
+  @media (max-width: 359px) {
+    .header__row { gap: var(--space-2); }
+    .logo { font-size: 14px; gap: 6px; }
+    .logo__mark { width: 24px; height: 24px; font-size: 11px; }
+    .compare-link { padding: 0 8px; gap: 6px; font-size: 12px; }
+    .compare-link .compare-link__paren { display: none; }
+    .compare-link__n { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-on-primary); font-size: 12px; }
+  }
   /* Mobile: ao rolar para baixo, a linha do logo colapsa e só a busca fica fixa. */
   @media (max-width: 1023px) {
     .header.is-collapsed { transform: translateY(-56px); }
@@ -263,6 +275,12 @@
   /* Carrossel */
   .rail { display: grid; grid-auto-flow: column; grid-auto-columns: 240px; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px var(--space-4); margin: 0 -4px; list-style: none; }
   .rail > * { scroll-snap-align: start; }
+  .carrossel { position: relative; }
+  .carrossel__setas { display: none; }
+  @media (min-width: 1024px) {
+    .carrossel__setas { display: flex; gap: 4px; position: absolute; right: 0; top: -60px; }
+    .carrossel__setas .icon-btn { font-size: 24px; border: 1.5px solid var(--color-border-input); border-radius: var(--radius-full); }
+  }
 
   /* Card de produto — §3.8 */
   .cards { display: grid; gap: var(--space-4); list-style: none; padding: 0; margin: 0; }
@@ -274,9 +292,11 @@
   .pcard:has(.cmp-toggle[aria-pressed="true"]) { border: 2px solid var(--color-primary); }
   .pcard__media { position: relative; background: var(--color-bg-subtle); border-radius: var(--radius-sm); aspect-ratio: 4/5; display: grid; place-items: center; overflow: hidden; align-self: start; }
   .pcard__media img { object-fit: contain; padding: 16px; }
-  .pcard__media svg.bottle { height: 70%; width: auto; }
+  .pcard__media { grid-template-rows: 1fr auto; }
+  .pcard__media svg.bottle { height: 60%; width: auto; align-self: end; }
   .pcard__media .badge { display: none; }
-  .pcard__noimg { position: absolute; bottom: 6px; left: 0; right: 0; text-align: center; }
+  .pcard__noimg { text-align: center; padding: 4px 4px 8px; line-height: 1.2; }
+  .prod__media .pcard__noimg { position: absolute; bottom: 12px; left: 0; right: 0; }
   .pcard__body { min-width: 0; display: flex; flex-direction: column; gap: 4px; padding-right: 36px; }
   .pcard__body .badge { align-self: flex-start; margin-bottom: 2px; }
   .pcard__maker { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
@@ -288,14 +308,14 @@
   .pcard__price { margin-top: 6px; font-size: var(--text-small); color: var(--color-text-muted); }
   .pcard__price strong { color: var(--color-text); font-size: var(--text-h3); font-variant-numeric: tabular-nums; }
   .pcard__actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); align-self: end; }
-  .pcard__actions .btn { font-size: 13px; padding: 0 8px; text-transform: uppercase; }
+  .pcard__actions .btn { font-size: 14px; padding: 0 8px; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.15; }
   .pcard__cmp { position: absolute; top: 6px; right: 6px; z-index: 1; }
   @media (max-width: 639px) { .pcard .chips > li:nth-child(n + 3):not(.chips__extra) { display: none; } }
   @media (min-width: 640px) {
     .pcard { grid-template-columns: 1fr; padding: 0; overflow: hidden; }
     .pcard__media { border-radius: 0; aspect-ratio: 4/3.4; }
     .pcard__media .badge { display: inline-flex; position: absolute; left: 12px; top: 12px; }
-    .pcard__body .badge { display: none; }
+    .pcard__body .badge:not(.badge--draft) { display: none; }
     .pcard__body { padding: 0 var(--space-4); }
     .pcard__actions { padding: 0 var(--space-4) var(--space-4); }
     .pcard__cmp { top: 8px; right: 8px; }
@@ -303,7 +323,9 @@
   .rail .pcard { grid-template-columns: 1fr; padding: 0; overflow: hidden; }
   .rail .pcard__media { border-radius: 0; aspect-ratio: 4/3.4; }
   .rail .pcard__media .badge { display: inline-flex; position: absolute; left: 12px; top: 12px; }
-  .rail .pcard__body .badge { display: none; }
+  .rail .pcard__body .badge:not(.badge--draft) { display: none; }
+  /* selo da mídia não passa por baixo do toggle ⊕ (44px) */
+  .pcard__media .badge { max-width: calc(100% - 68px); white-space: normal; height: auto; min-height: 24px; padding-block: 3px; line-height: 1.2; }
   .rail .pcard__body { padding: 0 var(--space-4); }
   .rail .pcard__actions { padding: 0 var(--space-4) var(--space-4); }
 
@@ -350,7 +372,12 @@
   .diagram__steps { list-style: none; padding: 0; margin: 0 auto; max-width: 360px; }
   .step { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 14px; border-radius: var(--radius-md); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 16px; animation: stepIn var(--dur-slow) var(--ease) both; animation-delay: calc(var(--i, 0) * 80ms); }
   .step__glyph { width: 32px; height: 32px; border-radius: 50%; background: #fff; display: grid; place-items: center; font: 700 13px/1 var(--font-serif); text-transform: none; flex: none; border: 1.5px solid currentColor; }
-  .step__label { display: flex; flex-direction: column; line-height: 1.2; }
+  .step__label { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; flex: 1; hyphens: auto; overflow-wrap: anywhere; }
+  .step__count { flex: none; }
+  @media (max-width: 359px) {
+    .diagram { padding: var(--space-3); }
+    .step { font-size: 14px; letter-spacing: 0.02em; gap: 8px; padding: 0 10px; }
+  }
   .step__sub { font-size: 12px; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--color-text-muted); }
   .step__count { margin-left: auto; font-size: 12px; font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--color-text-muted); white-space: nowrap; }
   .step--acid { background: var(--step-acid-bg); box-shadow: inset 4px 0 0 var(--step-acid-line); }
@@ -365,11 +392,39 @@
   .step--apa .step__glyph { color: var(--color-primary); font-size: 10px; }
   .arrow { display: flex; justify-content: center; height: 28px; }
   .arrow svg { width: 24px; height: 28px; color: var(--color-border-accent); }
-  @keyframes stepIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  /* Só deslocamento: com opacidade, o texto passa por contraste < 4.5:1 durante a entrada (BUG-009). */
+  @keyframes stepIn { from { transform: translateY(8px); } to { transform: none; } }
   @media (prefers-reduced-motion: reduce) { .step { animation: none; } }
   @media (min-width: 1024px) { .diagram { padding: var(--space-8); } .step { min-height: 64px; } }
   .diagram--compact, .diagram--compact.diagram { padding: var(--space-4); margin-bottom: var(--space-6); }
   .diagram--compact .step { min-height: 44px; font-size: 13px; }
+
+  /* [R2] Notação compacta, etapa ausente riscada e substrato — §3.7 */
+  .notacao { font-size: var(--text-small); font-weight: 600; color: var(--purple-900); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; text-transform: none; white-space: nowrap; }
+  .notacao sub { font-size: 0.7em; }
+  .notacao--diagrama { display: block; margin-top: 4px; }
+  .subcard .notacao { margin-top: -4px; }
+  .legenda-notacao { font-size: var(--text-caption); color: var(--color-text-muted); margin-top: var(--space-3); text-align: center; }
+  .step-ghost { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border: 1.5px dashed var(--gray-500); border-radius: var(--radius-md); color: var(--color-text-muted); font-size: 14px; }
+  .step-ghost s { text-decoration-thickness: 1.5px; }
+  .step-ghost svg { width: 16px; height: 16px; color: var(--color-error); flex: none; }
+  .step-ghost em { margin-left: auto; font-style: normal; font-size: 12px; }
+  .ghost-link { height: 16px; width: 0; margin: 0 auto; border-left: 1.5px dashed var(--gray-500); }
+  .substrato { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: var(--color-text-muted); text-transform: none; letter-spacing: 0; }
+  .substrato svg { width: 40px; height: 40px; flex: none; }
+  .path > .substrato { margin: 2px 0 8px; }
+  .step__substrato { display: inline-flex; align-items: center; gap: 10px; }
+  .step__substrato .substrato svg { width: 32px; height: 32px; }
+  .step__sub--substrato { display: none; }
+  @media (max-width: 639px) {
+    .step__substrato .substrato svg { width: 24px; height: 24px; }
+    .step__substrato .substrato > span { display: none; }
+    .step__sub--substrato { display: block; }
+    .step { padding-right: 16px; }
+  }
+  .path .ghost-link { height: 12px; }
+  .path .step-ghost { font-size: 12px; min-height: 36px; padding: 4px 8px; gap: 6px; }
+  .step-ghost em { white-space: nowrap; }
 
   /* Diagrama universal: três caminhos — §4.4 */
   .paths { display: grid; gap: var(--space-3); }
@@ -390,7 +445,18 @@
   .seg a:hover, .seg button:hover { color: var(--color-primary); }
   .seg [aria-current="page"], .seg [aria-checked="true"] { background: #fff; color: var(--purple-900); box-shadow: var(--shadow-1); }
   .seg [aria-disabled="true"] { color: var(--color-text-muted); cursor: not-allowed; text-decoration: line-through; text-decoration-color: var(--gray-400); }
+  /* Universais < 640px: 3 colunas iguais em vez de pílula com quebra (DESIGN §4.2). */
+  .seg__curto { display: none; }
+  @media (max-width: 639px) {
+    .seg--3 { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; border-radius: var(--radius-md); }
+    .seg--3 a { justify-content: center; padding: 0 6px; border-radius: 8px; }
+    .seg--3 .seg__longo { display: none; }
+    .seg--3 .seg__curto { display: inline; }
+  }
+  .nota-igual { display: flex; align-items: center; gap: 8px; font-size: var(--text-small); color: var(--color-text-muted); }
+  .nota-igual b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; font-size: 13px; line-height: 1; }
   .split { display: grid; gap: var(--space-6); }
+  .split > *, .prod > * { min-width: 0; }
   @media (min-width: 1024px) { .split { grid-template-columns: 5fr 7fr; gap: var(--space-10); align-items: start; } }
   .toolbar { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin-bottom: var(--space-4); }
   .toolbar__inline { display: none; }
@@ -545,6 +611,9 @@
   @media (min-width: 640px) { .guide { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) { .guide { grid-template-columns: repeat(3, 1fr); } }
   .gcard { display: flex; gap: 12px; padding: var(--space-4); background: var(--color-surface-atlas); border: 1px solid var(--lilac-200); border-radius: var(--radius-md); color: var(--color-text); height: 100%; }
+  /* Tópico sem conteúdo com fonte: não interativo, tracejado (DESIGN §4.1 item 6). */
+  .gcard--pendente { background: var(--color-bg-subtle); border-style: dashed; }
+  .gcard--pendente svg { color: var(--gray-500); }
   .gcard svg { width: 24px; height: 24px; color: var(--purple-600); flex: none; }
   .gcard h3 { font-size: 16px; }
   .gcard p { font-size: 14px; color: var(--color-text-muted); margin-top: 2px; }

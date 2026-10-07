@@ -19,6 +19,7 @@ export interface LinhaLoja {
   pixCentavos?: number;
   url?: string;
   consultadoEm?: string;
+  /** Selo "MENOR PREÇO": só quando comparável e há diferença; empatadas no menor recebem todas. */
   menorPreco: boolean;
 }
 
@@ -72,8 +73,9 @@ export function compararPrecos(ofertas: readonly Oferta[], apresentacaoId: strin
 
   const menorCentavos = Math.min(...precos);
   const maiorCentavos = Math.max(...precos);
-  for (const l of linhas) l.menorPreco = l.centavos === menorCentavos;
   const economia = maiorCentavos - menorCentavos;
+  // Todos iguais: não há "menor preço" a destacar (DESIGN §4.7, PR-11).
+  if (economia > 0) for (const l of linhas) l.menorPreco = l.centavos === menorCentavos;
   return {
     apresentacaoId,
     linhas,

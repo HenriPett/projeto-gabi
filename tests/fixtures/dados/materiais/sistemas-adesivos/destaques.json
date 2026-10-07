@@ -1,0 +1,4 @@
+{
+  "$schema": "../../../../../data/schemas/destaques.schema.json",
+  "produtos": ["ficticio-universal-triplo", "ficticio-rascunho", "ficticio-ambar"]
+}

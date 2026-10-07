@@ -1,6 +1,7 @@
 import "server-only";
 import type { Oferta, Produto } from "@/lib/esquema";
 import { itemDeBusca } from "@/lib/busca";
+import { formatarVolume } from "@/lib/formato";
 import { apresentacaoParaComparar, apresentacoesComOferta, compararPrecos } from "@/lib/precos";
 import type {
   CardProduto,
@@ -9,6 +10,7 @@ import type {
   DivergenciaDTO,
   FonteDTO,
   ItemIndice,
+  PrecoCard,
 } from "./tipos";
 
 /**
@@ -28,16 +30,6 @@ const TIPO_APRESENTACAO: Record<Apresentacao["tipo"], string> = {
 };
 
 export const rotuloTipoApresentacao = (a: Apresentacao) => TIPO_APRESENTACAO[a.tipo];
-
-// TODO(Molar): mover para src/lib/formato.ts (formatarVolume) se aprovado.
-const decimal = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 });
-
-/** "5 mL", "3 g", "50 × 0,1 mL"; kit → descrição do fabricante. */
-export function volumeDe(a: Apresentacao): string {
-  if (a.tipo === "kit") return a.descricao;
-  const unidade = a.volumeMl !== undefined ? `${decimal.format(a.volumeMl)} mL` : a.massaG !== undefined ? `${decimal.format(a.massaG)} g` : a.descricao;
-  return a.quantidade > 1 ? `${a.quantidade} × ${unidade}` : unidade;
-}
 
 export function apresentacaoPrincipal(p: Produto): Apresentacao {
   return p.apresentacoes.find((a) => a.id === p.apresentacaoPrincipal) ?? p.apresentacoes[0];
@@ -74,11 +66,28 @@ export function componentesChave(p: Produto): string[] {
   return chave.length ? chave : c.componentes.map((x) => x.nome);
 }
 
-/** Menor preço da apresentação que a página do produto compara por padrão. */
-function aPartirDe(p: Produto, ofertas: readonly Oferta[]): number | undefined {
-  const id = apresentacaoParaComparar(ofertas, p.apresentacaoPrincipal);
-  if (!id) return undefined;
-  return compararPrecos(ofertas, id).linhas.find((l) => l.centavos !== undefined)?.centavos;
+/** Resumo de preço do card a partir das comparações por apresentação (precos.ts). */
+function precoDoCard(p: Produto, ofertas: readonly Oferta[]): PrecoCard {
+  const comparacoes = comparacoesDePreco(p, ofertas);
+  const comPreco = comparacoes.filter((c) => c.comparacao.linhas.some((l) => l.centavos !== undefined));
+  const comparavel = comparacoes.find((c) => c.comparacao.comparavel);
+  if (comparavel)
+    return {
+      tipo: "comparavel",
+      centavos: comparavel.comparacao.menorCentavos!,
+      apresentacao: comparavel.descricao,
+      principal: comparavel.apresentacaoId === p.apresentacaoPrincipal,
+    };
+  if (comPreco.length > 1) return { tipo: "apresentacoes-diferentes" };
+  const unica = comPreco[0]?.comparacao.linhas.find((l) => l.centavos !== undefined);
+  if (unica)
+    return {
+      tipo: "uma-loja",
+      centavos: unica.centavos!,
+      apresentacao: comPreco[0].descricao,
+      principal: comPreco[0].apresentacaoId === p.apresentacaoPrincipal,
+    };
+  return { tipo: "sem-preco" };
 }
 
 export function cardDe(p: Produto, ofertas: readonly Oferta[] = []): CardProduto {
@@ -90,11 +99,11 @@ export function cardDe(p: Produto, ofertas: readonly Oferta[] = []): CardProduto
     fabricante: p.fabricante.nome,
     grupo: p.classificacao.grupo,
     subcategorias: p.classificacao.subcategorias.map((s) => s.id),
-    apresentacao: a.tipo === "kit" ? a.descricao : `${rotuloTipoApresentacao(a)} · ${volumeDe(a)}`,
+    apresentacao: a.tipo === "kit" ? a.descricao : `${rotuloTipoApresentacao(a)} · ${formatarVolume(a)}`,
     estrategia: p.estrategiaAdesiva?.texto,
     componentes: componentesChave(p),
     mdp: p.composicao.mdp.valor === "sim",
-    aPartirDeCentavos: aPartirDe(p, ofertas),
+    preco: precoDoCard(p, ofertas),
     imagem: img ? { arquivo: img.arquivo, alt: img.alt } : undefined,
     rascunho: p.revisao.status === "rascunho",
   };
@@ -134,7 +143,8 @@ export function colunaComparador(p: Produto, ofertas: readonly Oferta[] = []): C
     silano: c.silano.valor,
     solventes: c.solventes.valor === "nao-informado" ? "nao-informado" : c.solventes.valor.map(capitalizar),
     polimerizacao: c.polimerizacao.valor === "nao-informado" ? "nao-informado" : POLIMERIZACAO[c.polimerizacao.valor],
-    volume: volumeDe(apresentacaoPrincipal(p)),
+    // Todas as apresentações, principal primeiro (BUG-013).
+    volume: [...new Set([apresentacaoPrincipal(p), ...p.apresentacoes].map((a) => formatarVolume(a)))].join(" · "),
     divergencias: divergenciasDe(p),
   };
 }

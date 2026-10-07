@@ -173,7 +173,7 @@ Fora do escopo da v1 (público consulta em clínica/sala de aula, fundo branco �
 
 ### 3.1 Header + busca fixa (`<SearchBar>`)
 - Header `position: sticky; top: 0; z-index: 50`, bg branco, borda inferior `--color-border`, altura 56px (mobile) / 64px (≥1024).
-- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--purple-900`) + botão "Comparar (n)" à direita. Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
+- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--purple-900`, `nowrap`) + botão "Comparar (n)" à direita (`nowrap`). **Abaixo de 360px:** o logotipo cai para 14px e o botão vira "Comparar" + contador num badge circular de 20px (`--color-primary`, texto branco 11px 700; `aria-label="Comparar, n produtos selecionados"`). Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
 - ≥1024: uma linha só: logo · busca (máx. 560px, centro) · links "Classificação", "Comparar", "Guia".
 - Campo: `type="search"`, `role="combobox"`, `aria-expanded`, `aria-controls="search-listbox"`, placeholder **"Pesquisar sistema, marca ou produto"**, ícone lupa (SVG, não emoji) à esquerda 20px `--gray-600`, botão limpar (×) quando há texto, `aria-label="Limpar busca"`. bg `--gray-50`, borda 1.5px `--color-border-input`, raio `--radius-md`; foco: borda `--color-primary` + anel de foco.
 - Atalho `/` foca a busca (desktop).
@@ -207,6 +207,7 @@ Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo)
 - **Seta** entre etapas: SVG 24×28px, traço 2px `--lilac-400`, ponta em "V". `aria-hidden`.
 - Etapa combinada (ex.: Primer + Adesivo num frasco) = um único bloco com rótulo "PRIMER + ADESIVO" e glifo "P+A"; abaixo, legenda caption "mesmo frasco".
 - **[R2]** Contador à direita do bloco: **"passo 1", "passo 2"**, nunca "frasco N". **Passo = aplicação clínica, não frasco.** O kit de convencional 3 passos tem 2 frascos + ácido em seringa; o autocondicionante de 1 passo pode ter 2 frascos que se misturam e são aplicados uma vez (Silva e Souza Jr. 2010, Fig. 9). Textos de leitura: o ácido é "aplicado separadamente" (não "em frasco separado"); o bloco tudo-em-um é "uma única aplicação" (não "um único frasco"). "Mesmo frasco" continua válido só no bloco combinado Primer + Adesivo do convencional de 2 passos.
+- **[R2] Legenda da notação:** deve **quebrar linha** entre itens. Cada item fica `nowrap` e o separador " · " fica **fora** do span. Containers de grade/flex que recebem o diagrama precisam de `min-width: 0` nos filhos, senão a legenda alarga a coluna.
 - **[R2] Notação compacta** sob o título do diagrama, em `--text-small` 600 `--purple-900`, fonte tabular, com `aria-hidden` (a leitura completa já está no figcaption). `+` separa passos e `(…)` agrupa o que é aplicado junto (adaptado de Perdigão 2022):
   | Subcategoria | Notação |
   |---|---|
@@ -222,7 +223,7 @@ Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo)
 - **[R2] Etapa opcional** (só se o conteúdo, com fonte, confirmar para aquela subcategoria): bloco tracejado `--lilac-400` com rótulo "Condicionamento seletivo do esmalte" e selo "opcional". Aparece no lugar do bloco fantasma, nunca junto com ele. Não entra na notação compacta.
 - Universais: três colunas (≥640) ou três linhas empilhadas com divisor "OU" em pílula (mobile) — ver §4.4.
 - Acessibilidade: `<figure>`; os blocos visuais ficam `aria-hidden="true"` e o `<figcaption>` traz a leitura completa em texto (visualmente oculto além do overline): "Convencional de 2 passos: 1. Ácido, em frasco separado; 2. Primer e adesivo no mesmo frasco."
-- Animação de entrada: etapas aparecem em sequência (opacity+translateY 8px, 80ms de stagger). Desligada em reduced-motion.
+- Animação de entrada: etapas entram em sequência **só com translateY 8px → 0** (80ms de stagger), **sem animar opacidade**, porque o fade reduzia o contraste abaixo de AA durante a entrada (axe, serious). Desligada em reduced-motion.
 
 Mapa de diagramas (conteúdo fixo do produto, revisado pelo time de conteúdo):
 | Categoria | Etapas |
@@ -237,7 +238,7 @@ Mapa de diagramas (conteúdo fixo do produto, revisado pelo time de conteúdo):
 
 Autocondicionante 1 e 2 passos também começam pelo bloco fantasma ~~Ácido fosfórico separado~~ **[R2]**.
 
-**[R2] Pictograma de substrato** (`<SubstrateGlyph>`), obrigatório nos três caminhos do universal e no bloco Ácido dos convencionais. É um corte de dente simplificado em SVG de 40×40: a coroa tem um anel externo (esmalte, traço 1.5px `--gray-600`) e um núcleo (dentina, preenchimento `--gray-100`). A área condicionada recebe preenchimento `--magenta-600` com 45% de opacidade:
+**[R2] Pictograma de substrato** (`<SubstrateGlyph>`). No bloco de etapa **abaixo de 640px**, o pictograma fica a 24px e a legenda de substrato desce para a linha de baixo do rótulo (como `step__sub`), para o contador "passo N" não encostar na borda., obrigatório nos três caminhos do universal e no bloco Ácido dos convencionais. É um corte de dente simplificado em SVG de 40×40: a coroa tem um anel externo (esmalte, traço 1.5px `--gray-600`) e um núcleo (dentina, preenchimento `--gray-100`). A área condicionada recebe preenchimento `--magenta-600` com 45% de opacidade:
 - seletivo: só o anel de esmalte;
 - total / convencionais: anel e núcleo;
 - autocondicionante: nenhuma área, com o rótulo "sem ácido".
@@ -255,7 +256,11 @@ Anatomia vertical (de cima p/ baixo):
 6. Linha de metadados `--text-small` muted: "Frasco · 4 mL" (apresentação · volume).
 7. Estratégia: `--text-small`: "Condicionamento ácido + adesivo". Universais: chips minis das estratégias indicadas (ver §4.5).
 8. Componentes: até 3 chips (`--radius-sm`, 24px, bg `--gray-50`, borda `--gray-200`, `--text-caption`): "MDP", "HEMA", "Etanol". Excedente "+2".
-9. Faixa de preço (se houver ≥1 preço comparável): "a partir de **R$ 00,00**" `--text-small` + `--text-h3` tabular. Sem preço: "Preço não encontrado" muted.
+9. Faixa de preço, conforme os dados:
+   - ≥2 lojas com a mesma apresentação: "a partir de **R$ 00,00**" (`--text-small` + `--text-h3` tabular);
+   - só 1 loja com preço: "**R$ 00,00** em 1 loja" (sem "a partir de", porque não houve comparação);
+   - preços só em apresentações diferentes: "Preços em apresentações diferentes" (`--text-small` muted, sem valor);
+   - nenhum preço: "Preço não encontrado" muted.
 10. Ações (grid 2 colunas, gap 8): **VER PRODUTO** (`secondary`) · **COMPARAR PREÇOS** (`cta`). Mobile horizontal: ações em linha abaixo do conteúdo, largura total.
 
 Anatomia horizontal (mobile < 640): mídia 96×120 à esquerda; à direita itens 2, 4, 5, 6, 8 (máx. 2 chips), 9; ações abaixo ocupando a largura do card.
@@ -280,9 +285,9 @@ Ordem (mobile, uma coluna):
    - **Corpo**: bg `--grp-*-tint`, padding 12px, grade de **cards de subcategoria**: mobile = 2 colunas (Universais: 1 coluna com 3 linhas — os rótulos são longos); ≥768 = 1 linha com todas as subcategorias.
    - **Card de subcategoria** (é um `<a>` inteiro): bg branco, raio `--radius-md`, min-height 96px, padding 16px. Conteúdo: rótulo grande `--text-h3` uppercase ("2 PASSOS"), **[R2] notação compacta** logo abaixo (`Ác + (P·Ad)`, `--text-small` 600 `--purple-900`, `aria-hidden`), **mini-diagrama** (até 3 blocos coloridos de 8px de altura empilhados — versão miniatura do §3.7, `aria-hidden`), caption "{n} produtos", seta "→" no canto. Hover/foco: §2. `aria-label="Convencionais, 2 passos — 5 produtos"`.
    - ≥1024: os três grupos lado a lado em 3 colunas (como colunas da tabela de referência), cards de subcategoria empilhados verticalmente em cada coluna. Isso reproduz a estrutura de tabela da referência, mas interativa.
-4. **⭐ Em destaque** (v1; o briefing chama de "Produtos mais consultados") — h2 serif + link "Ver todos". Curadoria manual em `destaques.json`; o título só vira "Mais consultados" quando houver dado real de analytics. Nunca rotular curadoria como popularidade. Mobile: carrossel horizontal com scroll-snap (cards verticais 240px de largura, 1.2 cards visíveis para indicar rolagem), sem autoplay; setas ‹ › em ≥1024. `role="region" aria-roledescription="carrossel"`.
+4. **⭐ Em destaque** (v1; o briefing chama de "Produtos mais consultados") — h2 serif, **sem link "Ver todos" na v1**: não há página de listagem e o carrossel já mostra a curadoria inteira. O link volta quando houver `/sistemas-adesivos/em-destaque` ou similar. Curadoria manual em `data/materiais/sistemas-adesivos/destaques.json` (a ordem do arquivo é a ordem de exibição; seleção combinada entre Esmalte e Bula). Sem arquivo, ou com ele vazio, a seção não aparece e a ordenação padrão da categoria é A–Z; o título só vira "Mais consultados" quando houver dado real de analytics. Nunca rotular curadoria como popularidade. Mobile: carrossel horizontal com scroll-snap (cards verticais 240px de largura, 1.2 cards visíveis para indicar rolagem), sem autoplay; setas ‹ › em ≥1024. `role="region" aria-roledescription="carrossel"`.
 5. **💰 Melhores preços** — h2 + subtítulo caption: "Produtos com maior diferença de preço entre as três dentais (mesma apresentação)." Lista de até 5 linhas: miniatura · nome + apresentação · "economia de **R$ 00,00**" em `--color-best` · chevron. Só entram produtos com ≥2 preços comparáveis. Rodapé: "Preços consultados em DD/MM/AAAA."
-6. **📚 Guia rápido** — h2 + grade de cartões-tópico (mobile 1 col, ≥640 2 col, ≥1024 3 col): bg `--color-surface-atlas`, ícone linear 24px `--purple-600`, título `--text-h3`, 1 linha de resumo, link. Tópicos: Como escolher a estratégia adesiva? · Convencional x autocondicionante · O que é adesivo universal? · O que é MDP? · Esmalte x dentina · Condicionamento seletivo · Camada híbrida.
+6. **📚 Guia rápido** — h2 + grade de cartões-tópico (mobile 1 col, ≥640 2 col, ≥1024 3 col): bg `--color-surface-atlas`, ícone linear 24px `--purple-600`, título `--text-h3`, 1 linha de resumo, link. Tópico ainda sem conteúdo com fonte: cartão **não interativo** (sem `<a>`, sem hover), borda 1px **tracejada** `--lilac-200`, fundo `--gray-50`, ícone `--gray-500`, título `--color-text`, linha "Em preparação" em caption muted. Tópicos: Como escolher a estratégia adesiva? · Convencional x autocondicionante · O que é adesivo universal? · O que é MDP? · Esmalte x dentina · Condicionamento seletivo · Camada híbrida.
 7. **Rodapé**: aviso fixo `--text-caption` muted: "Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante. Preços sujeitos a alteração nas lojas." + links Sobre / Fontes e metodologia.
 
 Emojis do briefing (⭐ 💰 📚 🔎 🏆) → usar ícones SVG lineares equivalentes nos títulos (consistência e leitores de tela). Exceção: 🏆 pode ficar como emoji no selo de menor preço se o cliente insistir; spec padrão = ícone de troféu SVG.
@@ -290,7 +295,7 @@ Emojis do briefing (⭐ 💰 📚 🔎 🏆) → usar ícones SVG lineares equiv
 ### 4.2 Página de categoria `/sistemas-adesivos/{grupo}/{subcategoria}` (ex.: `/sistemas-adesivos/convencionais/2-passos`)
 
 1. Breadcrumb: Sistemas Adesivos › Convencionais › 2 passos.
-2. **Cabeçalho**: `<ClassBadge solid>` "CONVENCIONAL" · h1 serif "Convencional — 2 passos" · **tabs de subcategoria irmãs** (pílulas segmentadas: [2 passos] [3 passos]) para pular sem voltar; `role="tablist"` não — são links (`nav` com `aria-current`).
+2. **Cabeçalho**: `<ClassBadge solid>` "CONVENCIONAL" · h1 serif "Convencional — 2 passos" · **tabs de subcategoria irmãs** (pílulas segmentadas: [2 passos] [3 passos]) para pular sem voltar. **Universais < 640px:** grade de 3 colunas iguais, raio `--radius-md` (igual ao seletor da §4.5), com rótulos curtos "Seletivo · Total · Autocond." e `aria-label` completo. A pílula com `flex-wrap` vira uma "bolha" de 3 linhas, o que é proibido; `role="tablist"` não — são links (`nav` com `aria-current`).
 3. **Grade 2 colunas em ≥1024** (diagrama à esquerda 5/12, explicação à direita 7/12); mobile empilhado:
    - `<StepDiagram>` "Como identificar?" (§3.7).
    - **Explicação**: h2 "O que caracteriza", parágrafo `--text-body` (≤ 3 frases, máx. 68ch). Ex.: "Sistema de condicionamento ácido prévio, seguido da aplicação de primer e adesivo, conforme a composição e protocolo específico do produto." · `<SourceLink>` da classificação · link "Comparar com 3 passos →".
@@ -386,7 +391,7 @@ Problema: o mesmo adesivo aparece em 3 listas; o usuário não pode achar que s�
   - Preço `--text-price` tabular, "R$ 00,00".
   - Caption muted: "Última atualização: DD/MM/AAAA".
   - Botão `cta` largura total (mobile): **"COMPRAR NA DENTAL CREMER"** + ícone ↗; `href` = URL da página do produto na loja; `target="_blank" rel="noopener sponsored"`; texto oculto "(abre o site da loja em nova aba)".
-- **Menor preço**: linha com borda 2px `--color-best`, bg `--color-best-bg`, selo no topo-esquerdo sobreposto à borda: ícone troféu + "MENOR PREÇO" (pílula `--green-700` texto branco, `--text-caption` 700). Empate: todas as empatadas recebem o selo. `aria-label` da linha inclui "menor preço".
+- **Menor preço**: linha com borda 2px `--color-best`, bg `--color-best-bg`, selo no topo-esquerdo sobreposto à borda: ícone troféu + "MENOR PREÇO" (pílula `--green-700` texto branco, `--text-caption` 700). Empate: todas as empatadas recebem o selo, **exceto** quando todas as lojas com preço comparável têm o mesmo valor. Nesse caso não há selo nem caixa de economia, e no lugar aparece a nota neutra "Mesmo preço nas lojas comparadas" (`--text-small` `--color-text-muted`, com ícone =). Com uma única loja com preço: sem selo e sem economia. `aria-label` da linha inclui "menor preço".
 - **Economia** (abaixo da lista, só se houver ≥2 preços comparáveis e diferença > 0): caixa `--color-best-bg`: "Você economiza **R$ 00,00** em relação ao maior preço encontrado." (`--text-body`, valor 700 `--color-best`).
 - **Loja sem preço** (`indisponível`): linha bg `--gray-50`, preço substituído por "Não encontrado / indisponível" (`--text-small` 600 `--gray-600`), sem botão de compra (ou botão `secondary` "Buscar na loja" — **não**: briefing exige link de produto; sem link, sem botão). Data da última consulta mantida.
 - **Apresentações diferentes**: quando as lojas vendem apresentações não equivalentes (volume/qtde/SKU), **não exibir ranking, selo nem economia**. Mostrar caixa `--color-warn-bg`: título "Apresentações diferentes — comparação de preço não disponível." + lista por loja com a apresentação encontrada e o preço dessa apresentação **sem destaque**, ex.: "Dental Speed — Frasco 5 mL — R$ 00,00 [ver na loja]". Se só algumas lojas divergem: compara-se apenas as equivalentes; as divergentes aparecem num sub-bloco "Outras apresentações (não comparadas)".
@@ -411,6 +416,7 @@ Ver §3.1. Está presente em **todas** as telas no header. Página `/busca?q=` l
 - `prefers-reduced-motion` respeitado.
 - `lang="pt-BR"`; datas em DD/MM/AAAA; moeda via `Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'})`.
 - Links externos sinalizados (ícone ↗ + texto oculto).
+- Links dentro de texto corrido são sempre **sublinhados** (WCAG 1.4.1: a cor não pode ser o único sinal). Links que são componentes (cards, botões, abas, itens de navegação) não precisam de sublinhado.
 
 ---
 

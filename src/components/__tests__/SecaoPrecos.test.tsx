@@ -30,6 +30,8 @@ describe("<SecaoPrecos> (DESIGN §4.7, PLANO §3)", () => {
     render(<SecaoPrecos comparacoes={comparacoes("ficticio-tudo-em-um")} />);
     expect(screen.queryByTestId("savings-text")).toBeNull();
     expect(screen.getByText("Mesmo preço nas lojas comparadas.")).toBeTruthy();
+    // sem diferença, nenhuma loja ganha o selo
+    expect(screen.queryByTestId("best-price-badge")).toBeNull();
   });
 
   it("PR-07/08: um só preço — 3 linhas, sem selo, sem economia, sem botão na loja sem preço", () => {
