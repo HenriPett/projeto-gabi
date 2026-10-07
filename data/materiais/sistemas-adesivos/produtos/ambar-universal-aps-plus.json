@@ -1,0 +1,533 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Âmbar Universal APS Plus",
+    "Ambar Universal Plus"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Todas as classes de restaurações com compósitos (classes I, II, III, IV e V).",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Cimentação adesiva (em adição ao cimento resinoso) de peças protéticas (pinos/núcleos, coroas, onlays/inlays, facetas etc.) de fibra de vidro, cerômero, cerâmica, resina e metal.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparos adesivos em cerâmica e compósitos.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Uso como primer para metais ou cerâmica.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Não utilizar em paciente alérgico a alguma das substâncias da composição.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Sem condicionamento ácido prévio em esmalte ou dentina. Dispensar o adesivo em pote Dappen ou diretamente em microaplicador descartável. Aplicar a primeira camada (uma gota) nas superfícies levemente umedecidas, friccionando vigorosamente o microaplicador saturado.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "1ª de 2 camadas (1 gota por camada)"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo, com nova gota.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar gentilmente para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar suave 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo com luz azul.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · potência acima de 450 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Protocolo para restaurações diretas e indiretas. Para cimentação de pinos e uso como primer de metais/cerâmicas, a IFU traz instruções próprias.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar ácido fosfórico 37% somente em esmalte.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar a superfície com água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar a cavidade até que esteja úmida, não desidratada.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Dispensar o adesivo em pote Dappen ou diretamente em microaplicador descartável. Aplicar a primeira camada (uma gota) nas superfícies levemente umedecidas, friccionando vigorosamente o microaplicador saturado.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "1ª de 2 camadas (1 gota por camada)"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo, com nova gota.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar gentilmente para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar suave 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo com luz azul.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · potência acima de 450 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Protocolo para restaurações diretas e indiretas. Para cimentação de pinos e uso como primer de metais/cerâmicas, a IFU traz instruções próprias.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar ácido fosfórico 37% em esmalte e dentina, conforme o caso.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar a superfície com água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar a cavidade até que a dentina fique úmida, porém sem acúmulo de água. Se for preciso umedecer a dentina, usar bolinhas de algodão umedecidas com água destilada ou clorexidina a 2%.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Dispensar o adesivo em pote Dappen ou diretamente em microaplicador descartável. Aplicar a primeira camada (uma gota) nas superfícies levemente umedecidas, friccionando vigorosamente o microaplicador saturado.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "1ª de 2 camadas (1 gota por camada)"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo, com nova gota.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar gentilmente para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar suave 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo com luz azul.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · potência acima de 450 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Protocolo para restaurações diretas e indiretas. Para cimentação de pinos e uso como primer de metais/cerâmicas, a IFU traz instruções próprias.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 1. Imagens pendentes."
+  },
+  "id": "ambar-universal-aps-plus",
+  "nomeComercial": "Ambar Universal APS Plus",
+  "fabricante": {
+    "id": "fgm",
+    "nome": "FGM"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "A IFU o descreve como \"adesivo autocondicionante fotopolimerizável de frasco único\" que \"pode ser utilizado de três modos: autocondicionante, seletivo em esmalte e condicionamento total\"; o site do fabricante o apresenta como universal."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo de frasco único; condicionamento ácido prévio opcional (autocondicionante, seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Monômeros metacrílicos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Monômero metacrílico fosfatado (MDP)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "solvente"
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "solvente"
+      },
+      {
+        "nome": "Composição fotoiniciadora APS",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dióxido de silício",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Metacriloil-silano",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Aminossilano",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Estabilizantes",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "IFU: \"contém MDP, que permite o seu uso como primer de metais e cerâmicas\"."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita HEMA na composição."
+    },
+    "silano": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Metacriloil-silano e aminossilano na composição."
+    },
+    "solventes": {
+      "valor": [
+        "água",
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-3ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 3 mL",
+      "quantidade": 1,
+      "volumeMl": 3,
+      "ean": "7899633831043",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-3ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso Ambar Universal APS Plus (IFUAMP-02, PT/ES/EN/IT)",
+      "url": "https://ifu.fgm.ind.br/pdf/PRODUTO_172/VERSAO_308/IFUAMP-02%20-%20MANUAL%20AMBAR%20UNIVERSAL%20APS%20PLUS%20PT%20ES%20EN%20IT-%20visualizacao.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "IFUAMP-02 · versão 02 · vigente desde 28/07/2025"
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar Universal APS Plus — FGM",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar-universal-aps-plus/",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Ambar Universal APS Plus 3ml - FGM",
+      "url": "https://www.dentalcremer.com.br/adesivo-ambar-universal-aps-plus-fgm-145075.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN 7899633831043 (o mesmo exibido na Dental Speed)."
+    }
+  ]
+}

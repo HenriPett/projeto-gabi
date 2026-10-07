@@ -1,0 +1,481 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Âmbar Universal APS",
+    "Ambar Universal"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Todas as classes de restaurações diretas com compósitos (classes I, II, III, IV e V).",
+      "fontes": [
+        "site"
+      ]
+    },
+    {
+      "texto": "Cimentação adesiva (em conjunto com cimento resinoso) de peças protéticas (pinos intracanais/núcleos, coroas, onlays/inlays, facetas etc.) em fibra de vidro, compômero, cerâmicas condicionáveis e não condicionáveis, resina e metal.",
+      "fontes": [
+        "site"
+      ]
+    },
+    {
+      "texto": "Reparos adesivos em cerâmicas e compósitos.",
+      "fontes": [
+        "site"
+      ]
+    },
+    {
+      "texto": "Como primer para metal ou cerâmicas (condicionáveis e não condicionáveis).",
+      "fontes": [
+        "site"
+      ]
+    }
+  ],
+  "contraindicacoes": [],
+  "protocolos": [
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "site"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Após o preparo dental, condicionar esmalte e dentina com ácido.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente.",
+          "parametros": [],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Aplicar vigorosamente a primeira camada, friccionando o microaplicador saturado em adesivo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo, com nova gota.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "site"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Após o preparo dental, condicionar o esmalte com ácido.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Realizar lavagem abundante.",
+          "parametros": [],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Aplicar vigorosamente a primeira camada, friccionando o microaplicador saturado em adesivo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo, com nova gota.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "site"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo, lavagem e secagem",
+          "descricao": "Após o preparo dental, lavar e secar (sem condicionamento ácido).",
+          "parametros": [],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada (função de primer autocondicionante)",
+          "descricao": "Aplicar a primeira camada adesiva na função de primer autocondicionante, friccionando vigorosamente o microaplicador saturado em adesivo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo, com nova gota.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "site"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "apresentacoes.frasco-5ml.ean",
+      "descricao": "As lojas exibem EANs diferentes para o mesmo frasco de 5 mL.",
+      "versoes": [
+        {
+          "valor": "7899633813643",
+          "fontes": [
+            "loja-cremer"
+          ]
+        },
+        {
+          "valor": "7899633805860",
+          "fontes": [
+            "loja-speed"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 1. Imagens pendentes."
+  },
+  "id": "ambar-universal-aps",
+  "nomeComercial": "Ambar Universal APS",
+  "fabricante": {
+    "id": "fgm",
+    "nome": "FGM"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "site"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "site"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "site"
+        ]
+      }
+    ],
+    "observacao": "Site do fabricante: \"Sistema adesivo fotopolimerizável autocondicionante para esmalte e dentina\" com \"elevada adesão em diferentes modos de aplicação: condicionamento ácido total, condicionamento seletivo em esmalte e sem condicionamento ácido\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo de frasco único usado com condicionamento total, seletivo em esmalte ou sem condicionamento ácido.",
+    "fontes": [
+      "site"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "MDP",
+        "fontes": [
+          "site"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "site"
+      ],
+      "observacao": "Site: \"MDP potencializado\"."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "Não informado no site; IFU não localizada no portal de IFUs da FGM em 06/10/2026."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não informado no site."
+    },
+    "solventes": {
+      "valor": "nao-informado",
+      "observacao": "O site cita \"solvente, água\" sem nomear o solvente."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "site"
+      ]
+    },
+    "outros": [
+      {
+        "rotulo": "BPA",
+        "valor": "BPA Free (declarado pelo fabricante)",
+        "fontes": [
+          "site"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "refil",
+      "descricao": "Refil: 1 frasco (primer + adesivo) 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "site"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar Universal APS — FGM",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar-universal-aps/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Protocolos transcritos da seção \"Condicionamento\" da página. IFU não localizada no portal ifu.fgm.ind.br em 06/10/2026."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Ambar Universal APS 5ml - FGM",
+      "url": "https://www.dentalcremer.com.br/adesivo-ambar-universal-aps-fgm-178982.html",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-speed",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Ambar Universal APS 5ml - FGM",
+      "url": "https://www.dentalspeed.com/ambar-universal-aps-5ml-fgm.html",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}

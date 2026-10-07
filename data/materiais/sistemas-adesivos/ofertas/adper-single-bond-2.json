@@ -1,0 +1,110 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "adper-single-bond-2",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-adpertm-single-bond-2-3m-solventum-267013.html",
+      "tituloNaLoja": "Adesivo Adper Single Bond 2 - Solventum",
+      "skuLoja": "267013",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 18899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 18332,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adper-single-bond-2-3m-solventum.html",
+      "tituloNaLoja": "Adesivo Adper Single Bond 2 - Solventum",
+      "skuLoja": "3MA3379A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 18899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 18332,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-adper-single-bond-2-3m",
+      "tituloNaLoja": "Adesivo Adper Single Bond 2 - 3M",
+      "skuLoja": "25.2920",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 18899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 18332,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-3g",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-adper-single-bond-2-3g-3m-solventum.html",
+      "tituloNaLoja": "Adesivo Adper Single Bond 2 3g - Solventum",
+      "skuLoja": "100547",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 13590,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 13182,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-3g",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "SKU 3MA3379J aparece na busca como \"Avise-me\", mas a página do produto responde 404."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-3g",
+      "status": "indisponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-adper-single-bond-2-3m-112060",
+      "tituloNaLoja": "Adesivo Adper Single Bond 2 - 3M",
+      "skuLoja": "27.0226",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Sem estoque (\"Me avise quando chegar\")."
+    }
+  ]
+}
