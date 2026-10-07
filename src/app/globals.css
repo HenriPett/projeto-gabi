@@ -278,13 +278,19 @@
     .grp__body { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
   }
   /* Rótulos longos dos universais não cabem em 3 cards lado a lado: coluna única até o layout de 3 grupos. */
-  .subcard__label { padding-right: 28px; hyphens: auto; }
+  /* Sem hyphens:auto ("PAS-SOS" a 320px): se não couber, diminui o corpo, nunca hifeniza (DESIGN §3.7). */
+  .subcard__label { padding-right: 28px; hyphens: manual; overflow-wrap: normal; }
+  @media (max-width: 359px) {
+    .subcard { padding: var(--space-3); }
+    .subcard__label { font-size: 15px; letter-spacing: 0; padding-right: 20px; }
+    .subcard__arrow { right: 10px; top: 10px; }
+  }
   @media (max-width: 399px) { .grp__head h2 { font-size: 15px; letter-spacing: 0.02em; gap: 8px; } }
   @media (min-width: 1024px) {
     .classgrid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
     /* 3 colunas: "AUTOCONDICIONANTES" + contador + "?" precisam caber (~360px) */
     .grp__head h2 { font-size: 17px; letter-spacing: 0.03em; gap: 8px; }
-    .subcard__label { font-size: 17px; letter-spacing: 0.01em; padding-right: 28px; hyphens: auto; }
+    .subcard__label { font-size: 17px; letter-spacing: 0.01em; padding-right: 28px; }
     .grp__body, .grp--universal .grp__body { grid-template-columns: 1fr; align-content: start; }
   }
   /* Contador do grupo some onde não cabe ao lado do título (a contagem está em cada subcategoria). */

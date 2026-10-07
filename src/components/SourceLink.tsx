@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { citacaoCurta, formatarData } from "@/lib/formato";
 import type { FonteDTO } from "./tipos";
 
@@ -10,8 +11,10 @@ export function SourceLink({ fontes, compacto = false }: { fontes: FonteDTO[]; c
       <p className="source source--compacta">
         Fonte:{" "}
         {fontes.map((f, i) => (
-          <span key={f.id} className="whitespace-nowrap">
+          <Fragment key={f.id}>
+            {/* separador FORA do nowrap: senão não há onde quebrar e a linha vaza a 320px */}
             {i > 0 && <span aria-hidden="true"> · </span>}
+            <span className="whitespace-nowrap">
             <a
               href={f.url}
               target="_blank"
@@ -24,7 +27,8 @@ export function SourceLink({ fontes, compacto = false }: { fontes: FonteDTO[]; c
               {citacaoCurta(f.titulo)}
             </a>{" "}
             <span aria-hidden="true">↗</span>
-          </span>
+            </span>
+          </Fragment>
         ))}
       </p>
     );
