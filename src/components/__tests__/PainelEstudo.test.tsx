@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { cat } from "./catalogo-fixture";
 import { ColaCategorias } from "../guia/ColaCategorias";
 import { agruparPorLetra, filtrarTermos, Glossario, tituloDoTermo, type TermoDTO } from "../guia/Glossario";
-import { primeiraOracao, Trilha } from "../guia/Trilha";
+import { Trilha } from "../guia/Trilha";
 
 const t = (id: string, termo: string, extra: Partial<TermoDTO> = {}): TermoDTO => ({
   id, termo, sinonimos: [], definicao: "Definição.", fontes: [], artigos: [], relacionados: [], ...extra,
@@ -39,7 +39,7 @@ describe("glossário (DESIGN §4.9 ③)", () => {
     render(<Glossario termos={termos} />);
     const mdp = document.getElementById("termo-mdp")!;
     expect(mdp.tagName).toBe("ARTICLE");
-    expect(within(mdp).getByRole("heading", { level: 3 })).toHaveTextContent("MDP — 10-metacriloiloxidecil di-hidrogenofosfato");
+    expect(within(mdp).getByRole("heading", { level: 3 })).toHaveTextContent("MDP — 10\u2011metacriloiloxidecil di-hidrogenofosfato"); // hífen inseparável após número
     expect(within(mdp).getByRole("link", { name: "HEMA" })).toHaveAttribute("href", "/guia#termo-hema");
     expect(screen.getByRole("link", { name: "S" })).toHaveAttribute("href", "#letra-s");
     expect(document.getElementById("letra-s")).not.toBeNull();
@@ -62,12 +62,13 @@ describe("glossário (DESIGN §4.9 ③)", () => {
 });
 
 describe("trilha e cola", () => {
-  it("trilha segue a ordem dos artigos e usa a 1ª oração do resumo", () => {
-    expect(primeiraOracao("Um frasco, várias estratégias: o que define. Outra.")).toBe("Um frasco, várias estratégias");
+  it("trilha segue a ordem dos artigos: só número + título (sem repetir o resumo dos cartões)", () => {
     const artigos = cat.guia["sistemas-adesivos"] ?? [];
     render(<Trilha artigos={artigos} />);
     const itens = screen.getAllByRole("listitem");
     expect(itens.map((i) => i.dataset.slug)).toEqual(artigos.map((a) => a.slug));
+    expect(itens[0]).toHaveTextContent(`1${artigos[0].titulo}`);
+    expect(itens[0]).not.toHaveTextContent(artigos[0].resumo);
   });
 
   it("cola: 7 linhas, passos da taxonomia, '—' com nome acessível quando não há produto", () => {

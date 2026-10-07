@@ -1,6 +1,7 @@
 "use client";
 
 import type { ComponentType, SVGProps } from "react";
+import { semQuebrarHifen } from "@/lib/formato";
 import { SUBCATEGORIA, type SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { DivergenceNote } from "../DivergenceNote";
 import { IconeAr, IconeCamadas, IconeDente, IconeExterno, IconeInfo, IconeLuz, IconeMao, IconeRelogio, IconeSetaBaixo } from "../Icones";
@@ -10,7 +11,6 @@ import type { ProtocoloDTO } from "../tipos";
 import { useEstrategia } from "./estrategia";
 
 /** Hífen inseparável entre números ("1‑2 gotas", "10‑20 s"): o intervalo não pode quebrar de linha. */
-const semQuebraEntreNumeros = (t: string) => t.replace(/(\d)-(\d)/g, "$1\u2011$2");
 
 const ICONE_PARAMETRO: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   tempo: IconeRelogio,
@@ -42,7 +42,7 @@ function Etapas({ protocolo }: { protocolo: ProtocoloDTO }) {
               <span className="sr-only">Etapa {i + 1}: </span>
               {e.titulo}
             </h3>
-            <p>{semQuebraEntreNumeros(e.descricao)}</p>
+            <p>{semQuebrarHifen(e.descricao)}</p>
             {e.parametros.length > 0 && (
               <ul className="params" aria-label="Parâmetros">
                 {e.parametros.map((p, j) => {
@@ -50,7 +50,7 @@ function Etapas({ protocolo }: { protocolo: ProtocoloDTO }) {
                   return (
                     <li key={j}>
                       <Icone />
-                      {semQuebraEntreNumeros(p.texto)}
+                      {semQuebrarHifen(p.texto)}
                     </li>
                   );
                 })}

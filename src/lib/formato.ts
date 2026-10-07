@@ -33,3 +33,26 @@ export function formatarVolume(a: ApresentacaoFormatavel): string {
   if (!unidade) return a.descricao;
   return a.quantidade > 1 ? `${a.quantidade} × ${unidade}` : unidade;
 }
+
+/**
+ * Hífen inseparável (U+2011) onde a quebra de linha separaria um termo técnico:
+ * entre número e letra/número ("10-MDP", "4-MET", "1-2") e antes de sigla em
+ * maiúsculas ("Bis-GMA"). Palavras comuns ("di-hidrogenofosfato") não mudam.
+ */
+export function semQuebrarHifen(texto: string): string {
+  return texto.replace(/(?<=\d)-(?=[\p{L}\d])|(?<=[\p{L}\d])-(?=\d)|(?<=\p{L})-(?=\p{Lu}{2,})/gu, "\u2011");
+}
+
+/**
+ * "Perdigão J. Current perspectives… 2020;56…" → "Perdigão 2020".
+ * Sobrenome do 1º autor (antes da 1ª vírgula ou ". ", sem iniciais/sufixo
+ * numérico) + 1º ano do título. Sem ano: só o autor.
+ */
+export function citacaoCurta(titulo: string): string {
+  const autor = titulo.split(/,|\. /)[0].trim();
+  const partes = autor.split(/\s+/);
+  while (partes.length > 1 && /^([A-Z]{1,3}\.?|\d+(st|nd|rd|th)\.?)$/.test(partes[partes.length - 1])) partes.pop();
+  const sobrenome = partes.join(" ").replace(/\bJr$/, "Jr.");
+  const ano = titulo.match(/\b(19|20)\d{2}\b/)?.[0];
+  return ano ? `${sobrenome} ${ano}` : sobrenome;
+}

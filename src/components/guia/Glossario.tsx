@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useDeferredValue, useEffect, useState } from "react";
 import { normalizar } from "@/lib/busca";
+import { semQuebrarHifen } from "@/lib/formato";
 import { SourceLink } from "../SourceLink";
 import type { FonteDTO } from "../tipos";
 
@@ -110,10 +111,10 @@ export function Glossario({ termos }: { termos: TermoDTO[] }) {
               {g.itens.map((t) => (
                 <article key={t.id} id={`termo-${t.id}`} className="glossario__termo" data-testid="glossario-termo" aria-labelledby={`h-termo-${t.id}`}>
                   <h3 id={`h-termo-${t.id}`} className="glossario__titulo">
-                    {tituloDoTermo(t)}
+                    {semQuebrarHifen(tituloDoTermo(t))}
                   </h3>
-                  {t.sinonimos.length > 0 && <p className="caption">Também: {t.sinonimos.join(", ")}</p>}
-                  <p className="glossario__def">{t.definicao}</p>
+                  {t.sinonimos.length > 0 && <p className="caption">Também: {semQuebrarHifen(t.sinonimos.join(", "))}</p>}
+                  <p className="glossario__def">{semQuebrarHifen(t.definicao)}</p>
                   {t.relacionados.length > 0 && (
                     <p className="glossario__rel">
                       <span className="caption">Relacionados:</span>

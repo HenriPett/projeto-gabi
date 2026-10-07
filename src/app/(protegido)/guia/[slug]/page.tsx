@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { catalogo } from "@/lib/dados/carregar";
-import { formatarData } from "@/lib/formato";
+import { formatarData, semQuebrarHifen } from "@/lib/formato";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { SeloRascunho } from "@/components/ClassBadge";
 import { referenciasNumeradas } from "@/components/guia/referencias";
@@ -55,7 +55,7 @@ export default async function PaginaArtigo(props: PageProps<"/guia/[slug]">) {
             {s.titulo && <h2 id={`secao-${i}`}>{s.titulo}</h2>}
             {s.paragrafos.map((p, j) => (
               <p key={j}>
-                {p.texto}
+                {semQuebrarHifen(p.texto)}
                 <span className="artigo__refs">
                   {p.fontes.map((id) => (
                     <a key={id} href={`#ref-${id}`} className="artigo__ref" aria-label={`Referência ${numero(id)}`}>

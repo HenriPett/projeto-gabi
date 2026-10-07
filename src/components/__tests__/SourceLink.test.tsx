@@ -31,6 +31,19 @@ describe("<SourceLink> (DESIGN §3.5)", () => {
   });
 });
 
+describe("<SourceLink compacto> (glossário, DESIGN §4.9 ③)", () => {
+  it("mostra '1º autor + ano'; citação completa no title e no nome acessível", () => {
+    const fontes: FonteDTO[] = [
+      { ...ifu, id: "a", titulo: "Perdigão J. Current perspectives on dental adhesion. Jpn Dent Sci Rev. 2020;56(1):190-207." },
+      { ...ifu, id: "b", titulo: "Silva e Souza Jr. MH, Carneiro KGK. Adhesive systems. J Appl Oral Sci. 2010;18(3):207-214." },
+    ];
+    const { container } = render(<SourceLink fontes={fontes} compacto />);
+    expect(container.textContent).toBe("Fonte: Perdigão 2020 ↗ · Silva e Souza Jr. 2010 ↗");
+    const a = screen.getByRole("link", { name: /^Fonte: Perdigão J\. Current perspectives.*\(abre em nova aba\)$/ });
+    expect(a).toHaveAttribute("title", fontes[0].titulo);
+  });
+});
+
 describe("observação da IFU no Modo de Uso", () => {
   const protocolo: ProtocoloDTO = {
     id: "p",
