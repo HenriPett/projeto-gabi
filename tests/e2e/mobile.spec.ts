@@ -19,3 +19,9 @@ for (const rota of ROTAS) {
     expect(scroll, `elementos além de ${largura}px: ${culpados.join("; ")}`).toBeLessThanOrEqual(largura);
   });
 }
+
+test("A11Y-09/MOB: botão Comparar do header mantém nome acessível em qualquer largura", async ({ page }) => {
+  await page.goto("/");
+  // ≥ 360 px o nome inclui os parênteses do contador visível: "Comparar (0) produtos selecionados" (BUG-014, S4)
+  await expect(page.getByRole("link", { name: /^comparar \(?0\)? produtos selecionados$/i }).first()).toBeVisible();
+});
