@@ -173,7 +173,7 @@ Fora do escopo da v1 (público consulta em clínica/sala de aula, fundo branco �
 
 ### 3.1 Header + busca fixa (`<SearchBar>`)
 - Header `position: sticky; top: 0; z-index: 50`, bg branco, borda inferior `--color-border`, altura 56px (mobile) / 64px (≥1024).
-- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--purple-900`) + botão "Comparar (n)" à direita. Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
+- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--purple-900`, `nowrap`) + botão "Comparar (n)" à direita (`nowrap`). **Abaixo de 360px:** o logotipo cai para 14px e o botão vira "Comparar" + contador num badge circular de 20px (`--color-primary`, texto branco 11px 700; `aria-label="Comparar, n produtos selecionados"`). Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
 - ≥1024: uma linha só: logo · busca (máx. 560px, centro) · links "Classificação", "Comparar", "Guia".
 - Campo: `type="search"`, `role="combobox"`, `aria-expanded`, `aria-controls="search-listbox"`, placeholder **"Pesquisar sistema, marca ou produto"**, ícone lupa (SVG, não emoji) à esquerda 20px `--gray-600`, botão limpar (×) quando há texto, `aria-label="Limpar busca"`. bg `--gray-50`, borda 1.5px `--color-border-input`, raio `--radius-md`; foco: borda `--color-primary` + anel de foco.
 - Atalho `/` foca a busca (desktop).
@@ -223,7 +223,7 @@ Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo)
 - **[R2] Etapa opcional** (só se o conteúdo, com fonte, confirmar para aquela subcategoria): bloco tracejado `--lilac-400` com rótulo "Condicionamento seletivo do esmalte" e selo "opcional". Aparece no lugar do bloco fantasma, nunca junto com ele. Não entra na notação compacta.
 - Universais: três colunas (≥640) ou três linhas empilhadas com divisor "OU" em pílula (mobile) — ver §4.4.
 - Acessibilidade: `<figure>`; os blocos visuais ficam `aria-hidden="true"` e o `<figcaption>` traz a leitura completa em texto (visualmente oculto além do overline): "Convencional de 2 passos: 1. Ácido, em frasco separado; 2. Primer e adesivo no mesmo frasco."
-- Animação de entrada: etapas aparecem em sequência (opacity+translateY 8px, 80ms de stagger). Desligada em reduced-motion.
+- Animação de entrada: etapas entram em sequência **só com translateY 8px → 0** (80ms de stagger), **sem animar opacidade**, porque o fade reduzia o contraste abaixo de AA durante a entrada (axe, serious). Desligada em reduced-motion.
 
 Mapa de diagramas (conteúdo fixo do produto, revisado pelo time de conteúdo):
 | Categoria | Etapas |
@@ -256,7 +256,11 @@ Anatomia vertical (de cima p/ baixo):
 6. Linha de metadados `--text-small` muted: "Frasco · 4 mL" (apresentação · volume).
 7. Estratégia: `--text-small`: "Condicionamento ácido + adesivo". Universais: chips minis das estratégias indicadas (ver §4.5).
 8. Componentes: até 3 chips (`--radius-sm`, 24px, bg `--gray-50`, borda `--gray-200`, `--text-caption`): "MDP", "HEMA", "Etanol". Excedente "+2".
-9. Faixa de preço (se houver ≥1 preço comparável): "a partir de **R$ 00,00**" `--text-small` + `--text-h3` tabular. Sem preço: "Preço não encontrado" muted.
+9. Faixa de preço, conforme os dados:
+   - ≥2 lojas com a mesma apresentação: "a partir de **R$ 00,00**" (`--text-small` + `--text-h3` tabular);
+   - só 1 loja com preço: "**R$ 00,00** em 1 loja" (sem "a partir de", porque não houve comparação);
+   - preços só em apresentações diferentes: "Preços em apresentações diferentes" (`--text-small` muted, sem valor);
+   - nenhum preço: "Preço não encontrado" muted.
 10. Ações (grid 2 colunas, gap 8): **VER PRODUTO** (`secondary`) · **COMPARAR PREÇOS** (`cta`). Mobile horizontal: ações em linha abaixo do conteúdo, largura total.
 
 Anatomia horizontal (mobile < 640): mídia 96×120 à esquerda; à direita itens 2, 4, 5, 6, 8 (máx. 2 chips), 9; ações abaixo ocupando a largura do card.
@@ -412,6 +416,7 @@ Ver §3.1. Está presente em **todas** as telas no header. Página `/busca?q=` l
 - `prefers-reduced-motion` respeitado.
 - `lang="pt-BR"`; datas em DD/MM/AAAA; moeda via `Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'})`.
 - Links externos sinalizados (ícone ↗ + texto oculto).
+- Links dentro de texto corrido são sempre **sublinhados** (WCAG 1.4.1: a cor não pode ser o único sinal). Links que são componentes (cards, botões, abas, itens de navegação) não precisam de sublinhado.
 
 ---
 
