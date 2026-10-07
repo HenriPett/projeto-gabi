@@ -104,9 +104,9 @@ data/materiais/<material>/guia/<slug>.json
   fontes[Fonte],                                            # DOI na url (https://doi.org/…)
   relacionados[slugs], revisao }
 ```
-Leitura: `catalogo().guia[material]` — artigos visíveis, ordenados por `ordem`; relacionados ocultos (rascunho) são removidos para não virar link 404. O slug `glossario` é reservado.
+Leitura: `catalogo().guia[material]` — artigos visíveis, ordenados por `ordem`; relacionados ocultos (rascunho) são removidos para não virar link 404. O slug `glossario` é reservado. **Trilha de leitura (DESIGN §4.9) = ordem crescente de `ordem`**; não há arquivo de trilha separado.
 
-Glossário (`Glossario`, `data/materiais/<material>/glossario.json`): `{ fontes[Fonte], termos[{ id, termo, sinonimos[], definicao, fontes[ids], artigos[slugs do guia], relacionados[ids de termos] }], revisao }`. Leitura: `catalogo().glossario[material]` (oculto em produção se rascunho; links para artigos ocultos removidos). Ordem alfabética é da UI. Rota: `/guia/glossario`.
+Glossário (`Glossario`, `data/materiais/<material>/glossario.json`): `{ fontes[Fonte], termos[{ id, termo, sigla?, nomeCompleto?, sinonimos[], definicao, fontes[ids], artigos[slugs do guia], relacionados[ids de termos] }], revisao }`. Leitura: `catalogo().glossario[material]` (oculto em produção se rascunho; links para artigos ocultos removidos). Ordem alfabética é da UI. Rota: `/guia/glossario`.
 
 ### 3.4 Ofertas (`OfertasDoProduto`)
 ```

@@ -46,7 +46,7 @@ export const ArtigoGuia = z
     titulo: z.string().min(1),
     /** Uma frase para o card da Home e a meta description. */
     resumo: z.string().min(1),
-    /** Posição no índice do guia e na Home (crescente). */
+    /** Posição na trilha de leitura (DESIGN §4.9), no índice do guia e na Home (crescente). */
     ordem: z.number().int(),
     secoes: z
       .array(
@@ -93,6 +93,9 @@ export const Glossario = z
         z.object({
           id: Slug,
           termo: z.string().min(1),
+          /** Ex.: sigla "MDP", nomeCompleto "10-metacriloiloxidecil di-hidrogenofosfato". */
+          sigla: z.string().min(1).optional(),
+          nomeCompleto: z.string().min(1).optional(),
           /** Grafias alternativas, usadas também na busca: "10-MDP", "smear layer". */
           sinonimos: z.array(z.string().min(1)).default([]),
           definicao: z.string().min(1),

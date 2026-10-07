@@ -71,6 +71,14 @@
             "type": "string",
             "minLength": 1
           },
+          "sigla": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nomeCompleto": {
+            "type": "string",
+            "minLength": 1
+          },
           "sinonimos": {
             "default": [],
             "type": "array",
