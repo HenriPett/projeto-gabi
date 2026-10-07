@@ -1,0 +1,630 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Tetric N Bond Universal",
+    "TNBU"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas em compósito fotopolimerizado em dentes permanentes.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reconstrução de núcleos diretos em compósitos fotopolimerizáveis, autopolimerizáveis e de dupla polimerização em dentes permanentes.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparo de restaurações fraturadas em compósito em dentes permanentes.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Cimentação adesiva de restaurações indiretas em compósitos fotopolimerizáveis e de dupla polimerização em dentes permanentes.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Selamento de superfícies dentárias preparadas antes da cimentação temporária/permanente de restaurações indiretas em dentes permanentes.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Restauração de dentes de leite.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Dessensibilização de áreas cervicais hipersensíveis em dentes permanentes.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Paciente com alergia a qualquer um dos ingredientes.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Capeamentos diretos da polpa.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Não usar como primer para materiais cerâmicos restauradores, nem onde não se possa assegurar iluminação suficiente (p. ex., cimentação de pinos radiculares).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Começando pelo esmalte, recobrir completamente as superfícies dentárias com Tetric N-Bond Universal (frasco: dispensar em recipiente e aplicar com aplicador descartável; VivaPen: saturar a cânula). Friccionar o adesivo na superfície do dente; este tempo não deve ser encurtado e aplicar sem friccionar não é adequado.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "friccionar pelo menos 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Dispersão com ar",
+          "descricao": "Dispersar o adesivo com ar comprimido livre de óleo e umidade até resultar em uma camada fina, brilhante e imóvel. Evitar acúmulo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "até camada fina, brilhante e imóvel"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo. Se a ponta da luz for menor que a restauração, fazer polimerização sobreposta.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 500–1.300 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · 1.800–2.200 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Intensidades acima de 2.200 mW/cm² não devem ser usadas em dentes de leite.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "Superfícies de esmalte não preparadas devem ser condicionadas com gel de ácido fosfórico.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento do esmalte",
+          "descricao": "Aplicar o gel de ácido fosfórico no esmalte e deixar agir.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15–30 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente com vigoroso jato de água.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar com ar comprimido livre de óleo e água até que o esmalte condicionado apresente aspecto branco opaco.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Começando pelo esmalte, recobrir completamente as superfícies dentárias com Tetric N-Bond Universal (frasco: dispensar em recipiente e aplicar com aplicador descartável; VivaPen: saturar a cânula). Friccionar o adesivo na superfície do dente; este tempo não deve ser encurtado e aplicar sem friccionar não é adequado.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "friccionar pelo menos 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Dispersão com ar",
+          "descricao": "Dispersar o adesivo com ar comprimido livre de óleo e umidade até resultar em uma camada fina, brilhante e imóvel. Evitar acúmulo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "até camada fina, brilhante e imóvel"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo. Se a ponta da luz for menor que a restauração, fazer polimerização sobreposta.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 500–1.300 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · 1.800–2.200 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Intensidades acima de 2.200 mW/cm² não devem ser usadas em dentes de leite.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "Superfícies de esmalte não preparadas devem ser condicionadas com gel de ácido fosfórico.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento ácido total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar o gel de ácido fosfórico primeiro no esmalte preparado e, em seguida, na dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte 15–30 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina 10–15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente com vigoroso jato de água.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar com ar comprimido livre de óleo e água até que o esmalte condicionado apresente aspecto branco opaco.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Começando pelo esmalte, recobrir completamente as superfícies dentárias com Tetric N-Bond Universal (frasco: dispensar em recipiente e aplicar com aplicador descartável; VivaPen: saturar a cânula). Friccionar o adesivo na superfície do dente; este tempo não deve ser encurtado e aplicar sem friccionar não é adequado.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "friccionar pelo menos 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Dispersão com ar",
+          "descricao": "Dispersar o adesivo com ar comprimido livre de óleo e umidade até resultar em uma camada fina, brilhante e imóvel. Evitar acúmulo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "até camada fina, brilhante e imóvel"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo. Se a ponta da luz for menor que a restauração, fazer polimerização sobreposta.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 500–1.300 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · 1.800–2.200 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Intensidades acima de 2.200 mW/cm² não devem ser usadas em dentes de leite.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "Superfícies de esmalte não preparadas devem ser condicionadas com gel de ácido fosfórico.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "apresentacoes.frasco-6g",
+      "descricao": "A Dental Speed anuncia o frasco como \"6g\" no título e \"6ml\" na descrição.",
+      "versoes": [
+        {
+          "valor": "6 g",
+          "fontes": [
+            "loja-cremer-6g"
+          ]
+        },
+        {
+          "valor": "6 mL (descrição da Dental Speed)",
+          "fontes": [
+            "loja-speed-6g"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Imagens pendentes."
+  },
+  "id": "tetric-n-bond-universal",
+  "nomeComercial": "Tetric N-Bond Universal",
+  "fabricante": {
+    "id": "ivoclar",
+    "nome": "Ivoclar"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"compatível com todas as técnicas de condicionamento ácido (autocondicionamento, condicionamento seletivo do esmalte e condicionamento ácido total)\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal monocomponente; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "HEMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "D3MA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "MDP",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Ácido poliacrilato modificado por metacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dióxido de silício",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Canforoquinona",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "p-Dimetilaminobenzoato de etila",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "2-Dimetil aminoetil metacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita silano e orienta não usar o produto como primer de cerâmica (usar primer cerâmico adequado)."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "A descrição diz \"monocomponente, fotopolimerizável\"; o cabeçalho da IFU diz \"Adesivo dental dual monocomponente\"."
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-6g",
+      "tipo": "frasco",
+      "descricao": "Frasco 6 g",
+      "quantidade": 1,
+      "massaG": 6,
+      "ean": "7899429839680",
+      "fontes": [
+        "loja-cremer-6g"
+      ]
+    },
+    {
+      "id": "vivapen-2ml-40-canulas",
+      "tipo": "kit",
+      "descricao": "Kit VivaPen 2 mL + 40 cânulas",
+      "quantidade": 1,
+      "volumeMl": 2,
+      "codigoFabricante": "754940AN",
+      "ean": "7899429867812",
+      "itens": [
+        "1 VivaPen 2 mL",
+        "40 cânulas/ponteiras"
+      ],
+      "fontes": [
+        "loja-cremer-vivapen",
+        "ifu"
+      ]
+    },
+    {
+      "id": "vivapen-2ml-refil",
+      "tipo": "refil",
+      "descricao": "VivaPen 2 mL (refil, sem cânulas)",
+      "quantidade": 1,
+      "volumeMl": 2,
+      "ean": "7899429839673",
+      "fontes": [
+        "loja-cremer-refil"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-6g",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Tetric N-Bond Universal — Instruções de Uso (eIFU Ivoclar, multilíngue, inclui [pt])",
+      "url": "https://www.ivoclar.com/pt_br/eifu/download/66481",
+      "acessadoEm": "2026-10-06",
+      "versao": "Rev. 2 · preparada em 2025-02-03 · válida a partir de 03/02/2025 (arquivo Tetric N-Bond Universal_3.0_eIfU_6spr_Rev2.pdf)",
+      "observacao": "A lista de referências da IFU inclui 754940AN (VivaPen 2 mL + 40 cânulas)."
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Tetric N-Bond Universal — Ivoclar Brasil",
+      "url": "https://www.ivoclar.com/pt_br/products/adhesives/tetric-n-bond-universal",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-6g",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Tetric N-Bond Universal 6g - Ivoclar",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-universal-ivoclar-vivadent-706727.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Volume do frasco não informado na IFU nem no site; apresentação e EAN da loja."
+    },
+    {
+      "id": "loja-speed-6g",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Adesivo Tetric N-Bond Universal 6g - Ivoclar",
+      "url": "https://www.dentalspeed.com/adesivo-tetric-n-bond-universal-6g-ivoclar-vivadent.html",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-vivapen",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Kit Adesivo Universal Tetric N-Bond Vivapen 1x2ml/40 - Ivoclar",
+      "url": "https://www.dentalcremer.com.br/kit-adesivo-universal-tetric-n-bond-vivapen-1x2ml-40-ivoclar-156695.html",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-refil",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Tetric N-Bond Universal Vivapen Refil - Ivoclar",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-universal-vivapen-ivoclar-147043.html",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}

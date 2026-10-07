@@ -1,0 +1,310 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Tetric N Bond"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Adesivo para restaurações diretas, fotopolimerizáveis ou de polimerização dual, de compósitos e compômeros.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Adesivo para restaurações indiretas de compósitos e de cerâmica pura (inlays, onlays e facetas).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Paciente alérgico a qualquer componente, ou quando a técnica estipulada não puder ser empregada.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Não usar com compósitos apenas autopolimerizáveis; capeamento pulpar direto.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar o N-Etch (ácido fosfórico 37%) no esmalte e, em seguida, na dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar completamente o condicionante com spray de água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar as superfícies com ar livre de óleo, evitando desidratar a dentina. O esmalte condicionado deve ter aparência branca opaca.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Aplicar uma camada grossa de Tetric N-Bond sobre esmalte e dentina com aplicador descartável, pincelando suavemente sobre a dentina. Aplicar material adicional se a cobertura for insuficiente.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "camada grossa"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "pincelar suavemente sobre a dentina no mínimo 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do excesso e do solvente",
+          "descricao": "Remover o excesso de material e de solvente com suave jato de ar, até o adesivo cobrir esmalte e dentina sem acúmulo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar suave"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar conforme a tabela de tempos da IFU. Superfície brilhante indica cobertura completa.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s (tabela da IFU para fotopolimerizadores Bluephase N)"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Esmalte condicionado seletivamente: 15-30 s. Esmalte não preparado (p. ex., selamento de fissuras): 30-60 s. Se houver contaminação por saliva, repetir o condicionamento por no máximo 10 s.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "apresentacoes.frasco-6g",
+      "descricao": "Dental Cremer e Dental Speed anunciam 6 g; a Dental Med Sul anuncia \"Embalagem com 6ml\".",
+      "versoes": [
+        {
+          "valor": "6 g",
+          "fontes": [
+            "loja-cremer"
+          ]
+        },
+        {
+          "valor": "6 mL",
+          "fontes": [
+            "loja-medsul"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Imagens pendentes."
+  },
+  "id": "tetric-n-bond",
+  "nomeComercial": "Tetric N-Bond",
+  "fabricante": {
+    "id": "ivoclar",
+    "nome": "Ivoclar"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"agente de ligação fotopolimerizável, monocomponente, para adesão em esmalte e dentina, em conjunto com a técnica de condicionamento ácido total\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo monocomponente.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Acrilato do ácido fosfórico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "HEMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dimetacrilato de uretano",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Agente formador de película",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Iniciadores e estabilizadores",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU cita \"acrilato do ácido fosfórico\", sem nomear MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita silano."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-6g",
+      "tipo": "frasco",
+      "descricao": "Frasco 6 g",
+      "quantidade": 1,
+      "massaG": 6,
+      "ean": "7899429821029",
+      "fontes": [
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-6g",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Tetric N-Collection (N-Etch, Tetric N-Bond, Tetric N-Flow, Tetric N-Ceram) — Instruções de Uso (eIFU Ivoclar)",
+      "url": "https://www.ivoclar.com/pt_br/eifu/download/66485",
+      "acessadoEm": "2026-10-06",
+      "versao": "635780 REV3 · 2018-01-24 (versão vigente no eIFU em 06/10/2026)"
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Tetric N-Bond — Ivoclar LATAM",
+      "url": "https://www.ivoclar.com/es_latam/products/adhesives/tetric-n-bond",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Tetric N-Bond 6g - Ivoclar",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-ivoclar-vivadent-354072.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Volume do frasco não informado na IFU; apresentação e EAN da loja."
+    },
+    {
+      "id": "loja-medsul",
+      "tipo": "loja",
+      "titulo": "Dental Med Sul — Adesivo Tetric N-Bond - Ivoclar",
+      "url": "https://www.dentalmedsul.com.br/adesivo-tetric-n-bond-ivoclar",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}
