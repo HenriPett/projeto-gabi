@@ -1,0 +1,148 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "camada-hibrida",
+  "titulo": "Camada híbrida",
+  "resumo": "A zona onde resina e tecido dentário se entrelaçam: como ela se forma em cada estratégia e por que se degrada com o tempo.",
+  "ordem": 7,
+  "secoes": [
+    {
+      "titulo": "O conceito",
+      "paragrafos": [
+        {
+          "texto": "Em 1982, Nakabayashi e colaboradores mostraram que monômeros com grupos hidrofóbicos e hidrofílicos, como o 4-META, se infiltram no tecido dentário e polimerizam ali dentro, produzindo boa adesão. A adesão não vinha do embricamento nos túbulos, como se pensava antes.",
+          "fontes": [
+            "nakabayashi-1982"
+          ]
+        },
+        {
+          "texto": "Essa zona de colágeno e tecido mineral impregnada por resina polimerizada é a camada híbrida. Ela também se forma no esmalte condicionado, impregnado pelo adesivo polimerizado.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Como se forma em cada estratégia",
+      "paragrafos": [
+        {
+          "texto": "Nos convencionais, o ácido desmineraliza a dentina e expõe a rede de colágeno. Os primers, em geral ricos em água e HEMA, expandem essa rede e a molham com monômeros hidrofílicos para que a resina a infiltre.",
+          "fontes": [
+            "pashley-2011"
+          ]
+        },
+        {
+          "texto": "Nos autocondicionantes 'mild', a dentina é desmineralizada só parcialmente, e a hidroxiapatita fica ao redor do colágeno numa camada híbrida submicrométrica. Isso permite união micromecânica e química ao mesmo tempo.",
+          "fontes": [
+            "yoshida-2004",
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Por que ela se degrada",
+      "paragrafos": [
+        {
+          "texto": "Vários fatores reduzem a longevidade da interface: impregnação insuficiente da dentina pela resina, alta permeabilidade, polimerização subótima, separação de fases e ativação de enzimas colagenolíticas da própria dentina. Esses fatores pesam mais nos adesivos simplificados.",
+          "fontes": [
+            "breschi-2008"
+          ]
+        },
+        {
+          "texto": "As enzimas da dentina, as metaloproteinases da matriz (MMPs) e as catepsinas cisteínicas, hidrolisam com o tempo o colágeno da camada híbrida.",
+          "fontes": [
+            "tjaderhane-2013"
+          ]
+        },
+        {
+          "texto": "A evaporação completa dos solventes é praticamente impossível, e a água residual compromete a interface. Universais e autocondicionantes de 1 passo podem se comportar como membranas permeáveis após a polimerização, o que favorece a degradação por hidrólise.",
+          "fontes": [
+            "pashley-2011",
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Estratégias estudadas para preservá-la",
+      "paragrafos": [
+        {
+          "texto": "Inibir as enzimas da dentina é uma abordagem promissora. A clorexidina, inibidora geral de MMPs e catepsinas, é o método mais testado. Também foram propostos a ligação cruzada do colágeno, a adesão úmida com etanol e a remineralização biomimética.",
+          "fontes": [
+            "tjaderhane-2013"
+          ]
+        },
+        {
+          "texto": "Entre as recomendações estão melhorar a impregnação da resina, preferir adesivos com camada hidrofóbica sem solvente e estender a fotopolimerização para reduzir a permeabilidade. Já a nanocamada de MDP-cálcio é apontada como fator de resistência da interface à biodegradação.",
+          "fontes": [
+            "breschi-2008",
+            "yoshida-2012"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "nakabayashi-1982",
+      "tipo": "literatura",
+      "titulo": "Nakabayashi N, Kojima K, Masuhara E. The promotion of adhesion by the infiltration of monomers into tooth substrates. J Biomed Mater Res. 1982;16(3):265-273.",
+      "url": "https://doi.org/10.1002/jbm.820160307",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "pashley-2011",
+      "tipo": "literatura",
+      "titulo": "Pashley DH, Tay FR, Breschi L, et al. State of the art etch-and-rinse adhesives. Dent Mater. 2011;27(1):1-16.",
+      "url": "https://doi.org/10.1016/j.dental.2010.10.016",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2004",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Nagakane K, Fukuda R, et al. Comparative study on adhesive performance of functional monomers. J Dent Res. 2004;83(6):454-458.",
+      "url": "https://doi.org/10.1177/154405910408300604",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "breschi-2008",
+      "tipo": "literatura",
+      "titulo": "Breschi L, Mazzoni A, Ruggeri A, et al. Dental adhesion review: aging and stability of the bonded interface. Dent Mater. 2008;24(1):90-101.",
+      "url": "https://doi.org/10.1016/j.dental.2007.02.009",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "tjaderhane-2013",
+      "tipo": "literatura",
+      "titulo": "Tjäderhane L, Nascimento FD, Breschi L, et al. Strategies to prevent hydrolytic degradation of the hybrid layer—a review. Dent Mater. 2013;29(10):999-1011.",
+      "url": "https://doi.org/10.1016/j.dental.2013.07.016",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2012",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Yoshihara K, Nagaoka N, et al. Self-assembled nano-layering at the adhesive interface. J Dent Res. 2012;91(4):376-381.",
+      "url": "https://doi.org/10.1177/0022034512437375",
+      "acessadoEm": "2026-10-06"
+    }
+  ],
+  "relacionados": [
+    "mdp",
+    "esmalte-x-dentina",
+    "convencional-x-autocondicionante"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
