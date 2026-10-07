@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // Servido em /manifest.webmanifest; o Next injeta o <link rel="manifest"> no <head>.
-// Cores = tokens do DESIGN.md §1 (--purple-700 primário, --gray-0 fundo).
+// Cores = tokens do DESIGN.md §1 (--ink-900 header/tema, --gray-0 fundo).
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
@@ -15,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     orientation: "portrait",
     background_color: "#FFFFFF",
-    theme_color: "#5E2280", // --purple-700 (DESIGN.md §1.1); manter igual ao viewport do layout
+    theme_color: "#151515", // --ink-900 (DESIGN.md §1.1); manter igual ao viewport do layout
     categories: ["education", "medical"],
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },

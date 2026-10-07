@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5E2280", // --purple-700 (DESIGN.md §1.1); manter igual a src/app/manifest.ts
+  themeColor: "#151515", // --ink-900 = cor do header (DESIGN.md §1.1); manter igual a src/app/manifest.ts
   viewportFit: "cover", // safe areas da CompareTray e da barra sticky (DESIGN §6)
 };
 

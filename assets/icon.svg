@@ -1,8 +1,8 @@
-<!-- Ícone mestre do PWA. Fonte única para `pnpm icons` (gera public/icons/*). Placeholder até o design final (Pulpa). -->
+<!-- Ícone mestre do PWA. Fonte única para `pnpm icons` (gera public/icons/* e src/app/apple-icon.png). Paleta "frascos" (DESIGN.md §1.1). -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#5E2280"/>
-  <!-- três camadas: ácido / primer / adesivo, dentro da zona segura (80%) do ícone maskable -->
-  <rect x="136" y="150" width="240" height="52" rx="26" fill="#FBE7F1"/>
-  <rect x="136" y="230" width="240" height="52" rx="26" fill="#B9A0D6"/>
-  <rect x="136" y="310" width="240" height="52" rx="26" fill="#A8236E"/>
+  <rect width="512" height="512" fill="#151515"/>
+  <!-- três camadas: ácido (laranja) / primer (amarelo) / adesivo (cinza), dentro da zona segura (80%) do ícone maskable -->
+  <rect x="136" y="150" width="240" height="52" rx="26" fill="#DE811D"/>
+  <rect x="136" y="230" width="240" height="52" rx="26" fill="#E9CA06"/>
+  <rect x="136" y="310" width="240" height="52" rx="26" fill="#EDEDED"/>
 </svg>
