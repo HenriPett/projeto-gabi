@@ -48,13 +48,15 @@ Só cabeçalhos (nada de rewrites/crons):
 - Todas as rotas: `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY`.
 
 ### 1.4 Variáveis de ambiente
-Regra: **nenhum segredo em código ou commit**. `.env*` é ignorado no Git, exceto `.env.example`. **Hoje o projeto não tem nenhum segredo** e nenhuma variável obrigatória na Vercel.
+Regra: **nenhum segredo em código ou commit**. `.env*` é ignorado no Git, exceto `.env.example`. Nenhuma variável é obrigatória: o site funciona na Vercel sem configuração. Para proteção real do acesso por senha, **recomenda-se definir `SENHA_ACESSO` e `SEGREDO_SESSAO`** (ARQUITETURA §4.1).
 
 | Variável | Onde definir | Uso |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | opcional (Vercel) | só se houver domínio próprio; ver fallback abaixo |
 | `INCLUIR_RASCUNHOS` | opcional | força exibir/esconder rascunhos |
 | `DADOS_DIR` | só CI/testes | aponta para `tests/fixtures/dados` |
+| `SENHA_ACESSO` | recomendado (Vercel, **Sensitive**) | senha do site; sem ela vale a senha combinada (só o SHA-256 está no código). E2E usa `teste-e2e` |
+| `SEGREDO_SESSAO` | recomendado (Vercel, **Sensitive**) | chave HMAC do cookie (`openssl rand -hex 32`); trocar desloga todos |
 
 **URL do site** (`src/lib/site.ts → urlDoSite()`, usada em `metadataBase` do layout e no `robots.txt`), resolvida no build:
 `NEXT_PUBLIC_SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` (em produção: `<projeto>.vercel.app`) → `VERCEL_URL` (previews) → `http://localhost:3000`.

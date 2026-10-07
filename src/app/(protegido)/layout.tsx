@@ -3,6 +3,8 @@ import { catalogo } from "@/lib/dados/carregar";
 import { CompareTray } from "@/components/comparar/CompareTray";
 import { indiceDeBusca } from "@/components/dados-de-tela";
 import { Header } from "@/components/Header";
+import { MarcadorSessao } from "@/auth/MarcadorSessao";
+import { BotaoSair } from "@/auth/BotaoSair";
 
 /** Páginas do site (protegidas por senha no proxy): header com busca, rodapé e barra de comparação. */
 export default function LayoutSite({ children }: LayoutProps<"/">) {
@@ -25,10 +27,13 @@ export default function LayoutSite({ children }: LayoutProps<"/">) {
           <nav aria-label="Rodapé">
             <Link href="/metodologia">Sobre</Link>
             <Link href="/metodologia">Fontes e metodologia</Link>
+            {/* < 1024px a nav do header some: o Sair fica aqui (TODO Pulpa: estilo) */}
+            <BotaoSair className="link-sair link-sair--rodape" />
           </nav>
         </div>
       </footer>
       <CompareTray indice={indice} />
+      <MarcadorSessao />
     </>
   );
 }

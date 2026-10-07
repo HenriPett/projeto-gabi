@@ -781,4 +781,8 @@
   .footer p + p { margin-top: 8px; }
   .footer nav { display: flex; gap: var(--space-4); margin-top: 8px; }
   .footer a { color: var(--color-text-muted); display: inline-flex; align-items: center; min-height: 44px; }
+  /* Sair (acesso por senha): discreto; no header ≥1024px, no rodapé abaixo disso */
+  .link-sair { background: none; border: 0; padding: 0 4px; min-height: 44px; font: inherit; font-size: var(--text-small); color: var(--color-text-muted); text-decoration: underline; cursor: pointer; }
+  .footer .link-sair { font-size: 12px; }
+  @media (min-width: 1024px) { .link-sair--rodape { display: none; } }
 }

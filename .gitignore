@@ -58,3 +58,4 @@ next-env.d.ts
 # referências com direitos reservados: só locais, nunca no repo (público)
 /docs/referencia/unichristus-*.png
 /docs/referencia/perdigao-*.png
+/tests/e2e/.auth/
