@@ -23,7 +23,7 @@ import { Galeria } from "@/components/produto/Galeria";
 import { ModoDeUso } from "@/components/produto/ModoDeUso";
 import { SecaoPrecos } from "@/components/produto/SecaoPrecos";
 import { StrategySelector } from "@/components/produto/StrategySelector";
-import { rotuloClassificacao, urlSubcategoria } from "@/components/rotulos";
+import { NAO_VERIFICADA, rotuloClassificacao, urlSubcategoria } from "@/components/rotulos";
 import { SourceLink } from "@/components/SourceLink";
 import type { ProtocoloDTO } from "@/components/tipos";
 
@@ -133,7 +133,7 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
                 {!universal && (
                   <div>
                     <dt>Estratégia adesiva</dt>
-                    <dd>{p.estrategiaAdesiva?.texto ?? <span className="ni">Não informado</span>}</dd>
+                    <dd>{p.estrategiaAdesiva?.texto ?? <span className="ni">{NAO_VERIFICADA}</span>}</dd>
                   </div>
                 )}
                 {universal && p.estrategiaAdesiva && (
@@ -187,7 +187,7 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
                   ))}
                 </ul>
               ) : (
-                <p className="muted mt-3">Composição completa não divulgada pelo fabricante.</p>
+                <p className="ni mt-3">Componentes: {NAO_VERIFICADA.toLowerCase()}.</p>
               )}
               {c.outros.length > 0 && (
                 <dl className="dl mt-4">
@@ -216,7 +216,7 @@ export default async function PaginaProduto(props: PageProps<"/produto/[id]">) {
                   ))}
                 </ul>
               ) : (
-                <p className="muted mt-3">Não informado pelo fabricante.</p>
+                <p className="ni mt-3">{NAO_VERIFICADA}.</p>
               )}
               {p.contraindicacoes.length > 0 && (
                 <>

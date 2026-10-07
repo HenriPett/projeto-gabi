@@ -24,7 +24,7 @@ describe("<ProductCard> (DESIGN §3.8)", () => {
 
   it("P-04: sem componentes → não informado (nunca vazio)", () => {
     render(<ProductCard card={{ ...card("ficticio-ambar"), componentes: [] }} />);
-    expect(screen.getByText("Componentes: não informado pelo fabricante")).toBeTruthy();
+    expect(screen.getByText("Componentes: informação ainda não verificada")).toBeTruthy();
   });
 
   it("U-03: universal mostra as 3 estratégias, com a atual marcada, e leva ?estrategia=", () => {

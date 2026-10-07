@@ -12,6 +12,15 @@ import {
  * taxonomia.ts para não levar zod ao bundle do cliente.
  */
 
+/**
+ * Toda ausência de dado verificado (atributo "nao-informado", campo opcional
+ * vazio). Não atribuir ao fabricante: "nao-informado" = não achado em fonte
+ * confiável (esquema). Exceções: "Protocolo oficial não localizado" (M-06) e
+ * o "Não" confirmado (CS-02).
+ */
+export const NAO_VERIFICADA = "Informação ainda não verificada";
+export const IMAGEM_AUSENTE = "Imagem ainda não disponível";
+
 export const GRUPO_SINGULAR: Record<GrupoId, string> = {
   convencional: "Convencional",
   autocondicionante: "Autocondicionante",

@@ -7,7 +7,7 @@ import { ClassBadge } from "@/components/ClassBadge";
 import { ListaProdutos } from "@/components/categoria/ListaProdutos";
 import { cardDe } from "@/components/dados-de-tela";
 import { IconeInfo } from "@/components/Icones";
-import { ESTRATEGIA_CURTA, rotuloClassificacao, urlSubcategoria } from "@/components/rotulos";
+import { ESTRATEGIA_CURTA, NAO_VERIFICADA, rotuloClassificacao, urlSubcategoria } from "@/components/rotulos";
 import { SourceLink } from "@/components/SourceLink";
 import { StepDiagram } from "@/components/StepDiagram";
 
@@ -73,7 +73,7 @@ export default async function PaginaSubcategoria(props: PageProps<"/sistemas-ade
               <SourceLink fontes={conteudo ? fontesDeConteudo(conteudo.fontes, explicacao.fontes) : []} />
             </>
           ) : (
-            <p className="mt-3 muted">Explicação em revisão pelo time de conteúdo.</p>
+            <p className="mt-3 ni">{NAO_VERIFICADA}.</p>
           )}
           {irmas.length > 0 && (
             <p className="mt-4 flex flex-wrap gap-x-4">
