@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { temSessaoLocal } from "@/auth/cliente";
+import { sairLocal, temSessaoLocal } from "@/auth/cliente";
 import { IconeAlerta, IconeInfo } from "../Icones";
 
 
@@ -28,11 +28,15 @@ export function FormLogin({ params }: { params?: URLSearchParams }) {
   const p = params ?? new URLSearchParams();
   const aviso = avisoDoLogin(p, sessaoLocal);
 
+  const saiu = p.get("saiu") === "1";
   useEffect(() => {
+    // Sair tocado antes da hidratação vai como POST nativo, sem sairLocal():
+    // o servidor apagou o cookie, mas a flag e as páginas do SW ficam. Completa aqui (BUG-016).
+    if (saiu) void sairLocal();
     // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage só existe no cliente
-    setSessaoLocal(temSessaoLocal());
+    else setSessaoLocal(temSessaoLocal());
     campo.current?.focus();
-  }, []);
+  }, [saiu]);
 
   return (
     <form className="login__form" method="post" action="/api/login" onSubmit={() => setEnviando(true)}>

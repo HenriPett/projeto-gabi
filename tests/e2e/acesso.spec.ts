@@ -302,9 +302,9 @@ test.describe("Sair antes da hidratação (envio nativo do form, sem onSubmit/sa
   });
 
   test("BUG-016: a flag de sessão local também é limpa", async ({ page }) => {
-    test.fail(true, "BUG-016 (PLANO §14)");
     await logarCachearESairNativo(page);
-    expect(await page.evaluate((k) => localStorage.getItem(k), CHAVE_LOCAL)).toBeNull();
+    // a limpeza roda quando /login?saiu=1 hidrata — esperar, não ler de imediato
+    await expect.poll(() => page.evaluate((k) => localStorage.getItem(k), CHAVE_LOCAL)).toBeNull();
   });
 });
 
