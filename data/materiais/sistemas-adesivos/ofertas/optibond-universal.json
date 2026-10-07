@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "optibond-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-optibond-universal-kerr-113543.html",
+      "tituloNaLoja": "Adesivo Optibond Universal 5ml - Kerr",
+      "skuLoja": "113543",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 19799,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 19205,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/optibond-universal-5ml-kavo.html",
+      "tituloNaLoja": "Adesivo Optibond Universal 5ml - Kerr",
+      "skuLoja": "KAV20226A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 16399,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 15907,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-optibond-universal-kerr",
+      "tituloNaLoja": "Adesivo Optibond Universal - Kerr",
+      "skuLoja": "26.8364",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 16490,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 15995,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: frasco com 5ml."
+    }
+  ]
+}

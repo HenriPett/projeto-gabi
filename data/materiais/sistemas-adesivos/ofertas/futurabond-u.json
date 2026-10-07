@@ -1,0 +1,47 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "futurabond-u",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "singledose-50",
+      "status": "indisponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-futurabond-u-voco-689891.html",
+      "tituloNaLoja": "Adesivo Monocomponente Autocondicionante Futurabond U Single Dose 50unid. - Voco",
+      "skuLoja": "689891",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Sem estoque em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "singledose-50",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-futurabond-u-voco.html",
+      "tituloNaLoja": "Adesivo Futurabond U - Voco",
+      "skuLoja": "VAF11077A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 57290,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 55571,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Anúncio: 50 unidoses."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "singledose-50",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Futurabond U não encontrado no sitemap da loja em 06/10/2026."
+    }
+  ]
+}

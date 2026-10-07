@@ -1,0 +1,250 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Optibond Solo Plus",
+    "OptiBond S",
+    "Optibond S"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Compósito direto ao esmalte e/ou dentina; compósito a compósito, porcelana e/ou metal; selante com amálgama; colagem indireta de facetas, inlays, onlays e coroas (com cimento resinoso como NX3); adesivo em pinos e reconstruções.",
+      "fontes": [
+        "ifu-pt"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "A IFU não traz seção de contraindicações; cuidado: resina de metacrilato não polimerizada pode causar dermatite de contato e lesar a polpa.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "condicionamento-total",
+      "titulo": "Restaurações diretas (condicionamento total)",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar esmalte e dentina com ácido fosfórico 37,5%.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente, removendo todo o condicionador.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar levemente, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar o frasco brevemente e dispensar uma gota. Aplicar no esmalte/dentina com ponta aplicadora, com movimento leve de escovação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "escovação leve 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Afinamento com ar",
+          "descricao": "Aplicar jato de ar para afinar a camada.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "3 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar (tempos por aparelho na IFU).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s (passo do protocolo)"
+            },
+            {
+              "tipo": "luz",
+              "texto": "Demi / L.E. Demetron II: 5 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "L.E. Demetron I / Optilux 501 Boost: 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. IFU oficial só em EN/FR (protocolo traduzido). Dental Cremer SKU 292626 (URL/imagem de OptiBond S, volume 5 vs 6 mL) não foi associado. Imagens pendentes."
+  },
+  "id": "optibond-solo-plus",
+  "nomeComercial": "OptiBond Solo Plus",
+  "fabricante": {
+    "id": "kerr",
+    "nome": "Kerr"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu",
+          "folheto"
+        ]
+      }
+    ],
+    "observacao": "IFU: condicionamento de esmalte e dentina seguido de adesivo único. Folheto Kerr Brasil 2025: \"Adesivo total-etch monocomponente\"; \"OptiBond S agora é OptiBond Solo Plus. Mesma fórmula, nova embalagem\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo monocomponente.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Vidro de bário 0,4 µm (carga de 15%)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "solvente"
+      },
+      {
+        "nome": "GPDM",
+        "fontes": [
+          "folheto"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não lista a composição química."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "refil-5ml",
+      "tipo": "refil",
+      "descricao": "1 refil 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "codigoFabricante": "KER29692",
+      "fontes": [
+        "folheto",
+        "ifu"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "refil-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "OptiBond Solo Plus — Instructions for Use (EN/FR)",
+      "url": "https://kavokerr.widen.net/content/s6tei88pnr/original/OptiBond-Solo-Plus_IFU_80556_20180131_Rev2_Multi-Language.pdf?u=18sth1&download=true",
+      "acessadoEm": "2026-10-06",
+      "versao": "80556 Rev 2",
+      "observacao": "IFU oficial sem português; protocolo traduzido fielmente do inglês, sem alterar valores."
+    },
+    {
+      "id": "ifu-pt",
+      "tipo": "outro",
+      "titulo": "OptiBond Solo Plus — IFU Kerr UE 41206 Rev. 03-'16 (cópia de revendedor, com português)",
+      "url": "https://content.rocadabox.ru/56613-e3c184aa2a.pdf",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Cópia antiga hospedada por revendedor, usada só para o texto das indicações em português; números conferem com a IFU oficial em inglês."
+    },
+    {
+      "id": "folheto",
+      "tipo": "ficha-tecnica",
+      "titulo": "Folheto OptiBond Solo Plus 2025 — Kerr Brasil",
+      "url": "https://kerrdental.com.br/wp-content/uploads/2025/10/KERR-Folheto-OptiBond-Solo-Plus-2025-v2.pdf",
+      "acessadoEm": "2026-10-06",
+      "observacao": "\"De: KER34614 OptiBond S - 1 refil de 6 ml / Para: KER29692 OptiBond Solo Plus - 1 refil de 5 ml\"."
+    }
+  ]
+}

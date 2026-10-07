@@ -1,0 +1,517 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Futurabond U SingleDose"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas fotopolimerizáveis; reconstrução de cotos; restaurações indiretas; reparo intraoral sem primer; colos hipersensíveis; verniz para ionômero; selamento; restaurações e cimentações auto/dual e pinos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Hipersensibilidade (alergia) conhecida a ácidos orgânicos, (di)metacrilatos, aminas (DABE) ou BHT.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante (self-etch)",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Preparar a cavidade, limpar com água e remover o excesso com leve jato de ar. Não secar demais a dentina: aparência fosca acetinada. Proteger áreas próximas da polpa com hidróxido de cálcio.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "outro",
+          "titulo": "Ativação do SingleDose",
+          "descricao": "Ativar o SingleDose e misturar bem com o aplicador até obter material homogêneo.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Aplicar o adesivo uniformemente em todas as superfícies da cavidade e friccionar com o Single Tim.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "friccionar 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do solvente",
+          "descricao": "Aplicar jato de ar seco e isento de óleo para remover o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar a camada de adesivo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · LED/halógena > 500 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "O condicionamento ácido prévio é opcional; só é necessário em esmalte não preparado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Preparar a cavidade, limpar com água e remover o excesso com leve jato de ar. Não secar demais a dentina: aparência fosca acetinada. Proteger áreas próximas da polpa com hidróxido de cálcio.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar o esmalte com agente à base de ácido fosfórico. Seguir as instruções do ácido fosfórico (tempo não informado nesta IFU).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "conforme instruções do ácido (não informado na IFU)"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o condicionador com aspirador e lavar com água; aplicar leve jato de ar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "cerca de 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "outro",
+          "titulo": "Ativação do SingleDose",
+          "descricao": "Ativar o SingleDose e misturar bem com o aplicador até obter material homogêneo.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Aplicar o adesivo uniformemente em todas as superfícies da cavidade e friccionar com o Single Tim.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "friccionar 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do solvente",
+          "descricao": "Aplicar jato de ar seco e isento de óleo para remover o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar a camada de adesivo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · LED/halógena > 500 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "O condicionamento ácido prévio é opcional; só é necessário em esmalte não preparado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total (total-etch)",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Preparar a cavidade, limpar com água e remover o excesso com leve jato de ar. Não secar demais a dentina: aparência fosca acetinada. Proteger áreas próximas da polpa com hidróxido de cálcio.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar esmalte e dentina com agente à base de ácido fosfórico. Seguir as instruções do ácido fosfórico (tempo não informado nesta IFU).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "conforme instruções do ácido (não informado na IFU)"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o condicionador com aspirador e lavar com água; aplicar leve jato de ar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "cerca de 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "outro",
+          "titulo": "Ativação do SingleDose",
+          "descricao": "Ativar o SingleDose e misturar bem com o aplicador até obter material homogêneo.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Aplicar o adesivo uniformemente em todas as superfícies da cavidade e friccionar com o Single Tim.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "friccionar 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do solvente",
+          "descricao": "Aplicar jato de ar seco e isento de óleo para remover o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar a camada de adesivo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · LED/halógena > 500 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "O condicionamento ácido prévio é opcional; só é necessário em esmalte não preparado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Só a apresentação SingleDose 50 un. foi encontrada nas lojas; o frasco (REF 1577) tem IFU própria e não foi cadastrado. Imagens pendentes."
+  },
+  "id": "futurabond-u",
+  "nomeComercial": "Futurabond U",
+  "fabricante": {
+    "id": "voco",
+    "nome": "VOCO"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: aplicável \"sem prévio condicionamento com ácido fosfórico (como autocondicionador, ou self-etch) ou após condicionamento com ácido fosfórico (condicionamento seletivo, ou total-etch)\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal dual (SingleDose); condicionamento com ácido fosfórico opcional (seletivo ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "HEMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "HEDMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Éster de ácido fosfórico de metacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Ácido polialquilenóico funcionalizado com metacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "UDMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Iniciadores",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Estabilizadores",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU cita \"éster de ácido fosfórico de metacrilato\", sem nomear MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado (a IFU indica reparo intraoral sem primer)."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "dual",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "SingleDose: após a ativação torna-se foto e autopolimerizável."
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "singledose-50",
+      "tipo": "unidose",
+      "descricao": "SingleDose — 50 unidades + acessórios (REF 1571)",
+      "quantidade": 50,
+      "volumeMl": 0.1,
+      "codigoFabricante": "1571",
+      "fontes": [
+        "site-br",
+        "site-us"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "singledose-50",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Futurabond U (SingleDose) — Instruções de utilização (multilíngue, inclui PT)",
+      "url": "https://www.voco.dental/en/portaldata/1/resources/products/instructions-for-use/e1/futurabond-u_ifu_e1.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "VC 60 AA1571 E1 0226 99 · revisão 2026-02",
+      "observacao": "Português europeu. A IFU não informa tempo de condicionamento ácido (remete às instruções do ácido)."
+    },
+    {
+      "id": "ifu-frasco",
+      "tipo": "ifu",
+      "titulo": "Futurabond U bottle — Instruções de utilização",
+      "url": "https://www.voco.dental/en/portaldata/1/resources/products/instructions-for-use/e1/futurabond-u-bottle_ifu_e1.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "VC 60 AA1577 E1 0426 99 · revisão 2026-04"
+    },
+    {
+      "id": "site-br",
+      "tipo": "site-fabricante",
+      "titulo": "Futurabond U — VOCO Brasil",
+      "url": "https://www.voco.dental/br/produtos/restaura%C3%A7%C3%B5es-diretas/adesivos/futurabond-u.aspx",
+      "acessadoEm": "2026-10-06",
+      "observacao": "REF 1571 SingleDose 50 un.; REF 1572 200 un.; REF 1577 frasco 5 ml; REF 1578 DCA 2 ml."
+    },
+    {
+      "id": "site-us",
+      "tipo": "site-fabricante",
+      "titulo": "Futurabond U — VOCO America",
+      "url": "https://www.voco.dental/us/products/direct-restoration/self-etch-adhesive/futurabond-u",
+      "acessadoEm": "2026-10-06",
+      "observacao": "\"REF 1571 pack 50 x 0.1 ml SingleDose, accessories\"."
+    }
+  ]
+}

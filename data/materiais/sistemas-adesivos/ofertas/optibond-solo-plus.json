@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "optibond-solo-plus",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-optibond-solo-plus-kerr-155660.html",
+      "tituloNaLoja": "Adesivo Optibond Solo Plus 5ml - Kerr",
+      "skuLoja": "155660",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 12899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 12512,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-optibond-solo-plus-kerr-ker37743a.html",
+      "tituloNaLoja": "Adesivo OptiBond Solo Plus - Kerr",
+      "skuLoja": "KER37743A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 12899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 12512,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-optibond-solo-plus-kerr",
+      "tituloNaLoja": "Adesivo Optibond Solo Plus - Kerr",
+      "skuLoja": "25.4075",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 13990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 13570,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 5ml."
+    }
+  ]
+}

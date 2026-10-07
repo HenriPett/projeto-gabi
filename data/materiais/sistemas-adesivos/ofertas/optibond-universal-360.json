@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "optibond-universal-360",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-optibond-universal-360-bottle-refill-row-kerr-157317.html",
+      "tituloNaLoja": "Adesivo Optibond Universal 360 Bottle Refill Row - Kerr",
+      "skuLoja": "157317",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 31199,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 30263,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-optibond-universal-360-bottle-refill-row-kerr-ker38480a.html",
+      "tituloNaLoja": "Adesivo Optibond Universal 360 Bottle Refill Row - Kerr",
+      "skuLoja": "KER38480A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 31199,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 30263,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-optibond-universal-360-refil-kerr",
+      "tituloNaLoja": "Adesivo Optibond Universal 360 Refil - Kerr",
+      "skuLoja": "27.9717",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 30290,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 29381,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: embalagem com 5ml."
+    }
+  ]
+}

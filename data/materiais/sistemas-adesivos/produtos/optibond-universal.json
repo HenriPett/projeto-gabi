@@ -1,0 +1,422 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Optibond Universal"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Diretas: compósitos fotopolimerizáveis; reparações de compósito/cerâmica e metal; selamento sob amálgama; reconstrução oclusal foto ou dual.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Indiretas: facetas; inlays, onlays, coroas e pontes de porcelana, compósito e metal; pinos endodônticos; selamento de preparos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Histórico de reações alérgicas graves a resinas de metacrilato; capeamento pulpar direto; com resinas químicas ou duais (exceto NX3) quando a incidência de luz é insuficiente.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Preparar a cavidade, lavar bem com spray de água e secar com jatos de ar seco, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar o frasco levemente (vigorosamente por 10 s no primeiro uso) e colocar 2 a 3 gotas em bloco de mistura. Com pincel descartável, aplicar quantidade generosa no esmalte/dentina, esfregando com movimento de escovação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "escovação 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar com leve jato de ar e depois jato médio, com ar sem óleo. A superfície deve ficar brilhante e uniforme; se não, repetir aplicação e secagem.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve → médio, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar conforme a tabela da IFU (por aparelho).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "Optilux 501 / L.E. Demetron I: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "L.E. Demetron II / Demi: 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Preparar a cavidade, lavar bem com spray de água e secar com jatos de ar seco, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento das margens de esmalte",
+          "descricao": "Condicionar as margens de esmalte com gel de ácido fosfórico (p. ex., Gel Condicionador 37,5% Kerr) e enxaguar bem.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar levemente com ar seco, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar o frasco levemente (vigorosamente por 10 s no primeiro uso) e colocar 2 a 3 gotas em bloco de mistura. Com pincel descartável, aplicar quantidade generosa no esmalte/dentina, esfregando com movimento de escovação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "escovação 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar com leve jato de ar e depois jato médio, com ar sem óleo. A superfície deve ficar brilhante e uniforme; se não, repetir aplicação e secagem.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve → médio, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar conforme a tabela da IFU (por aparelho).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "Optilux 501 / L.E. Demetron I: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "L.E. Demetron II / Demi: 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Preparar a cavidade, lavar bem com spray de água e secar com jatos de ar seco, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar esmalte e dentina com gel de ácido fosfórico (p. ex., Gel Condicionador 37,5% Kerr) e enxaguar bem.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar levemente com ar seco, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar o frasco levemente (vigorosamente por 10 s no primeiro uso) e colocar 2 a 3 gotas em bloco de mistura. Com pincel descartável, aplicar quantidade generosa no esmalte/dentina, esfregando com movimento de escovação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "escovação 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar com leve jato de ar e depois jato médio, com ar sem óleo. A superfície deve ficar brilhante e uniforme; se não, repetir aplicação e secagem.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve → médio, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar conforme a tabela da IFU (por aparelho).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "Optilux 501 / L.E. Demetron I: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "L.E. Demetron II / Demi: 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Imagens pendentes. Verificar se o produto original segue em linha (a Kerr lançou o OptiBond Universal 360)."
+  },
+  "id": "optibond-universal",
+  "nomeComercial": "OptiBond Universal",
+  "fabricante": {
+    "id": "kerr",
+    "nome": "Kerr"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"Adesivo Universal de componente único\", para \"adesivo autocondicionante, condicionamento seletivo do esmalte e condicionamento total\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal de componente único; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "GPDM",
+        "fontes": [
+          "folheto"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "folheto"
+        ]
+      },
+      {
+        "nome": "Acetona",
+        "fontes": [
+          "ifu",
+          "folheto"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "folheto"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "Não citado na IFU nem no folheto."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não lista a composição."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado; a IFU diz que o adesivo elimina a necessidade de silano ou condicionante de metal."
+    },
+    "solventes": {
+      "valor": [
+        "água",
+        "acetona",
+        "etanol"
+      ],
+      "fontes": [
+        "folheto"
+      ],
+      "observacao": "Folheto: \"solvente ternário\". A IFU só informa que \"contém acetona\"."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "folheto"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "OptiBond Universal — Instruções de uso (multilíngue, inclui pt)",
+      "url": "https://kavokerr.widen.net/content/7bos57qzuk/original/DMC3190_REV01_OPTIBOND-UNIVERSAL_IFU_P10.pdf?u=18sth1&download=true",
+      "acessadoEm": "2026-10-06",
+      "versao": "DMC3190 Rev.01 (PDF de dez/2017)",
+      "observacao": "DAM oficial Kerr. O portal de eIFU Envista não lista documentos para o OptiBond Universal original (só para o Universal 360)."
+    },
+    {
+      "id": "folheto",
+      "tipo": "ficha-tecnica",
+      "titulo": "Folheto OptiBond Universal — Kerr Brasil",
+      "url": "https://kerrdental.com.br/wp-content/uploads/2021/06/OptiBond_Universal.pdf",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}

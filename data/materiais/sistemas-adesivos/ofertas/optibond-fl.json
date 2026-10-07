@@ -1,0 +1,187 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "optibond-fl",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-optibond-fl-kerr-434958.html",
+      "tituloNaLoja": "Adesivo Optibond FL 8ml - Kerr",
+      "skuLoja": "434958",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 35699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 34628,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/optibond-fl-adesivo-kerr.html",
+      "tituloNaLoja": "Adesivo Optibond FL - Kerr",
+      "skuLoja": "KOP4978A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 35699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 34628,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-foto-optibond-fl-kerr",
+      "tituloNaLoja": "Adesivo Foto Optibond FL - Kerr",
+      "skuLoja": "26.7808",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 36590,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 35492,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 8ml."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "primer-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-optibond-fl-kerr-434941.html",
+      "tituloNaLoja": "Adesivo Optibond FL Prime 8ml - Kerr",
+      "skuLoja": "434941",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 29699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 28808,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "primer-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/optibond-fl-prime-kerr.html",
+      "tituloNaLoja": "Adesivo Optibond FL Primer - Kerr",
+      "skuLoja": "KOP4979A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 29699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 28808,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "primer-8ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalmedsul.com.br/venc260227-adesivo-primer-optibond-fl-kerr",
+      "tituloNaLoja": "Venc.26/02/27 - Adesivo Primer Optibond FL - Kerr",
+      "skuLoja": "26.7809",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Só lote com vencimento próximo, sem estoque."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "kit-primer-adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/kit-optibond-fl-primer-adesivo-kerr-141109.html",
+      "tituloNaLoja": "Kit Adesivo e Primer Optibond FL - Kerr",
+      "skuLoja": "141109",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 56099,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 54416,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "kit-primer-adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/kit-optibond-fl-primer-adesivo-kerr-kerr33341a.html",
+      "tituloNaLoja": "Kit Adesivo e Primer Optibond FL - Kerr",
+      "skuLoja": "KERR33341A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 56099,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 54416,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "kit-primer-adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/kit-optibond-fl-primer-adesivo-kerr",
+      "tituloNaLoja": "Kit Optibond FL Primer + Adesivo - Kerr",
+      "skuLoja": "27.1847",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 36590,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 35492,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: Primer 8ml + Adesivo FL Refil 8ml. Atenção: preço igual ao do adesivo avulso na mesma loja; conferir na próxima curadoria."
+    }
+  ]
+}

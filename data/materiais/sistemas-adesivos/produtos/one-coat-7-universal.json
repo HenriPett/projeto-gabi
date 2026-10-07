@@ -1,0 +1,393 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "One Coat 7",
+    "OneCoat 7 Universal"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Ligação a tecidos dentários duros e a materiais de restauração foto ou dual; selamento de dentina e fissuras (cáries, tratamento endodôntico, tratamento cosmético, defeitos dentários, fissuras profundas).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Hipersensibilidade comprovada aos componentes; impossibilidade de manter a área de trabalho seca.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento e limpeza",
+          "descricao": "Usar dique dentário e limpar o dente com pedra-pomes.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar uma gota e proteger da luz. Esfregar o adesivo na cavidade com aplicador descartável. Evitar camada demasiado espessa.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Jato de ar",
+          "descricao": "Aplicar com cuidado ar comprimido isento de óleo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar (halógena ou LED > 800 mW/cm²; com menor débito de luz, prolongar o tempo).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · > 800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Em esmalte não polido, condicionar com gel de condicionamento.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento e limpeza",
+          "descricao": "Usar dique dentário e limpar o dente com pedra-pomes.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento do esmalte",
+          "descricao": "Condicionar somente as áreas de esmalte com gel de ácido fosfórico, conforme as instruções do gel; enxaguar e secar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "conforme instruções do gel (não informado na IFU)"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar uma gota e proteger da luz. Esfregar o adesivo na cavidade com aplicador descartável. Evitar camada demasiado espessa.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Jato de ar",
+          "descricao": "Aplicar com cuidado ar comprimido isento de óleo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar (halógena ou LED > 800 mW/cm²; com menor débito de luz, prolongar o tempo).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · > 800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento e limpeza",
+          "descricao": "Usar dique dentário e limpar o dente com pedra-pomes.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar gel de ácido fosfórico (p. ex., Etchant Gel S, Coltene) conforme as instruções do fabricante do gel. Enxaguar bem com água e secar com ar sem óleo, sem secar demais a dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "conforme instruções do gel (não informado na IFU)"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar uma gota e proteger da luz. Esfregar o adesivo na cavidade com aplicador descartável. Evitar camada demasiado espessa.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Jato de ar",
+          "descricao": "Aplicar com cuidado ar comprimido isento de óleo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar (halógena ou LED > 800 mW/cm²; com menor débito de luz, prolongar o tempo).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · > 800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. IFU em português europeu (sem versão pt-BR); textos adaptados sem alterar valores. Imagens pendentes."
+  },
+  "id": "one-coat-7-universal",
+  "nomeComercial": "One Coat 7 Universal",
+  "fabricante": {
+    "id": "coltene",
+    "nome": "Coltene"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"adesivo monocomponente fotopolimerizável universal\", com técnicas de autocondicionamento, condicionamento total e condicionamento seletivo."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal monocomponente; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Solventes (água, etanol) — 40-50% em peso",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Monômeros de metacrilato — 25-35%",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Agentes condicionantes (p. ex., 10-MDP, ácido poliacrílico) — 10-20%",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Preenchimento (sílica amorfa, SiO2) — 1-10%",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "Não citado (a IFU não lista componentes < 1%)."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "solventes": {
+      "valor": [
+        "água",
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "ONE COAT 7 UNIVERSAL — Instruções de utilização (PT)",
+      "url": "https://products.coltene.com/EN/PT/media/DOC_IFU_30005506-03-25-OneCoat7-UNIVERSAL-A4_IND.pdf?sprache=PT",
+      "acessadoEm": "2026-10-06",
+      "versao": "30005506 · REV-03-2025",
+      "observacao": "Português europeu. A IFU não informa volumes nem tempo de condicionamento ácido (remete às instruções do gel)."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Universal One Coat 7 5ml - Coltene",
+      "url": "https://www.dentalcremer.com.br/adesivo-universal-one-coat-7-coltene-123860.html",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}

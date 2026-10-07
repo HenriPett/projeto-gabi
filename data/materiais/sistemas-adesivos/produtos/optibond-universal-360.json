@@ -1,0 +1,453 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Optibond Universal 360",
+    "OptiBond 360"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações de compósito fotopolimerizáveis, autopolimerizáveis e duais; reparação de restaurações; selante de superfície radicular; reconstruções e pinos; adesão de selantes de fissuras.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Indiretas: cimentação de facetas e de restaurações de metal, compósito e porcelana; selagem; primer para compósito, cerâmica e metal.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Histórico de reações alérgicas graves a resinas de metacrilato; evitar contato direto com tecido pulpar.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Isolar, preparar a cavidade, lavar bem com jato de água e secar levemente com jatos de ar, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Com pincel descartável, aplicar quantidade generosa no esmalte/dentina, esfregando com movimento de pincelagem delicado.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "pincelagem delicada 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar primeiro com fluxo suave e depois médio, com ar sem óleo. Superfície brilhante e uniforme; se não, repetir aplicação e secagem.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "suave → médio, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 600–1000 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · > 1000 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Isolar, preparar a cavidade, lavar bem com jato de água e secar levemente com jatos de ar, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar as margens de esmalte com gel de ácido fosfórico (p. ex., OptiBond 37.5% Gel Etchant), enxaguar bem e secar levemente com ar, sem dessecar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Com pincel descartável, aplicar quantidade generosa no esmalte/dentina, esfregando com movimento de pincelagem delicado.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "pincelagem delicada 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar primeiro com fluxo suave e depois médio, com ar sem óleo. Superfície brilhante e uniforme; se não, repetir aplicação e secagem.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "suave → médio, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 600–1000 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · > 1000 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo",
+          "descricao": "Isolar, preparar a cavidade, lavar bem com jato de água e secar levemente com jatos de ar, sem dessecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar esmalte e dentina com gel de ácido fosfórico (p. ex., OptiBond 37.5% Gel Etchant), enxaguar bem e secar levemente com ar, sem dessecar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Com pincel descartável, aplicar quantidade generosa no esmalte/dentina, esfregando com movimento de pincelagem delicado.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "pincelagem delicada 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar primeiro com fluxo suave e depois médio, com ar sem óleo. Superfície brilhante e uniforme; se não, repetir aplicação e secagem.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "suave → médio, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 600–1000 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · > 1000 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. IFU em português europeu (sem versão pt-BR); textos adaptados sem alterar valores. Imagens pendentes."
+  },
+  "id": "optibond-universal-360",
+  "nomeComercial": "OptiBond Universal 360",
+  "fabricante": {
+    "id": "kerr",
+    "nome": "Kerr"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"Adesivo universal de componente único\", com passos para autocondicionamento, condicionamento seletivo do esmalte e condicionamento total."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal de componente único; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "HEMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "PHGMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "PMGDM",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Monômeros de fosfato (MDP e GPDM)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "GDM",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Acetona",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Vidro de sílica < 1 µm (carga 1–5%)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Quinonas, fenóis e benzoatos (< 1% cada)",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado na composição."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água",
+        "acetona"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Em indiretas com resina dual, a fotopolimerização do adesivo é opcional."
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "refil",
+      "descricao": "Frasco (refil) 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "codigoFabricante": "KER36822",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "OptiBond Universal 360 — Instruções de utilização (ROW/UE, inclui português)",
+      "url": "https://kavokerr.widen.net/content/8zaxmo5tbr/original/DMC4190_REV02_OPTIBOND_UNIVERSAL_360_IFU_ROW_P1.pdf?u=cnifiv&download=true",
+      "acessadoEm": "2026-10-06",
+      "versao": "DMC4190 Rev.02 · 2025-08",
+      "observacao": "Português europeu, lido por imagem. A versão norte-americana (DMC4210E Rev.01) traz composição menos detalhada."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Optibond Universal 360 Bottle Refill Row - Kerr",
+      "url": "https://www.dentalcremer.com.br/adesivo-optibond-universal-360-bottle-refill-row-kerr-157317.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do código KER36822."
+    }
+  ]
+}

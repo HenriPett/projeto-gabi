@@ -1,0 +1,350 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Optibond FL",
+    "OptiBond FL Prime"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Compósito ao esmalte e/ou dentina, reparação de compósito e de porcelana, compósito ao metal e materiais de reconstrução de núcleo.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Nenhuma conhecida (IFU). Evitar contato direto com o tecido pulpar.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "condicionamento-total",
+      "titulo": "Restaurações diretas (condicionamento total)",
+      "aplicaA": [
+        "convencional-3-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Preparo",
+          "descricao": "Agitar brevemente o frasco de ADESIVO antes de dispensar e colocar 1-2 gotas de PRIMER e de ADESIVO em poços separados (pincéis separados para cada um). Isolar com dique de borracha, limpar o dente não preparado com pasta sem flúor, lavar e secar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "agitar o adesivo 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar o Kerr Gel Etchant no esmalte e na dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Enxaguar cuidadosamente, removendo todo o condicionador.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar delicadamente com ar limpo e isento de óleo, sem desidratar a dentina.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-primer",
+          "titulo": "PRIMER",
+          "descricao": "Aplicar o PRIMER com pincel, esfregando suavemente sobre esmalte e dentina.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar suavemente 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem do primer",
+          "descricao": "Secar suavemente com ar; a dentina deve ficar levemente lustrosa.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "suave, cerca de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "ADESIVO",
+          "descricao": "Com um novo pincel, aplicar o ADESIVO no esmalte e na dentina, esfregando suavemente para criar uma camada fina.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar suavemente 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Secar suavemente com ar.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "suave, cerca de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar (LED ou halógena, mínimo 600 mW/cm², 400–520 nm).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 600–1000 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · > 1000 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Ao restaurar vários dentes, aplicar o PRIMER em todas as superfícies antes de aplicar o ADESIVO.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "classificacao",
+      "descricao": "A IFU descreve \"adesivo de condicionamento total de dois componentes\" (primer + adesivo); o folheto Kerr Brasil fala em \"3 passos\" (contando o ácido). Ambos correspondem a ácido → primer → adesivo.",
+      "versoes": [
+        {
+          "valor": "Dois componentes (IFU)",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "valor": "3 passos (folheto BR)",
+          "fontes": [
+            "folheto"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. IFU em português europeu (sem versão pt-BR); textos adaptados sem alterar valores. Imagens pendentes."
+  },
+  "id": "optibond-fl",
+  "nomeComercial": "OptiBond FL",
+  "fabricante": {
+    "id": "kerr",
+    "nome": "Kerr"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-3-passos",
+        "fontes": [
+          "ifu",
+          "folheto"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"Adesivo de condicionamento total de dois componentes\" (primer e adesivo separados, após condicionamento ácido). Folheto Kerr Brasil: \"Adesivo fotopolimerizável de 3 passos\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total, seguido de primer e de adesivo em frascos separados.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Primer: HEMA, GPDM, PAMM, CQ",
+        "fontes": [
+          "folheto"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Adesivo: Bis-GMA, GDMA, HEMA, TEGDMA, UDMA, CQ",
+        "fontes": [
+          "folheto"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Vidro de bário 0,6 µm (carga de 48%)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU e o folheto não citam MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "folheto"
+      ],
+      "observacao": "A IFU não lista a composição química; o folheto Kerr lista HEMA no primer e no adesivo."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "IFU: promotores de adesão \"transportados num solvente de etanol\"; o folheto Kerr cita água e etanol."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "outros": [
+      {
+        "rotulo": "Radiopacidade",
+        "valor": "Adesivo radiopaco",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "adesivo-8ml",
+      "tipo": "frasco",
+      "descricao": "Adesivo (refil) 8 mL",
+      "quantidade": 1,
+      "volumeMl": 8,
+      "fontes": [
+        "ifu",
+        "folheto"
+      ]
+    },
+    {
+      "id": "primer-8ml",
+      "tipo": "frasco",
+      "descricao": "Primer (refil) 8 mL",
+      "quantidade": 1,
+      "volumeMl": 8,
+      "fontes": [
+        "ifu",
+        "folheto"
+      ]
+    },
+    {
+      "id": "kit-primer-adesivo-8ml",
+      "tipo": "kit",
+      "descricao": "Kit: Primer 8 mL + Adesivo 8 mL",
+      "quantidade": 1,
+      "itens": [
+        "Primer 8 mL",
+        "Adesivo 8 mL"
+      ],
+      "fontes": [
+        "folheto",
+        "loja-cremer-kit"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "kit-primer-adesivo-8ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instructions for Use – OptiBond FL (UE, multilíngue com português)",
+      "url": "https://kavokerr.widen.net/content/rzapwdlonk/original/OptiBond-FL-IFU-EU.pdf?u=cnifiv&download=true",
+      "acessadoEm": "2026-10-06",
+      "versao": "Part number 41204 · Revision 01-'22 (2022-01)",
+      "observacao": "Seção em português europeu, em contornos vetoriais (lida por imagem). Site kerrdental.com bloqueia acesso automatizado; PDF obtido no DAM oficial da Kerr via portal de eIFU Envista."
+    },
+    {
+      "id": "folheto",
+      "tipo": "ficha-tecnica",
+      "titulo": "Folheto OptiBond FL — Kerr Brasil",
+      "url": "https://kerrdental.com.br/wp-content/uploads/2021/06/OptiBond_FL.pdf",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-kit",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Kit Adesivo e Primer Optibond FL - Kerr",
+      "url": "https://www.dentalcremer.com.br/kit-optibond-fl-primer-adesivo-kerr-141109.html",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}

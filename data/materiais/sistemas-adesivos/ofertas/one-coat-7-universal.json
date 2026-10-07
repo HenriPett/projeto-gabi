@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "one-coat-7-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-universal-one-coat-7-coltene-123860.html",
+      "tituloNaLoja": "Adesivo Universal One Coat 7 5ml - Coltene",
+      "skuLoja": "123860",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 20190,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 19584,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-universal-one-coat-7-coltene.html",
+      "tituloNaLoja": "Adesivo Universal One Coat 7 5ml - Coltene",
+      "skuLoja": "CTN30707A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 20190,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 19584,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-universal-one-coat-7-coltene",
+      "tituloNaLoja": "Adesivo Universal One Coat 7 - Coltene",
+      "skuLoja": "26.2307",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 16790,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 16286,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 5 ml."
+    }
+  ]
+}
