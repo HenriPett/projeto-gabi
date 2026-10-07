@@ -418,12 +418,12 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-005 | S1 | ✅ Corrigido `f1aa8a6` — reverificado | `catalogo()` oculta ofertas de rascunho. |
 | BUG-006 | S3 | ✅ Corrigido `f620700` — reverificado | MDP indexado também como 10-MDP; `"10-MDP"` ≡ `"MDP"`. |
 | BUG-007 | S3 | ⏸ Wontfix no app (Molar) — reverificar no preview da Vercel | URI malformada → 500 no decode de params do próprio Next; corrigir exigiria middleware (runtime num site estático). Se o preview também der 500 → reabrir como upstream do Next. `test.fail` mantido. |
-| BUG-008 | S2 | 🔴 Aberto (Pulpa) | Overflow horizontal no mobile; toques caem no elemento errado |
-| BUG-009 | S2 | 🔴 Aberto (Pulpa) | Contraste insuficiente no diagrama de etapas |
-| BUG-010 | S3 | 🔴 Aberto (Pulpa) | Salto de heading h1 → h3 em /comparar e /guia |
-| BUG-011 | S3 | 🔴 Aberto (Pulpa) | Links dentro de texto só se distinguem pela cor |
-| BUG-012 | S2 | 🔴 Aberto (Pulpa) | Comparador mostra "Menor preço" de produto sem preços comparáveis |
-| BUG-013 | S3 | 🔴 Aberto (Pulpa) | Comparador mostra só o volume da apresentação principal |
+| BUG-008 | S2 | ✅ Corrigido `2ac25e8` — reverificado | Header a 320 px (contador vira badge < 360 px) e rótulo do diagrama hifenizado. MOB-01 verde em 320/390/412 px. |
+| BUG-009 | S2 | ✅ Corrigido `2ac25e8` — reverificado | Causa: animação `stepIn` animava opacidade e o axe media no meio do fade-in (contraste final não era o problema). Agora só desloca. |
+| BUG-010 | S3 | ✅ Corrigido `2ac25e8` — reverificado | |
+| BUG-011 | S3 | ✅ Corrigido `2ac25e8` — reverificado | |
+| BUG-012 | S2 | ✅ Corrigido `2ac25e8` — reverificado | Card e comparador só mostram "a partir de" com apresentação comparável (e dizem qual); senão "Apresentações diferentes" / "Preço em uma só loja" + ver preços. `test.fail` removido. |
+| BUG-013 | S3 | ✅ Corrigido `2ac25e8` — reverificado | Lista todas as apresentações ("5 mL · 3 mL"). |
 
 **Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
 
@@ -500,3 +500,6 @@ Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja rece
 - **Passos:** `/comparar?ids=ficticio-universal-triplo,…`.
 - **Esperado:** "3 mL · 5 mL" (todas as apresentações cadastradas) ou a apresentação explicitada.
 - **Obtido:** "5 mL".
+
+### Reexecução — front `2ac25e8`
+`pnpm e2e` (4 projetos): **297 passed, 3 skipped** (SW/offline só no Chromium). BUG-007 segue como `test.fail` (wontfix no app). Corrigida uma corrida no próprio teste G-01/E2E-01: a home também linka `ficticio-ambar` (Melhores preços), então o 2º clique podia acontecer ainda na home no WebKit — agora espera a URL da categoria (48/48 em 8 repetições, mobile-chrome + mobile-safari).

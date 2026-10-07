@@ -5,6 +5,7 @@ import { expect, test } from "./apoio";
 test("E2E-01 (parcial): home → Convencionais → 2 passos → produto", async ({ page }) => {
   await page.goto("/");
   await page.locator('main a[href="/sistemas-adesivos/convencionais/2-passos"]').first().click();
+  await expect(page).toHaveURL("/sistemas-adesivos/convencionais/2-passos");
   await expect(page.locator("h1")).toContainText(/2 passos/i);
   await page.locator('main a[href="/produto/ficticio-ambar"]').first().click();
   await expect(page).toHaveURL("/produto/ficticio-ambar");
@@ -75,12 +76,12 @@ test("E2E-02: … → selos de estratégia → comparar produtos → comparar pr
 });
 
 test("BUG-012: comparador não chama de 'menor preço' produto sem preços comparáveis", async ({ page }) => {
-  test.fail(true, "BUG-012 (PLANO §12)");
   await page.goto("/comparar?ids=ficticio-universal-triplo,ficticio-ambar");
   const linha = page.locator('[data-testid="compare-row"][data-atributo="menor-preco"]');
   await expect(page.getByTestId("compare-table")).toBeVisible();
   // ficticio-universal-triplo: 3 mL só na Cremer, 5 mL só na Speed → nenhuma comparação possível (PR-02)
   await expect(linha).not.toContainText("R$ 159,90");
+  await expect(linha).not.toContainText("R$ 99,90");
 });
 
 test("PR-10/PR-11: empate marca as duas lojas; preços iguais não têm selo e mostram aviso", async ({ page }) => {
