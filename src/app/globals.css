@@ -652,6 +652,95 @@
   .gcard--link { text-decoration: none; transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast); }
   .gcard--link:hover { background: var(--lilac-100); border-color: var(--lilac-400); color: var(--color-text); }
 
+  /* /guia — painel de estudo (DESIGN §4.9). DOM = ordem mobile; a grade reposiciona no desktop. */
+  .estudo { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .estudo > * { min-width: 0; }
+  .estudo .pagehead { padding-bottom: 0; }
+  @media (min-width: 640px) { .estudo__cartoes .guide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) {
+    .estudo {
+      grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+      grid-template-areas: "cab ." "cart trilha" "cart cola" "glos cola";
+      grid-template-rows: auto auto 1fr auto;
+      column-gap: var(--space-10);
+    }
+    .estudo__cabecalho { grid-area: cab; }
+    .estudo__trilha { grid-area: trilha; }
+    .estudo__cartoes { grid-area: cart; }
+    .estudo__glossario { grid-area: glos; }
+    /* A cola acompanha a rolagem só se couber; senão rola por dentro. */
+    .estudo__cola { grid-area: cola; align-self: start; position: sticky; top: 88px; max-height: calc(100vh - 104px); overflow-y: auto; overscroll-behavior: contain; }
+  }
+  .estudo-bloco { background: var(--color-surface-atlas); border: 1px solid var(--lilac-200); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .estudo-bloco__titulo { font: 600 var(--text-h3) / 1.3 var(--font-sans); color: var(--color-text); text-align: left; margin: 2px 0 var(--space-4); }
+
+  /* ① trilha */
+  .trilha { list-style: none; margin: 0; padding: 0; position: relative; }
+  .trilha::before { content: ""; position: absolute; left: 13px; top: 14px; bottom: 14px; width: 2px; background: var(--lilac-200); }
+  .trilha__item { position: relative; display: flex; gap: var(--space-3); align-items: flex-start; min-height: 44px; padding: 4px 0; }
+  .trilha__item + .trilha__item { margin-top: var(--space-2); }
+  .trilha__n { position: relative; flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 1.5px solid var(--color-cta); color: var(--color-cta); font: 700 14px/1 var(--font-serif); }
+  .trilha__txt { min-width: 0; padding-top: 3px; }
+  .trilha__link, .trilha__titulo { font-size: 15px; font-weight: 600; line-height: 1.3; }
+  .trilha__link { color: var(--color-text); text-decoration: none; }
+  .trilha__link::after { content: ""; position: absolute; inset: 0; }
+  .trilha__item:hover .trilha__link { text-decoration: underline; color: var(--color-primary); }
+  .trilha__item:has(.trilha__link:focus-visible) { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: var(--radius-sm); }
+  .trilha__link:focus-visible { outline: none; }
+  .trilha__item--pendente .trilha__titulo { color: var(--color-text-muted); }
+  .trilha__item--pendente .trilha__n { border-color: var(--gray-400); color: var(--color-text-muted); }
+
+  /* ② cola */
+  .cola { width: 100%; border-collapse: collapse; font-size: var(--text-small); }
+  .cola caption { caption-side: top; }
+  .cola th, .cola td { padding: 8px 6px; text-align: left; border-bottom: 1px solid var(--lilac-200); vertical-align: middle; }
+  .cola thead th { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted); }
+  .cola__num { text-align: right !important; font-variant-numeric: tabular-nums; width: 1%; white-space: nowrap; }
+  .cola td .notacao { white-space: nowrap; }
+  .cola__grupo th { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 8px; }
+  .cola__grupo th .marker { display: inline-block; margin-right: 8px; vertical-align: middle; }
+  .cola__grupo--convencional th { background: var(--grp-conv-tint); color: var(--grp-conv-ink); } .cola__grupo--convencional .marker { background: var(--grp-conv-solid); }
+  .cola__grupo--autocondicionante th { background: var(--grp-auto-tint); color: var(--grp-auto-ink); } .cola__grupo--autocondicionante .marker { background: var(--grp-auto-solid); }
+  .cola__grupo--universal th { background: var(--grp-univ-tint); color: var(--grp-univ-ink); } .cola__grupo--universal .marker { border-bottom-color: var(--grp-univ-solid); }
+  .cola__linha { position: relative; }
+  .cola__linha th { font-weight: 600; }
+  .cola__linha th a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
+  .cola__linha th a::after { content: ""; position: absolute; inset: 0; }
+  .cola__linha:hover { background: var(--lilac-100); }
+  .cola__linha:focus-within { outline: 2px solid var(--color-focus); outline-offset: -2px; }
+  .cola__linha th a:focus-visible { outline: none; }
+  /* 320px: a cola cabe sem rolagem lateral (DESIGN §4.9 aceite). A âncora usa o scroll-padding do html (header sticky). */
+  @media (max-width: 399px) {
+    .estudo-bloco { padding: var(--space-3); }
+    .cola th, .cola td { padding: 8px 3px; }
+    .cola thead th { font-size: 10px; letter-spacing: 0.02em; }
+    .cola .notacao { font-size: 13px; letter-spacing: 0; }
+  }
+
+  /* ③ glossário */
+  .glossario__barra { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-bottom: var(--space-2); }
+  .glossario__filtro { height: 44px; width: 100%; max-width: 320px; padding: 0 12px; border: 1.5px solid var(--color-border-input); border-radius: var(--radius-md); font: inherit; font-size: 16px; background: #fff; }
+  .glossario__nav { min-width: 0; max-width: 100%; }
+  .glossario__az { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+  @media (max-width: 639px) {
+    .glossario__az { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 4px; }
+    .glossario__az li { scroll-snap-align: start; }
+  }
+  .glossario__chip { display: inline-grid; place-items: center; min-width: 32px; height: 32px; padding: 0 8px; border: 1.5px solid var(--color-border-input); border-radius: var(--radius-full); background: #fff; font: 700 13px/1 var(--font-sans); color: var(--color-text); text-decoration: none; }
+  .glossario__chip:hover { background: var(--lilac-50); color: var(--color-text); }
+  .glossario__chip--rel { height: 28px; font-weight: 600; padding: 0 10px; }
+  .glossario__rel { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: var(--space-2); }
+  .glossario__separador { font: 700 24px/1 var(--font-serif); color: var(--purple-900); border-bottom: 1px solid var(--lilac-200); padding: var(--space-5) 0 var(--space-2); }
+  .glossario__grade { display: grid; gap: 0 24px; }
+  @media (min-width: 1024px) { .glossario__grade { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .glossario__termo { padding: var(--space-3) var(--space-2); margin: 0 calc(-1 * var(--space-2)); border-radius: var(--radius-sm); min-width: 0; }
+  .glossario__titulo { font: 700 16px / 1.3 var(--font-sans); color: var(--color-text); overflow-wrap: break-word; }
+  .glossario__def { font-size: var(--text-small); color: var(--color-text); margin-top: 4px; }
+  .glossario__termo .source { margin-top: var(--space-2); }
+  .glossario__termo:target { animation: alvoTermo 1.5s var(--ease); }
+  @keyframes alvoTermo { from { background: var(--lilac-100); } to { background: transparent; } }
+  @media (prefers-reduced-motion: reduce) { .glossario__termo:target { animation: none; background: var(--lilac-100); } }
+
   /* Artigo do Guia rápido */
   .artigo { max-width: 68ch; }
   .artigo__resumo { font-size: 18px; color: var(--color-text-muted); }
