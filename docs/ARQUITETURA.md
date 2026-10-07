@@ -30,6 +30,7 @@ data/
       categorias.json                # textos explicativos por grupo/subcategoria (com fonte)
       destaques.json                 # { produtos: [ids] } curadoria "Em destaque", na ordem exibida
       guia/<slug>.json               # artigos do Guia rápido (parágrafos com fonte) ← Dentina
+      glossario.json                 # glossário de adesão (termos com fonte) ← Dentina
       produtos/<id>.json             # 1 arquivo por produto  ← Bula
       ofertas/<id>.json              # preços por loja/apresentação ← Bula (curadoria manual)
 public/
@@ -103,7 +104,9 @@ data/materiais/<material>/guia/<slug>.json
   fontes[Fonte],                                            # DOI na url (https://doi.org/…)
   relacionados[slugs], revisao }
 ```
-Leitura: `catalogo().guia[material]` — artigos visíveis, ordenados por `ordem`; relacionados ocultos (rascunho) são removidos para não virar link 404.
+Leitura: `catalogo().guia[material]` — artigos visíveis, ordenados por `ordem`; relacionados ocultos (rascunho) são removidos para não virar link 404. O slug `glossario` é reservado.
+
+Glossário (`Glossario`, `data/materiais/<material>/glossario.json`): `{ fontes[Fonte], termos[{ id, termo, sinonimos[], definicao, fontes[ids], artigos[slugs do guia], relacionados[ids de termos] }], revisao }`. Leitura: `catalogo().glossario[material]` (oculto em produção se rascunho; links para artigos ocultos removidos). Ordem alfabética é da UI. Rota: `/guia/glossario`.
 
 ### 3.4 Ofertas (`OfertasDoProduto`)
 ```
@@ -133,7 +136,7 @@ ofertas[{
 | `/produto/{id}` (+ `#precos`, `?estrategia={slug}`) | `app/produto/[id]/page.tsx` | Produto, modo de uso, preços (§4.3, §4.7) |
 | `/comparar?ids=a,b,c` | `app/comparar/page.tsx` | Comparador (§4.6) — ler `ids` no cliente para manter rota estática |
 | `/busca?q=` | `app/busca/page.tsx` | Resultados (§4.8) — idem, no cliente |
-| `/guia`, `/guia/{slug}` | `app/guia/…` | Guia rápido (§3.3) |
+| `/guia`, `/guia/{slug}`, `/guia/glossario` | `app/guia/…` | Guia rápido e glossário (§3.3) |
 | `/metodologia` | `app/metodologia/page.tsx` | Fontes e metodologia (rodapé) |
 
 Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `2-passos | 3-passos | 1-passo | condicionamento-seletivo | condicionamento-total | autocondicionante`. O prefixo `/sistemas-adesivos/` é intencional (próximos materiais ganham o próprio prefixo); diverge do `/[grupo]/[sub]` e `/produto/[slug]` sugeridos no DESIGN/Plano de testes — **vale esta tabela**.
