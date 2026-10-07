@@ -1,0 +1,97 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "ambar-aps",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-ambar-aps-fgm-907285.html",
+      "tituloNaLoja": "Adesivo Ambar APS 6ml - FGM",
+      "skuLoja": "907285",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 13699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 13288,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-ambar-aps-6ml-fgm.html",
+      "tituloNaLoja": "Adesivo Ambar APS 6ml - FGM",
+      "skuLoja": "FGM12262A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 13699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 13288,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-ambar-aps-fgm",
+      "tituloNaLoja": "Adesivo Ambar APS - FGM",
+      "skuLoja": "26.4824",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 13699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 13288,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-2ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalspeed.com/adesivo-ambar-aps-2-ml-fgm.html",
+      "tituloNaLoja": "Adesivo Fotopolimerizável Ambar APS 2ml - FGM",
+      "skuLoja": "FGM12262B",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Esgotado em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-2ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Apresentação de 2 mL não encontrada na loja."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-2ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Apresentação de 2 mL não encontrada na loja."
+    }
+  ]
+}

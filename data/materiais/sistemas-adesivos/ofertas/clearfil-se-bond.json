@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "clearfil-se-bond",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "kit-primer-6ml-bond-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-clearfil-se-bond-kuraray-116476.html",
+      "tituloNaLoja": "Kit Adesivo Clearfil SE Bond + Primer - Kuraray",
+      "skuLoja": "116476",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 84790,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 82246,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "kit-primer-6ml-bond-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/kit-adesivo-clearfil-se-bond-primer-kuraray.html",
+      "tituloNaLoja": "Kit Adesivo Clearfil SE Bond + Primer - Kuraray",
+      "skuLoja": "KUR20887A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 84790,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 82246,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "kit-primer-6ml-bond-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/clearfil-se-bond-primer-kuraray",
+      "tituloNaLoja": "Clearfil SE Bond + Primer - Kuraray",
+      "skuLoja": "26.9821",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 84790,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 82246,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 Primer 6 ml + 1 Bond 5 ml + 50 pontas pincel + 2 cabos."
+    }
+  ]
+}

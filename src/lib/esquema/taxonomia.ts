@@ -30,6 +30,12 @@ export interface Subcategoria {
   sequencia: PassoVisual[];
   /** Características derivadas da classificação, usadas na tabela COMPARAR (§11). */
   condicionamentoAcidoSeparado: "sim" | "nao" | "opcional";
+  /**
+   * Onde o ácido fosfórico separado é aplicado; null = não há ácido separado.
+   * Diferencia universal seletivo (só esmalte) de total (esmalte e dentina),
+   * que têm a mesma `sequencia` (DESIGN §3.7, pictograma de substrato).
+   */
+  substratoAcido: "esmalte" | "esmalte-e-dentina" | null;
 }
 
 export interface Grupo {
@@ -72,6 +78,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "2 passos",
     sequencia: ["acido", "primer+adesivo"],
     condicionamentoAcidoSeparado: "sim",
+    substratoAcido: "esmalte-e-dentina",
   },
   "convencional-3-passos": {
     id: "convencional-3-passos",
@@ -80,6 +87,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "3 passos",
     sequencia: ["acido", "primer", "adesivo"],
     condicionamentoAcidoSeparado: "sim",
+    substratoAcido: "esmalte-e-dentina",
   },
   "autocondicionante-1-passo": {
     id: "autocondicionante-1-passo",
@@ -88,6 +96,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "1 passo",
     sequencia: ["tudo-em-um"],
     condicionamentoAcidoSeparado: "nao",
+    substratoAcido: null,
   },
   "autocondicionante-2-passos": {
     id: "autocondicionante-2-passos",
@@ -96,6 +105,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "2 passos",
     sequencia: ["primer-autocondicionante", "adesivo"],
     condicionamentoAcidoSeparado: "nao",
+    substratoAcido: null,
   },
   "universal-condicionamento-seletivo": {
     id: "universal-condicionamento-seletivo",
@@ -104,6 +114,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "Condicionamento seletivo",
     sequencia: ["acido", "adesivo-universal"],
     condicionamentoAcidoSeparado: "sim",
+    substratoAcido: "esmalte",
   },
   "universal-condicionamento-total": {
     id: "universal-condicionamento-total",
@@ -112,6 +123,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "Condicionamento total",
     sequencia: ["acido", "adesivo-universal"],
     condicionamentoAcidoSeparado: "sim",
+    substratoAcido: "esmalte-e-dentina",
   },
   "universal-autocondicionante": {
     id: "universal-autocondicionante",
@@ -120,6 +132,7 @@ export const SUBCATEGORIA: Record<SubcategoriaId, Subcategoria> = {
     rotulo: "Autocondicionante",
     sequencia: ["adesivo-universal"],
     condicionamentoAcidoSeparado: "nao",
+    substratoAcido: null,
   },
 };
 

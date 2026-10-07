@@ -1,0 +1,332 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Âmbar APS"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Todas as classes de restaurações com compósitos (classes I, II, III, IV e V).",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Cimentação adesiva (em adição ao cimento resinoso) de peças protéticas (pinos/núcleos, coroas, onlays/inlays, facetas etc.) de fibra de vidro, cerômero, cerâmica, resina e metal.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparos adesivos em cerâmica e compósitos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Evitar o uso em pacientes com alergia a acrilatos/metacrilatos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas-e-indiretas",
+      "titulo": "Restaurações diretas e indiretas",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar ácido fosfórico 37% em esmalte e dentina, de acordo com o tipo de preparo.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar a superfície com água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar a cavidade deixando a dentina hidratada, porém sem acúmulo de água na superfície. Se for preciso reidratar a dentina, usar bolinhas de algodão umedecidas com água destilada ou clorexidina.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Dispensar o adesivo em pote Dappen ou diretamente em microaplicador descartável. Aplicar a primeira camada (uma gota) friccionando vigorosamente o microaplicador saturado sobre as superfícies levemente umedecidas.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "1ª de 2 camadas (1 gota por camada)"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "fricção vigorosa 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada de adesivo.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar jato de ar gentilmente para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar suave 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo com luz azul.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · potência acima de 450 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Para cimentação de pinos pré-fabricados a IFU traz protocolo próprio: ácido no conduto por 15 s, duas camadas friccionadas por 10 s, jato de ar 10 s e fotopolimerização por 20 s.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "Antes de aplicar o adesivo, a dentina deve estar levemente brilhante (úmida), mas não molhada. Evitar excesso de adesivo e de jatos de ar.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "apresentacoes",
+      "descricao": "A IFU descreve apenas embalagem com frasco de 6 mL; a Dental Speed anuncia frasco de 2 mL.",
+      "versoes": [
+        {
+          "valor": "Somente 6 mL",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "valor": "Também 2 mL",
+          "fontes": [
+            "loja-speed-2ml"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 1. Imagens pendentes."
+  },
+  "id": "ambar-aps",
+  "nomeComercial": "Ambar APS",
+  "fabricante": {
+    "id": "fgm",
+    "nome": "FGM"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"adesivo fotopolimerizável de 5ª geração (adesivo de dois passos, condicionamento ácido total)\"; primer e adesivo combinados em frasco único."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de primer + adesivo em frasco único.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "MDP (10-metacriloiloxidecil dihidrogenofosfato)",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "ingrediente ativo"
+      },
+      {
+        "nome": "Monômeros metacrilatos",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "ingrediente ativo"
+      },
+      {
+        "nome": "Complexo fotoiniciador (APS)",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "ingrediente ativo"
+      },
+      {
+        "nome": "Co-iniciadores e estabilizantes",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Carga inerte (partículas de sílica)",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "ingrediente inativo"
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ],
+        "funcao": "veículo"
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita HEMA na composição básica."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita silano."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-6ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 6 mL",
+      "quantidade": 1,
+      "volumeMl": 6,
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "id": "frasco-2ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 2 mL",
+      "quantidade": 1,
+      "volumeMl": 2,
+      "ean": "7899633810932",
+      "fontes": [
+        "loja-speed-2ml"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-6ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso Ambar APS (IFUAMA-00, PT/ES/EN)",
+      "url": "https://ifu.fgm.ind.br/pdf/PRODUTO_162/VERSAO_228/IFUAMA-00%20-%20MANUAL%20AMBAR%20APS%20PT%20ES%20EN.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "IFUAMA-00 · versão 00 · vigente desde 14/11/2023"
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar APS — FGM",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar-aps/",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-speed-2ml",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Adesivo Fotopolimerizável Ambar APS 2ml - FGM",
+      "url": "https://www.dentalspeed.com/adesivo-ambar-aps-2-ml-fgm.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Apresentação de 2 mL só encontrada em loja; a IFU cita apenas 6 mL."
+    }
+  ]
+}
