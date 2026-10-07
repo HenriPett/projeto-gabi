@@ -1,10 +1,33 @@
-// /metodologia — de onde vêm classificação, protocolos, composição e preços (§20).
+import { Breadcrumb } from "@/components/Breadcrumb";
+
+// /metodologia — de onde vêm classificação, protocolos, composição e preços.
 export const metadata = { title: "Metodologia e fontes" };
 
 export default function Pagina() {
   return (
-    <main className="mx-auto w-full max-w-5xl p-4">
-      <h1 className="text-3xl font-bold">Metodologia e fontes</h1>
-    </main>
+    <div className="pagina">
+      <Breadcrumb itens={[{ rotulo: "Sistemas Adesivos", href: "/" }, { rotulo: "Metodologia e fontes" }]} />
+      <article className="prose stack pb-6">
+        <h1>Metodologia e fontes</h1>
+        <p>
+          Cada informação técnica exibida — classificação, composição, indicações e modo de uso — aponta para a fonte
+          consultada (instruções de uso, ficha técnica ou site do fabricante), com a data de acesso.
+        </p>
+        <p>
+          Quando fontes discordam, mostramos todas as versões lado a lado, sem escolher uma. Quando um dado não foi
+          encontrado em fonte confiável, ele aparece como “Não informado”.
+        </p>
+        <h2 id="precos">Como comparamos preços</h2>
+        <p>
+          Só comparamos preços da <strong>mesma apresentação</strong> (mesmo fabricante, produto, volume e quantidade).
+          Usamos o preço vigente da página, sem condição de pagamento. Lojas com apresentações diferentes aparecem
+          separadas, sem ranking.
+        </p>
+        <p>
+          Cada preço mostra a data em que foi consultado. Preços podem ter mudado desde então — confirme sempre no site
+          da loja.
+        </p>
+      </article>
+    </div>
   );
 }
