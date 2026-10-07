@@ -405,6 +405,71 @@ Ver §3.1. Está presente em **todas** as telas no header. Página `/busca?q=` l
 
 ---
 
+### 4.9 Guia rápido `/guia` (índice): coluna de estudo (06/10/2026)
+
+Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/3 da tela e o resto fica em branco. Solução: transformar a página num **painel de estudo** com os artigos no centro e três ferramentas de consulta rápida ao lado.
+
+**Layout**
+
+```
+≥1024px (container 1200px; a 1920 continua 1200 centralizado)
+┌──────────── 8/12 ─────────────┐ ┌──── 4/12 (sticky top: 88px) ────┐
+│ PARA ESTUDAR / h1 / lead       │ │ ① POR ONDE COMEÇAR (trilha 1→7) │
+│ ┌ card ┐ ┌ card ┐  (2 colunas) │ │                                  │
+│ ┌ card ┐ ┌ card ┐              │ │ ② COLA DAS 7 CATEGORIAS (tabela) │
+│ ┌ card ┐ ┌ card ┐              │ └──────────────────────────────────┘
+│ ┌ card ┐                       │
+│ ─────────────────────────────  │
+│ ③ GLOSSÁRIO (2 colunas de dl)  │
+└────────────────────────────────┘
+640–1023px: uma coluna; ordem = h1 → ① trilha → cartões (2 col) → ② cola → ③ glossário
+<640px:     uma coluna; mesma ordem; cartões em 1 col
+```
+
+- Grade: `grid-template-columns: minmax(0, 8fr) minmax(0, 4fr)`, gap `--space-10`. A coluna lateral é `<aside aria-label="Ferramentas de estudo">` com `position: sticky; top: 88px; align-self: start` e **só fica sticky se couber**: `max-height: calc(100vh - 104px); overflow-y: auto` com `overscroll-behavior: contain`. Ela começa alinhada ao topo da grade de cartões, não ao h1.
+- Cartões de artigo: 2 colunas no main (`.guide` com `repeat(2, minmax(0,1fr))` a partir de 640px), sem mudar o componente.
+- O glossário fica no main, abaixo dos cartões, porque é a parte mais longa e não faz sentido sticky.
+- Cada bloco é uma seção com `h2` (`--text-h3` sans 600, não serif, porque são ferramentas e não conteúdo) + overline acima: "PARA COMEÇAR", "CONSULTA RÁPIDA", "TERMOS".
+- Superfície dos blocos laterais: fundo `--color-surface-atlas`, borda 1px `--lilac-200`, raio `--radius-lg`, padding `--space-5`; gap entre blocos `--space-6`.
+
+**① Por onde começar (trilha de leitura)**
+- Lista ordenada `<ol>` de 7 itens, do básico à síntese. A ordem é **dado** (proposta: campo `trilha` com array de slugs em `data/materiais/sistemas-adesivos/guia/trilha.json`; contrato com o Molar), não ordem alfabética nem a `ordem` dos cartões. Ordem inicial proposta:
+  1. Esmalte x dentina — "os dois substratos e por que se comportam diferente"
+  2. Camada híbrida — "o que a adesão forma na dentina"
+  3. Convencional x autocondicionante — "as duas estratégias de base"
+  4. O que é adesivo universal? — "um frasco, várias estratégias"
+  5. Condicionamento seletivo — "a técnica que combina as duas"
+  6. O que é MDP? — "o monômero que aparece na composição"
+  7. Como escolher a estratégia adesiva? — "a síntese, para decidir"
+  (As frases curtas são de navegação, não afirmações científicas; se o artigo tiver `resumo`, a Pulpa pode usar a 1ª oração dele em vez da frase.)
+- Item: número em círculo de 28px (serif 700 14px, `--magenta-600`, borda 1.5px), título 15px 600 (link sublinhado só no hover; o item inteiro é o alvo, mín. 44px de altura), frase em caption muted. Linha vertical 2px `--lilac-200` ligando os círculos (estilo da Modo de Uso, versão mini).
+- Artigo ainda não publicado: item sem link, título `--gray-600`, selo "em preparação" (caption). **Não pula a numeração.**
+- Sem estado "lido" na v1 (não há conta; `localStorage` só se for pedido depois).
+
+**② Cola das 7 categorias**
+- `<table>` real, `caption` visível "Cola das 7 categorias" como h2 do bloco, `--text-small`, sem zebra, linhas separadas por borda `--lilac-200`.
+- **Colunas:** Subcategoria · Notação · Passos · Produtos. O **grupo vira linha-cabeçalho** (`<th scope="rowgroup" colspan="4">`, overline 11px com o marcador ●◆▲ e a cor `--grp-*-ink` sobre `--grp-*-tint`), em vez de coluna, para caber em 4/12 (~380px).
+  - Subcategoria: link para a categoria (`rotulo` curto: "2 passos", "Seletivo"…), 14px 600.
+  - Notação: componente `<Notacao>` (o mesmo do diagrama), `nowrap`.
+  - Passos: número de aplicações = `sequencia.length` da taxonomia (conv. 3→3, conv. 2→2, auto 2→2, auto 1→1, univ. seletivo/total→2, univ. autocond.→1), tabular, alinhado à direita.
+  - Produtos: nº de produtos **publicados** naquela subcategoria (mesma contagem da Home), tabular, à direita; 0 aparece como "—" em `--gray-600` com `aria-label="nenhum produto"`.
+- **Linha inteira clicável**: o link está na célula Subcategoria e um `::after` absoluto cobre a linha (`tr { position: relative }`). Hover: fundo `--lilac-100`. Foco visível no link (o anel envolve a linha via `:focus-within` → `outline` no `tr`).
+- Rodapé da tabela (caption muted): a legenda da notação (`<LegendaNotacao>`), uma vez só.
+- Tudo vem da taxonomia + `categorias.json` + contagem do catálogo. **Nada digitado à mão.**
+
+**③ Glossário**
+- `<dl>` em 2 colunas (≥1024; 1 coluna abaixo), ordem alfabética, com âncora por termo (`id="termo-mdp"`) para outros textos linkarem.
+- Termo (`dt`): 15px 700 `--color-text`; sigla expandida em seguida, 14px 400 muted ("MDP — 10‑metacriloiloxidecil di‑hidrogenofosfato").
+- Definição (`dd`): **1 frase**, `--text-small`, máx. 220 caracteres + `<SourceLink>` compacto ("Fonte: Autor Ano ↗").
+- Se existir artigo do guia sobre o termo: link "Ler no guia →" no fim da definição.
+- Barra de filtro opcional acima do glossário (input de busca 40px "Filtrar termos") só se houver mais de 12 termos.
+- Conteúdo: **vem da Dentina**, com fonte por termo (mesma regra de correção científica do briefing). Termos mínimos: MDP, HEMA, camada híbrida, smear layer (lama dentinária), solvente, condicionamento seletivo, nanocamada (nanolayering), primer, silano, monômero funcional, condicionamento total, fibras colágenas. Proposta de dado: `data/materiais/sistemas-adesivos/glossario.json` (`[{termo, sigla?, definicao, fontes[], artigo?}]`), com contrato/validação a cargo do Molar.
+- Sem dado ainda: o bloco **não aparece** (nada de "em preparação" num glossário vazio).
+
+**Acessibilidade:** a ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → glossário). No desktop, a trilha e a cola vão para a coluna lateral via `grid-area`, sem reordenar o DOM de modo que a leitura vá contra a ordem visual: no desktop a ordem visual é main (cartões, glossário) e depois aside, e o leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha é a introdução. `aside` com `aria-label`; tabela com `caption`; cada bloco com h2.
+
+**Larguras de aceite:** 320, 390, 768, 1280, 1920. Sem scroll horizontal, a tabela da cola cabe sem rolagem a partir de 320px (a coluna Notação pode quebrar entre os termos da notação, nunca dentro de um termo) e a lateral não ultrapassa a altura da viewport sem rolar internamente.
+
 ## 5. Acessibilidade (checklist de aceite)
 
 - Contraste AA verificado em todos os pares da §1 (texto ≥ 4.5:1, UI/ícones ≥ 3:1).
