@@ -417,6 +417,13 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-004 | S3 | ✅ Corrigido `f1aa8a6` — reverificado | Toda `DataISO` ≤ hoje (UTC). |
 | BUG-005 | S1 | ✅ Corrigido `f1aa8a6` — reverificado | `catalogo()` oculta ofertas de rascunho. |
 | BUG-006 | S3 | ✅ Corrigido `f620700` — reverificado | MDP indexado também como 10-MDP; `"10-MDP"` ≡ `"MDP"`. |
+| BUG-007 | S3 | 🔴 Aberto (Molar) | URI malformada → 500 |
+| BUG-008 | S2 | 🔴 Aberto (Pulpa) | Overflow horizontal no mobile; toques caem no elemento errado |
+| BUG-009 | S2 | 🔴 Aberto (Pulpa) | Contraste insuficiente no diagrama de etapas |
+| BUG-010 | S3 | 🔴 Aberto (Pulpa) | Salto de heading h1 → h3 em /comparar e /guia |
+| BUG-011 | S3 | 🔴 Aberto (Pulpa) | Links dentro de texto só se distinguem pela cor |
+| BUG-012 | S2 | 🔴 Aberto (Pulpa) | Comparador mostra "Menor preço" de produto sem preços comparáveis |
+| BUG-013 | S3 | 🔴 Aberto (Pulpa) | Comparador mostra só o volume da apresentação principal |
 
 **Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
 
@@ -453,3 +460,43 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 - **Esperado:** `ficticio-rascunho` ausente (rascunho nunca vai para produção — ARQUITETURA §3.1.5).
 - **Obtido:** `ficticio-rascunho` é o **1º** de "Melhores preços". `catalogo()` filtra `produtos` mas devolve `ofertas` sem filtro. A home mostraria um produto não revisado com link para `/produto/ficticio-rascunho`, que é **404** em produção (`dynamicParams = false`).
 - **Saída real:** `produtos: false | melhores: [ 'ficticio-rascunho', 'ficticio-ambar', 'ficticio-dois-frascos', 'ficticio-single-bond-2', 'exemplo-universal' ]`
+
+## 13. Execução E2E (Playwright) — 06/10/2026, front `682f4c2`
+
+`pnpm e2e` → build de produção com fixtures + `next start` na porta 3100 (servidor **sempre novo**: um `next start` antigo na porta servia CSS/dados velhos e mascarava resultados). 4 projetos: desktop-chromium, mobile-chrome (Pixel 7), mobile-safari (iPhone 13), small (320 px).
+
+Fluxos do §22 (E2E-01 completo até o clique em Comprar; E2E-02 até comparar produtos e preços) e todos os cenários de preço PR-01/02/06/07/08/09/10/11/14/16/18/21/25 **passam** em desktop e mobile-safari. As falhas restantes são os bugs abaixo.
+
+Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja recebe o selo; aparece "Mesmo preço nas lojas comparadas". ✅ Coerente com PR-11. Observação: `compararPrecos` marca `menorPreco: true` em todas e o componente reverte — a regra deveria estar em `precos.ts` (ARQUITETURA §5) para valer igual em card, home e comparador.
+
+### BUG-007 — URI malformada em rota dinâmica responde 500 · **S3** · Molar
+- **Passos:** `pnpm e2e` (ou `curl -o /dev/null -w "%{http_code}" localhost:3100/produto/%E0`).
+- **Esperado:** 404 amigável (C-06/D-05/B-21).
+- **Obtido:** `/produto/%E0` → **500**; `/sistemas-adesivos/%E0/x` → **500**. (`/%E0` → 404, `/busca?q=%E0` → 200.) Pode ser comportamento do `next start` — conferir no preview da Vercel.
+- **Teste:** `navegacao.spec.ts` (marcado `test.fail` com BUG-007).
+
+### BUG-008 — Overflow horizontal no mobile; toques acertam o elemento errado · **S2** · Pulpa
+- **Passos:** `pnpm e2e --project=mobile-chrome` (ou abrir a home/qualquer categoria a 412 px ou 320 px).
+- **Esperado:** `scrollWidth` ≤ largura do aparelho (MOB-01).
+- **Obtido (412 px):** home → 801 px (`span.whitespace-nowrap` até 800 px); as 7 categorias → **842 px** (`figure.diagram` / `figcaption` / `span.notacao` até 821 px; nos universais `div.paths`/`div.path__title`). No Chrome Android o layout viewport cresce para ~984 px e o conteúdo se sobrepõe: clicar em "Condicionamento seletivo" na home é interceptado por `.grp__body`/`h2`; na categoria, o link do produto é interceptado por `figure.diagram` e "Comparar com 3 passos →". **Consequência: E2E-01, E2E-02, H-04 (universais) e G-01 falham no mobile-chrome por timeout de clique.** Falha em mobile-chrome, mobile-safari e small.
+
+### BUG-009 — Contraste insuficiente no diagrama "Como identificar?" · **S2** · Pulpa
+- **Passos:** `pnpm e2e -g A11Y` (axe, WCAG 2.1 AA).
+- **Obtido (`color-contrast`, serious):** `.step--pa > .step__glyph`, `.step--primer > .step__count`, `.step--adh > .step__label`, `.step--adh > .step__count` em categorias convencionais/autocondicionantes e no seletor de estratégias da página de produto universal.
+
+### BUG-010 — Salto de heading h1 → h3 · **S3** · Pulpa
+- **Rotas:** `/comparar` (estado vazio) e `/guia` (`<h3>Conteúdo em preparação.`). Todas as larguras.
+
+### BUG-011 — Links em bloco de texto só se distinguem pela cor · **S3** · Pulpa
+- **Obtido (`link-in-text-block`, serious):** na página de produto, `.small > a[href$="ifu.pdf"]` (fonte) e `a[href$="metodologia#precos"]`. Precisam de sublinhado ou outro indicador além da cor (A11Y-05).
+
+### BUG-012 — Comparador mostra "Menor preço" de produto sem preços comparáveis · **S2** · Pulpa
+- **Passos:** `/comparar?ids=ficticio-universal-triplo,ficticio-ambar`.
+- **Esperado:** para produto sem nenhuma apresentação com ≥ 2 lojas, nada de "menor preço" (PR-02/PR-08); a linha extra coloca lado a lado preços de produtos e volumes diferentes (5 mL × 4 mL), o que o §13 proíbe.
+- **Obtido:** linha `menor-preco` com "a partir de R$ 159,90" para `ficticio-universal-triplo` (5 mL na Speed, único preço da apresentação; a Cremer vende o 3 mL por R$ 99,90 — o "a partir de" também está errado). Sugestão: mostrar só "ver preços" (link para `#precos`) ou o valor apenas quando `comparacao.comparavel`, sempre com a apresentação.
+- **Teste:** `fluxos.spec.ts` › BUG-012 (`test.fail`).
+
+### BUG-013 — Comparador mostra só o volume da apresentação principal · **S3** · Pulpa
+- **Passos:** `/comparar?ids=ficticio-universal-triplo,…`.
+- **Esperado:** "3 mL · 5 mL" (todas as apresentações cadastradas) ou a apresentação explicitada.
+- **Obtido:** "5 mL".

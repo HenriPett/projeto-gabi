@@ -12,7 +12,8 @@
     "validar:dados": "tsx scripts/validar-dados.ts",
     "gerar:json-schema": "tsx scripts/gerar-json-schema.ts",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm validar:dados",
-    "icons": "node scripts/gerar-icones.mjs"
+    "icons": "node scripts/gerar-icones.mjs",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "next": "16.4.0",
@@ -22,6 +23,8 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/turbopack": "^4",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^7.0.1",
