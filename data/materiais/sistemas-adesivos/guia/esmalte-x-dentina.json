@@ -1,0 +1,155 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "esmalte-x-dentina",
+  "titulo": "Esmalte x dentina",
+  "resumo": "Por que aderir ao esmalte é previsível e aderir à dentina é o grande desafio da odontologia adesiva.",
+  "ordem": 5,
+  "secoes": [
+    {
+      "titulo": "Dois substratos opostos",
+      "paragrafos": [
+        {
+          "texto": "A adesão é diferente no esmalte e na dentina. O esmalte é predominantemente mineral, enquanto a dentina contém bastante água e matéria orgânica, principalmente colágeno tipo I.",
+          "fontes": [
+            "perdigao-2010"
+          ]
+        },
+        {
+          "texto": "O esmalte é um substrato seco, sem estruturas vitais, com 92% de fase mineral (hidroxiapatita) em volume, o que o torna quase ideal para uma união firme. Na dentina, a hidroxiapatita ocupa em média 45% do volume e a matriz orgânica 33%, e o restante é água.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Esmalte: condicionamento ácido",
+      "paragrafos": [
+        {
+          "texto": "A adesão ao esmalte com condicionamento ácido remonta ao trabalho de Buonocore, de 1955, que propôs um método simples para aumentar a adesão de materiais acrílicos à superfície do esmalte.",
+          "fontes": [
+            "buonocore-1955",
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "No esmalte, a união é micromecânica: os monômeros se difundem e se entrelaçam nas microporosidades deixadas pela dissolução ácida. Essa união é confiável e sela as margens da restauração contra infiltração.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Os autocondicionantes testados tiveram resistência de união ao esmalte menor que a dos sistemas com ácido fosfórico, e a união ao esmalte é mais desafiadora para os autocondicionantes 'mild'.",
+          "fontes": [
+            "erickson-2009",
+            "van-meerbeek-2011"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Dentina: o substrato mais desafiador",
+      "paragrafos": [
+        {
+          "texto": "A dentina é considerada o substrato de adesão mais desafiador.",
+          "fontes": [
+            "van-meerbeek-2020"
+          ]
+        },
+        {
+          "texto": "Quanto mais profunda, mais túbulos e mais umidade ela tem: o volume tubular vai de cerca de 4% perto da junção amelodentinária a 28% perto da polpa. Por isso, aderir à dentina profunda é mais difícil que à superficial.",
+          "fontes": [
+            "perdigao-2020",
+            "perdigao-2010"
+          ]
+        },
+        {
+          "texto": "Substratos alterados complicam a adesão. A dentina afetada por cárie tem dureza menor e depósitos minerais nos túbulos, e a das lesões cervicais não cariosas é hipermineralizada e tem colágeno desnaturado.",
+          "fontes": [
+            "perdigao-2010"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Umidade da dentina",
+      "paragrafos": [
+        {
+          "texto": "Depois de condicionada e lavada, a dentina desmineralizada perde a sustentação mineral, e o colágeno colapsa se for seco com ar. Daí surgiu a proposta de aderir com a superfície úmida, também porque é quase impossível manter a dentina seca na boca.",
+          "fontes": [
+            "perdigao-2020",
+            "kanca-1992"
+          ]
+        },
+        {
+          "texto": "Em estudos clínicos com adesivos convencionais, porém, a dentina úmida não se associou a uma taxa de retenção melhor que a da dentina seca. O controle de umidade de cada produto deve seguir a IFU.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "perdigao-2010",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Dentin bonding—variables related to the clinical situation and the substrate treatment. Dent Mater. 2010;26(2):e24-e37.",
+      "url": "https://doi.org/10.1016/j.dental.2009.11.149",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "buonocore-1955",
+      "tipo": "literatura",
+      "titulo": "Buonocore MG. A simple method of increasing the adhesion of acrylic filling materials to enamel surfaces. J Dent Res. 1955;34(6):849-853.",
+      "url": "https://doi.org/10.1177/00220345550340060801",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "erickson-2009",
+      "tipo": "literatura",
+      "titulo": "Erickson RL, Barkmeier WW, Latta MA. The role of etching in bonding to enamel: a comparison of self-etching and etch-and-rinse adhesive systems. Dent Mater. 2009;25(11):1459-1467.",
+      "url": "https://doi.org/10.1016/j.dental.2009.07.002",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "van-meerbeek-2011",
+      "tipo": "literatura",
+      "titulo": "Van Meerbeek B, Yoshihara K, Yoshida Y, et al. State of the art of self-etch adhesives. Dent Mater. 2011;27(1):17-28.",
+      "url": "https://doi.org/10.1016/j.dental.2010.10.023",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "van-meerbeek-2020",
+      "tipo": "literatura",
+      "titulo": "Van Meerbeek B, Yoshihara K, Van Landuyt K, et al. From Buonocore's pioneering acid-etch technique to self-adhering restoratives. A status perspective of rapidly advancing dental adhesive technology. J Adhes Dent. 2020;22(1):7-34.",
+      "url": "https://doi.org/10.3290/j.jad.a43994",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "kanca-1992",
+      "tipo": "literatura",
+      "titulo": "Kanca J 3rd. Improving bond strength through acid etching of dentin and bonding to wet dentin surfaces. J Am Dent Assoc. 1992;123(9):35-43.",
+      "url": "https://doi.org/10.14219/jada.archive.1992.0248",
+      "acessadoEm": "2026-10-06"
+    }
+  ],
+  "relacionados": [
+    "condicionamento-seletivo",
+    "camada-hibrida",
+    "convencional-x-autocondicionante"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
