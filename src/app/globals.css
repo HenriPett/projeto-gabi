@@ -699,12 +699,15 @@
 
   /* ② cola */
   .cola { width: 100%; border-collapse: collapse; font-size: var(--text-small); }
+  /* Rede de segurança: com fonte reserva mais larga (Linux sem webfont), a tabela rola por dentro em vez de alargar a página. */
+  .estudo__cola .estudo-bloco, .estudo-bloco:has(.cola) { min-width: 0; overflow-x: auto; }
+  .cola th, .cola td { overflow-wrap: break-word; }
   .cola caption { caption-side: top; }
   .cola th, .cola td { padding: 8px 6px; text-align: left; border-bottom: 1px solid var(--lilac-200); vertical-align: middle; }
   .cola thead th { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted); }
   .cola__num { text-align: right !important; font-variant-numeric: tabular-nums; width: 1%; white-space: nowrap; }
   .cola td .notacao { white-space: nowrap; }
-  .cola__grupo th { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 8px; }
+  .cola__grupo th { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 8px; white-space: normal; }
   .cola__grupo th .marker { display: inline-block; margin-right: 8px; vertical-align: middle; }
   .cola__grupo--convencional th { background: var(--grp-conv-tint); color: var(--grp-conv-ink); } .cola__grupo--convencional .marker { background: var(--grp-conv-solid); }
   .cola__grupo--autocondicionante th { background: var(--grp-auto-tint); color: var(--grp-auto-ink); } .cola__grupo--autocondicionante .marker { background: var(--grp-auto-solid); }
@@ -720,7 +723,8 @@
   @media (max-width: 399px) {
     .estudo-bloco { padding: var(--space-3); }
     .cola th, .cola td { padding: 8px 3px; }
-    .cola thead th { font-size: 10px; letter-spacing: 0.02em; }
+    .cola thead th { font-size: 10px; letter-spacing: 0; }
+    .cola__grupo th { letter-spacing: 0.02em; }
     .cola .notacao { font-size: 13px; letter-spacing: 0; }
   }
 
