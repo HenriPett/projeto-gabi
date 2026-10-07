@@ -1,0 +1,251 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Master Bond"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações de resinas compostas fotopolimerizáveis; dessensibilização dentinária e colagem de fragmentos; complemento de cimentação adesiva; facetas de porcelana e reparos em porcelana.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Contraindicado para pessoas sensíveis a algum dos componentes do produto.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-compositos",
+      "titulo": "Restaurações com compósitos",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Sob isolamento absoluto, condicionar com ácido (p. ex., Attaque Gel).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte 30 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina 15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente com água/ar a área condicionada.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "30 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar completamente o esmalte; secar a dentina com papel absorvente, sem desidratar: ela deve apresentar brilho de umidade.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada",
+          "descricao": "Aplicar ativamente o adesivo de forma uniforme sobre toda a superfície condicionada.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada",
+          "descricao": "Aplicar nova camada da mesma forma e evaporar o solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3."
+  },
+  "id": "master-bond-de",
+  "nomeComercial": "Master Bond DE",
+  "fabricante": {
+    "id": "biodinamica",
+    "nome": "Biodinâmica"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: \"Adesivo Monocomponente para Esmalte e Dentina Fotopolimerizável\"; requer condicionamento do esmalte e da dentina com ácido fosfórico 37%."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo monocomponente.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bisfenol A glicidilmetacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Grupos dimetacrilatos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Álcool",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fluoreto de sódio",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Catalisadores",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita MDP."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita HEMA."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita silano."
+    },
+    "solventes": {
+      "valor": "nao-informado",
+      "observacao": "A bula cita \"Álcool\" sem especificar."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "refil-5ml",
+      "tipo": "refil",
+      "descricao": "Reposição: frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "ean": "7896261377219",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "refil-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Bula MASTER BOND DE — Biodinâmica",
+      "url": "https://biodinamica.com.br/wp-content/uploads/2024/05/000875-bula-master-bond-rev.26-14-07-26.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "EM B000875 Rev.26 · ANVISA 10298550091",
+      "observacao": "A bula lista Kit Introdução (1x5 mL ou 2x5 mL + Attaque Gel) e Reposição 1x4 mL e 1x5 mL."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Master Bond Refil 5ml - Biodinâmica",
+      "url": "https://www.dentalcremer.com.br/adesivo-master-bond-refil-biodinamica-382556.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN (o mesmo exibido na Dental Speed)."
+    }
+  ]
+}

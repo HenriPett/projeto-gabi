@@ -1,0 +1,465 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Magic Bond Universal Vigodent"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas de todas as classes; ligação adesiva de restaurações indiretas (inlays, onlays, facetas, coroas e pinos) em fibra de vidro, cerâmica, compósitos e metais; reparos em cerâmicas e compósitos; selagem da dentina.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Não usar em pacientes com histórico de alergia aos componentes, quando a técnica não puder ser aplicada, com higiene oral inadequada ou se for impossível manter a área seca.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Técnica autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Preparo",
+          "descricao": "Profilaxia com pedra-pomes e água; isolar com dique de borracha. Esmalte não cortado: condicionar com Magic Ácid 37% ou limpar com pedra-pomes, enxaguar e secar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar uma gota e aplicar na cavidade com Technobrush, esfregando a superfície. Evitar acúmulo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "1 aplicação"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem",
+          "descricao": "Secar cuidadosamente com ar isento de óleo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar (halógena ou LED). Intensidade menor exige mais tempo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · > 800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Preparo",
+          "descricao": "Profilaxia com pedra-pomes e água; isolar com dique de borracha. Esmalte não cortado: condicionar com Magic Ácid 37% ou limpar com pedra-pomes, enxaguar e secar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar somente o esmalte. Aplicar o gel de ácido fosfórico Magic Ácid 37% de acordo com as instruções de uso do gel.",
+          "parametros": [
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Enxaguar bem, verificar se não ficaram resíduos e secar com ar isento de óleo, sem ressecar a dentina (de preferência com papel absorvente).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar uma gota e aplicar na cavidade com Technobrush, esfregando a superfície. Evitar acúmulo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "1 aplicação"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem",
+          "descricao": "Secar cuidadosamente com ar isento de óleo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar (halógena ou LED). Intensidade menor exige mais tempo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · > 800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "A IFU do adesivo não informa o tempo de condicionamento ácido; seguir as instruções do ácido utilizado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Preparo",
+          "descricao": "Profilaxia com pedra-pomes e água; isolar com dique de borracha. Esmalte não cortado: condicionar com Magic Ácid 37% ou limpar com pedra-pomes, enxaguar e secar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Condicionar esmalte e dentina. Aplicar o gel de ácido fosfórico Magic Ácid 37% de acordo com as instruções de uso do gel.",
+          "parametros": [
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Enxaguar bem, verificar se não ficaram resíduos e secar com ar isento de óleo, sem ressecar a dentina (de preferência com papel absorvente).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar uma gota e aplicar na cavidade com Technobrush, esfregando a superfície. Evitar acúmulo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "esfregar 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "1 aplicação"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem",
+          "descricao": "Secar cuidadosamente com ar isento de óleo.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar (halógena ou LED). Intensidade menor exige mais tempo.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · > 800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "A IFU do adesivo não informa o tempo de condicionamento ácido; seguir as instruções do ácido utilizado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3."
+  },
+  "id": "magic-bond-universal",
+  "nomeComercial": "Magic Bond Universal",
+  "fabricante": {
+    "id": "vigodent",
+    "nome": "Vigodent (Coltene)"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: agente fotopolimerizável \"aplicável com a técnica autocondicionante, de condicionamento seletivo ou de Condicionamento total\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "GDMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "UDMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "BHT",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etil-4-dimetilaminobenzoato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "2-Hidroxietil metacrilato (HEMA)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Promotores de adesividade (tipo metacrilatos)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Óxido de 2,4,6-trimetilbenzoildifenil fosfina",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Álcool etílico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fotoiniciadores",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Agente de fluorescência",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A bula cita \"promotores de adesividade (tipo metacrilatos)\", sem nomear MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita silano."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "ean": "7897808339899",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instrução de uso Adesivo Magic Bond Universal — Vigodent",
+      "url": "https://vigodent.com.br/wp-content/uploads/2024/04/MagicBond-Universal.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "REV. 00 · código 040249 · ANVISA 10068879046",
+      "observacao": "A bula lista frascos de 1 a 12 mL. Na seção 7 ela remete a \"passos 5.1.1/5.1.2/5.1.3\", inexistentes no documento (erro do fabricante)."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Magic Bond Universal 5ml - Vigodent",
+      "url": "https://www.dentalcremer.com.br/adesivo-magic-bond-universal-5ml-vigodent-145419.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN (o mesmo exibido na Dental Speed)."
+    }
+  ]
+}

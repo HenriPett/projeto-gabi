@@ -1,0 +1,311 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Magic Bond DE com Flúor"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas de compósitos, cerômero e compômeros fotopolimerizáveis; cimentação adesiva de facetas, inlays, onlays e coroas de cerâmica, cerômero e compósito.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Não usar em pacientes com histórico de alergia aos componentes ou quando a técnica estipulada não puder ser aplicada.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar Magic Acid (ácido fosfórico 37%) no esmalte e na dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte no mínimo 15 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina no máximo 10 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o ácido com jato de água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Retirar o excesso de umidade com jato de ar, sem desidratar: a dentina deve ficar ligeiramente úmida.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Aplicar sobre esmalte e dentina, pincelando suavemente e massageando.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "massagear cerca de 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Dispersão com ar",
+          "descricao": "Aplicar jato de ar para dispersar o material e obter camada fina (evitar camadas muito finas).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar com luz halógena ou LED. A superfície deve ficar lustrosa; se não, repetir a aplicação.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "apresentacoes.frasco-5ml.ean",
+      "descricao": "As lojas exibem EANs diferentes para o frasco de 5 mL.",
+      "versoes": [
+        {
+          "valor": "7897808303296",
+          "fontes": [
+            "loja-cremer"
+          ]
+        },
+        {
+          "valor": "7897808337321",
+          "fontes": [
+            "loja-speed"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3."
+  },
+  "id": "magic-bond-de",
+  "nomeComercial": "Magic Bond DE",
+  "fabricante": {
+    "id": "vigodent",
+    "nome": "Vigodent (Coltene)"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: \"agente de união com carga, fotopolimerizável, monocomponente indicado para uso em esmalte e dentina\", aplicado após ácido fosfórico 37% em esmalte e dentina."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo monocomponente.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Dimetacrilato de uretano",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dimetacrilato piromelítico (PMDM)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "2-Hidroxietil metacrilato (HEMA)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Álcool anidro",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Glicerol 1,3-dimetacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Óxido de 2,4,6-trimetilbenzoildifenil fosfina",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Canforoquinona",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Butil hidroxitolueno",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dióxido de silício",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fluoreto de amina (difluoridrato)",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita silano."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Bula: \"Álcool Anidro\"."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "outros": [
+      {
+        "rotulo": "Flúor",
+        "valor": "Contém fluoreto de amina",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instrução de uso Magic Bond DE com flúor — Vigodent",
+      "url": "https://vigodent.com.br/wp-content/uploads/2024/04/Magic-Bond-DE.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "código 040090 · ANVISA 10068870076"
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Monocomponente Magic Bond DE 5ml - Vigodent",
+      "url": "https://www.dentalcremer.com.br/adesivo-magic-bond-de-vigodent-298253.html",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-speed",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Adesivo Magic Bond DE com Flúor - Vigodent",
+      "url": "https://www.dentalspeed.com/adesivo-magic-bond-de-com-fluor-vigodent.html",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}
