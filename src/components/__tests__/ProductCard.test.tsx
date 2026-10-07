@@ -62,3 +62,14 @@ describe("selo curto no card (revisão de fidelidade 4)", () => {
     expect(selo).toHaveAttribute("title", "Convencional, 2 passos");
   });
 });
+
+describe("preço no card (BUG-012)", () => {
+  it("'a partir de' só com apresentação comparável; senão diz o motivo", () => {
+    expect(card("ficticio-ambar").preco).toMatchObject({ tipo: "comparavel", centavos: 8990 });
+    expect(card("ficticio-universal-triplo").preco).toEqual({ tipo: "apresentacoes-diferentes" });
+    expect(card("ficticio-prime-bond-2-1").preco).toMatchObject({ tipo: "uma-loja" });
+    render(<ProductCard card={card("ficticio-universal-triplo")} />);
+    expect(screen.getByText("Preços em apresentações diferentes")).toBeTruthy();
+    expect(screen.queryByText(/a partir de/)).toBeNull();
+  });
+});

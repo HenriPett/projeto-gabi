@@ -57,7 +57,7 @@ export function ResultadosBusca({ indice, cards }: { indice: ItemIndice[]; cards
       </p>
 
       {!achados.length && !categorias.length ? (
-        <EstadoVazio titulo={`Nada encontrado para “${q}”.`}>
+        <EstadoVazio nivel={2} titulo={`Nada encontrado para “${q}”.`}>
           <p className="muted">
             Tente o nome comercial, o fabricante ou termos como <em>MDP</em>, <em>2 passos</em>, <em>Universal</em>.
           </p>

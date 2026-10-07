@@ -81,7 +81,11 @@ export function LinkComparar({ className, children }: { className?: string; chil
   const href = ids.length ? `/comparar?ids=${ids.join(",")}` : "/comparar";
   return (
     <Link className={className} href={href}>
-      {children ?? "Comparar"} ({ids.length})<span className="sr-only"> produtos selecionados</span>
+      {children ?? "Comparar"}
+      <span className="compare-link__paren"> ({ids.length})</span>
+      {/* só um dos dois é exibido (CSS), então o número é lido uma vez */}
+      <span className="compare-link__n">{ids.length}</span>
+      <span className="sr-only"> produtos selecionados</span>
     </Link>
   );
 }

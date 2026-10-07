@@ -1,6 +1,6 @@
 import { SUBCATEGORIA, type PassoVisual, type SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { ESTRATEGIA_CURTA, GRUPO_SINGULAR, notacaoTexto, numeroDePassos } from "../rotulos";
-import type { ColunaComparador, DivergenciaDTO, ValorSimNao } from "../tipos";
+import type { ColunaComparador, DivergenciaDTO, PrecoCard, ValorSimNao } from "../tipos";
 
 /**
  * Linhas da tabela de comparação (DESIGN §4.6). Etapas/passos são derivados da
@@ -12,7 +12,7 @@ export type Celula =
   /** [R2] "2 · Ác + (P·Ad)"; universais: um item por estratégia indicada. */
   | { tipo: "passos"; itens: { estrategia?: string; n: number; subcategoria: SubcategoriaId }[] }
   | { tipo: "simnao"; valor: ValorSimNao }
-  | { tipo: "preco"; centavos?: number; produtoId: string };
+  | { tipo: "preco"; preco: PrecoCard; produtoId: string };
 
 export const GRUPOS_LINHA = ["Classificação", "Etapas", "Composição", "Uso", "Produto"] as const;
 
@@ -118,7 +118,7 @@ export function montarLinhas(colunas: ColunaComparador[]): Linha[] {
       atributo: "menor-preco",
       rotulo: "Menor preço",
       grupo: "Produto",
-      celulas: colunas.map((c) => ({ tipo: "preco", centavos: c.card.aPartirDeCentavos, produtoId: c.card.id })),
+      celulas: colunas.map((c) => ({ tipo: "preco", preco: c.card.preco, produtoId: c.card.id })),
       divergencias: semDiv,
     },
   ];
@@ -131,7 +131,7 @@ const chave = (c: Celula) =>
       ? c.valor
       : c.tipo === "passos"
         ? c.itens.map((i) => `${i.estrategia}:${notacaoTexto(i.subcategoria)}`).join("|")
-        : String(c.centavos);
+        : JSON.stringify(c.preco);
 
 /** true quando todas as colunas têm o mesmo valor (para "Destacar diferenças"). */
 export function linhaIgual(l: Linha): boolean {

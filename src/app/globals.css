@@ -93,6 +93,8 @@
   body { background: var(--color-bg); color: var(--color-text); font: 400 var(--text-body) / 1.55 var(--font-sans); }
   a { color: var(--color-primary); }
   a:hover { color: var(--color-primary-hover); }
+  /* Link dentro de texto corrido: sublinhado, não só cor (WCAG 1.4.1; BUG-011). */
+  p a, li a:not(.btn):not(.chip):not(.fchip), dd a, .caption a, .small a { text-decoration: underline; text-underline-offset: 2px; }
   :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: 4px; }
   h1, h2 { font-family: var(--font-serif); color: var(--purple-900); }
   h1 { font-size: var(--text-h1); line-height: 1.2; font-weight: 700; }
@@ -129,7 +131,15 @@
   .header__nav a:hover { color: var(--color-primary); }
   .compare-link { min-height: 44px; font-size: 13px; white-space: nowrap; padding: 0 12px; }
   .logo { white-space: nowrap; }
-  @media (max-width: 359px) { .logo { font-size: 16px; } }
+  .compare-link__n { display: none; }
+  @media (max-width: 359px) {
+    .header__row { gap: var(--space-2); }
+    .logo { font-size: 14px; gap: 6px; }
+    .logo__mark { width: 24px; height: 24px; font-size: 11px; }
+    .compare-link { padding: 0 8px; gap: 6px; font-size: 12px; }
+    .compare-link .compare-link__paren { display: none; }
+    .compare-link__n { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-on-primary); font-size: 12px; }
+  }
   /* Mobile: ao rolar para baixo, a linha do logo colapsa e só a busca fica fixa. */
   @media (max-width: 1023px) {
     .header.is-collapsed { transform: translateY(-56px); }
@@ -362,7 +372,12 @@
   .diagram__steps { list-style: none; padding: 0; margin: 0 auto; max-width: 360px; }
   .step { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 14px; border-radius: var(--radius-md); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 16px; animation: stepIn var(--dur-slow) var(--ease) both; animation-delay: calc(var(--i, 0) * 80ms); }
   .step__glyph { width: 32px; height: 32px; border-radius: 50%; background: #fff; display: grid; place-items: center; font: 700 13px/1 var(--font-serif); text-transform: none; flex: none; border: 1.5px solid currentColor; }
-  .step__label { display: flex; flex-direction: column; line-height: 1.2; }
+  .step__label { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; flex: 1; hyphens: auto; overflow-wrap: anywhere; }
+  .step__count { flex: none; }
+  @media (max-width: 359px) {
+    .diagram { padding: var(--space-3); }
+    .step { font-size: 14px; letter-spacing: 0.02em; gap: 8px; padding: 0 10px; }
+  }
   .step__sub { font-size: 12px; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--color-text-muted); }
   .step__count { margin-left: auto; font-size: 12px; font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--color-text-muted); white-space: nowrap; }
   .step--acid { background: var(--step-acid-bg); box-shadow: inset 4px 0 0 var(--step-acid-line); }
@@ -377,7 +392,8 @@
   .step--apa .step__glyph { color: var(--color-primary); font-size: 10px; }
   .arrow { display: flex; justify-content: center; height: 28px; }
   .arrow svg { width: 24px; height: 28px; color: var(--color-border-accent); }
-  @keyframes stepIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  /* Só deslocamento: com opacidade, o texto passa por contraste < 4.5:1 durante a entrada (BUG-009). */
+  @keyframes stepIn { from { transform: translateY(8px); } to { transform: none; } }
   @media (prefers-reduced-motion: reduce) { .step { animation: none; } }
   @media (min-width: 1024px) { .diagram { padding: var(--space-8); } .step { min-height: 64px; } }
   .diagram--compact, .diagram--compact.diagram { padding: var(--space-4); margin-bottom: var(--space-6); }
