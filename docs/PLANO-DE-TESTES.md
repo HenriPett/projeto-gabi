@@ -416,7 +416,7 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-003 | S2 | ✅ Corrigido `f1aa8a6` + `591374a` — reverificado | Bloqueia `//`, `/index.*`, caminhos/params de busca; exige forma de página de produto por loja (Cremer/Speed `/<slug>.html`, Med Sul `/<slug>`). **Limitação conhecida:** Med Sul aceita categoria de 1 nível (ex.: `/adesivos`) — garantia é a revisão humana do link. |
 | BUG-004 | S3 | ✅ Corrigido `f1aa8a6` — reverificado | Toda `DataISO` ≤ hoje (UTC). |
 | BUG-005 | S1 | ✅ Corrigido `f1aa8a6` — reverificado | `catalogo()` oculta ofertas de rascunho. |
-| BUG-006 | S3 | 🔴 Aberto | ver abaixo |
+| BUG-006 | S3 | ✅ Corrigido `f620700` — reverificado | MDP indexado também como 10-MDP; `"10-MDP"` ≡ `"MDP"`. |
 
 **Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
 
