@@ -1,0 +1,134 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "single-bond-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-single-bond-universal-3m-solventum-475326.html",
+      "tituloNaLoja": "Adesivo Single Bond Universal 5ml - Solventum",
+      "skuLoja": "475326",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 34799,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 33755,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/single-bond-universal-3m-solventum.html",
+      "tituloNaLoja": "Adesivo Single Bond Universal - Solventum",
+      "skuLoja": "3MS6439A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 34799,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 33755,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-single-bond-universal-3m",
+      "tituloNaLoja": "Adesivo Single Bond Universal - 3M",
+      "skuLoja": "25.8234",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 34799,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 33755,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 frasco de 5ml."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-single-bonde-universal-3m-solventum-116860.html",
+      "tituloNaLoja": "Adesivo Single Bond Universal 3ml - Solventum",
+      "skuLoja": "116860",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 19999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 19399,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-single-bond-universal-3m-solventum.html",
+      "tituloNaLoja": "Adesivo Single Bond Universal 3ml - Solventum",
+      "skuLoja": "MMM20502A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 19999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 19399,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-single-bond-universal-3m-112004",
+      "tituloNaLoja": "Adesivo Single Bond Universal - 3M",
+      "skuLoja": "26.9052",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 21999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 21339,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 frasco de 3ml."
+    }
+  ]
+}

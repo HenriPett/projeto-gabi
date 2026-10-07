@@ -1,0 +1,353 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Scotchbond Multi-Purpose",
+    "Adper Scotchbond Multi-Purpose",
+    "SBMP",
+    "Scotchbond Multiuso",
+    "Scotchbond 7543",
+    "Scotchbond Primer 3008"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Todas as classes de restaurações diretas de resina composta (classes I a V).",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Restaurações indiretas: coroas metálicas, de cerâmica vítrea ou de resina, inlays e onlays.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "União de amálgama, resina autopolimerizável e bráquetes ortodônticos a coroas.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "A IFU não traz seção de contraindicações; precaução: o HEMA é um alergênico conhecido.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas fotopolimerizáveis em esmalte e dentina",
+      "aplicaA": [
+        "convencional-3-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Isolar com lençol de borracha, preparar a cavidade e biselar as margens de esmalte. Condicionar esmalte e dentina com ácido fosfórico a 32%.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Enxaguar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar com papel absorvente ou bolinha de algodão, mantendo a superfície úmida. Não dessecar com jato de ar da seringa tríplice.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-primer",
+          "titulo": "Primer",
+          "descricao": "Aplicar o primer ao esmalte e à dentina condicionados, sem agitação ou tempo de espera. Não enxaguar. A superfície parecerá brilhante.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem do primer",
+          "descricao": "Secar levemente com jato de ar.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Adesivo",
+          "descricao": "Aplicar o adesivo às superfícies de esmalte e dentina tratadas com o primer.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar com fotopolimerizador 3M ESPE ou de igual intensidade (a IFU não informa o valor).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Quando a adesão for só em esmalte, o primer não é necessário (omitir a etapa do primer).",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "nomeComercial",
+      "descricao": "O título da IFU FE0026 é \"Adper Scotchbond Multiuso Adesivo\", mas o metadado do PDF e o corpo do texto descrevem o \"Scotchbond Multiuso Plus\" (com ativador e catalisador).",
+      "versoes": [
+        {
+          "valor": "Adper Scotchbond Multiuso Adesivo (título)",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "valor": "Adper Scotchbond Multiuso Plus (corpo do texto)",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. As lojas vendem primer e adesivo separadamente (nenhuma das três tem o kit). Imagens pendentes."
+  },
+  "id": "adper-scotchbond-multiuso",
+  "nomeComercial": "Adper Scotchbond Multiuso",
+  "fabricante": {
+    "id": "solventum",
+    "nome": "Solventum (3M)"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-3-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"A união de resina composta fotopolimerizável requer somente a utilização de ácido de ataque, primer e adesivo\" (frascos separados), com condicionamento de esmalte e dentina."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total, seguido de primer e de adesivo em frascos separados.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "HEMA (2-hidroxietilmetacrilato), em solução aquosa",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Copolímero do ácido polialcenóico",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "HEMA (2-hidroxietilmetacrilato)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Sistema de iniciação de polimerização",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não faz parte do sistema; a IFU indica o RelyX Agente Silano à parte para cerâmica."
+    },
+    "solventes": {
+      "valor": [
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Água no primer (\"solução aquosa\"); a IFU não informa solvente do adesivo."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "O sistema Plus (ativador e catalisador, vendidos no kit Plus) permite autopolimerização."
+    },
+    "outros": [
+      {
+        "rotulo": "pH do primer",
+        "valor": "aproximadamente 3,3",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "primer-8ml",
+      "tipo": "frasco",
+      "descricao": "Primer (frasco nº 2, ref. 3008) 8 mL — vendido separadamente",
+      "quantidade": 1,
+      "volumeMl": 8,
+      "codigoFabricante": "HB004551881",
+      "ean": "7891040021802",
+      "fontes": [
+        "loja-cremer-primer"
+      ]
+    },
+    {
+      "id": "adesivo-8ml",
+      "tipo": "frasco",
+      "descricao": "Adesivo (ref. 7543) 8 mL — vendido separadamente",
+      "quantidade": 1,
+      "volumeMl": 8,
+      "codigoFabricante": "HB004551873",
+      "ean": "7891040021819",
+      "fontes": [
+        "loja-cremer-adesivo"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "adesivo-8ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de Uso — 3M ESPE Adper Scotchbond Multiuso Adesivo (BR)",
+      "url": "https://solv-render.eifu.com/PDFDownload.aspx?DocID=4700&Action=download&FileName=x",
+      "acessadoEm": "2026-10-06",
+      "versao": "FE0026 (1) rev02 · publicada no eIFU Solventum em 09/12/2021 · Notificação ANVISA 80284930222",
+      "observacao": "Página no portal: https://eifu.solventum.com/Index.aspx?docId=2605. O título diz \"Multiuso Adesivo\", mas o texto descreve também o sistema \"Multiuso Plus\" (ativador e catalisador)."
+    },
+    {
+      "id": "site-primer",
+      "tipo": "site-fabricante",
+      "titulo": "Adper Scotchbond Multiuso Primer — Solventum Brasil",
+      "url": "https://www.solventum.com/pt-br/home/f/b10058174/",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "site-adesivo",
+      "tipo": "site-fabricante",
+      "titulo": "Adper Scotchbond Multiuso Adesivo — Solventum Brasil",
+      "url": "https://www.solventum.com/pt-br/home/f/b00007555/",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-primer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Bi-componente Scotchbond Primer 3008 8ml - Solventum",
+      "url": "https://www.dentalcremer.com.br/primer-scotchbondtm-3008-3m-solventum-276244.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte de volume, código e EAN."
+    },
+    {
+      "id": "loja-cremer-adesivo",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Bi-componente Scotchbond 7543 8ml - Solventum",
+      "url": "https://www.dentalcremer.com.br/adesivo-scotchbondtm-7543-3m-solventum-276251.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte de volume, código e EAN."
+    }
+  ]
+}

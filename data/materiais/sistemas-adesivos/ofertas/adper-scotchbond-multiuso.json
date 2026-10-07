@@ -1,0 +1,134 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "adper-scotchbond-multiuso",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-scotchbondtm-7543-3m-solventum-276251.html",
+      "tituloNaLoja": "Adesivo Bi-componente Scotchbond 7543 8ml - Solventum",
+      "skuLoja": "276251",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 40690,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 39469,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-dental-scotchbond-7543-8ml-solventum.html",
+      "tituloNaLoja": "Adesivo Scotchbond 7543 - Solventum",
+      "skuLoja": "3MS3382A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 40690,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 39469,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "adesivo-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-scotchbond-multiuso-3m",
+      "tituloNaLoja": "Adesivo Scotchbond Multiuso - 3M",
+      "skuLoja": "25.3932",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 40690,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 39469,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 frasco de 8ml."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "primer-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/primer-scotchbondtm-3008-3m-solventum-276244.html",
+      "tituloNaLoja": "Adesivo Bi-componente Scotchbond Primer 3008 8ml - Solventum",
+      "skuLoja": "276244",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 54990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 53340,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "primer-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/primer-scotchbond-3008-8-ml-3m-solventum.html",
+      "tituloNaLoja": "Primer Scotchbond 3008 - Solventum",
+      "skuLoja": "3MS3383A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 54990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 53340,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "primer-8ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-adper-scotchbond-primer-3m",
+      "tituloNaLoja": "Adesivo Adper Scotchbond Primer - 3M",
+      "skuLoja": "25.4013",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 54890,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 53243,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 frasco de 8ml."
+    }
+  ]
+}

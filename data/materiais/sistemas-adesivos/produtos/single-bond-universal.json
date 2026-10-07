@@ -1,0 +1,546 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Scotchbond Universal",
+    "SBU",
+    "3M Single Bond Universal",
+    "Adper Single Bond Universal"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Todas as restaurações classes I a V com compósitos ou compômeros fotopolimerizáveis.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Cimentação de restaurações indiretas (com RelyX Ultimate) e de facetas (com RelyX Veneer).",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Adesão de núcleos de preenchimento e de cimentos/materiais de núcleo duais compatíveis.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparo de restaurações em compósito/compômero e reparo intraoral de metalocerâmica e cerâmica, sem primer adicional.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Dessensibilização de raízes expostas; selamento de cavidades antes de amálgama ou de cimentação provisória.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Adesão de selantes de fóssulas e fissuras; verniz de proteção para ionômero de vidro.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "A IFU não traz seção de contraindicações; como precaução, evitar o uso em pacientes alérgicos a acrilatos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo da superfície",
+          "descricao": "Remover resíduos com spray de água e secar ligeiramente com 2 a 3 jatos de ar isento de água e óleo, ou com bolinhas de algodão/papel absorvente. Não ressecar: a superfície deve ter aspecto acetinado.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Com o aplicador descartável, aplicar ativamente o adesivo em toda a superfície dentária, reumedecendo o aplicador se necessário. Evitar contato com as mucosas e luz intensa durante a aplicação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "aplicação ativa por aproximadamente 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar leve jato de ar sobre o líquido até que deixe de se mover e o solvente tenha evaporado completamente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, cerca de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar o adesivo com aparelho adequado. A IFU não informa a intensidade de luz.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Esmalte não preparado deve ser limpo e condicionado com ácido (ver condicionamento seletivo). Recomenda-se isolamento absoluto.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo da superfície",
+          "descricao": "Remover resíduos com spray de água e secar ligeiramente com 2 a 3 jatos de ar isento de água e óleo, ou com bolinhas de algodão/papel absorvente. Não ressecar: a superfície deve ter aspecto acetinado.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar gel de ácido fosfórico a 35% sobre o esmalte preparado e não preparado (se for o caso) e deixar atuar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Lavar bem com água e secar com ar isento de umidade e óleo ou com bolinhas de algodão/papel absorvente, sem ressecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Com o aplicador descartável, aplicar ativamente o adesivo em toda a superfície dentária, reumedecendo o aplicador se necessário. Evitar contato com as mucosas e luz intensa durante a aplicação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "aplicação ativa por aproximadamente 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar leve jato de ar sobre o líquido até que deixe de se mover e o solvente tenha evaporado completamente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, cerca de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar o adesivo com aparelho adequado. A IFU não informa a intensidade de luz.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Esmalte não preparado deve ser limpo e condicionado com ácido (ver condicionamento seletivo). Recomenda-se isolamento absoluto.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "O condicionamento acidental da dentina não tem influência negativa sobre a adesão.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento ácido total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "secagem",
+          "titulo": "Preparo da superfície",
+          "descricao": "Remover resíduos com spray de água e secar ligeiramente com 2 a 3 jatos de ar isento de água e óleo, ou com bolinhas de algodão/papel absorvente. Não ressecar: a superfície deve ter aspecto acetinado.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar gel de ácido fosfórico a 35% sobre a superfície dental (esmalte e dentina) preparado e não preparado (se for o caso) e deixar atuar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Lavar bem com água e secar com ar isento de umidade e óleo ou com bolinhas de algodão/papel absorvente, sem ressecar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Com o aplicador descartável, aplicar ativamente o adesivo em toda a superfície dentária, reumedecendo o aplicador se necessário. Evitar contato com as mucosas e luz intensa durante a aplicação.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "aplicação ativa por aproximadamente 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar leve jato de ar sobre o líquido até que deixe de se mover e o solvente tenha evaporado completamente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, cerca de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar o adesivo com aparelho adequado. A IFU não informa a intensidade de luz.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Esmalte não preparado deve ser limpo e condicionado com ácido (ver condicionamento seletivo). Recomenda-se isolamento absoluto.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Imagens pendentes."
+  },
+  "id": "single-bond-universal",
+  "nomeComercial": "Single Bond Universal",
+  "fabricante": {
+    "id": "solventum",
+    "nome": "Solventum (3M)"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: adesivo fotopolimerizável monocomponente usado \"na forma autocondicionante\", \"com condicionamento ácido seletivo em esmalte\" ou \"na forma de condicionamento ácido total\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal monocomponente; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Bisfenol A diglicidil éter dimetacrilato (Bis-GMA)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Metacrilato de 2-hidroxietila (HEMA)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Sílica tratada com silício (sic)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Álcool etílico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Decametileno dimetacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "1,10-Decanodiol fosfato metacrilato (MDP)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Copolímero de acrílico e ácido itacônico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Canforoquinona",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "N,N-Dimetilbenzocaína",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Metacrilato de 2-dimetilamonoetilo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Metil etil cetona",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "A IFU lista \"1,10-decanodiol fosfato metacrilato\" (nome químico do 10-MDP), sem usar a sigla."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "A IFU lista \"metacrilato de 2-hidroxietila\"."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A composição traz \"sílica tratada com silício\"; não fica claro se é sílica silanizada. A IFU diz que nas facetas \"não é necessário um silano adicional\"."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "A composição também lista metil etil cetona."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "codigoFabricante": "HB004509632",
+      "ean": "7891040180332",
+      "fontes": [
+        "loja-cremer-5ml"
+      ]
+    },
+    {
+      "id": "frasco-3ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 3 mL",
+      "quantidade": 1,
+      "volumeMl": 3,
+      "codigoFabricante": "HB004680490",
+      "ean": "7891040314768",
+      "fontes": [
+        "loja-cremer-3ml"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de Uso — 3M ESPE Single Bond Universal (BR)",
+      "url": "https://solv-render.eifu.com/PDFDownload.aspx?DocID=4643&Action=download&FileName=FE0006",
+      "acessadoEm": "2026-10-06",
+      "versao": "FE0006 (1) rev01 · publicada no eIFU Solventum em 29/10/2021 · Notificação ANVISA 80284930291",
+      "observacao": "Página no portal: https://eifu.solventum.com/Index.aspx?docId=2551. A IFU não informa volumes, intensidade de luz nem número de camadas."
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Single Bond Universal — Solventum Brasil",
+      "url": "https://www.solventum.com/pt-br/home/f/b5005096099/",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-cremer-5ml",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Single Bond Universal 5ml - Solventum",
+      "url": "https://www.dentalcremer.com.br/adesivo-single-bond-universal-3m-solventum-475326.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte de volume, código do fabricante e EAN."
+    },
+    {
+      "id": "loja-cremer-3ml",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Single Bond Universal 3ml - Solventum",
+      "url": "https://www.dentalcremer.com.br/adesivo-single-bonde-universal-3m-solventum-116860.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte de volume, código do fabricante e EAN."
+    }
+  ]
+}

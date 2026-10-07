@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "scotchbond-universal-plus",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-scotchbond-universal-plus-3m-solventum-127037.html",
+      "tituloNaLoja": "Adesivo Scotchbond Universal Plus 3ml - Solventum",
+      "skuLoja": "127037",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 28999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 28129,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-scotchbond-universal-plus-3ml-m-solventum.html",
+      "tituloNaLoja": "Adesivo Scotchbond Universal Plus 3ml - Solventum",
+      "skuLoja": "MMM29751A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 28999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 28129,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-scotchbond-universal-plus-3m",
+      "tituloNaLoja": "Adesivo Scotchbond Universal Plus - 3M",
+      "skuLoja": "27.0123",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 28999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 28129,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 frasco de 3ml."
+    }
+  ]
+}
