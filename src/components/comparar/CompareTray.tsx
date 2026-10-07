@@ -80,14 +80,19 @@ export function LinkComparar({ className, children }: { className?: string; chil
   const ids = useSelecaoComparar();
   const href = ids.length ? `/comparar?ids=${ids.join(",")}` : "/comparar";
   return (
-    <Link className={className} href={href}>
-      {/* < 360px: só ícone + contador; o texto continua para leitor de tela */}
+    // Nome acessível fixo em qualquer largura (BUG-014); o conteúdo visual varia.
+    <Link className={className} href={href} aria-label={`Comparar ${ids.length} ${ids.length === 1 ? "produto selecionado" : "produtos selecionados"}`}>
+      {/* < 360px: só ícone + contador */}
       <IconeComparar className="compare-link__icone" />
-      <span className="compare-link__txt">{children ?? "Comparar"}</span>
-      <span className="compare-link__paren"> ({ids.length})</span>
-      {/* só um dos dois é exibido (CSS), então o número é lido uma vez */}
-      <span className="compare-link__n">{ids.length}</span>
-      <span className="sr-only"> produtos selecionados</span>
+      <span className="compare-link__txt" aria-hidden="true">
+        {children ?? "Comparar"}
+      </span>
+      <span className="compare-link__paren" aria-hidden="true">
+        ({ids.length})
+      </span>
+      <span className="compare-link__n" aria-hidden="true">
+        {ids.length}
+      </span>
     </Link>
   );
 }
