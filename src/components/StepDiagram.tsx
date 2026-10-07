@@ -3,7 +3,7 @@ import { SUBCATEGORIA, type SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { IconeFechar, IconeSetaBaixo } from "./Icones";
 import { LegendaNotacao, Notacao } from "./Notacao";
 import { ESTRATEGIA_CURTA, ESTRATEGIAS_UNIVERSAIS, etapasVisuais, leituraDiagrama, semAcidoSeparado, substratoAcido } from "./rotulos";
-import { SubstrateGlyph } from "./SubstrateGlyph";
+import { LEGENDA_SUBSTRATO, SubstrateGlyph } from "./SubstrateGlyph";
 
 /** [R2] Bloco fantasma riscado: não conta como passo. */
 function EtapaAusente() {
@@ -35,6 +35,10 @@ function Etapas({ id, contador, substratoNoAcido }: { id: SubcategoriaId; contad
           <span className="step__label">
             {e.rotulo}
             {e.sub && <span className="step__sub">{e.sub}</span>}
+            {/* < 640px a legenda do substrato desce para cá (DESIGN §3.7) */}
+            {e.tipo === "acid" && substratoNoAcido && (
+              <span className="step__sub step__sub--substrato">{LEGENDA_SUBSTRATO[substratoAcido(id) ?? "nenhum"]}</span>
+            )}
           </span>
           {e.tipo === "acid" && substratoNoAcido ? (
             <span className="step__count step__substrato">

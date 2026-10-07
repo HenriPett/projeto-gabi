@@ -399,6 +399,13 @@
   .path > .substrato { margin: 2px 0 8px; }
   .step__substrato { display: inline-flex; align-items: center; gap: 10px; }
   .step__substrato .substrato svg { width: 32px; height: 32px; }
+  .step__sub--substrato { display: none; }
+  @media (max-width: 639px) {
+    .step__substrato .substrato svg { width: 24px; height: 24px; }
+    .step__substrato .substrato > span { display: none; }
+    .step__sub--substrato { display: block; }
+    .step { padding-right: 16px; }
+  }
   .path .ghost-link { height: 12px; }
   .path .step-ghost { font-size: 12px; min-height: 36px; padding: 4px 8px; gap: 6px; }
   .step-ghost em { white-space: nowrap; }
