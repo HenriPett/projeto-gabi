@@ -44,6 +44,14 @@
       "acessadoEm": "2026-10-06"
     },
     {
+      "id": "silva-souza-2010",
+      "tipo": "literatura",
+      "titulo": "Silva e Souza Jr. MH, Carneiro KGK, Lobato MF, Silva e Souza PAR, Góes MF. Adhesive systems: important aspects related to their composition and clinical use. J Appl Oral Sci. 2010;18(3):207-214.",
+      "url": "https://doi.org/10.1590/S1678-77572010000300002",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC5349047, CC BY)."
+    },
+    {
       "id": "perdigao-2020",
       "tipo": "literatura",
       "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
@@ -110,9 +118,10 @@
     },
     "autocondicionante-1-passo": {
       "explicacao": {
-        "texto": "Condicionamento, primer e adesivo num único componente, sem a resina hidrofóbica extra do sistema de 2 passos. É a opção mais simples, mas, em revisões, os adesivos de passo único foram os menos duráveis, e a evaporação do solvente exige atenção.",
+        "texto": "Condicionamento, primer e adesivo numa única aplicação, sem a resina hidrofóbica extra do sistema de 2 passos. Alguns sistemas guardam os componentes separados, que precisam ser misturados antes ou durante a aplicação. É a opção mais simples, mas, em revisões, os adesivos de passo único foram os menos duráveis, e a evaporação do solvente exige atenção.",
         "fontes": [
           "perdigao-2020",
+          "silva-souza-2010",
           "breschi-2008"
         ]
       }
