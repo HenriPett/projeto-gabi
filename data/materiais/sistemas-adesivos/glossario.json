@@ -1,0 +1,557 @@
+{
+  "$schema": "../../schemas/glossario.schema.json",
+  "fontes": [
+    {
+      "id": "pashley-2011",
+      "tipo": "literatura",
+      "titulo": "Pashley DH, Tay FR, Breschi L, et al. State of the art etch-and-rinse adhesives. Dent Mater. 2011;27(1):1-16.",
+      "url": "https://doi.org/10.1016/j.dental.2010.10.016",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2004",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Nagakane K, Fukuda R, et al. Comparative study on adhesive performance of functional monomers. J Dent Res. 2004;83(6):454-458.",
+      "url": "https://doi.org/10.1177/154405910408300604",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2012",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Yoshihara K, Nagaoka N, et al. Self-assembled nano-layering at the adhesive interface. J Dent Res. 2012;91(4):376-381.",
+      "url": "https://doi.org/10.1177/0022034512437375",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshihara-2011",
+      "tipo": "literatura",
+      "titulo": "Yoshihara K, Yoshida Y, Hayakawa S, et al. Nanolayering of phosphoric acid ester monomer on enamel and dentin. Acta Biomater. 2011;7(8):3187-3195.",
+      "url": "https://doi.org/10.1016/j.actbio.2011.04.026",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "nakabayashi-1982",
+      "tipo": "literatura",
+      "titulo": "Nakabayashi N, Kojima K, Masuhara E. The promotion of adhesion by the infiltration of monomers into tooth substrates. J Biomed Mater Res. 1982;16(3):265-273.",
+      "url": "https://doi.org/10.1002/jbm.820160307",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "perdigao-2010",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Dentin bonding—variables related to the clinical situation and the substrate treatment. Dent Mater. 2010;26(2):e24-e37.",
+      "url": "https://doi.org/10.1016/j.dental.2009.11.149",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "kanca-1992",
+      "tipo": "literatura",
+      "titulo": "Kanca J 3rd. Improving bond strength through acid etching of dentin and bonding to wet dentin surfaces. J Am Dent Assoc. 1992;123(9):35-43.",
+      "url": "https://doi.org/10.14219/jada.archive.1992.0248",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "szesz-2016",
+      "tipo": "literatura",
+      "titulo": "Szesz A, Parreiras S, Reis A, Loguercio A. Selective enamel etching in cervical lesions for self-etch adhesives: a systematic review and meta-analysis. J Dent. 2016;53:1-11.",
+      "url": "https://doi.org/10.1016/j.jdent.2016.05.009",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "breschi-2008",
+      "tipo": "literatura",
+      "titulo": "Breschi L, Mazzoni A, Ruggeri A, et al. Dental adhesion review: aging and stability of the bonded interface. Dent Mater. 2008;24(1):90-101.",
+      "url": "https://doi.org/10.1016/j.dental.2007.02.009",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "tjaderhane-2013",
+      "tipo": "literatura",
+      "titulo": "Tjäderhane L, Nascimento FD, Breschi L, et al. Strategies to prevent hydrolytic degradation of the hybrid layer—a review. Dent Mater. 2013;29(10):999-1011.",
+      "url": "https://doi.org/10.1016/j.dental.2013.07.016",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "peumans-2014",
+      "tipo": "literatura",
+      "titulo": "Peumans M, De Munck J, Mine A, Van Meerbeek B. Clinical effectiveness of contemporary adhesives for the restoration of non-carious cervical lesions. A systematic review. Dent Mater. 2014;30(10):1089-1103.",
+      "url": "https://doi.org/10.1016/j.dental.2014.07.007",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "silva-souza-2010",
+      "tipo": "literatura",
+      "titulo": "Silva e Souza Jr. MH, Carneiro KGK, Lobato MF, Silva e Souza PAR, Góes MF. Adhesive systems: important aspects related to their composition and clinical use. J Appl Oral Sci. 2010;18(3):207-214.",
+      "url": "https://doi.org/10.1590/S1678-77572010000300002",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC5349047, CC BY)."
+    },
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    }
+  ],
+  "termos": [
+    {
+      "id": "mdp",
+      "termo": "MDP",
+      "sigla": "10-MDP",
+      "nomeCompleto": "10-metacriloiloxidecil di-hidrogenofosfato",
+      "sinonimos": [
+        "10-MDP"
+      ],
+      "definicao": "Monômero funcional com uma ponta polimerizável, uma cadeia hidrofóbica de 10 carbonos e um grupo fosfato. Liga-se quimicamente ao cálcio da hidroxiapatita, formando um sal pouco solúvel e estável.",
+      "fontes": [
+        "perdigao-2020",
+        "yoshida-2004"
+      ],
+      "artigos": [
+        "mdp",
+        "adesivo-universal"
+      ],
+      "relacionados": [
+        "monomero-funcional",
+        "nanocamada-mdp-ca",
+        "hidroxiapatita"
+      ]
+    },
+    {
+      "id": "monomero-funcional",
+      "termo": "Monômero funcional",
+      "sinonimos": [
+        "monômero ácido"
+      ],
+      "definicao": "Monômero ácido capaz de interagir quimicamente com o cálcio da hidroxiapatita, como o MDP, o 4-MET e o phenyl-P. Em estudo comparativo, a ligação do MDP foi a mais estável das três.",
+      "fontes": [
+        "perdigao-2020",
+        "yoshida-2004"
+      ],
+      "artigos": [
+        "mdp",
+        "adesivo-universal"
+      ],
+      "relacionados": [
+        "mdp",
+        "conceito-ad"
+      ]
+    },
+    {
+      "id": "nanocamada-mdp-ca",
+      "termo": "Nanocamada MDP-Ca",
+      "sinonimos": [
+        "nanolayering",
+        "nanocamadas"
+      ],
+      "definicao": "Estrutura em camadas nanométricas de sais de MDP e cálcio que se forma na interface adesiva. Ela é maior na dentina que no esmalte, cresce com a fricção do primer e deve tornar a interface mais resistente à biodegradação.",
+      "fontes": [
+        "yoshida-2012",
+        "yoshihara-2011"
+      ],
+      "artigos": [
+        "mdp",
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "mdp",
+        "conceito-ad"
+      ]
+    },
+    {
+      "id": "conceito-ad",
+      "termo": "Conceito AD (adesão-descalcificação)",
+      "sinonimos": [
+        "adhesion-decalcification concept"
+      ],
+      "definicao": "Modelo segundo o qual alguns monômeros funcionais se ligam ionicamente à hidroxiapatita, por adesão, enquanto outros a dissolvem, por descalcificação. Os autocondicionantes suaves seguem principalmente a via da adesão.",
+      "fontes": [
+        "yoshida-2012",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "mdp"
+      ],
+      "relacionados": [
+        "monomero-funcional",
+        "mdp"
+      ]
+    },
+    {
+      "id": "hema",
+      "termo": "HEMA",
+      "sigla": "HEMA",
+      "sinonimos": [],
+      "definicao": "Monômero fortemente hidrofílico, usado como promotor de adesão em muitos adesivos e comum nos primers. Em concentração alta, atrai água e pode favorecer a hidrólise e a formação de gotículas na interface.",
+      "fontes": [
+        "silva-souza-2010",
+        "pashley-2011",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "primer",
+        "solvente"
+      ]
+    },
+    {
+      "id": "bis-gma",
+      "termo": "Bis-GMA",
+      "sigla": "Bis-GMA",
+      "sinonimos": [
+        "resina de Bowen"
+      ],
+      "definicao": "Monômero desenvolvido por Bowen a partir de bisfenol A e glicidil metacrilato, também chamado de resina de Bowen. É a base da matriz das resinas compostas desde a primeira resina comercial, de 1964.",
+      "fontes": [
+        "perdigao-2020"
+      ],
+      "artigos": [],
+      "relacionados": [
+        "silano"
+      ]
+    },
+    {
+      "id": "primer",
+      "termo": "Primer",
+      "sinonimos": [],
+      "definicao": "Solução hidrofílica de monômeros, solvente orgânico (álcool ou acetona), água e estabilizantes. Prepara a dentina para receber o adesivo; nos autocondicionantes é ácido e também condiciona.",
+      "fontes": [
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "convencional-x-autocondicionante"
+      ],
+      "relacionados": [
+        "resina-adesiva",
+        "solvente",
+        "hema"
+      ]
+    },
+    {
+      "id": "resina-adesiva",
+      "termo": "Adesivo (resina hidrofóbica)",
+      "sinonimos": [
+        "bond",
+        "bonding resin"
+      ],
+      "definicao": "Resina de baixa viscosidade e sem solvente aplicada sobre o primer e fotopolimerizada. Torna a interface menos permeável. É a etapa que falta no convencional de 2 passos e no autocondicionante de 1 passo.",
+      "fontes": [
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "convencional-x-autocondicionante",
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "primer"
+      ]
+    },
+    {
+      "id": "solvente",
+      "termo": "Solvente",
+      "sinonimos": [
+        "água",
+        "etanol",
+        "acetona"
+      ],
+      "definicao": "Componente que dissolve os monômeros, reduz a viscosidade e ajuda a resina a se difundir na dentina desmineralizada. Água, etanol e acetona são os mais usados; depois da difusão, o solvente precisa ser eliminado.",
+      "fontes": [
+        "silva-souza-2010"
+      ],
+      "artigos": [
+        "adesivo-universal",
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "evaporacao-do-solvente",
+        "primer"
+      ]
+    },
+    {
+      "id": "evaporacao-do-solvente",
+      "termo": "Evaporação do solvente",
+      "sinonimos": [
+        "secagem com ar"
+      ],
+      "definicao": "Etapa de jato de ar após a aplicação do adesivo. O solvente residual dilui os monômeros, prejudica a polimerização e deixa a camada mais permeável, e a evaporação completa é praticamente impossível.",
+      "fontes": [
+        "silva-souza-2010",
+        "pashley-2011"
+      ],
+      "artigos": [
+        "adesivo-universal",
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "solvente"
+      ]
+    },
+    {
+      "id": "smear-layer",
+      "termo": "Smear layer",
+      "sinonimos": [
+        "lama dentinária",
+        "camada de esfregaço"
+      ],
+      "definicao": "Camada de resíduos que o preparo com instrumentos rotatórios deixa sobre a dentina, inclusive dentro dos túbulos (smear plugs). Os convencionais a removem com o ácido; os autocondicionantes a atravessam e a incorporam à interface.",
+      "fontes": [
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "convencional-x-autocondicionante"
+      ],
+      "relacionados": [
+        "condicionamento-total",
+        "autocondicionante-suave"
+      ]
+    },
+    {
+      "id": "camada-hibrida",
+      "termo": "Camada híbrida",
+      "sinonimos": [
+        "zona de interdifusão"
+      ],
+      "definicao": "Zona em que a resina infiltra o tecido dentário condicionado e polimeriza dentro dele, formando uma mistura de resina e colágeno ou mineral. Descrita por Nakabayashi em 1982, é a base da adesão à dentina.",
+      "fontes": [
+        "nakabayashi-1982",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "camada-hibrida",
+        "esmalte-x-dentina"
+      ],
+      "relacionados": [
+        "tags-resinosos",
+        "colageno",
+        "degradacao-da-interface"
+      ]
+    },
+    {
+      "id": "tags-resinosos",
+      "termo": "Tags resinosos",
+      "sinonimos": [
+        "resin tags",
+        "prolongamentos resinosos"
+      ],
+      "definicao": "Prolongamentos de resina que penetram nos túbulos dentinários ou nas microporosidades do esmalte condicionado. Com ácido fosfórico ou autocondicionante forte são longos e afunilados; com autocondicionante suave, curtos e cilíndricos.",
+      "fontes": [
+        "silva-souza-2010",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "camada-hibrida"
+      ]
+    },
+    {
+      "id": "hidroxiapatita",
+      "termo": "Hidroxiapatita",
+      "sinonimos": [
+        "HAp"
+      ],
+      "definicao": "Fase mineral do dente: ocupa 92% do volume do esmalte e, em média, 45% da dentina. É com o cálcio dela que os monômeros funcionais, como o MDP, se ligam quimicamente.",
+      "fontes": [
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "esmalte-x-dentina",
+        "mdp"
+      ],
+      "relacionados": [
+        "mdp",
+        "colageno"
+      ]
+    },
+    {
+      "id": "colageno",
+      "termo": "Colágeno",
+      "sinonimos": [
+        "fibrilas colágenas"
+      ],
+      "definicao": "Principal componente orgânico da dentina (colágeno tipo I). Depois do condicionamento ácido fica exposto e, se a dentina for seca demais com ar, a rede colapsa e dificulta a infiltração da resina.",
+      "fontes": [
+        "perdigao-2010",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "esmalte-x-dentina",
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "camada-hibrida",
+        "adesao-umida",
+        "mmps"
+      ]
+    },
+    {
+      "id": "adesao-umida",
+      "termo": "Adesão úmida",
+      "sinonimos": [
+        "wet bonding",
+        "técnica úmida"
+      ],
+      "definicao": "Técnica de aplicar o adesivo convencional com a dentina condicionada levemente úmida, para não colapsar o colágeno. Em estudos clínicos, porém, a dentina úmida não teve retenção melhor que a seca.",
+      "fontes": [
+        "kanca-1992",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "esmalte-x-dentina"
+      ],
+      "relacionados": [
+        "colageno",
+        "condicionamento-total"
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "termo": "Condicionamento total",
+      "sinonimos": [
+        "etch-and-rinse",
+        "condicionamento ácido total"
+      ],
+      "definicao": "Aplicação de ácido fosfórico (em geral de 32% a 37%) em esmalte e dentina ao mesmo tempo, seguida de lavagem, como nos adesivos convencionais. O ácido remove a smear layer e desmineraliza o substrato.",
+      "fontes": [
+        "pashley-2011",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "convencional-x-autocondicionante",
+        "como-escolher-estrategia"
+      ],
+      "relacionados": [
+        "condicionamento-seletivo",
+        "smear-layer"
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "termo": "Condicionamento seletivo do esmalte",
+      "sinonimos": [
+        "selective enamel etching"
+      ],
+      "definicao": "Ácido fosfórico aplicado só no esmalte antes de um autocondicionante ou universal, sem condicionar a dentina. Melhora a união ao esmalte, mas os estudos clínicos divergem quanto ao ganho de retenção.",
+      "fontes": [
+        "perdigao-2020",
+        "szesz-2016",
+        "peumans-2014"
+      ],
+      "artigos": [
+        "condicionamento-seletivo"
+      ],
+      "relacionados": [
+        "condicionamento-total",
+        "autocondicionante-suave"
+      ]
+    },
+    {
+      "id": "autocondicionante-suave",
+      "termo": "Autocondicionante suave",
+      "sinonimos": [
+        "mild self-etch",
+        "autocondicionante mild"
+      ],
+      "definicao": "Autocondicionante de pH em torno de 2, que desmineraliza a dentina só parcialmente e deixa hidroxiapatita ao redor do colágeno. Isso permite união química, por exemplo com o MDP.",
+      "fontes": [
+        "silva-souza-2010",
+        "yoshida-2004"
+      ],
+      "artigos": [
+        "convencional-x-autocondicionante",
+        "mdp"
+      ],
+      "relacionados": [
+        "autocondicionante-forte",
+        "mdp"
+      ]
+    },
+    {
+      "id": "autocondicionante-forte",
+      "termo": "Autocondicionante forte",
+      "sinonimos": [
+        "strong self-etch"
+      ],
+      "definicao": "Autocondicionante de pH igual ou menor que 1 (os intermediários ficam perto de 1,5). Desmineraliza a dentina com um padrão semelhante ao do ácido fosfórico e forma tags longos e afunilados.",
+      "fontes": [
+        "silva-souza-2010",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "convencional-x-autocondicionante"
+      ],
+      "relacionados": [
+        "autocondicionante-suave",
+        "tags-resinosos"
+      ]
+    },
+    {
+      "id": "silano",
+      "termo": "Silano",
+      "sinonimos": [
+        "agente de união silano"
+      ],
+      "definicao": "Agente de união que liga a carga inorgânica à resina e prepara cerâmicas vítreas para a cimentação. Alguns universais trazem silano, mas o incorporado não melhora a união a essas cerâmicas, e o silano separado continua recomendado.",
+      "fontes": [
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "adesivo-universal"
+      ],
+      "relacionados": [
+        "bis-gma"
+      ]
+    },
+    {
+      "id": "degradacao-da-interface",
+      "termo": "Degradação da interface",
+      "sinonimos": [
+        "hidrólise da interface"
+      ],
+      "definicao": "Perda de resistência da união ao longo do tempo por impregnação insuficiente da resina, permeabilidade, polimerização deficiente, separação de fases e ação de enzimas da dentina. É mais acentuada nos adesivos simplificados.",
+      "fontes": [
+        "breschi-2008"
+      ],
+      "artigos": [
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "mmps",
+        "camada-hibrida",
+        "evaporacao-do-solvente"
+      ]
+    },
+    {
+      "id": "mmps",
+      "termo": "MMPs",
+      "sigla": "MMPs",
+      "nomeCompleto": "metaloproteinases da matriz",
+      "sinonimos": [
+        "metaloproteinases",
+        "catepsinas"
+      ],
+      "definicao": "Enzimas da própria dentina que, com as catepsinas, degradam com o tempo o colágeno da camada híbrida. Inibidores como a clorexidina funcionam em laboratório, mas não mostraram benefício clínico em estudos com mais de 2 anos.",
+      "fontes": [
+        "tjaderhane-2013",
+        "perdigao-2020"
+      ],
+      "artigos": [
+        "camada-hibrida"
+      ],
+      "relacionados": [
+        "degradacao-da-interface",
+        "colageno"
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
