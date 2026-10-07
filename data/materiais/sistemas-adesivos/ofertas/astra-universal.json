@@ -1,0 +1,56 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "astra-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-astra-universal-6ml-yller-157034.html",
+      "tituloNaLoja": "Adesivo Astra Universal 6ml - Yller",
+      "skuLoja": "157034",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 17890,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 17353,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-astra-universal-6ml-yller-yll38423a.html",
+      "tituloNaLoja": "Adesivo Astra Universal 6ml - Yller",
+      "skuLoja": "YLL38423A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 17890,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 17353,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Astra Universal não encontrado no sitemap da loja em 06/10/2026."
+    }
+  ]
+}

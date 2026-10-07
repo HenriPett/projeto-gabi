@@ -1,0 +1,469 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas; restaurações indiretas (com cimento resinoso); reparo e cimentação de restaurações de compósito, cerâmica vítrea, zircônia e metal; cimentação de pinos intrarradiculares.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Contraindicado para pessoas alérgicas aos componentes da fórmula; não utilizar diretamente sobre a polpa.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Técnica autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento",
+          "descricao": "Realizar o isolamento absoluto (grampos + lençol de borracha).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada (aplicação ativa)",
+          "descricao": "Aplicar ativamente o adesivo com microaplicador em forma de pincel sobre toda a superfície.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "aplicação ativa 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada",
+          "descricao": "Aplicar outra camada e repetir a evaporação do solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento",
+          "descricao": "Realizar o isolamento absoluto (grampos + lençol de borracha).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento do esmalte",
+          "descricao": "Aplicar gel de ácido fosfórico 37% somente no esmalte.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "30 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Remover o gel com spray de ar e água. Secar o esmalte; remover o excesso de umidade da dentina com papel absorvente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada (aplicação ativa)",
+          "descricao": "Aplicar ativamente o adesivo com microaplicador em forma de pincel sobre toda a superfície.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "aplicação ativa 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada",
+          "descricao": "Aplicar outra camada e repetir a evaporação do solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Após o condicionamento do esmalte, o adesivo é aplicado em toda a superfície (esmalte e dentina) como na técnica autocondicionante.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Técnica convencional (condicionamento total)",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento",
+          "descricao": "Realizar o isolamento absoluto (grampos + lençol de borracha).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar gel de ácido fosfórico 37% sobre esmalte e dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte 30 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina 15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o gel com spray de ar e água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar o esmalte e remover o excesso de umidade da dentina com papel absorvente, mantendo-a ligeiramente úmida.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada",
+          "descricao": "Aplicar o adesivo com microaplicador em forma de pincel, agitando-o gentilmente sobre toda a superfície até o total recobrimento.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "agitar gentilmente cerca de 10 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada",
+          "descricao": "Aplicar outra camada e repetir a evaporação do solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "A superfície deve exibir aparência brilhante; caso contrário, repetir a aplicação.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3. Volume do frasco vem das lojas (a bula não informa)."
+  },
+  "id": "astra-universal",
+  "nomeComercial": "Astra Universal",
+  "fabricante": {
+    "id": "yller",
+    "nome": "Yller"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: \"Adesivo Odontológico Autocondicionante Universal\"; aplicável na técnica convencional (com condicionamento prévio com ácido fosfórico), autocondicionante ou com condicionamento seletivo em esmalte."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal monocomponente; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Monômeros hidrófilos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Monômeros hidrofóbicos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Organosilanos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Nanopartículas silanizadas",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Estabilizadores",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fotoiniciadores",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Solventes",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A bula não nomeia MDP."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A bula não nomeia HEMA."
+    },
+    "silano": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Bula lista \"Organosilanos\" e \"Nanopartículas silanizadas\"."
+    },
+    "solventes": {
+      "valor": "nao-informado",
+      "observacao": "A bula lista \"Solventes\" sem nomeá-los."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-6ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 6 mL",
+      "quantidade": 1,
+      "volumeMl": 6,
+      "codigoFabricante": "1211",
+      "ean": "7898657862378",
+      "fontes": [
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-6ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso Astra Universal — Yller (PT/EN/ES)",
+      "url": "https://yller.com.br/wp-content/uploads/2026/03/AF.530.r02_Bula_Astra_Universal_PT_EN_ESP.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "REV:02 · ANVISA 81009359006",
+      "observacao": "Armazenar em local seco, entre 2 °C e 30 °C."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Astra Universal 6ml - Yller",
+      "url": "https://www.dentalcremer.com.br/adesivo-astra-universal-6ml-yller-157034.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Volume, código do fabricante e EAN."
+    }
+  ]
+}

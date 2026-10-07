@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "astra-mono",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-astra-mono-5ml-yller-157035.html",
+      "tituloNaLoja": "Adesivo Astra Monocomponente 5ml - Yller",
+      "skuLoja": "157035",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 9890,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 9593,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-astra-mono-5ml-yller-yll38424a.html",
+      "tituloNaLoja": "Adesivo Astra Mono 5ml - Yller",
+      "skuLoja": "YLL38424A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 9890,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 9593,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-astra-mono-bond-yller",
+      "tituloNaLoja": "Adesivo Astra Mono Bond - Yller",
+      "skuLoja": "26.1956",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 9890,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 9593,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 5ml."
+    }
+  ]
+}

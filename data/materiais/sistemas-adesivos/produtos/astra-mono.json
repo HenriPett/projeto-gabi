@@ -1,0 +1,257 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas de resina fotopolimerizável, cerômero e compômero; restaurações indiretas (inlay, onlay, laminados); restaurações com retentor intrarradicular (com cimento resinoso); coroas unitárias e próteses fixas.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Contraindicado para pessoas alérgicas aos componentes da fórmula; não utilizar diretamente sobre a polpa.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar gel de ácido fosfórico 37% sobre esmalte e dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte 30 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina 15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o gel com spray de ar e água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar o esmalte e remover o excesso de umidade da dentina com papel absorvente, mantendo-a ligeiramente úmida.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada",
+          "descricao": "Aplicar o adesivo com microaplicador em forma de pincel, agitando-o gentilmente sobre toda a superfície até o total recobrimento.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "agitar gentilmente cerca de 10 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada",
+          "descricao": "Aplicar outra camada e repetir a evaporação do solvente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar. A superfície deve ficar brilhante; se não, repetir a aplicação.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3. Volume do frasco vem das lojas (a bula não informa)."
+  },
+  "id": "astra-mono",
+  "nomeComercial": "Astra Mono",
+  "fabricante": {
+    "id": "yller",
+    "nome": "Yller"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: nome técnico \"Adesivo Odontológico Convencional de 2 passos\"; monocomponente, de condicionamento total."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo monocomponente.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Monômeros metacrilatos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Monômeros fosfatados",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fotoiniciador",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dióxido de silício",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Estabilizante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A bula cita \"Monômeros fosfatados\", sem nomear MDP."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A bula não nomeia HEMA."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita silano."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "codigoFabricante": "1242",
+      "ean": "7898657862545",
+      "fontes": [
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso Astra Mono — Yller (PT/EN/ES)",
+      "url": "https://yller.com.br/wp-content/uploads/2026/03/AF.560.r01_Bula_Astra_Mono_PT_EN_ESP.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "REV: 01 · ANVISA 81009359009"
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Astra Monocomponente 5ml - Yller",
+      "url": "https://www.dentalcremer.com.br/adesivo-astra-mono-5ml-yller-157035.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Volume, código do fabricante e EAN."
+    }
+  ]
+}

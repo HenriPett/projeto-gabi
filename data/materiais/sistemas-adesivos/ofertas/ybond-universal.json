@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "ybond-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-ybond-universal-yller-840407.html",
+      "tituloNaLoja": "Adesivo Monocomponente Autocondicionante Ybond Universal 5ml - Yller",
+      "skuLoja": "840407",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 6499,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 6304,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-ybond-universal-yller.html",
+      "tituloNaLoja": "Adesivo Ybond Universal - Yller",
+      "skuLoja": "YLE12059A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 6599,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 6401,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-autocondicionante-ybond-universal-yller",
+      "tituloNaLoja": "Adesivo Autocondicionante Ybond Universal - Yller",
+      "skuLoja": "26.1955",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8720,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 5ml."
+    }
+  ]
+}
