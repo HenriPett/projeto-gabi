@@ -466,9 +466,9 @@ Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/
 - Conteúdo: **vem da Dentina**, com fonte por termo (mesma regra de correção científica do briefing). Termos mínimos: MDP, HEMA, camada híbrida, smear layer (lama dentinária), solvente, condicionamento seletivo, nanocamada (nanolayering), primer, silano, monômero funcional, condicionamento total, fibras colágenas. Proposta de dado: `data/materiais/sistemas-adesivos/glossario.json` (`[{termo, sigla?, definicao, fontes[], artigo?}]`), com contrato/validação a cargo do Molar.
 - Sem dado ainda: o bloco **não aparece** (nada de "em preparação" num glossário vazio).
 
-**Acessibilidade:** a ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → glossário). No desktop, a trilha e a cola vão para a coluna lateral via `grid-area`, sem reordenar o DOM de modo que a leitura vá contra a ordem visual: no desktop a ordem visual é main (cartões, glossário) e depois aside, e o leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha é a introdução. `aside` com `aria-label`; tabela com `caption`; cada bloco com h2.
+**Acessibilidade:** ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → glossário). No desktop, `grid-template-areas` põe cartões e glossário no main e trilha e cola no aside. O leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha funciona como introdução. `aside` com `aria-label`, tabela com `caption`, um h2 por bloco.
 
-**Larguras de aceite:** 320, 390, 768, 1280, 1920. Sem scroll horizontal, a tabela da cola cabe sem rolagem a partir de 320px (a coluna Notação pode quebrar entre os termos da notação, nunca dentro de um termo) e a lateral não ultrapassa a altura da viewport sem rolar internamente.
+**Larguras de aceite:** 320, 390, 768, 1280, 1920. Sem scroll horizontal, a tabela da cola cabe sem rolagem a partir de 320px (Notação `nowrap`; a 320 as colunas somam ~290px: Subcategoria 90 · Notação 90 · Passos 44 · Produtos 56) e a lateral não ultrapassa a altura da viewport sem rolar internamente.
 
 ## 5. Acessibilidade (checklist de aceite)
 
