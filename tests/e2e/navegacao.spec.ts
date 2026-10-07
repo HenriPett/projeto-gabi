@@ -116,3 +116,10 @@ test("P-02: foto que falha ao carregar vira placeholder, sem ícone de imagem qu
   );
   expect(quebradas).toBe(0);
 });
+
+test("marca: páginas internas têm título '<página> · Adesivologia'", async ({ page }) => {
+  for (const url of ["/sistemas-adesivos/convencionais/2-passos", "/produto/ficticio-ambar", "/comparar", "/guia"]) {
+    await irPara(page, url);
+    await expect(page, url).toHaveTitle(/^.+ · Adesivologia$/);
+  }
+});

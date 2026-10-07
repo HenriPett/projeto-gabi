@@ -371,3 +371,8 @@ test("A11Y: /login tem campo rotulado, botão e h1", async ({ page }) => {
   await expect(page.getByLabel(/senha/i)).toHaveAttribute("type", "password");
   await expect(page.getByRole("button", { name: /entrar/i })).toBeVisible();
 });
+
+test("marca: /login (sem sessão) identifica o site como Adesivologia", async ({ page }) => {
+  await page.goto("/login");
+  await expect(page).toHaveTitle(/Adesivologia/);
+});
