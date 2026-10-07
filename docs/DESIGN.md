@@ -24,6 +24,26 @@ Princípios:
 
 ---
 
+### 0.1 Marca: ADESIVOLOGIA (07/10/2026)
+
+O site se chama **Adesivologia** (antes "Sistemas Adesivos"). O nome da **categoria** continua "Sistemas Adesivos": breadcrumb raiz e h1 da Home não mudam (pedido do cliente). Só a marca muda.
+
+**Logotipo:** **"ADESIVOLOGIA" em CAIXA ALTA**, Source Serif 4 700, `letter-spacing: .04em`, 18px (16px abaixo de 400px). A caixa alta é feita **por CSS** (`.logo__txt { text-transform: uppercase }`). No HTML e em todo texto corrido (title, metadata, manifest, alt, aria, rodapé) escreve-se **"Adesivologia"**, para o leitor de tela não soletrar. Cor: branco sobre o header preto; `--ink-900` sobre fundo claro (login).
+
+**Monograma:** um **"A" serifado** (slab, coerente com o Source Serif do logotipo), desenhado em path SVG, sem depender de fonte. Duas versões:
+
+| Versão | Onde | Desenho | Fonte |
+|---|---|---|---|
+| Pequena | monograma do header e do login (28px; 24px abaixo de 360px), favicon 16/32/48 | ladrilho `--orange-500` (raio 22%) + "A" `--ink-900` (6.3:1) | `assets/icon-pequeno.svg` e `<Monograma>` em `src/components/Marca.tsx` |
+| Grande | PWA 192/512, apple-icon 180 | fundo `--ink-900`, "A" branco **apoiado sobre três camadas**: azul (ácido), amarelo (primer) e laranja (adesivo), na ordem de aplicação, com as cores das etapas do §1.4 | `assets/icon.svg` |
+| Maskable | PWA maskable 512 | o desenho grande a 76%, inteiro dentro do círculo de segurança de 80% | `assets/icon-maskable.svg` |
+
+Conceito: o "A" de Adesivologia "aderido" às três camadas de um sistema adesivo. As camadas somem na versão pequena porque abaixo de ~48px viram ruído.
+
+**Geração:** `pnpm icons` gera tudo a partir dos três SVGs (`scripts/gerar-icones.mjs`), inclusive o `favicon.ico` de verdade (PNG 16/32/48 embutidos). Antes era o ícone padrão do Next.js. A saída é commitada.
+
+**Header:** `<Marca />` = `<Monograma />` + logotipo, no link para a Home. Larguras medidas: 160px a 320, 166px a 390, 182px a 1280, sem corte nem rolagem lateral.
+
 ## 1. Design tokens
 
 Implementar como CSS custom properties em `:root` (e/ou `tailwind.config` `theme.extend`). Nomes abaixo são os nomes definitivos.

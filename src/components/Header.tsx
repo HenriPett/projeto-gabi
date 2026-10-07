@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SearchBox } from "./busca/SearchBox";
 import { LinkComparar } from "./comparar/CompareTray";
 import { HeaderRetratil } from "./HeaderRetratil";
+import { Marca } from "./Marca";
 import { BotaoSair } from "@/auth/BotaoSair";
 import type { ItemIndice } from "./tipos";
 
@@ -12,10 +13,7 @@ export function Header({ indice }: { indice: ItemIndice[] }) {
       <div className="pagina header__inner">
         <div className="header__row">
           <Link className="logo" href="/">
-            <span className="logo__mark" aria-hidden="true">
-              SA
-            </span>
-            <span className="logo__txt">Sistemas Adesivos</span>
+            <Marca />
           </Link>
           <LinkComparar className="btn btn--secondary compare-link" />
         </div>
