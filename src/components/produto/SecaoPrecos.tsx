@@ -33,9 +33,9 @@ function useCliqueUnico() {
   };
 }
 
-function LinhaDeLoja({ l, destacar, onComprar }: { l: LinhaLoja; destacar: boolean; onComprar: (e: React.MouseEvent) => void }) {
+function LinhaDeLoja({ l, onComprar }: { l: LinhaLoja; onComprar: (e: React.MouseEvent) => void }) {
   const temPreco = l.centavos !== undefined;
-  const melhor = destacar && l.menorPreco;
+  const melhor = l.menorPreco;
   return (
     <li
       className={`store${melhor ? " store--best" : ""}${temPreco ? "" : " store--na"}`}
@@ -151,7 +151,7 @@ export function SecaoPrecos({ comparacoes }: { comparacoes: ComparacaoApresentac
           <ul className="stores">
             {c.linhas.map((l) => (
               // Todas iguais (sem economia): o selo em todas não informa nada — fica só o aviso abaixo.
-              <LinhaDeLoja key={l.lojaId} l={l} destacar={c.comparavel && c.economiaCentavos !== undefined} onComprar={onComprar} />
+              <LinhaDeLoja key={l.lojaId} l={l} onComprar={onComprar} />
             ))}
           </ul>
           {c.economiaCentavos !== undefined && (

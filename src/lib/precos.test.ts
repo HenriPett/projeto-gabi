@@ -59,7 +59,7 @@ describe("compararPrecos", () => {
     expect(c.linhas.find((l) => l.lojaId === "dental-cremer")?.pixCentavos).toBe(5000);
   });
 
-  it("preços iguais: comparável, sem economia", () => {
+  it("preços iguais: comparável, sem economia e sem selo de menor preço", () => {
     const c = compararPrecos(
       [
         oferta({ lojaId: "dental-cremer", apresentacaoId: "a", precos: preco(5000) }),
@@ -69,6 +69,7 @@ describe("compararPrecos", () => {
     );
     expect(c.comparavel).toBe(true);
     expect(c.economiaCentavos).toBeUndefined();
+    expect(c.linhas.some((l) => l.menorPreco)).toBe(false);
   });
 
   it("indisponível não tem preço nem conta para comparação", () => {
