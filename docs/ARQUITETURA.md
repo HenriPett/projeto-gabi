@@ -144,9 +144,19 @@ Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `
 
 ## 7. Git
 
-- `main` sempre verde e implantável (produção na Vercel, plano Hobby, domínio *.vercel.app). Remote: `origin` (GitHub); após merge no main, `git push origin main`. Trabalho em branches curtas: `feat/…`, `fix/…`, `dados/…`, `chore/…`, `docs/…`; merge após `pnpm check` + review do Tech Lead.
+Regra do cliente (2026-10-06): **sem Pull Requests e sem esperar aprovação.**
+
+- `main` sempre verde e implantável (produção na Vercel, plano Hobby, *.vercel.app). Remote: `origin` (GitHub).
+- Cada agente trabalha no **seu `git worktree`**, numa branch local (`feat/…`, `fix/…`, `dados/…`, `chore/…`, `docs/…`). **Branches de trabalho não vão para o GitHub.**
+- Entrega pronta → no worktree: `pnpm check && pnpm build` (precisam passar) → no diretório principal:
+  ```bash
+  git pull --ff-only origin main && git merge --no-edit <sua-branch>
+  pnpm check && git push origin main
+  ```
+- Conflito: resolva você mesmo ou chame o Molar.
+- **Commits pequenos e frequentes**; nada de trabalho grande sem commit (os worktrees irmãos serão apagados no fim do projeto).
 - **Conventional Commits** em português: `feat(produto): seção de preços`, `dados(ambar): ofertas 2026-10-06`.
-- Agentes trabalhando em paralelo no mesmo clone: cada um em **`git worktree`** próprio, para não trocar a branch do outro.
+- Code review do Tech Lead acontece **depois** da integração, com correção direto no `main` — não bloqueia.
 
 ## 8. Escalar para outros materiais
 
