@@ -2,7 +2,8 @@
 
 > Dono: Ponte (DevOps). Runtime/build alinhados com Molar (Tech Lead) — fonte técnica: [`ARQUITETURA.md`](./ARQUITETURA.md).
 > Produto: [`BRIEFING.md`](./BRIEFING.md).
-> Status: PWA, CI, `vercel.json` e Action de preços **implementados** (branch `chore/pwa-ci`). Conexão com a Vercel e com o GitHub **ainda não feita** (seção 7).
+> Status: PWA, CI e `vercel.json` **implementados** na `main`. Repositório: [`HenriPett/projeto-gabi`](https://github.com/HenriPett/projeto-gabi). Vercel **plano Hobby**, domínio `*.vercel.app`, conectada pelo cliente via painel (seção 7).
+> Preços: **curadoria manual** (decisão do cliente, 06/10/2026) — sem coleta automática (seção 4).
 
 ---
 
@@ -47,21 +48,26 @@ Só cabeçalhos (nada de rewrites/crons):
 - Todas as rotas: `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY`.
 
 ### 1.4 Variáveis de ambiente
-Regra: **nenhum segredo em código ou commit**. `.env*` é ignorado no Git, exceto `.env.example`.
+Regra: **nenhum segredo em código ou commit**. `.env*` é ignorado no Git, exceto `.env.example`. **Hoje o projeto não tem nenhum segredo** e nenhuma variável obrigatória na Vercel.
 
 | Variável | Onde definir | Uso |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Vercel (Production; Preview opcional) | URL canônica no `robots.txt` |
+| `NEXT_PUBLIC_SITE_URL` | opcional (Vercel) | só se houver domínio próprio; ver fallback abaixo |
 | `INCLUIR_RASCUNHOS` | opcional | força exibir/esconder rascunhos |
 | `DADOS_DIR` | só CI/testes | aponta para `tests/fixtures/dados` |
-| `PRECOS_PR_TOKEN` | GitHub → Secrets | token da Action de preços (seção 4) |
 
-Fornecidas pela Vercel no build: `VERCEL_ENV`, `VERCEL_GIT_COMMIT_SHA`, `VERCEL_GIT_COMMIT_REF`, `NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA` (deixar ligado "Automatically expose System Environment Variables", padrão).
+**URL do site** (`src/lib/site.ts → urlDoSite()`, usada em `metadataBase` do layout e no `robots.txt`), resolvida no build:
+`NEXT_PUBLIC_SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` (em produção: `<projeto>.vercel.app`) → `VERCEL_URL` (previews) → `http://localhost:3000`.
+
+Fornecidas pela Vercel no build: `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_PROJECT_PRODUCTION_URL`, `VERCEL_GIT_COMMIT_SHA`, `VERCEL_GIT_COMMIT_REF`, `NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA` (deixar ligado "Automatically expose System Environment Variables", padrão).
 
 Modelo para dev local: [`.env.example`](../.env.example) → copiar para `.env.local`.
 
-### 1.5 Domínio
-A definir pelo cliente; até lá, `*.vercel.app`. HTTPS automático (requisito do PWA).
+### 1.5 Plano e domínio
+- **Plano Hobby (gratuito)**, domínio `<projeto>.vercel.app` com HTTPS automático (requisito do PWA).
+- Cabe no Hobby porque o site é 100% estático: sem Functions, sem cron, só CDN e builds.
+- Limites do Hobby a ter em mente: uso **não comercial** pelos termos da Vercel (se o site passar a ter fins comerciais — ex.: links de afiliado —, migrar para Pro); cotas mensais de banda/builds; um membro por time (o cliente é o dono da conta).
+- Domínio próprio no futuro: Project → Settings → Domains, e definir `NEXT_PUBLIC_SITE_URL`.
 
 ---
 
@@ -109,37 +115,22 @@ Fase 2: E2E Playwright + axe (Sonda) contra a URL de preview (`deployment_status
 
 ---
 
-## 4. Atualização de preços — `.github/workflows/precos.yml`
+## 4. Atualização de preços (manual)
 
-Princípio: **nunca inventar preço**; toda mudança passa por PR revisado.
+Decisão do cliente (06/10/2026): **sem coleta automática**. Preços são curadoria manual do Bula; o histórico de preços é o histórico do Git.
 
-**Como funciona:**
-1. Toda segunda às 06h (Brasília) ou manualmente (`workflow_dispatch`, com filtro opcional de produtos).
-2. `pnpm precos:atualizar` (`scripts/atualizar-precos.ts`) visita a `url` de cada oferta cadastrada (ignora `nao-encontrado`), respeitando o `robots.txt` da loja e 3 s entre requisições por loja, com user-agent identificado (`SistemasAdesivosBot`).
-3. Lê o preço do **JSON-LD schema.org** (`Product` → `Offer`) da página (`scripts/precos/extrair.ts`, com testes unitários).
-   - Em estoque → `disponivel` + preço `padrao`; fora de estoque → `indisponivel`; ambos com `consultadoEm` = hoje.
-   - A `url` cadastrada e a URL final após redirects passam por `validarUrlDeProduto`: redirect para home/categoria (comum quando o produto sai de linha) é **falha**, nunca `indisponivel`.
-   - Página com variações de preço e sem `skuLoja` na oferta, SKU divergente, moeda ≠ BRL, HTTP ≠ 200, sem JSON-LD → **oferta fica como estava** (com a data antiga) e entra no relatório.
-   - Pix/boleto não vêm no JSON-LD: são removidos quando o preço é reconsultado (não exibir valor velho com data nova) e o relatório avisa.
-   - Variação > 30% é destacada para conferência.
-   - Arquivo só é gravado se continuar válido no esquema zod.
-4. Guarda: o job falha se algo fora de `data/materiais/*/ofertas/*.json` mudou. Depois roda `validar:dados` e `test`.
-5. O corpo do PR traz um checklist de curadoria (Bula): confirmar por loja que o `price` do JSON-LD é o preço padrão ("por"), não Pix/boleto nem o "de" riscado; conferir variações; decidir ofertas redirecionadas.
-6. Abre/atualiza o PR `dados(precos): atualização automática AAAA-MM-DD` na branch `dados/precos-automatico`, com o relatório no corpo. A Vercel gera preview do PR; revisão humana → merge → produção.
+1. Criar branch `dados/precos-AAAA-MM-DD`.
+2. Editar `data/materiais/sistemas-adesivos/ofertas/<produto>.json`: preço `padrao` em centavos (o "por", não o Pix nem o "de" riscado), `status`, `url` da página **específica** do produto e `consultadoEm` = data da consulta. Preço não encontrado → `"status": "nao-encontrado"`. Nunca inventar.
+3. `pnpm validar:dados` — o esquema (`src/lib/esquema/oferta.ts` + `validarUrlDeProduto` em `lojas.ts`) recusa URL de outra loja, home/categoria, oferta disponível sem preço `padrao`, ofertas duplicadas etc.
+4. Commit `dados(precos): <produto> AAAA-MM-DD`, push, PR → `ci` verde + preview da Vercel conferido → merge → produção.
 
-**Rollback:** `git revert` do merge do PR de preços.
-
-**⚠️ Risco conhecido (testado em 06/10/2026):** Dental Cremer e Dental Speed respondem **403** a clientes que não se identificam como navegador (inclusive no `robots.txt`); Dental Med Sul responde normalmente. Não vamos disfarçar o bot de navegador. Enquanto não houver alternativa, as ofertas dessas lojas aparecerão como "Não atualizadas" no relatório e seguem por curadoria manual (Bula). Caminhos a avaliar: feed/API de afiliados das lojas, ou permissão das lojas para o user-agent.
-
-**Alternativa futura (não adotada):** Vercel Cron + rota gravando em Blob/Edge Config. Exigiria a primeira Function do projeto (quebra o "100% SSG"), um store mutável e perderia a revisão humana. Só reavaliar se precisarmos de atualização diária sem PR.
-
----
+**Rollback:** `git revert` do merge.
 
 ## 5. Observabilidade
 
 - **Versão no ar**: `GET /version.json`, arquivo estático gerado no início do build (`scripts/gerar-versao.mjs`, não versionado) → `{ status, commit, branch, ambiente, geradoEm, ofertas, precosAtualizadosEm }`. Serve como healthcheck (200) e mostra quão velhos estão os preços. Um monitor externo gratuito pode checar o 200 e o campo `precosAtualizadosEm`.
-- **Logs**: Vercel Build Logs (erros de `validar:dados` aparecem aqui) e logs das Actions. Não há Runtime Logs (sem Functions).
-- **Falhas da Action de preços**: notificação padrão do GitHub para os mantenedores.
+- **Logs**: Vercel Build Logs (erros de `validar:dados` aparecem aqui) e logs do GitHub Actions (`ci`). Não há Runtime Logs (sem Functions).
+- **Preços envelhecendo**: `precosAtualizadosEm` em `/version.json` mostra a consulta mais recente; não há alerta automático.
 - **Métricas (proposta, aguarda ok do Tech Lead/produto)**: Vercel Web Analytics + Speed Insights — sem cookies; daria o dado real para "Produtos mais consultados" (ARQUITETURA §9).
 
 ---
@@ -157,22 +148,32 @@ Princípio: **nunca inventar preço**; toda mudança passa por PR revisado.
   | `vercel.json` (headers) | reverter o commit; sem o arquivo a Vercel usa os padrões do Next |
   | variável de ambiente | apagar/restaurar no painel da Vercel e redeploy |
   | `ci.yml` / proteção da `main` | reverter o commit / desmarcar o check em Settings → Branches |
-  | `precos.yml` | desabilitar o workflow em Actions (sem commit) ou reverter |
+  | conexão com a Vercel | Project → Settings → Git → Disconnect (o site atual continua no ar até apagar o projeto) |
   | PWA inteiro | kill switch acima + remover `<RegistrarServiceWorker />` do layout |
 
 ---
 
-## 7. Passos manuais pendentes (responsável humano)
+## 7. Importar o projeto na Vercel (passo a passo para o cliente)
 
-- [ ] Criar o repositório no GitHub e fazer push (`main` + `chore/pwa-ci`).
-- [ ] Settings → Actions → General → permitir que Actions criem pull requests.
-- [ ] Criar o secret `PRECOS_PR_TOKEN` (fine-grained PAT ou GitHub App com `contents` e `pull-requests: write`) — sem ele o PR de preços não dispara o `ci`.
-- [ ] Proteção da `main`: exigir PR, check `ci` e status da Vercel.
-- [ ] Importar o repositório na Vercel (dashboard), conferir Node 24, definir `NEXT_PUBLIC_SITE_URL` e ligar Vercel Authentication nos previews.
-- [ ] Domínio de produção; plano Vercel (Hobby proíbe uso comercial — avaliar Pro).
-- [ ] Decidir a coleta de preços em Dental Cremer/Dental Speed (seção 4).
+Pré-requisito: acesso ao repositório [`HenriPett/projeto-gabi`](https://github.com/HenriPett/projeto-gabi) no GitHub.
+
+1. Acesse [vercel.com/signup](https://vercel.com/signup), escolha **Hobby** e entre com **Continue with GitHub**.
+2. No painel, clique em **Add New… → Project**.
+3. Em *Import Git Repository*, clique em **Install** / **Adjust GitHub App Permissions** e autorize a Vercel **apenas** no repositório `projeto-gabi`. Volte e clique em **Import** ao lado dele.
+4. Na tela *Configure Project*, **não altere nada**: Framework *Next.js*, Root Directory `./`, comandos de build/install vêm do `vercel.json`. Não é preciso adicionar variáveis de ambiente.
+   - O nome do projeto define o endereço: `projeto-gabi` → `https://projeto-gabi.vercel.app` (se o nome estiver ocupado, a Vercel acrescenta um sufixo).
+5. Clique em **Deploy** e aguarde (~1–2 min). Ao terminar, **Continue to Dashboard → Visit** abre o site.
+6. Conferências rápidas:
+   - Settings → **General → Node.js Version** = 24.x.
+   - Settings → **Deployment Protection → Vercel Authentication** ligado (previews só para quem tem acesso).
+   - Abrir `https://<projeto>.vercel.app/version.json` → `"ambiente": "production"` e o commit da `main`.
+   - No celular, abrir o site e usar **Adicionar à tela inicial**.
+
+A partir daí: todo merge na `main` publica produção; todo PR/branch ganha um preview com link comentado no PR.
+
+**Ainda recomendado no GitHub** (dono do repositório): Settings → Branches → regra para `main` exigindo PR e o check `ci`.
 
 ## 8. Arquivos sob responsabilidade do DevOps
 
-`.github/workflows/{ci,precos}.yml` · `vercel.json` · `.env.example` · `public/sw.js` · `src/pwa/` · `src/app/manifest.ts` · `src/app/robots.ts` · `src/app/offline/` · `assets/icon.svg` + ícones gerados · `scripts/{gerar-versao,gerar-icones}.mjs` · `scripts/atualizar-precos.ts` · `scripts/precos/` · `scripts/sw-kill-switch.js` · este documento.
-Toques em arquivos de outros donos (para review): `src/app/layout.tsx` (metadata PWA/robots + `<RegistrarServiceWorker />`), `package.json` (scripts `build`, `icons`, `precos:atualizar`), `.gitignore`.
+`.github/workflows/ci.yml` · `vercel.json` · `.env.example` · `public/sw.js` · `src/pwa/` · `src/app/manifest.ts` · `src/app/robots.ts` · `src/app/offline/` · `assets/icon.svg` + ícones gerados · `scripts/{gerar-versao,gerar-icones}.mjs` · `scripts/sw-kill-switch.js` · este documento.
+Toques em arquivos de outros donos (para review): `src/app/layout.tsx` (metadata PWA/robots + `<RegistrarServiceWorker />`), `package.json` (scripts `build`, `icons`), `.gitignore`, `src/lib/site.ts` (`urlDoSite`, para review do Tech Lead).

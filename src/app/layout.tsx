@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { RegistrarServiceWorker } from "@/pwa/RegistrarServiceWorker";
+import { urlDoSite } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(urlDoSite()),
   title: { default: "Sistemas Adesivos", template: "%s · Sistemas Adesivos" },
   description: "Classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.",
   appleWebApp: { capable: true, title: "Adesivos", statusBarStyle: "default" },
