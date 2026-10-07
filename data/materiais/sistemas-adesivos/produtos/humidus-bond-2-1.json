@@ -142,7 +142,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/humidus-bond-2-1/frasco.webp",
+      "alt": "Caixa e frasco de Humidus Bond 2.1 — Superdont",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -286,6 +295,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-humidus-bond-2-1-4ml-superdont-154329.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte dos EANs (os mesmos exibidos na Dental Speed)."
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Humidus Bond 2.1 4 mL — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-humidus-bond-2-1-4ml-superdont-154329.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/adesivo-humidus-bond-2-1-4ml-superdont-154329.jpg"
     }
   ]
 }

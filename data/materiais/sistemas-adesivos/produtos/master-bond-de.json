@@ -126,7 +126,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/master-bond-de/frasco.webp",
+      "alt": "Frasco de 5 mL do Master Bond DE — Biodinâmica",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Biodinâmica"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -246,6 +255,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-master-bond-refil-biodinamica-382556.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte do EAN (o mesmo exibido na Dental Speed)."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Master Bond DE — Biodinâmica (foto do frasco 5 mL)",
+      "url": "https://biodinamica.com.br/produto/master-bond/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://biodinamica.com.br/wp-content/uploads/2024/05/img_principal_restauradores-master-bond_00_rev00_31-07-26-1.png"
     }
   ]
 }

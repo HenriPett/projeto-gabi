@@ -286,7 +286,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/magic-bond-universal/frasco.webp",
+      "alt": "Frasco de Magic Bond Universal — Vigodent",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Vigodent"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -460,6 +469,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-magic-bond-universal-5ml-vigodent-145419.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte do EAN (o mesmo exibido na Dental Speed)."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Magic Bond Universal — Vigodent (foto do frasco)",
+      "url": "https://vigodent.com.br/produto/magic-bond-universal/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://vigodent.com.br/wp-content/uploads/2024/04/Magic-Bond-Universal.jpg"
     }
   ]
 }

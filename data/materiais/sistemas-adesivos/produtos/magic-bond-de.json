@@ -112,7 +112,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/magic-bond-de/frasco.webp",
+      "alt": "Caixa e frasco de Magic Bond DE — Vigodent",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Vigodent"
+    }
+  ],
   "divergencias": [
     {
       "campo": "apresentacoes.frasco-5ml.ean",
@@ -306,6 +315,14 @@
       "titulo": "Dental Speed — Adesivo Magic Bond DE com Flúor - Vigodent",
       "url": "https://www.dentalspeed.com/adesivo-magic-bond-de-com-fluor-vigodent.html",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Magic Bond DE — Vigodent (foto da caixa e do frasco)",
+      "url": "https://vigodent.com.br/produto/magic-bond-de/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://vigodent.com.br/wp-content/uploads/2024/04/Magic-Bond-DE_Cartucho-Frasco.png"
     }
   ]
 }
