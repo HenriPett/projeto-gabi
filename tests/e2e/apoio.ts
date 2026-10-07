@@ -36,6 +36,16 @@ export async function produtosLinkados(page: import("@playwright/test").Page, es
   return [...new Set(hrefs)].sort();
 }
 
+/**
+ * Para `goto` em sequência no mesmo teste: espera a rede acalmar antes de seguir.
+ * Sem isso, o próximo goto aborta os prefetches RSC da página anterior e o WebKit
+ * os reporta como pageerror (flaky do U-02 no mobile-safari, CI 37559347656).
+ */
+export async function irPara(page: import("@playwright/test").Page, url: string) {
+  await page.goto(url);
+  await page.waitForLoadState("networkidle");
+}
+
 /** G-08: erro de console ou exceção não tratada = falha em qualquer teste E2E. */
 export const test = base.extend<{ errosDeConsole: string[] }>({
   errosDeConsole: [

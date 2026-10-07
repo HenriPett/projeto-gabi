@@ -1,4 +1,4 @@
-import { expect, produtosLinkados, PRODUTOS_PUBLICADOS, SUBCATEGORIAS, test } from "./apoio";
+import { expect, irPara, produtosLinkados, PRODUTOS_PUBLICADOS, SUBCATEGORIAS, test } from "./apoio";
 
 // PLANO §1.1 (H-01..H-04), §1.2 (C-04, C-06), §1.4 (D-05, D-06), §1.6 (U-02, U-04), §8 (G-02, G-10)
 
@@ -34,7 +34,7 @@ for (const s of SUBCATEGORIAS) {
 
 test("U-02: universal das 3 estratégias aponta para a MESMA página de produto", async ({ page }) => {
   for (const s of SUBCATEGORIAS.filter((x) => x.grupo === "Universais")) {
-    await page.goto(s.url);
+    await irPara(page, s.url);
     await expect(page.locator('main a[href^="/produto/ficticio-universal-triplo"]').first()).toBeVisible();
   }
 });
@@ -46,7 +46,7 @@ test("U-04: universal sem indicação para seletivo não aparece em seletivo", a
 
 test("rascunho nunca aparece com INCLUIR_RASCUNHOS=0 (BUG-005)", async ({ page, errosDeConsole }) => {
   for (const url of ["/", "/sistemas-adesivos/convencionais/2-passos"]) {
-    await page.goto(url);
+    await irPara(page, url);
     await expect(page.locator('a[href="/produto/ficticio-rascunho"]')).toHaveCount(0);
     await expect(page.getByText("Rascunho Fictício")).toHaveCount(0);
   }

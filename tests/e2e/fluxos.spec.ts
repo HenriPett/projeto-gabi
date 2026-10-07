@@ -1,4 +1,4 @@
-import { expect, test } from "./apoio";
+import { expect, irPara, test } from "./apoio";
 
 // PLANO §2 — fluxos do BRIEFING §22 sobre o catálogo fictício.
 
@@ -115,7 +115,7 @@ test("PR-06: refil fora da comparação do kit", async ({ page }) => {
 
 test("PR-21: todo botão Comprar aponta para página de produto da loja certa, em nova aba", async ({ page }) => {
   for (const id of ["ficticio-ambar", "ficticio-single-bond-2", "ficticio-dois-frascos", "ficticio-tudo-em-um"]) {
-    await page.goto(`/produto/${id}`);
+    await irPara(page, `/produto/${id}`);
     for (const linha of await page.locator('[data-testid="price-row"]:has([data-testid="btn-comprar"])').all()) {
       const loja = await linha.getAttribute("data-loja");
       const a = linha.getByTestId("btn-comprar");

@@ -305,6 +305,9 @@ test.describe("Sair antes da hidratação (envio nativo do form, sem onSubmit/sa
     await logarCachearESairNativo(page);
     // a limpeza roda quando /login?saiu=1 hidrata — esperar, não ler de imediato
     await expect.poll(() => page.evaluate((k) => localStorage.getItem(k), CHAVE_LOCAL)).toBeNull();
+    // consequência visível do bug: quem saiu não pode ver "sessão expirou" no próximo /login
+    await page.goto("/login");
+    await expect(page.getByText(/sua sessão expirou/i)).toHaveCount(0);
   });
 });
 

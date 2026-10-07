@@ -426,7 +426,7 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-013 | S3 | ✅ Corrigido `2ac25e8` — reverificado | Lista todas as apresentações ("5 mL · 3 mL"). |
 | BUG-014 | S4 | 🔴 Aberto (Pulpa) | Nome acessível do Comparar no header varia: 320 px "Comparar 0 produtos selecionados"; ≥ 360 px "Comparar (0) produtos selecionados" (leitor de tela lê os parênteses). |
 | BUG-015 | — | ⚪ Retirado — não reproduzível | `/guia` a 320 px com 330 px vista uma vez; provável servidor de outra worktree na porta fixa. |
-| BUG-016 | S3 | 🔴 Aberto (Molar) | Sair tocado antes da hidratação envia o form nativo sem `sairLocal()`: cookie e páginas do SW somem (Clear-Site-Data), mas a flag `sa:sessao` fica → depois o /login mostra "Sua sessão expirou" para quem saiu. |
+| BUG-016 | S3 | ✅ Corrigido `0c531c3` — reverificado (Molar) | Sair tocado antes da hidratação envia o form nativo sem `sairLocal()`: cookie e páginas do SW somem (Clear-Site-Data), mas a flag `sa:sessao` fica → depois o /login mostra "Sua sessão expirou" para quem saiu. |
 
 **Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
 
@@ -540,3 +540,5 @@ Perguntas ao Molar: nome da variável de ambiente da senha e do cookie; nome do 
 - **BUG-016** reproduzido em estresse (2/30 em mobile-chrome/mobile-safari) e depois de forma determinística com o envio nativo do form. Sugestão: o `/login?saiu=1` chamar `sairLocal()` ao montar (cobre o envio nativo e o sem-JS). Risco aceito a confirmar: no iOS, o apagamento do CacheStorage pelo `Clear-Site-Data` não é verificado (SW só testado no Chromium).
 - Robustez (relato da Pulpa): o Sair da `header__nav` fica `display:none` abaixo de 1024 px; o helper usa `filter({ visible: true })` sem `.first()`.
 - MOB-01b: `/guia` a 320 px com as webfonts bloqueadas também cabe. A falha do `/guia` vista antes (330 px) **não se reproduz** (0/11 + 0/6 com a fonte reserva) e provavelmente veio de rodar contra o servidor de outra worktree na porta fixa 3100. BUG-015 retirado (não reproduzível).
+- BUG-016 corrigido (`0c531c3`): `/login?saiu=1` chama `sairLocal()` ao montar — cobre o envio nativo, o sem-JS e o Safari se ignorar `Clear-Site-Data`. Teste com `expect.poll` (limpeza roda na hidratação) + confere que o próximo `/login` não mostra "Sua sessão expirou".
+- Flaky U-02 (mobile-safari, CI 37559347656): não reproduzido localmente (41/41 isolado; 4× o projeto inteiro, 509/509). Causa provável: `goto` em sequência aborta prefetches RSC e o WebKit reporta como `pageerror`. Correção no teste: helper `irPara()` (goto + `networkidle`) em todo teste com várias navegações (U-02, rascunho, PR-21). Se reaparecer no CI, preciso do texto do erro (não tenho `gh` autenticado).
