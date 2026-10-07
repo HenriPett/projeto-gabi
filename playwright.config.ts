@@ -5,7 +5,13 @@ import { ARQ_SESSAO, SENHA_E2E } from "./tests/e2e/sessao";
  * E2E (docs/PLANO-DE-TESTES.md). Sempre contra build de produção com o
  * catálogo fictício: dados determinísticos e service worker ativo.
  */
-const PORTA = Number(process.env.PORTA_E2E ?? 3100);
+/**
+ * Porta por worktree (3100–3199, hash do cwd): agentes rodando e2e em paralelo em
+ * worktrees diferentes não disputam a mesma porta. PORTA_E2E força uma porta.
+ */
+const PORTA = Number(
+  process.env.PORTA_E2E ?? 3100 + ([...process.cwd()].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % 100),
+);
 
 export default defineConfig({
   testDir: "tests/e2e",

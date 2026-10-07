@@ -425,6 +425,8 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-012 | S2 | ✅ Corrigido `2ac25e8` — reverificado | Card e comparador só mostram "a partir de" com apresentação comparável (e dizem qual); senão "Apresentações diferentes" / "Preço em uma só loja" + ver preços. `test.fail` removido. |
 | BUG-013 | S3 | ✅ Corrigido `2ac25e8` — reverificado | Lista todas as apresentações ("5 mL · 3 mL"). |
 | BUG-014 | S4 | 🔴 Aberto (Pulpa) | Nome acessível do Comparar no header varia: 320 px "Comparar 0 produtos selecionados"; ≥ 360 px "Comparar (0) produtos selecionados" (leitor de tela lê os parênteses). |
+| BUG-015 | — | ⚪ Retirado — não reproduzível | `/guia` a 320 px com 330 px vista uma vez; provável servidor de outra worktree na porta fixa. |
+| BUG-016 | S3 | 🔴 Aberto (Molar) | Sair tocado antes da hidratação envia o form nativo sem `sairLocal()`: cookie e páginas do SW somem (Clear-Site-Data), mas a flag `sa:sessao` fica → depois o /login mostra "Sua sessão expirou" para quem saiu. |
 
 **Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
 
@@ -464,7 +466,7 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 
 ## 13. Execução E2E (Playwright) — 06/10/2026, front `682f4c2`
 
-`pnpm e2e` → build de produção com fixtures + `next start` na porta 3100 (servidor **sempre novo**: um `next start` antigo na porta servia CSS/dados velhos e mascarava resultados). 4 projetos: desktop-chromium, mobile-chrome (Pixel 7), mobile-safari (iPhone 13), small (320 px).
+`pnpm e2e` → build de produção com fixtures + `next start` (servidor **sempre novo**: um `next start` antigo na porta servia CSS/dados velhos e mascarava resultados). **Porta por worktree:** 3100 + hash do caminho (3100–3199), para agentes rodarem e2e em paralelo; `PORTA_E2E=31xx` força outra. Nunca matar processo numa porta que não é a sua. 4 projetos: desktop-chromium, mobile-chrome (Pixel 7), mobile-safari (iPhone 13), small (320 px).
 
 Fluxos do §22 (E2E-01 completo até o clique em Comprar; E2E-02 até comparar produtos e preços) e todos os cenários de preço PR-01/02/06/07/08/09/10/11/14/16/18/21/25 **passam** em desktop e mobile-safari. As falhas restantes são os bugs abaixo.
 
@@ -509,7 +511,7 @@ Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja rece
 - Texto de ausência agora é "Informação ainda não verificada" (Pulpa ajustou E2E-02). Onde o plano diz "Não informado", ler este texto.
 - **P-02** coberto: a fixture `ficticio-multiuso-3p` aponta de propósito para `frasco-inexistente.webp`; o teste exige "Imagem ainda não disponível" e nenhuma `<img>` quebrada visível. O 404 dessa foto é o único erro de console tolerado (`apoio.ts`).
 
-## 14. Login por senha (em implementação — Molar)
+## 14. Login por senha — no main `73cfb1c`
 
 Contrato esperado: todas as páginas exigem login; cookie HttpOnly de longa duração + flag em `localStorage`. Os testes rodam com a senha de teste vinda do ambiente (nunca commitada). Os E2E existentes passam a logar uma vez (projeto `setup` do Playwright → `storageState`), salvo os testes desta seção, que começam sem sessão.
 
@@ -531,3 +533,10 @@ Contrato esperado: todas as páginas exigem login; cookie HttpOnly de longa dura
 | LOG-14 | Muitas tentativas erradas seguidas | Comportamento definido (atraso/limite) sem travar quem acerta depois | S3 |
 
 Perguntas ao Molar: nome da variável de ambiente da senha e do cookie; nome do campo/rota do formulário (`/login`, POST para onde?); se o login exige JS (Route Handler × Server Action); o que acontece com o SW no logout; rotas públicas definitivas.
+
+### Execução do login — main `73cfb1c`
+- Ajustes do Molar nos testes revisados e **aceitos**: `nextDe`/LOG-04 comparam caminho + parâmetros decodificados (o Next normaliza `,` → `%2C`; `&` dentro de `q` continua verificado), LOG-02 compara `hostname` (Location absoluto com porta). LOG-09 reforçado: depois de sair e offline, nem o produto nem a home (`/` saiu do shell do SW) mostram conteúdo.
+- Teste corrigido (não era bug): no iPhone o header retrátil pode esconder o Sair; o helper `sair()` volta ao topo e clica no botão visível.
+- **BUG-016** reproduzido em estresse (2/30 em mobile-chrome/mobile-safari) e depois de forma determinística com o envio nativo do form. Sugestão: o `/login?saiu=1` chamar `sairLocal()` ao montar (cobre o envio nativo e o sem-JS). Risco aceito a confirmar: no iOS, o apagamento do CacheStorage pelo `Clear-Site-Data` não é verificado (SW só testado no Chromium).
+- Robustez (relato da Pulpa): o Sair da `header__nav` fica `display:none` abaixo de 1024 px; o helper usa `filter({ visible: true })` sem `.first()`.
+- MOB-01b: `/guia` a 320 px com as webfonts bloqueadas também cabe. A falha do `/guia` vista antes (330 px) **não se reproduz** (0/11 + 0/6 com a fonte reserva) e provavelmente veio de rodar contra o servidor de outra worktree na porta fixa 3100. BUG-015 retirado (não reproduzível).

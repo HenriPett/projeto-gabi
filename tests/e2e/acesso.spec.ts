@@ -43,6 +43,13 @@ const normalizar = (rota: string | null) => {
 };
 const nextDe = (location: string) => normalizar(new URL(location, "http://x").searchParams.get("next"));
 
+/** Sair como o usuário: header retrátil pode esconder o botão depois de rolar — volta ao topo antes. */
+async function sair(page: import("@playwright/test").Page) {
+  await page.evaluate(() => window.scrollTo(0, 0));
+  // o Sair da header__nav fica display:none < 1024 px: só o visível
+  await page.getByRole("button", { name: /sair/i }).filter({ visible: true }).click();
+}
+
 async function entrar(page: import("@playwright/test").Page, senha = SENHA_E2E) {
   await page.getByLabel(/senha/i).fill(senha);
   await page.getByRole("button", { name: /entrar/i }).click();
@@ -219,7 +226,8 @@ test.describe("LOG-06: Sair", () => {
     await page.goto("/login?next=/produto/ficticio-ambar");
     await entrar(page);
     await expect(page.locator("h1")).toContainText("Âmbar Fictício");
-    await page.getByRole("button", { name: /sair/i }).first().click();
+    await page.waitForLoadState("networkidle"); // hidratação concluída (caso sem hidratação: BUG-016)
+    await sair(page);
     await expect(page).toHaveURL(/\/login\?.*saiu=1/);
     expect(await cookieSessao(page)).toBeUndefined();
     expect(await page.evaluate((k) => localStorage.getItem(k), CHAVE_LOCAL)).toBeNull();
@@ -248,7 +256,8 @@ test.describe("LOG-09: service worker não serve página protegida depois de sai
     await page.evaluate(() => navigator.serviceWorker.ready);
     await page.reload(); // passa pelo SW → vai para o cache de páginas
     await expect(page.locator("h1")).toContainText("Âmbar Fictício");
-    await page.getByRole("button", { name: /sair/i }).first().click();
+    await page.waitForLoadState("networkidle");
+    await sair(page);
     await expect(page).toHaveURL(/\/login\?.*saiu=1/);
     const emCache = await page.evaluate(async () => {
       const nomes = await caches.keys();
@@ -260,8 +269,42 @@ test.describe("LOG-09: service worker não serve página protegida depois de sai
     await context.setOffline(true);
     await page.goto("/produto/ficticio-ambar");
     await expect(page.locator("body")).not.toContainText("Âmbar Fictício");
+    await page.goto("/"); // a home lista produtos/preços: também não pode vir do cache
+    await expect(page.locator("body")).not.toContainText("Âmbar Fictício");
+    await expect(page.locator("body")).not.toContainText("89,90");
     await context.setOffline(false);
     errosDeConsole.splice(0, errosDeConsole.length, ...errosDeConsole.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e)));
+  });
+});
+
+test.describe("Sair antes da hidratação (envio nativo do form, sem onSubmit/sairLocal)", () => {
+  test.skip(({ browserName }) => browserName !== "chromium", "SW verificado no Chromium");
+
+  async function logarCachearESairNativo(page: import("@playwright/test").Page) {
+    await page.goto("/login?next=/produto/ficticio-ambar");
+    await entrar(page);
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    await page.reload(); // produto vai para o cache de páginas do SW
+    await expect(page.locator("h1")).toContainText("Âmbar Fictício");
+    // Igual a tocar em Sair antes de o React hidratar
+    await page.evaluate(() => HTMLFormElement.prototype.submit.call(document.querySelector('form[action="/api/logout"]')));
+    await expect(page).toHaveURL(/\/login\?.*saiu=1/);
+  }
+
+  test("LOG-09b: páginas do SW são apagadas mesmo assim (Clear-Site-Data \"cache\")", async ({ page }) => {
+    await logarCachearESairNativo(page);
+    const paginas = await page.evaluate(async () => {
+      const urls: string[] = [];
+      for (const n of await caches.keys()) for (const r of await (await caches.open(n)).keys()) urls.push(r.url);
+      return urls.filter((u) => u.includes("/produto/") || new URL(u).pathname === "/");
+    });
+    expect(paginas).toEqual([]);
+  });
+
+  test("BUG-016: a flag de sessão local também é limpa", async ({ page }) => {
+    test.fail(true, "BUG-016 (PLANO §14)");
+    await logarCachearESairNativo(page);
+    expect(await page.evaluate((k) => localStorage.getItem(k), CHAVE_LOCAL)).toBeNull();
   });
 });
 
