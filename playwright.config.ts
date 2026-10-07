@@ -28,7 +28,8 @@ export default defineConfig({
   webServer: {
     command: `pnpm build && pnpm start -p ${PORTA}`,
     url: `http://localhost:${PORTA}`,
-    reuseExistingServer: !process.env.CI,
+    // nunca reaproveitar: um next start antigo na porta serve build velho (CSS/dados desatualizados)
+    reuseExistingServer: false,
     timeout: 240_000,
     env: { DADOS_DIR: "tests/fixtures/dados", INCLUIR_RASCUNHOS: "0", NEXT_TELEMETRY_DISABLED: "1" },
   },

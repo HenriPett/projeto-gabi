@@ -44,7 +44,11 @@ export const test = base.extend<{ errosDeConsole: string[] }>({
       page.on("console", (m) => {
         if (m.type() === "error") erros.push(`console: ${m.text()}`);
       });
-      page.on("pageerror", (e) => erros.push(`pageerror: ${e.message}`));
+      page.on("pageerror", (e) => {
+        // WebKit reporta como pageerror o prefetch RSC abortado por uma navegação rápida (page.goto em sequência)
+        if (/_rsc=.*due to access control checks/.test(e.message)) return;
+        erros.push(`pageerror: ${e.message}`);
+      });
       await use(erros);
       expect(erros, "erros no console do navegador").toEqual([]);
     },

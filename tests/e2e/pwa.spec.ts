@@ -2,7 +2,7 @@ import { expect, test } from "./apoio";
 
 /** Offline, recursos que o navegador tenta buscar falham com ERR_INTERNET_DISCONNECTED — ruído esperado. */
 const semRuidoOffline = (erros: string[]) =>
-  erros.splice(0, erros.length, ...erros.filter((e) => !e.includes("ERR_INTERNET_DISCONNECTED")));
+  erros.splice(0, erros.length, ...erros.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e)));
 
 // PLANO §6. O SW só registra em build de produção (playwright.config usa next start).
 

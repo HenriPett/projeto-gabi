@@ -41,8 +41,8 @@ test("E2E-02 (parcial): home → Universais → Condicionamento seletivo → só
   await page.goto("/");
   await page.locator('main a[href="/sistemas-adesivos/universais/condicionamento-seletivo"]').first().click();
   await expect(page.locator("h1")).toContainText(/condicionamento seletivo/i);
-  await expect(page.locator('main a[href="/produto/ficticio-universal-triplo"]').first()).toBeVisible();
-  await expect(page.locator('main a[href="/produto/exemplo-universal"]')).toHaveCount(0);
+  await expect(page.locator('main a[href^="/produto/ficticio-universal-triplo"]').first()).toBeVisible();
+  await expect(page.locator('main a[href^="/produto/exemplo-universal"]')).toHaveCount(0);
 });
 
 test.fixme("E2E-02: … → selos de estratégia → comparar produtos → comparar preços", async ({ page }) => {

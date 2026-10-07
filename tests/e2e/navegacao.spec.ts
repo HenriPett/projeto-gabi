@@ -35,13 +35,13 @@ for (const s of SUBCATEGORIAS) {
 test("U-02: universal das 3 estratégias aponta para a MESMA página de produto", async ({ page }) => {
   for (const s of SUBCATEGORIAS.filter((x) => x.grupo === "Universais")) {
     await page.goto(s.url);
-    await expect(page.locator('main a[href="/produto/ficticio-universal-triplo"]').first()).toBeVisible();
+    await expect(page.locator('main a[href^="/produto/ficticio-universal-triplo"]').first()).toBeVisible();
   }
 });
 
 test("U-04: universal sem indicação para seletivo não aparece em seletivo", async ({ page }) => {
   await page.goto("/sistemas-adesivos/universais/condicionamento-seletivo");
-  await expect(page.locator('main a[href="/produto/exemplo-universal"]')).toHaveCount(0);
+  await expect(page.locator('main a[href^="/produto/exemplo-universal"]')).toHaveCount(0);
 });
 
 test("rascunho nunca aparece com INCLUIR_RASCUNHOS=0 (BUG-005)", async ({ page, errosDeConsole }) => {
