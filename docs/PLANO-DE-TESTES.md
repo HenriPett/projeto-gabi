@@ -214,7 +214,7 @@ Fixtures dedicadas em `tests/fixtures/precos/`. Cada caso = 1 teste unitário da
 **Comportamento definido pelo contrato** (`src/lib/precos.ts`, confirmado em `tests/unit/cenarios-fixtures.test.ts`):
 - Comparabilidade = mesmo `apresentacaoId` (curadoria decide a equivalência). Comparação usa o preço `padrao`; Pix/boleto são informativos (PR-20).
 - Sempre 3 linhas; loja sem registro = `nao-encontrado`. Ordem: com preço do menor ao maior, depois sem preço em ordem alfabética.
-- **Empate (PR-10): todas as lojas empatadas recebem `menorPreco`.** Preços iguais (PR-11): `economiaCentavos` indefinida → UI não mostra frase de economia.
+- **Empate (PR-10): todas as lojas empatadas no menor preço recebem `menorPreco`.** Preços todos iguais (PR-11): **nenhuma** linha com `menorPreco` e `economiaCentavos` indefinida → UI mostra "Mesmo preço nas lojas comparadas" (`7f71335`).
 - `comparavel` só com ≥ 2 preços; com 1 preço não há 🏆 nem economia (PR-08).
 - `indisponivel` mantém `url` (a página existe) → UI decide se mostra "Ver na loja"; `nao-encontrado` nunca tem `url` (PR-25).
 
@@ -417,7 +417,7 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-004 | S3 | ✅ Corrigido `f1aa8a6` — reverificado | Toda `DataISO` ≤ hoje (UTC). |
 | BUG-005 | S1 | ✅ Corrigido `f1aa8a6` — reverificado | `catalogo()` oculta ofertas de rascunho. |
 | BUG-006 | S3 | ✅ Corrigido `f620700` — reverificado | MDP indexado também como 10-MDP; `"10-MDP"` ≡ `"MDP"`. |
-| BUG-007 | S3 | 🔴 Aberto (Molar) | URI malformada → 500 |
+| BUG-007 | S3 | ⏸ Wontfix no app (Molar) — reverificar no preview da Vercel | URI malformada → 500 no decode de params do próprio Next; corrigir exigiria middleware (runtime num site estático). Se o preview também der 500 → reabrir como upstream do Next. `test.fail` mantido. |
 | BUG-008 | S2 | 🔴 Aberto (Pulpa) | Overflow horizontal no mobile; toques caem no elemento errado |
 | BUG-009 | S2 | 🔴 Aberto (Pulpa) | Contraste insuficiente no diagrama de etapas |
 | BUG-010 | S3 | 🔴 Aberto (Pulpa) | Salto de heading h1 → h3 em /comparar e /guia |
@@ -467,7 +467,7 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 
 Fluxos do §22 (E2E-01 completo até o clique em Comprar; E2E-02 até comparar produtos e preços) e todos os cenários de preço PR-01/02/06/07/08/09/10/11/14/16/18/21/25 **passam** em desktop e mobile-safari. As falhas restantes são os bugs abaixo.
 
-Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja recebe o selo; aparece "Mesmo preço nas lojas comparadas". ✅ Coerente com PR-11. Observação: `compararPrecos` marca `menorPreco: true` em todas e o componente reverte — a regra deveria estar em `precos.ts` (ARQUITETURA §5) para valer igual em card, home e comparador.
+Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja recebe o selo; aparece "Mesmo preço nas lojas comparadas". ✅ Coerente com PR-11. A regra foi movida para `compararPrecos` (`7f71335`): preços todos iguais → nenhuma linha com `menorPreco`; reverificado em unitário e E2E.
 
 ### BUG-007 — URI malformada em rota dinâmica responde 500 · **S3** · Molar
 - **Passos:** `pnpm e2e` (ou `curl -o /dev/null -w "%{http_code}" localhost:3100/produto/%E0`).
