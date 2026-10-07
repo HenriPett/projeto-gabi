@@ -35,10 +35,18 @@ describe("esquema de produto", () => {
     p.classificacao.grupo = "convencional";
     expect(ProdutoSistemaAdesivo.safeParse(p).success).toBe(false);
   });
-  it("publicado exige protocolo para cada estratégia", () => {
+  it("publicado NÃO exige protocolo (a UI mostra 'não localizado')", () => {
     const p = produto();
-    p.protocolos = [p.protocolos[0]];
-    expect(erros(ProdutoSistemaAdesivo.safeParse(p)).join()).toMatch(/sem protocolo/);
+    p.protocolos = [];
+    expect(erros(ProdutoSistemaAdesivo.safeParse(p))).toEqual([]);
+  });
+  it("publicado exige fonte técnica na classificação (loja não basta)", () => {
+    const p = produto();
+    p.fontes.push({ id: "loja", tipo: "loja", titulo: "x", url: "https://example.com/p", acessadoEm: "2026-10-01" });
+    p.classificacao.subcategorias[0].fontes = ["loja"];
+    expect(erros(ProdutoSistemaAdesivo.safeParse(p)).join()).toMatch(/fonte técnica/);
+    p.revisao.status = "rascunho";
+    expect(erros(ProdutoSistemaAdesivo.safeParse(p))).toEqual([]);
   });
   it("divergência exige duas versões", () => {
     const p = produto();

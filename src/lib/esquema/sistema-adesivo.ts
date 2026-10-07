@@ -190,19 +190,28 @@ export const ProdutoSistemaAdesivo = z
       if (!oficial) erro(["protocolos", i, "fontes"], "protocolo precisa de fonte oficial do fabricante (IFU)");
     });
 
-    // Publicado ⇒ cada estratégia tem protocolo
+    // Critério de publicação (ARQUITETURA §3.1.5): classificação com fonte
+    // técnica em cada subcategoria + ao menos uma apresentação com fonte (já
+    // garantido pelo esquema). Protocolo, imagem e composição NÃO bloqueiam:
+    // a UI mostra "Informação ainda não verificada".
     if (p.revisao.status === "publicado") {
-      for (const id of subs) {
-        if (!p.protocolos.some((pr) => pr.aplicaA.includes(id)))
-          erro(["protocolos"], `produto publicado sem protocolo para ${id}`);
-      }
+      p.classificacao.subcategorias.forEach((s, i) => {
+        if (!s.fontes.some((id) => FONTES_TECNICAS.has(fontePorId.get(id)?.tipo ?? "")))
+          erro(
+            ["classificacao", "subcategorias", i, "fontes"],
+            `publicado exige fonte técnica (${[...FONTES_TECNICAS].join("/")}) para ${s.id}`,
+          );
+      });
     }
   });
+
+/** Fontes aceitas para classificação de produto publicado (não loja/outro). */
+export const FONTES_TECNICAS = new Set(["ifu", "ficha-tecnica", "site-fabricante", "embalagem", "literatura", "fds"]);
 
 export type ProdutoSistemaAdesivo = z.infer<typeof ProdutoSistemaAdesivo>;
 
 /** Varre o objeto e retorna toda referência a fonte (arrays `fontes` de strings). */
-function referenciasDeFonte(raiz: unknown) {
+export function referenciasDeFonte(raiz: unknown) {
   const refs: { path: (string | number)[]; id: string }[] = [];
   const visitar = (v: unknown, path: (string | number)[]) => {
     if (Array.isArray(v)) return v.forEach((x, i) => visitar(x, [...path, i]));
