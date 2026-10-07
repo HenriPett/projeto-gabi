@@ -109,7 +109,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/fl-bond-ii/frasco.webp",
+      "alt": "Kit FL-Bond II com frascos de Primer e Bonding Agent — Shofu",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Shofu"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -301,6 +310,14 @@
       "url": "https://www.dentalspeed.com/kit-adesivo-fl-bond-5ml-primer-5ml-e-micropinceis-shofu.html",
       "acessadoEm": "2026-10-06",
       "observacao": "A descrição da página identifica o produto como FL-Bond II."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "FL-Bond II — Shofu (foto do kit)",
+      "url": "https://www.shofu.de/en/produkt/fl-bond-ii/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://www.shofu.de/wp-content/uploads/2024/03/20240305-fl-bond-II_001.jpg"
     }
   ]
 }
