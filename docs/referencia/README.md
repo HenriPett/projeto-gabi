@@ -5,6 +5,8 @@
 > **Uso interno apenas.** Estas imagens servem de referência de *estrutura e linguagem visual*. Elas **não** vão para o site (nem para `public/`) e **não** são fonte de dados: tempos, protocolos, composições e nomes de produto vêm da IFU e da documentação do fabricante (BRIEFING §20). Algumas têm direitos reservados; o material da Unichristus, por exemplo, traz "todos os direitos reservados".
 >
 > Os PDFs originais não foram versionados. Para consultar, baixe pela URL de cada item.
+>
+> **O repositório no GitHub é público.** Por isso só as figuras CC BY (Silva e Souza Jr. 2010, itens 9 e 10) são versionadas. As imagens da Unichristus (todos os direitos reservados) e do handout do Perdigão (sem licença) ficam **só localmente** (`.gitignore`): recrie a partir das URLs abaixo se precisar.
 
 ## Índice
 
