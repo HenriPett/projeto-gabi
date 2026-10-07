@@ -1,4 +1,6 @@
-import { GRUPO, SUBCATEGORIA, type Produto } from "@/lib/esquema";
+// Só taxonomia (sem zod): este módulo vai para o bundle do cliente.
+import type { Produto } from "@/lib/esquema";
+import { GRUPO, SUBCATEGORIA } from "@/lib/esquema/taxonomia";
 
 /**
  * Busca client-side sobre um índice pequeno gerado no build (§17).
