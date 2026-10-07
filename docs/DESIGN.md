@@ -28,78 +28,84 @@ Princípios:
 
 Implementar como CSS custom properties em `:root` (e/ou `tailwind.config` `theme.extend`). Nomes abaixo são os nomes definitivos.
 
-### 1.1 Cor — primitivas
+### 1.1 Cor — primitivas: paleta "frascos" (substitui roxo/magenta/lilás, 07/10/2026)
 
-| Token | Hex | Uso |
-|---|---|---|
-| `--purple-900` | `#2E0F3D` | texto sobre lilás em títulos de grupo, header escuro |
-| `--purple-800` | `#4A1A63` | hover de primário |
-| `--purple-700` | `#5E2280` | **primário** (links, botões, foco) |
-| `--purple-600` | `#7433A0` | ícones ativos |
-| `--magenta-700` | `#8E1B5E` | hover do CTA |
-| `--magenta-600` | `#A8236E` | **CTA de compra / acento** |
-| `--magenta-100` | `#FBE7F1` | fundo de destaque magenta |
-| `--lilac-400` | `#B9A0D6` | bordas decorativas, setas do diagrama |
-| `--lilac-200` | `#DDD0EE` | bordas de card selecionado, chips |
-| `--lilac-100` | `#EFE8F7` | superfícies de seção, hover de linhas |
-| `--lilac-50` | `#F8F4FC` | fundo de blocos "atlas" |
-| `--gray-0` | `#FFFFFF` | fundo base |
-| `--gray-50` | `#F7F7F9` | fundo da página/frasco |
-| `--gray-100` | `#EEEDF1` | zebra de tabela, skeleton |
-| `--gray-200` | `#E0DEE5` | bordas padrão |
-| `--gray-400` | `#A19DAA` | ícones desabilitados (não usar em texto) |
-| `--gray-500` | `#858090` | **borda de input/select/chip de filtro** (3.8:1 em branco, 3.6:1 em gray-50) |
-| `--gray-600` | `#5F5A68` | texto secundário |
-| `--gray-900` | `#17141C` | **texto principal** ("preto") |
-| `--green-700` | `#1B6B45` | menor preço / sucesso |
-| `--green-50` | `#E7F5EE` | fundo menor preço |
-| `--amber-800` | `#7A4B00` | divergência / atenção |
-| `--amber-50` | `#FFF5E0` | fundo divergência |
-| `--red-700` | `#B3261E` | erro |
-| `--red-50` | `#FDECEA` | fundo erro |
+Pedido do cliente: usar as cores dos frascos OptiBond Universal / OptiBond FL (Kerr), da imagem `ref-paleta/paleta-kerr.png`, fora do repositório. Os valores de marca foram **medidos na imagem** (mediana de pixels de cada área), não estimados. Regras de uso:
+- **Laranja e amarelo nunca são cor de texto sobre branco**: #DE811D tem 2.9:1 e #E9CA06 tem 1.6:1. Texto sobre eles é sempre escuro (`--ink-900`).
+- Para texto/link/foco laranja usamos as variações escuras `--orange-700` / `--orange-800`.
+
+| Token | Hex | Origem | Uso |
+|---|---|---|---|
+| `--ink-900` | `#151515` | tampa preta (medido) | **texto principal**, header, toast |
+| `--ink-800` | `#252525` | logo "Kerr" (medido) | reserva |
+| `--ink-700` | `#373430` | faixa "Adhesive" (medido) | sólido de Autocondicionantes, filete da etapa Adesivo, borda do header |
+| `--orange-500` | `#DE811D` | faixa "Universal" (medido) | **cor de marca**: fundo do CTA, sólido de Universais, filete da etapa Ácido, marca do logo, foco sobre o header |
+| `--orange-600` | `#C46A0E` | derivado | hover do CTA |
+| `--orange-700` | `#A65308` | derivado (AA) | **primário**: links, botões primários (texto branco), foco, chips ativos |
+| `--orange-800` | `#7A3D04` | derivado (AA) | hover do primário, texto sobre tinta laranja |
+| `--orange-100` / `--orange-50` | `#FCEBD7` / `#FEF6EC` | derivado | tinta de Universais / etapa Ácido |
+| `--yellow-400` | `#E9CA06` | faixa "FL" (medido) | **acento**: selo MENOR PREÇO, sólido de Convencionais |
+| `--yellow-600` | `#C9A800` | derivado | filete da etapa Primer |
+| `--yellow-800` | `#5C4A00` | derivado (AA) | texto sobre tinta amarela, glifo do Primer |
+| `--yellow-100` / `--yellow-50` | `#FBF3C2` / `#FFFBE6` | derivado | tinta de Convencionais / etapa Primer / fundo da loja com menor preço, realce de busca |
+| `--gray-0` | `#FFFFFF` | rótulo branco | fundo base |
+| `--gray-50` | `#F9F9F9` | fundo da imagem (medido) | fundo sutil, foto do frasco, hover |
+| `--gray-75` | `#F4F4F2` | derivado | superfície "atlas" (diagrama, Modo de Uso, Guia) |
+| `--gray-100` / `--gray-200` | `#EDEDED` / `#E0E0E0` | borda do card (medido) / derivado | tinta de Autocondicionantes, zebra / bordas padrão |
+| `--gray-300` | `#CFCFCF` | derivado | setas e bordas decorativas, placeholder de frasco |
+| `--gray-400` | `#A3A3A3` | derivado | ícones desabilitados (nunca texto) |
+| `--gray-500` | `#858585` | ≈ cinza do logo (#898C91) | **borda de input** (3.7:1) |
+| `--gray-600` | `#5C5C5C` | derivado | texto secundário |
+| `--green-700/50`, `--amber-800/50`, `--red-700/50` | inalterados | — | estados de sucesso (✓ Sim, economia), divergência e erro. **Não fazem parte da paleta de marca e ficam como estavam** |
 
 ### 1.2 Cor — semânticas (o código usa SÓ estas)
 
-| Token | Valor | Contraste verificado |
-|---|---|---|
-| `--color-bg` | `--gray-0` | — |
-| `--color-bg-subtle` | `--gray-50` | — |
-| `--color-surface-atlas` | `--lilac-50` | — |
-| `--color-text` | `--gray-900` | 18.2:1 em branco |
-| `--color-text-muted` | `--gray-600` | 6.7:1 em branco, 6.1:1 em lilac-50, 5.7:1 em gray-100 |
-| `--color-border` | `--gray-200` | decorativo (cards, divisores) — **nunca** como única borda de campo de formulário |
-| `--color-border-input` | `--gray-500` | 3.8:1 — borda de inputs, selects, chips de filtro (WCAG 1.4.11) |
-| `--color-border-accent` | `--lilac-400` | 2.3:1 — **só decorativo** (setas do diagrama, hover de card) |
-| `--color-primary` | `--purple-700` | 10.4:1 em branco |
-| `--color-primary-hover` | `--purple-800` | |
-| `--color-on-primary` | `#FFFFFF` | |
-| `--color-cta` | `--magenta-600` | 6.7:1 (texto branco no botão) |
-| `--color-cta-hover` | `--magenta-700` | |
-| `--color-focus` | `--purple-600` | anel de 2px + offset 2px; 7.7:1 em branco |
-| `--color-best` / `--color-best-bg` | `--green-700` / `--green-50` | 5.8:1 |
-| `--color-warn` / `--color-warn-bg` | `--amber-800` / `--amber-50` | 6.8:1 |
-| `--color-error` / `--color-error-bg` | `--red-700` / `--red-50` | 5.7:1 |
+| Token | Antes | **Depois** | Contraste verificado |
+|---|---|---|---|
+| `--color-bg` | `--gray-0` | `--gray-0` | — |
+| `--color-bg-subtle` | `#F7F7F9` | `--gray-50` `#F9F9F9` | — |
+| `--color-surface-atlas` | `--lilac-50` | `--gray-75` `#F4F4F2` | — |
+| `--color-text` | `#17141C` | `--ink-900` `#151515` | 18.3:1 em branco, 16.6:1 em atlas |
+| `--color-text-muted` | `#5F5A68` | `--gray-600` `#5C5C5C` | 6.7:1 em branco, 6.1:1 em atlas, 5.7:1 em gray-100 |
+| `--color-border` | `#E0DEE5` | `--gray-200` | decorativo |
+| `--color-border-input` | `#858090` | `--gray-500` `#858585` | 3.7:1 (WCAG 1.4.11) |
+| `--color-border-accent` | `--lilac-400` | `--gray-300` | **só decorativo** (setas) |
+| `--color-primary` | `--purple-700` | **`--orange-700` `#A65308`** | 5.4:1 em branco (link e texto branco no botão), 4.9:1 em atlas |
+| `--color-primary-hover` | `--purple-800` | `--orange-800` | 8.4:1 |
+| `--color-on-primary` | branco | branco | — |
+| `--color-cta` | `--magenta-600` | **`--orange-500` `#DE811D`** | — |
+| `--color-on-cta` | *(branco fixo)* | **novo:** `--ink-900` | 6.3:1 (hover `--orange-600`: 4.7:1) |
+| `--color-cta-hover` | `--magenta-700` | `--orange-600` | — |
+| `--color-focus` | `--purple-600` | `--orange-700` (sobre o header: `--orange-500`) | 5.4:1 em branco; 6.3:1 sobre o preto |
+| `--color-highlight` / `--color-on-highlight` / `--color-highlight-bg` | — | **novo:** `--yellow-400` / `--ink-900` / `--yellow-50` | 11.2:1 (selo), 17.6:1 (texto no fundo) |
+| `--color-header` / `--color-on-header` | — (header branco) | **novo:** `--ink-900` / branco | 18.3:1 |
+| `--color-best` / `--color-best-bg` | verde | verde (inalterado) | 5.8:1, usado em "✓ Sim" e economia. O **menor preço** passou para `--color-highlight` |
+| `--color-warn*`, `--color-error*` | âmbar, vermelho | inalterados | 6.8:1, 5.7:1 |
+
+**Header:** passa a ser **preto** (`--color-header`), com texto branco, a marca "SA" em quadrado laranja com texto preto, o campo de busca branco e o foco laranja `--orange-500`. `theme-color` e o `theme_color` do manifest = `#151515`. Ícone do PWA e favicon: fundo preto com três faixas (laranja, amarelo e cinza claro, as camadas ácido/primer/adesivo).
 
 ### 1.3 Cor — grupos de classificação
 
-Cada grupo tem 3 tokens (sólido / tinta / texto-sobre-tinta) **e** um marcador de forma, para não depender de cor.
+Cada grupo tem 4 tokens (sólido / **texto sobre o sólido** / tinta / texto-sobre-tinta) **e** um marcador de forma. A escolha segue a própria referência: o OptiBond **FL** (convencional de 3 passos) tem a faixa **amarela** e o OptiBond **Universal** tem a faixa **laranja**. Os três grupos ficam em luminâncias bem separadas (claro / médio / escuro), o que os mantém distinguíveis também em tons de cinza e para daltonismo, e a forma reforça.
 
-| Grupo | `--grp-*-solid` | `--grp-*-tint` | `--grp-*-ink` | Marcador | Ícone/forma |
+| Grupo | `solid` | `on` (texto no sólido) | `tint` | `ink` | Marcador |
 |---|---|---|---|---|---|
-| Convencionais (`conv`) | `#5E2280` | `#EFE8F7` | `#3B1352` | ● círculo | barra vertical cheia |
-| Autocondicionantes (`auto`) | `#A8236E` | `#FBE7F1` | `#6E1146` | ◆ losango | |
-| Universais (`univ`) | `#3D3A8F` | `#E9E8F7` | `#25236A` | ▲ triângulo | |
+| Convencionais | `#E9CA06` amarelo | `#151515` (11.2:1) | `#FBF3C2` | `#5C4A00` (7.7:1) | ● círculo |
+| Autocondicionantes | `#373430` grafite | `#FFFFFF` (12.4:1) | `#EDEDED` | `#151515` (15.6:1) | ◆ losango |
+| Universais | `#DE811D` laranja | `#151515` (6.3:1) | `#FCEBD7` | `#7A3D04` (7.2:1) | ▲ triângulo |
 
-Texto branco sobre todos os `solid`: ≥ 6.7:1. `ink` sobre `tint`: ≥ 9.7:1.
+Antes: roxo `#5E2280` / magenta `#A8236E` / índigo `#3D3A8F`, todos com texto branco. **Agora o texto sobre o sólido depende do grupo (`--grp-*-on`)**, e cabeçalhos de grupo, `.badge--solid` e marcadores usam `currentColor`.
 
 ### 1.4 Cor — etapas do diagrama "Como identificar?"
 
-| Etapa | Fundo | Borda esquerda 4px | Texto | Glifo |
+| Etapa | Fundo | Filete 4px | Glifo (texto) | Texto do rótulo |
 |---|---|---|---|---|
-| Ácido | `--magenta-100` | `--magenta-600` | `--gray-900` | "H⁺" |
-| Primer | `--lilac-100` | `--purple-600` | `--gray-900` | "P" |
-| Adesivo | `#E9E8F7` | `#3D3A8F` | `--gray-900` | "A" |
-| Primer + Adesivo / Ácido + Primer + Adesivo (combinados) | gradiente horizontal dos fundos envolvidos | borda de cada um empilhada (2px cada) | `--gray-900` | glifos juntos ("P+A") |
+| Ácido | `--orange-100` | `--orange-500` | `--orange-800` (8.4:1) | `--ink-900` |
+| Primer | `--yellow-100` | `--yellow-600` | `--yellow-800` (8.6:1) | `--ink-900` |
+| Adesivo | `--gray-100` | `--ink-700` | `--ink-900` | `--ink-900` |
+| Combinados (P+A, Ác+P+A) | gradiente dos fundos | filetes empilhados | `--ink-900` | `--ink-900` |
+
+O glifo **não usa mais a cor do filete como cor de texto**: laranja e amarelo não passam AA como texto. A borda do círculo continua com o filete. Desenho do dente: a área condicionada usa `--orange-500` a 55%. Mini-diagramas da Home: as barras usam os filetes.
 
 ### 1.5 Tipografia
 
@@ -150,17 +156,17 @@ Fora do escopo da v1 (público consulta em clínica/sala de aula, fundo branco �
 
 | Estado | Botão primário | Botão secundário (outline) | Card clicável | Chip/toggle |
 |---|---|---|---|---|
-| default | bg `--color-primary`, texto branco | borda 1.5px `--color-primary`, texto `--color-primary`, bg branco | borda `--color-border`, `--shadow-1` | borda `--lilac-200`, bg branco |
-| hover (pointer) | bg `--color-primary-hover` | bg `--lilac-50` | `--shadow-2`, `translateY(-2px)`, borda `--lilac-400` | bg `--lilac-50` |
+| default | bg `--color-primary`, texto branco | borda 1.5px `--color-primary`, texto `--color-primary`, bg branco | borda `--color-border`, `--shadow-1` | borda `--gray-200`, bg branco |
+| hover (pointer) | bg `--color-primary-hover` | bg `--gray-50` | `--shadow-2`, `translateY(-2px)`, borda `--orange-500` | bg `--gray-50` |
 | focus-visible | `outline: 2px solid var(--color-focus); outline-offset: 2px` — **em todos**, nunca remover | idem | idem (no card inteiro) | idem |
-| active/pressed | bg `--purple-900`, `scale(.98)` | bg `--lilac-100` | `scale(.99)` | — |
+| active/pressed | bg `--ink-900`, `scale(.98)` | bg `--gray-100` | `scale(.99)` | — |
 | selecionado | — | — | borda 2px `--color-primary` + check no canto | bg `--color-primary`, texto branco, ícone ✓, `aria-pressed="true"` |
 | disabled | bg `--gray-100`, texto `--gray-600`, `cursor:not-allowed`, `aria-disabled="true"` (manter focável se tiver tooltip explicando) | borda `--gray-200`, texto `--gray-600` | opacidade 1, selo "Indisponível" | borda `--gray-200`, texto `--gray-600` |
 | loading | texto mantém largura, spinner 16px à esquerda, `aria-busy="true"`, desabilitado | idem | skeleton (ver abaixo) | — |
 
 **Loading de conteúdo:** skeleton em `--gray-100` com shimmer (desligado em reduced-motion), mesmas dimensões do conteúdo final (sem layout shift). Preço carregando: barra 96×24px.
 
-**Vazio:** ilustração linear simples (frasco em `--lilac-400`) + título h3 + 1 frase + ação. Textos:
+**Vazio:** ilustração linear simples (frasco em `--gray-300`) + título h3 + 1 frase + ação. Textos:
 - Categoria sem produtos: "Nenhum produto cadastrado nesta categoria ainda." + link "Ver outras categorias".
 - Busca sem resultado: "Nada encontrado para “{termo}”." + "Tente o nome comercial, o fabricante ou termos como *MDP*, *2 passos*, *Universal*." + chips de sugestão.
 - Comparador vazio: "Selecione de 2 a 4 produtos para comparar." + botão "Explorar categorias".
@@ -173,11 +179,11 @@ Fora do escopo da v1 (público consulta em clínica/sala de aula, fundo branco �
 
 ### 3.1 Header + busca fixa (`<SearchBar>`)
 - Header `position: sticky; top: 0; z-index: 50`, bg branco, borda inferior `--color-border`, altura 56px (mobile) / 64px (≥1024).
-- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--purple-900`, `nowrap`) + botão "Comparar (n)" à direita (`nowrap`). **Abaixo de 360px:** o logotipo cai para 14px e o botão vira "Comparar" + contador num badge circular de 20px (`--color-primary`, texto branco 11px 700; `aria-label="Comparar, n produtos selecionados"`). Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
+- Mobile: linha 1 = logotipo (wordmark "Sistemas Adesivos" serif 18px 700 `--ink-900`, `nowrap`) + botão "Comparar (n)" à direita (`nowrap`). **Abaixo de 360px:** o logotipo cai para 14px e o botão vira "Comparar" + contador num badge circular de 20px (`--color-primary`, texto branco 11px 700; `aria-label="Comparar, n produtos selecionados"`). Linha 2 = campo de busca 48px de altura, largura total. Ao rolar para baixo > 120px, a linha 1 colapsa (só a busca fica fixa, 64px total); reaparece ao rolar para cima.
 - ≥1024: uma linha só: logo · busca (máx. 560px, centro) · links "Classificação", "Comparar", "Guia".
 - Campo: `type="search"`, `role="combobox"`, `aria-expanded`, `aria-controls="search-listbox"`, placeholder **"Pesquisar sistema, marca ou produto"**, ícone lupa (SVG, não emoji) à esquerda 20px `--gray-600`, botão limpar (×) quando há texto, `aria-label="Limpar busca"`. bg `--gray-50`, borda 1.5px `--color-border-input`, raio `--radius-md`; foco: borda `--color-primary` + anel de foco.
 - Atalho `/` foca a busca (desktop).
-- **Sugestões (listbox)**: abre após 1 caractere, debounce 150ms, máx. 8 itens agrupados por tipo com overline: **CATEGORIAS** (ex.: "Convencionais › 2 passos"), **PRODUTOS** (miniatura 32px + nome + fabricante + selo de grupo), **FABRICANTES**, **COMPONENTES** (ex.: "MDP — 4 produtos"). Termo casado em `<mark>` (bg `--magenta-100`, sem itálico). Setas ↑↓ navegam (`aria-activedescendant`), Enter abre, Esc fecha. Mobile: listbox ocupa a tela abaixo do header (sheet branca).
+- **Sugestões (listbox)**: abre após 1 caractere, debounce 150ms, máx. 8 itens agrupados por tipo com overline: **CATEGORIAS** (ex.: "Convencionais › 2 passos"), **PRODUTOS** (miniatura 32px + nome + fabricante + selo de grupo), **FABRICANTES**, **COMPONENTES** (ex.: "MDP — 4 produtos"). Termo casado em `<mark>` (bg `--yellow-100`, sem itálico). Setas ↑↓ navegam (`aria-activedescendant`), Enter abre, Esc fecha. Mobile: listbox ocupa a tela abaixo do header (sheet branca).
 - Busca é tolerante a acento/caixa ("ambar" = "Âmbar") e a sinônimos: "2 passos", "dois passos"; "auto", "self-etch"; "universal".
 - Página de resultados `/busca?q=`: lista de cards de produto + filtros em chips (Grupo, Fabricante, Contém MDP, Contém HEMA).
 
@@ -191,7 +197,7 @@ Variante `solid` (sobre foto/hero): bg `solid`, texto branco.
 
 ### 3.4 Botões
 Alturas: `lg 52px` (CTA de compra mobile), `md 44px` (padrão), `sm 36px` (só desktop, dentro de tabela). Padding horizontal 20/16/12px. Texto `--text-body` 600 (sm: 14px). Ícone 20px, gap 8px.
-Variantes: `primary` (roxo), `cta` (magenta — **exclusivo de compra/"Comparar preços"**), `secondary` (outline), `ghost` (texto roxo, sublinhado no hover), `icon` (44×44, `aria-label` obrigatório).
+Variantes: `primary` (laranja escuro `--orange-700`, texto branco), `cta` (laranja da marca `--orange-500`, **texto preto** — **exclusivo de compra/"Comparar preços"**), `secondary` (outline), `ghost` (texto `--color-primary`, sublinhado no hover), `icon` (44×44, `aria-label` obrigatório).
 
 ### 3.5 Link de fonte (`<SourceLink>`)
 `--text-caption` `--color-text-muted`: "Fonte: {nome do documento} · acesso em DD/MM/AAAA ↗". Link abre em nova aba (`target="_blank" rel="noopener"` + texto visualmente oculto "(abre em nova aba)"). Aparece ao pé de: Classificação, Composição, Indicações, Modo de uso, cada preço.
@@ -201,14 +207,14 @@ Caixa `--color-warn-bg`, borda-esquerda 4px `--color-warn`, raio `--radius-md`, 
 
 ### 3.7 Diagrama "Como identificar?" (`<StepDiagram>`) — componente-assinatura
 Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo).
-- Container: bg `--color-surface-atlas`, raio `--radius-lg`, padding 20px (mobile) / 32px, borda 1px `--lilac-200`.
+- Container: bg `--color-surface-atlas`, raio `--radius-lg`, padding 20px (mobile) / 32px, borda 1px `--gray-200`.
 - Overline: "COMO IDENTIFICAR?" `--text-overline` `--color-primary`.
 - Cada **etapa** = bloco de altura 56px (mobile) / 64px, largura 100% (máx. 360px, centralizado), raio `--radius-md`, cores da tabela 1.4, glifo em círculo 32px à esquerda (bg branco, borda 1.5px da cor da etapa), rótulo `--text-h3` uppercase.
-- **Seta** entre etapas: SVG 24×28px, traço 2px `--lilac-400`, ponta em "V". `aria-hidden`.
+- **Seta** entre etapas: SVG 24×28px, traço 2px `--gray-300`, ponta em "V". `aria-hidden`.
 - Etapa combinada (ex.: Primer + Adesivo num frasco) = um único bloco com rótulo "PRIMER + ADESIVO" e glifo "P+A"; abaixo, legenda caption "mesmo frasco".
 - **[R2]** Contador à direita do bloco: **"passo 1", "passo 2"**, nunca "frasco N". **Passo = aplicação clínica, não frasco.** O kit de convencional 3 passos tem 2 frascos + ácido em seringa; o autocondicionante de 1 passo pode ter 2 frascos que se misturam e são aplicados uma vez (Silva e Souza Jr. 2010, Fig. 9). Textos de leitura: o ácido é "aplicado separadamente" (não "em frasco separado"); o bloco tudo-em-um é "uma única aplicação" (não "um único frasco"). "Mesmo frasco" continua válido só no bloco combinado Primer + Adesivo do convencional de 2 passos.
 - **[R2] Legenda da notação:** deve **quebrar linha** entre itens. Cada item fica `nowrap` e o separador " · " fica **fora** do span. Containers de grade/flex que recebem o diagrama precisam de `min-width: 0` nos filhos, senão a legenda alarga a coluna.
-- **[R2] Notação compacta** sob o título do diagrama, em `--text-small` 600 `--purple-900`, fonte tabular, com `aria-hidden` (a leitura completa já está no figcaption). `+` separa passos e `(…)` agrupa o que é aplicado junto (adaptado de Perdigão 2022):
+- **[R2] Notação compacta** sob o título do diagrama, em `--text-small` 600 `--ink-900`, fonte tabular, com `aria-hidden` (a leitura completa já está no figcaption). `+` separa passos e `(…)` agrupa o que é aplicado junto (adaptado de Perdigão 2022):
   | Subcategoria | Notação |
   |---|---|
   | Convencional 3 passos | `Ác + P + Ad` |
@@ -220,7 +226,7 @@ Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo)
   | Universal autocondicionante | `U` |
   Legenda fixa uma vez por página (caption muted): "Ác = ácido fosfórico · P = primer · Ad = adesivo · U = adesivo universal · esm = só esmalte · ( ) = aplicados juntos".
 - **[R2] Etapa ausente riscada** (ensino por contraste, como a seringa riscada em Perdigão p. 5): nos autocondicionantes e no universal autocondicionante, o diagrama abre com um bloco fantasma **"Ácido fosfórico separado"**: altura 40px, borda 1.5px tracejada `--gray-500`, fundo transparente, texto `--gray-600` 14px com `text-decoration: line-through`, ícone ✕ 16px `--red-700` à esquerda, rótulo à direita "não usa". Ele não conta como passo (sem contador) e o figcaption diz "sem condicionamento ácido separado". Sem seta saindo dele: um traço tracejado de 16px liga ao primeiro passo real.
-- **[R2] Etapa opcional** (só se o conteúdo, com fonte, confirmar para aquela subcategoria): bloco tracejado `--lilac-400` com rótulo "Condicionamento seletivo do esmalte" e selo "opcional". Aparece no lugar do bloco fantasma, nunca junto com ele. Não entra na notação compacta.
+- **[R2] Etapa opcional** (só se o conteúdo, com fonte, confirmar para aquela subcategoria): bloco tracejado `--gray-300` com rótulo "Condicionamento seletivo do esmalte" e selo "opcional". Aparece no lugar do bloco fantasma, nunca junto com ele. Não entra na notação compacta.
 - Universais: três colunas **quando o próprio diagrama tem ≥700px de largura** (container query `@container diagrama`, nunca media query de janela) ou três cartões empilhados com divisor "OU" em pílula. Lado a lado, as colunas têm a mesma altura (`align-items: stretch`) e as etapas ocupam a largura do cartão.
 - **Na página de categoria dos universais o diagrama ocupa a largura total** (fora do grid 5/12 + 7/12) e "O que caracteriza" vem abaixo. Na coluna de 5/12 os 3 caminhos ficavam com ~120px cada, e o cliente reportou palavras quebrando letra a letra e o 3º caminho sobrepondo a coluna direita (06/10/2026).
 - **Tipografia dos blocos:** nunca `hyphens: auto` nem `overflow-wrap: anywhere` em rótulos de etapa, legendas de substrato ou etapa riscada. Use `word-break: normal` e `hyphens: manual`. Se um rótulo não couber, encurte-o: "PRIMER" + sub "autocondicionante" em vez de "PRIMER AUTOCONDICIONANTE". Intervalos numéricos ("1‑2 gotas") usam hífen inseparável (U+2011).
@@ -240,7 +246,7 @@ Mapa de diagramas (conteúdo fixo do produto, revisado pelo time de conteúdo):
 
 Autocondicionante 1 e 2 passos também começam pelo bloco fantasma ~~Ácido fosfórico separado~~ **[R2]**.
 
-**[R2] Pictograma de substrato** (`<SubstrateGlyph>`). No bloco de etapa **abaixo de 640px**, o pictograma fica a 24px e a legenda de substrato desce para a linha de baixo do rótulo (como `step__sub`), para o contador "passo N" não encostar na borda., obrigatório nos três caminhos do universal e no bloco Ácido dos convencionais. É um corte de dente simplificado em SVG de 40×40: a coroa tem um anel externo (esmalte, traço 1.5px `--gray-600`) e um núcleo (dentina, preenchimento `--gray-100`). A área condicionada recebe preenchimento `--magenta-600` com 45% de opacidade:
+**[R2] Pictograma de substrato** (`<SubstrateGlyph>`). No bloco de etapa **abaixo de 640px**, o pictograma fica a 24px e a legenda de substrato desce para a linha de baixo do rótulo (como `step__sub`), para o contador "passo N" não encostar na borda., obrigatório nos três caminhos do universal e no bloco Ácido dos convencionais. É um corte de dente simplificado em SVG de 40×40: a coroa tem um anel externo (esmalte, traço 1.5px `--gray-600`) e um núcleo (dentina, preenchimento `--gray-100`). A área condicionada recebe preenchimento `--orange-500` com 55% de opacidade:
 - seletivo: só o anel de esmalte;
 - total / convencionais: anel e núcleo;
 - autocondicionante: nenhuma área, com o rótulo "sem ácido".
@@ -250,9 +256,9 @@ Abaixo dele vem uma legenda caption ("esmalte" / "esmalte + dentina" / "sem áci
 Mobile: **horizontal compacto** (lista); ≥640: **vertical** em grade (2 col ≥640, 3 col ≥1024, 4 col ≥1280).
 
 Anatomia vertical (de cima p/ baixo):
-1. **Mídia** — proporção 4:5, bg `--gray-50`, foto do frasco `object-fit: contain`, padding 16px. `alt="Frasco do {nome} — {fabricante}"`. Sem foto: silhueta SVG de frasco em `--lilac-200` + caption "Imagem indisponível".
+1. **Mídia** — proporção 4:5, bg `--gray-50`, foto do frasco `object-fit: contain`, padding 16px. `alt="Frasco do {nome} — {fabricante}"`. Sem foto: silhueta SVG de frasco em `--gray-200` + caption "Imagem indisponível".
 2. Canto superior esquerdo da mídia: `<ClassBadge>`.
-3. Canto superior direito: toggle **Comparar** (ícone ⊕ 44×44, `aria-pressed`, `aria-label="Adicionar {nome} à comparação"`). Selecionado: ícone ✓ em círculo roxo.
+3. Canto superior direito: toggle **Comparar** (ícone ⊕ 44×44, `aria-pressed`, `aria-label="Adicionar {nome} à comparação"`). Selecionado: ícone ✓ em círculo `--color-primary`.
 4. Overline: fabricante (`--text-overline` `--color-text-muted`).
 5. Nome comercial `--text-h3` `--color-text`, máx. 2 linhas (clamp).
 6. Linha de metadados `--text-small` muted: "Frasco · 4 mL" (apresentação · volume).
@@ -270,7 +276,7 @@ Anatomia horizontal (mobile < 640): mídia 96×120 à esquerda; à direita itens
 - Hover/foco: ver §2.
 
 ### 3.9 Barra de comparação (`<CompareTray>`)
-Aparece fixa no rodapé quando ≥1 produto está marcado. Altura 64px, bg branco, `--shadow-3`, borda-top `--lilac-200`. Conteúdo: miniaturas (32px) dos selecionados com × para remover, contador "2 de 4", botão primário **COMPARAR** (desabilitado com < 2: texto "Selecione mais 1"). Máx. 4 produtos (tentativa de 5º: toast "Limite de 4 produtos na comparação"). Estado persistido em `localStorage`. `role="region" aria-label="Produtos selecionados para comparação"`. Anunciar mudanças via `aria-live="polite"`.
+Aparece fixa no rodapé quando ≥1 produto está marcado. Altura 64px, bg branco, `--shadow-3`, borda-top `--gray-200`. Conteúdo: miniaturas (32px) dos selecionados com × para remover, contador "2 de 4", botão primário **COMPARAR** (desabilitado com < 2: texto "Selecione mais 1"). Máx. 4 produtos (tentativa de 5º: toast "Limite de 4 produtos na comparação"). Estado persistido em `localStorage`. `role="region" aria-label="Produtos selecionados para comparação"`. Anunciar mudanças via `aria-live="polite"`.
 
 ---
 
@@ -280,16 +286,16 @@ Aparece fixa no rodapé quando ≥1 produto está marcado. Altura 64px, bg branc
 
 Ordem (mobile, uma coluna):
 1. **Header + busca fixa** (§3.1).
-2. **Hero da classificação**: overline "CLASSIFICAÇÃO" · display **"SISTEMAS ADESIVOS"** (serif, `--purple-900`, centralizado) · subtítulo `--text-body` muted: "Consulte a classificação, estude o modo de uso e compare preços nas principais dentais." Abaixo, um traço de 64×3px `--magenta-600` (assinatura "atlas").
+2. **Hero da classificação**: overline "CLASSIFICAÇÃO" · display **"SISTEMAS ADESIVOS"** (serif, `--ink-900`, centralizado) · subtítulo `--text-body` muted: "Consulte a classificação, estude o modo de uso e compare preços nas principais dentais." Abaixo, um traço de 64×3px `--orange-500` (assinatura "atlas").
 3. **Grade de classificação** — o coração da Home. Um bloco por grupo:
-   - Bloco: raio `--radius-lg`, borda 1px `--grp-*-tint` escurecida (`--lilac-200`), overflow hidden.
+   - Bloco: raio `--radius-lg`, borda 1px `--grp-*-tint` escurecida (`--gray-200`), overflow hidden.
    - **Cabeçalho do grupo**: faixa `--grp-*-solid`, altura 56px, texto branco `--text-h3` uppercase tracking .06em: "● CONVENCIONAIS". À direita, contador "12 produtos" caption branco 85% — **oculto < 640px** (não cabe ao lado de "AUTOCONDICIONANTES" em 375px; a contagem já aparece em cada subcategoria). Botão "?" (44×44, `aria-label="O que são sistemas convencionais?"`) abre popover com 2 linhas de definição.
    - **Corpo**: bg `--grp-*-tint`, padding 12px, grade de **cards de subcategoria**: mobile = 2 colunas (Universais: 1 coluna com 3 linhas — os rótulos são longos); ≥768 = 1 linha com todas as subcategorias.
-   - **Card de subcategoria** (é um `<a>` inteiro): bg branco, raio `--radius-md`, min-height 96px, padding 16px. Conteúdo: rótulo grande `--text-h3` uppercase ("2 PASSOS"), **[R2] notação compacta** logo abaixo (`Ác + (P·Ad)`, `--text-small` 600 `--purple-900`, `aria-hidden`), **mini-diagrama** (até 3 blocos coloridos de 8px de altura empilhados — versão miniatura do §3.7, `aria-hidden`), caption "{n} produtos", seta "→" no canto. Hover/foco: §2. `aria-label="Convencionais, 2 passos — 5 produtos"`.
+   - **Card de subcategoria** (é um `<a>` inteiro): bg branco, raio `--radius-md`, min-height 96px, padding 16px. Conteúdo: rótulo grande `--text-h3` uppercase ("2 PASSOS"), **[R2] notação compacta** logo abaixo (`Ác + (P·Ad)`, `--text-small` 600 `--ink-900`, `aria-hidden`), **mini-diagrama** (até 3 blocos coloridos de 8px de altura empilhados — versão miniatura do §3.7, `aria-hidden`), caption "{n} produtos", seta "→" no canto. Hover/foco: §2. `aria-label="Convencionais, 2 passos — 5 produtos"`.
    - ≥1024: os três grupos lado a lado em 3 colunas (como colunas da tabela de referência), cards de subcategoria empilhados verticalmente em cada coluna. Isso reproduz a estrutura de tabela da referência, mas interativa.
 4. **⭐ Em destaque** (v1; o briefing chama de "Produtos mais consultados") — h2 serif, **sem link "Ver todos" na v1**: não há página de listagem e o carrossel já mostra a curadoria inteira. O link volta quando houver `/sistemas-adesivos/em-destaque` ou similar. Curadoria manual em `data/materiais/sistemas-adesivos/destaques.json` (a ordem do arquivo é a ordem de exibição; seleção combinada entre Esmalte e Bula). Sem arquivo, ou com ele vazio, a seção não aparece e a ordenação padrão da categoria é A–Z; o título só vira "Mais consultados" quando houver dado real de analytics. Nunca rotular curadoria como popularidade. Mobile: carrossel horizontal com scroll-snap (cards verticais 240px de largura, 1.2 cards visíveis para indicar rolagem), sem autoplay; setas ‹ › em ≥1024. `role="region" aria-roledescription="carrossel"`.
 5. **💰 Melhores preços** — h2 + subtítulo caption: "Produtos com maior diferença de preço entre as três dentais (mesma apresentação)." Lista de até 5 linhas: miniatura · nome + apresentação · "economia de **R$ 00,00**" em `--color-best` · chevron. Só entram produtos com ≥2 preços comparáveis. Rodapé: "Preços consultados em DD/MM/AAAA."
-6. **📚 Guia rápido** — h2 + grade de cartões-tópico (mobile 1 col, ≥640 2 col, ≥1024 3 col): bg `--color-surface-atlas`, ícone linear 24px `--purple-600`, título `--text-h3`, 1 linha de resumo, link. Tópico ainda sem conteúdo com fonte: cartão **não interativo** (sem `<a>`, sem hover), borda 1px **tracejada** `--lilac-200`, fundo `--gray-50`, ícone `--gray-500`, título `--color-text`, linha "Em preparação" em caption muted. Tópicos: Como escolher a estratégia adesiva? · Convencional x autocondicionante · O que é adesivo universal? · O que é MDP? · Esmalte x dentina · Condicionamento seletivo · Camada híbrida.
+6. **📚 Guia rápido** — h2 + grade de cartões-tópico (mobile 1 col, ≥640 2 col, ≥1024 3 col): bg `--color-surface-atlas`, ícone linear 24px `--orange-700`, título `--text-h3`, 1 linha de resumo, link. Tópico ainda sem conteúdo com fonte: cartão **não interativo** (sem `<a>`, sem hover), borda 1px **tracejada** `--gray-200`, fundo `--gray-50`, ícone `--gray-500`, título `--color-text`, linha "Em preparação" em caption muted. Tópicos: Como escolher a estratégia adesiva? · Convencional x autocondicionante · O que é adesivo universal? · O que é MDP? · Esmalte x dentina · Condicionamento seletivo · Camada híbrida.
 7. **Rodapé**: aviso fixo `--text-caption` muted: "Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante. Preços sujeitos a alteração nas lojas." + links Sobre / Fontes e metodologia.
 
 Emojis do briefing (⭐ 💰 📚 🔎 🏆) → usar ícones SVG lineares equivalentes nos títulos (consistência e leitores de tela). Exceção: 🏆 pode ficar como emoji no selo de menor preço se o cliente insistir; spec padrão = ícone de troféu SVG.
@@ -322,16 +328,16 @@ Mobile, ordem:
    - FABRICANTE — "FGM"
    - `<SourceLink>` ao pé.
 6. **Composição** — h2. Chips grandes (32px) para componentes-chave pesquisáveis (MDP, HEMA, silano, solvente) — clicar leva à busca por componente. Abaixo lista completa `<ul>` só com componentes **confirmados**. Se a fonte não declara: texto muted "Composição completa não divulgada pelo fabricante." `<SourceLink>`. `<DivergenceNote>` se houver.
-7. **Indicações** — h2 + lista `<ul>` com bullets ▸ `--purple-600`. `<SourceLink>`.
+7. **Indicações** — h2 + lista `<ul>` com bullets ▸ `--orange-700`. `<SourceLink>`.
 8. **Modo de Uso** — seção-vitrine, bg `--color-surface-atlas` em largura total (sangra até as bordas), padding vertical 40px.
    - Overline "PROTOCOLO DO FABRICANTE" · h2 serif "Modo de Uso" · caption: "Segundo a IFU oficial de {fabricante} ({ano/versão}). Este protocolo é específico deste produto." Link "Ver IFU original ↗".
    - **Etapas** `<ol>`: cada etapa é um cartão branco, raio `--radius-md`, `--shadow-1`, padding 16px, grade `[número | conteúdo]`:
-     - **Número**: "01" em serif 28px 700 `--magenta-600`, coluna 48px.
+     - **Número**: "01" em serif 28px 700 `--orange-500`, coluna 48px.
      - Título `--text-h3` ("Condicionamento").
      - Instrução `--text-body` (frase da IFU).
-     - **Parâmetros** em chips com ícone — mapeiam 1:1 para `parametros[{tipo, texto}]` (ARQUITETURA.md); o chip mostra `texto` tal como veio da IFU, o ícone vem de `tipo`: `tempo`→relógio, `camadas`→camadas, `friccao`→mão, `jato-de-ar`→ar, `luz`→lâmpada, `substrato`→dente, `outro`→ⓘ. Exemplos de texto (linha abaixo): ⏱ tempo ("15 s"), ↻ camadas/aplicações ("2 camadas"), ✋ fricção ("fricção ativa 10 s"), 💨 jato de ar ("5 s"), 💡 fotopolimerização ("10 s · ≥ 1000 mW/cm²"), 🦷 substrato ("esmalte e dentina"). Ícones SVG; chip bg `--lilac-100`, texto `--purple-900` 14px 600 tabular. Só renderiza o parâmetro que a IFU informa.
+     - **Parâmetros** em chips com ícone — mapeiam 1:1 para `parametros[{tipo, texto}]` (ARQUITETURA.md); o chip mostra `texto` tal como veio da IFU, o ícone vem de `tipo`: `tempo`→relógio, `camadas`→camadas, `friccao`→mão, `jato-de-ar`→ar, `luz`→lâmpada, `substrato`→dente, `outro`→ⓘ. Exemplos de texto (linha abaixo): ⏱ tempo ("15 s"), ↻ camadas/aplicações ("2 camadas"), ✋ fricção ("fricção ativa 10 s"), 💨 jato de ar ("5 s"), 💡 fotopolimerização ("10 s · ≥ 1000 mW/cm²"), 🦷 substrato ("esmalte e dentina"). Ícones SVG; chip bg `--gray-100`, texto `--ink-900` 14px 600 tabular. Só renderiza o parâmetro que a IFU informa.
      - Ilustração opcional da etapa (pictograma 64px) à direita em ≥640.
-   - **Conector** entre cartões: linha vertical 2px `--lilac-400` de 16px com seta (mesmo SVG do diagrama), alinhada ao centro da coluna do número.
+   - **Conector** entre cartões: linha vertical 2px `--gray-300` de 16px com seta (mesmo SVG do diagrama), alinhada ao centro da coluna do número.
    - ≥1024: lista vertical continua (protocolo é sequencial; não fazer grade). Largura máx. 760px, centralizada.
    - Toggle "Modo estudo" (opcional v1.1): marca etapas como concluídas (checkbox por etapa) — não necessário na v1.
    - Rodapé da seção: aviso caption "Sempre confirme na embalagem do lote em uso." + `<SourceLink>`.
@@ -357,7 +363,7 @@ Problema: o mesmo adesivo aparece em 3 listas; o usuário não pode achar que s�
 
 **Na página do produto universal** (substitui o item ESTRATÉGIA ADESIVA da ficha e controla o Modo de Uso):
 - Bloco com título h3 "Escolha a estratégia de uso" e frase "Mesmo frasco, três formas de usar." + uma pequena ilustração: **um único frasco** central com 3 setas saindo para as estratégias (reforço visual de "1 produto → n técnicas").
-- **Controle segmentado** (`role="radiogroup"`, cada opção `role="radio"`, setas ←→ navegam): [Seletivo] [Total] [Autocondicionante]. Grade de 3 colunas iguais, largura 100%, altura 44px, raio `--radius-md`, fundo `--gray-50`; rótulos curtos "Seletivo / Total / Autocond." com `aria-label` completo (o rótulo longo quebra linha em 375px); selecionado = pílula branca `--shadow-1` com texto `--purple-900` 600. Estratégia não indicada pelo fabricante: opção visível, desabilitada, rótulo "Autocondicionante — não indicado", tooltip/nota explicando.
+- **Controle segmentado** (`role="radiogroup"`, cada opção `role="radio"`, setas ←→ navegam): [Seletivo] [Total] [Autocondicionante]. Grade de 3 colunas iguais, largura 100%, altura 44px, raio `--radius-md`, fundo `--gray-50`; rótulos curtos "Seletivo / Total / Autocond." com `aria-label` completo (o rótulo longo quebra linha em 375px); selecionado = pílula branca `--shadow-1` com texto `--ink-900` 600. Estratégia não indicada pelo fabricante: opção visível, desabilitada, rótulo "Autocondicionante — não indicado", tooltip/nota explicando.
 - Ao trocar: atualiza **somente** o `<StepDiagram>` compacto e as etapas do **Modo de Uso** (cada estratégia tem seu protocolo da IFU). Nome, foto, composição, preço **não mudam** (prova visual de que é o mesmo produto). Transição: cross-fade 200ms só nas etapas. URL atualiza `?estrategia=seletivo` (compartilhável, sem novo histórico: `replaceState`).
 - Valor inicial = estratégia de onde o usuário veio (query/referrer) ou a primeira indicada.
 - `aria-live="polite"` no cabeçalho do Modo de Uso anuncia "Protocolo: condicionamento seletivo, 5 etapas".
@@ -377,8 +383,8 @@ Problema: o mesmo adesivo aparece em 3 listas; o usuário não pode achar que s�
     - **USO**: Fotopolimerização
     - **PRODUTO**: Volume · Fabricante · Menor preço (link "ver preços")
   - Valores booleanos: ✓ "Sim" (`--color-best`) / — "Não" (`--gray-600`) / "Não informado" (itálico muted). **Sempre texto + ícone**, nunca só ícone.
-  - Zebra: linhas pares `--gray-50`. Hover de linha (desktop): `--lilac-50`.
-  - Toggle acima da tabela: "Destacar diferenças" — quando ligado, linhas com valores iguais em todas as colunas ficam recolhidas/esmaecidas e as diferentes ganham marcador `--magenta-600` à esquerda.
+  - Zebra: linhas pares `--gray-50`. Hover de linha (desktop): `--gray-50`.
+  - Toggle acima da tabela: "Destacar diferenças" — quando ligado, linhas com valores iguais em todas as colunas ficam recolhidas/esmaecidas e as diferentes ganham marcador `--orange-500` à esquerda.
   - Divergência numa célula: ícone ⚠ âmbar + tooltip/expansão com as fontes.
 - Mobile alternativo (< 640): mesma tabela com scroll horizontal (não converter em cards — a leitura lado a lado é o objetivo). Com 2 produtos, cabe sem scroll em 360px (132 + 2×114).
 
@@ -430,7 +436,7 @@ Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/
 - Cartões de artigo: 2 colunas no main (`.guide` com `repeat(2, minmax(0,1fr))` a partir de 640px), sem mudar o componente.
 - O glossário fica no main, abaixo dos cartões, porque é a parte mais longa e não faz sentido sticky.
 - Cada bloco é uma seção com `h2` (`--text-h3` sans 600, não serif, porque são ferramentas e não conteúdo) + overline acima: "PARA COMEÇAR", "CONSULTA RÁPIDA", "TERMOS".
-- Superfície dos blocos laterais: fundo `--color-surface-atlas`, borda 1px `--lilac-200`, raio `--radius-lg`, padding `--space-5`; gap entre blocos `--space-6`.
+- Superfície dos blocos laterais: fundo `--color-surface-atlas`, borda 1px `--gray-200`, raio `--radius-lg`, padding `--space-5`; gap entre blocos `--space-6`.
 
 **① Por onde começar (trilha de leitura)**
 - Lista ordenada `<ol>` de 7 itens, do básico à síntese. **A ordem é o campo `ordem` dos artigos**, em ordem crescente (decisão do Molar, ARQUITETURA §3.3; não existe `trilha.json`). Os cartões usam a mesma ordem. A Dentina renumera assim:
@@ -442,18 +448,18 @@ Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/
   6. O que é MDP? — "o monômero que aparece na composição"
   7. Como escolher a estratégia adesiva? — "a síntese, para decidir"
   (As frases curtas são de navegação, não afirmações científicas; se o artigo tiver `resumo`, a Pulpa pode usar a 1ª oração dele em vez da frase.)
-- Item: número em círculo de 28px (serif 700 14px, `--magenta-600`, borda 1.5px) + **só o título** 15px 600 (link sublinhado só no hover; o item inteiro é o alvo, mín. 44px de altura). **Sem resumo:** os cartões ao lado (e logo abaixo, no mobile) já mostram o resumo, e repeti-lo na trilha duplicava a lista (revisão de 06/10/2026). Linha vertical 2px `--lilac-200` ligando os círculos (estilo da Modo de Uso, versão mini).
+- Item: número em círculo de 28px (serif 700 14px, `--orange-500`, borda 1.5px) + **só o título** 15px 600 (link sublinhado só no hover; o item inteiro é o alvo, mín. 44px de altura). **Sem resumo:** os cartões ao lado (e logo abaixo, no mobile) já mostram o resumo, e repeti-lo na trilha duplicava a lista (revisão de 06/10/2026). Linha vertical 2px `--gray-200` ligando os círculos (estilo da Modo de Uso, versão mini).
 - Artigo ainda não publicado: item sem link, título `--gray-600`, selo "em preparação" (caption). **Não pula a numeração.**
 - Sem estado "lido" na v1 (não há conta; `localStorage` só se for pedido depois).
 
 **② Cola das 7 categorias**
-- `<table>` real, `caption` visível "Cola das 7 categorias" como h2 do bloco, `--text-small`, sem zebra, linhas separadas por borda `--lilac-200`.
+- `<table>` real, `caption` visível "Cola das 7 categorias" como h2 do bloco, `--text-small`, sem zebra, linhas separadas por borda `--gray-200`.
 - **Colunas:** Subcategoria · Notação · Passos · Produtos. O **grupo vira linha-cabeçalho** (`<th scope="rowgroup" colspan="4">`, overline 11px com o marcador ●◆▲ e a cor `--grp-*-ink` sobre `--grp-*-tint`), em vez de coluna, para caber em 4/12 (~380px).
   - Subcategoria: link para a categoria (`rotulo` curto: "2 passos", "Seletivo"…), 14px 600.
   - Notação: componente `<Notacao>` (o mesmo do diagrama), `nowrap`.
   - Passos: número de aplicações = `sequencia.length` da taxonomia (conv. 3→3, conv. 2→2, auto 2→2, auto 1→1, univ. seletivo/total→2, univ. autocond.→1), tabular, alinhado à direita.
   - Produtos: nº de produtos **publicados** naquela subcategoria (mesma contagem da Home), tabular, à direita; 0 aparece como "—" em `--gray-600` com `aria-label="nenhum produto"`.
-- **Linha inteira clicável**: o link está na célula Subcategoria e um `::after` absoluto cobre a linha (`tr { position: relative }`). Hover: fundo `--lilac-100`. Foco visível no link (o anel envolve a linha via `:focus-within` → `outline` no `tr`).
+- **Linha inteira clicável**: o link está na célula Subcategoria e um `::after` absoluto cobre a linha (`tr { position: relative }`). Hover: fundo `--gray-100`. Foco visível no link (o anel envolve a linha via `:focus-within` → `outline` no `tr`).
 - Rodapé da tabela (caption muted): a legenda da notação (`<LegendaNotacao>`), uma vez só.
 - Tudo vem da taxonomia + `categorias.json` + contagem do catálogo. **Nada digitado à mão.**
 
@@ -462,14 +468,14 @@ Contrato: `glossario.json` = `{ fontes[], termos[{ id, termo, sigla?, nomeComple
 
 - Cabeçalho do bloco: overline "TERMOS", h2 "Glossário", contagem caption ("20 termos").
 - **Barra de navegação do glossário** (abaixo do h2): input "Filtrar termos" (44px, `type="search"`, largura máx. 320px) + **índice A–Z** em chips de 32×32px (13px 700, só as letras com termos, cada um levando à âncora `#letra-{x}`). Abaixo de 640px, os chips ficam numa linha com scroll horizontal (`overflow-x: auto`, `scroll-snap`). O filtro busca em termo, sigla e sinônimo, sem distinguir acento ou caixa; quando vazio mostra "Nenhum termo para “x”."; `aria-live="polite"` anuncia "n termos". Não é sticky (o header já é).
-- **Lista**: agrupada por letra. O separador tem `id="letra-{x}"`, letra em serif 24px 700 `--purple-900` + filete `--lilac-200`. Os termos de cada letra ficam numa grade de **2 colunas a partir de 1024px** (`minmax(0,1fr)`, gap 24px) e 1 coluna abaixo. Cada termo é um `<article id="termo-{id}">` com `scroll-margin-top: 96px` (header sticky):
+- **Lista**: agrupada por letra. O separador tem `id="letra-{x}"`, letra em serif 24px 700 `--ink-900` + filete `--gray-200`. Os termos de cada letra ficam numa grade de **2 colunas a partir de 1024px** (`minmax(0,1fr)`, gap 24px) e 1 coluna abaixo. Cada termo é um `<article id="termo-{id}">` com `scroll-margin-top: 96px` (header sticky):
   - Título h3: sigla + termo ("MDP — 10‑metacriloiloxidecil di‑hidrogenofosfato", ou só o termo), 16px 700.
   - Sinônimos: caption muted "Também: lama dentinária, smear layer".
   - Definição: `--text-small` `--color-text`, 1–2 frases.
   - "Relacionados:" chips-link (28px, 13px) para outros termos (`relacionados` → `#termo-{id}`).
   - Rodapé, **em uma linha só que quebra entre itens**: "Fonte: Perdigão 2020 ↗ · Silva e Souza Jr. 2010 ↗". O texto do link é **1º autor + ano**, derivado do campo de citação (sobrenome antes da 1ª vírgula + ano); a citação completa vai no `title` e num `aria-label` ("Fonte: <citação completa> (abre em nova aba)"). **Nunca a citação inteira visível no glossário**, porque ela triplicava a altura de cada termo; a citação completa continua nos artigos do guia. Depois, "Leia mais: <título do artigo> →" na mesma linha ou na seguinte.
   - Nomes técnicos com hífen não quebram: "10‑MDP", "4‑MET", "Bis‑GMA", "1‑2". Use hífen inseparável (U+2011) quando o hífen fica entre dígito e letra/dígito ou numa sigla em maiúsculas. Compostos comuns ("di‑hidrogenofosfato", "self‑assembled") podem quebrar no hífen.
-  - `:target`: fundo `--lilac-100` que some em 1,5s (sem animação em reduced-motion); com filtro ativo, o termo-alvo nunca é escondido.
+  - `:target`: fundo `--gray-100` que some em 1,5s (sem animação em reduced-motion); com filtro ativo, o termo-alvo nunca é escondido.
 - Sem dado (ou só rascunho em produção): o bloco não aparece.
 
 **Acessibilidade:** ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → glossário). No desktop, `grid-template-areas` põe cartões e glossário no main e trilha e cola no aside. O leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha funciona como introdução. `aside` com `aria-label`, tabela com `caption`, um h2 por bloco.
@@ -496,7 +502,7 @@ Contrato: `glossario.json` = `{ fontes[], termos[{ id, termo, sigla?, nomeComple
 ## 6. PWA / mobile
 
 - `theme_color: #5E2280` · `background_color: #FFFFFF` · `display: standalone` · nome curto "Adesivos".
-- Ícone: monograma "SA" serif branco sobre `--purple-700`, com versão maskable (área segura 80%).
+- Ícone: monograma "SA" serif branco sobre `--orange-700`, com versão maskable (área segura 80%).
 - Safe areas: `padding-bottom: env(safe-area-inset-bottom)` na `<CompareTray>` e barra sticky de ação.
 - Banner "Adicionar à tela inicial": discreto, no rodapé da Home após a 2ª visita, dispensável, nunca modal.
 - Offline: páginas já visitadas disponíveis; preços mostram aviso "Você está offline — preços de DD/MM/AAAA podem estar desatualizados" (caixa warn).
@@ -514,7 +520,7 @@ Contrato: `glossario.json` = `{ fontes[], termos[{ id, termo, sigla?, nomeComple
 
 ## 8. Revisão 2: o que mudou com as referências (06/10/2026)
 
-Fontes e análise: `docs/referencia/README.md`. As referências **confirmaram** a estrutura: blocos com faixa de título sólida, classificação em caixa-alta, produtos agrupados por subcategoria e Modo de Uso em etapas numeradas com seta. A paleta (roxo/magenta/lilás) **não muda**; as referências usam azul-marinho/amarelo, mas o briefing fixa a paleta. Mudanças:
+Fontes e análise: `docs/referencia/README.md`. As referências **confirmaram** a estrutura: blocos com faixa de título sólida, classificação em caixa-alta, produtos agrupados por subcategoria e Modo de Uso em etapas numeradas com seta. Na época, a paleta (roxo/magenta/lilás) **não mudou** (em 07/10/2026 foi substituída pela paleta "frascos", §1.1); as referências usam azul-marinho/amarelo, mas o briefing fixa a paleta. Mudanças:
 
 | # | Mudança | Onde | Motivo (referência) |
 |---|---|---|---|
