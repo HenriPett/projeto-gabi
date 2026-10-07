@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "clearfil-tri-s-bond-universal-quick",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-clearfil-tri-s-bond-universal-quick-kuraray-147344.html",
+      "tituloNaLoja": "Adesivo Clearfil Tri-S Bond Universal Quick 5ml - Kuraray",
+      "skuLoja": "147344",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 43790,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 42476,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalspeed.com/adesivo-clearfil-tri-s-bond-universal-quick-kuraray-kur35147a.html",
+      "tituloNaLoja": "Adesivo Clearfil Tri-S Bond Universal Quick - Kuraray",
+      "skuLoja": "KUR35147A",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Esgotado em 06/10/2026. Anúncio: 5 ml."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "A loja anuncia apenas o \"Refil\" 5 ml (ver apresentação refil-5ml)."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-clearfil-tri-s-universal-quick-refil-kuraray",
+      "tituloNaLoja": "Adesivo Clearfil Tri-S Universal Quick Refil - Kuraray",
+      "skuLoja": "27.1163",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 39990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 38790,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "refil-5ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "A loja não anuncia o item como refil."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "refil-5ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "A loja não anuncia o item como refil."
+    }
+  ]
+}

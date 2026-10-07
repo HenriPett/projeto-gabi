@@ -1,0 +1,551 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Clearfil Universal Bond Quick",
+    "Tri-S Universal Quick",
+    "Clearfil S3 Universal Bond Quick"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas com resina composta fotopolimerizável.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Selamento de cavidades, como pré-tratamento de restaurações indiretas.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Tratamento de superfícies radiculares expostas e de hipersensibilidade dentinária.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparos intraorais de restaurações fraturadas.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Cimentação de pinos e construção do núcleo; cimentação de restaurações indiretas.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Pacientes com hipersensibilidade a monômeros de metacrilatos e a este produto.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do ADESIVO",
+          "descricao": "Dispensar o ADESIVO imediatamente antes do uso (proteger da luz; usar em até 7 minutos). Aplicar com movimentos ativos em todas as paredes da cavidade com o pincel aplicador. Não é necessário tempo de espera.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "movimentos ativos · sem tempo de espera"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem com ar",
+          "descricao": "Secar suficientemente todas as paredes com leve jato de ar até que o ADESIVO não se movimente; usar sugador para evitar dispersão.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, mais de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o ADESIVO (comprimento de onda efetivo 400-515 nm).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "Halógena > 400 mW/cm²: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "LED 800–1400 mW/cm²: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "LED > 1500 mW/cm²: 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Para dentes hipersensíveis, usar o procedimento autocondicionante. O condicionamento da dentina vital pode provocar sensibilidade pós-operatória.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento do esmalte",
+          "descricao": "Aplicar K-ETCHANT Syringe (ácido fosfórico 35%) no esmalte intacto e/ou preparado e deixar agir.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Lavar e secar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do ADESIVO",
+          "descricao": "Dispensar o ADESIVO imediatamente antes do uso (proteger da luz; usar em até 7 minutos). Aplicar com movimentos ativos em todas as paredes da cavidade com o pincel aplicador. Não é necessário tempo de espera.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "movimentos ativos · sem tempo de espera"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem com ar",
+          "descricao": "Secar suficientemente todas as paredes com leve jato de ar até que o ADESIVO não se movimente; usar sugador para evitar dispersão.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, mais de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o ADESIVO (comprimento de onda efetivo 400-515 nm).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "Halógena > 400 mW/cm²: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "LED 800–1400 mW/cm²: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "LED > 1500 mW/cm²: 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Para dentes hipersensíveis, usar o procedimento autocondicionante. O condicionamento da dentina vital pode provocar sensibilidade pós-operatória.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar K-ETCHANT Syringe em toda a cavidade (esmalte e dentina) e deixar agir.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem e secagem",
+          "descricao": "Lavar e secar.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do ADESIVO",
+          "descricao": "Dispensar o ADESIVO imediatamente antes do uso (proteger da luz; usar em até 7 minutos). Aplicar com movimentos ativos em todas as paredes da cavidade com o pincel aplicador. Não é necessário tempo de espera.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "movimentos ativos · sem tempo de espera"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem com ar",
+          "descricao": "Secar suficientemente todas as paredes com leve jato de ar até que o ADESIVO não se movimente; usar sugador para evitar dispersão.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, mais de 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o ADESIVO (comprimento de onda efetivo 400-515 nm).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "Halógena > 400 mW/cm²: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "LED 800–1400 mW/cm²: 10 s"
+            },
+            {
+              "tipo": "luz",
+              "texto": "LED > 1500 mW/cm²: 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Para dentes hipersensíveis, usar o procedimento autocondicionante. O condicionamento da dentina vital pode provocar sensibilidade pós-operatória.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "apresentacoes",
+      "descricao": "A IFU descreve o produto como ADESIVO + K-ETCHANT Syringe; as lojas vendem só o frasco de 5 mL, e a Med Sul o chama de \"Refil\". Sem confirmação de que \"frasco\" e \"refil\" sejam o mesmo item, as ofertas ficam em apresentações separadas.",
+      "versoes": [
+        {
+          "valor": "Frasco 5 mL",
+          "fontes": [
+            "loja-cremer"
+          ]
+        },
+        {
+          "valor": "Refil 5 mL",
+          "fontes": [
+            "loja-medsul"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Confirmar se o frasco 5 mL (Cremer/Speed) e o refil 5 mL (Med Sul) são o mesmo item para permitir comparação de preço. Imagens pendentes."
+  },
+  "id": "clearfil-tri-s-bond-universal-quick",
+  "nomeComercial": "Clearfil Tri-S Bond Universal Quick",
+  "fabricante": {
+    "id": "kuraray-noritake",
+    "nome": "Kuraray Noritake"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"Dependendo da indicação, o ADESIVO é utilizado como autocondicionante ou com K-ETCHANT Syringe para procedimentos de condicionamento seletivo do esmalte ou de condicionamento total.\" Fora do Brasil o produto é vendido como Clearfil Universal Bond Quick."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal de frasco único; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total). Sem tempo de espera após a aplicação.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "10-Metacriloiloxidecil dihidrogeno fosfato (MDP)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "HEMA (metacrilato de 2-hidroxietilo)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Monômeros de amida hidrofílico",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Sílica coloidal",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Agente de ligação à base de silano",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Fluoreto de sódio",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "dl-Canforquinona",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "adesivo"
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "IFU: \"Agente de ligação à base de silano\"."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Dupla polimerização apenas com a adição do CLEARFIL DC Activator (vendido à parte)."
+    },
+    "outros": [
+      {
+        "rotulo": "Flúor",
+        "valor": "Contém fluoreto de sódio",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "loja-cremer"
+      ]
+    },
+    {
+      "id": "refil-5ml",
+      "tipo": "refil",
+      "descricao": "Refil 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "loja-medsul"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso CLEARFIL TRI-S BOND Universal Quick (BR)",
+      "url": "https://www.kuraraynoritake.com.br/file/instrucoes-de-uso-clearfiltm-tri-s-universal-quick-bond-br",
+      "acessadoEm": "2026-10-06",
+      "versao": "003 1563R581R"
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Clearfil Tri-S Bond Universal Quick — Kuraray Noritake Brasil",
+      "url": "https://www.kuraraynoritake.com.br/clearfil-s3-universal-bond-quick",
+      "acessadoEm": "2026-10-06",
+      "observacao": "A página não informa volumes."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Clearfil Tri-S Bond Universal Quick 5ml - Kuraray",
+      "url": "https://www.dentalcremer.com.br/adesivo-clearfil-tri-s-bond-universal-quick-kuraray-147344.html",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-medsul",
+      "tipo": "loja",
+      "titulo": "Dental Med Sul — Adesivo Clearfil Tri-S Universal Quick Refil - Kuraray",
+      "url": "https://www.dentalmedsul.com.br/adesivo-clearfil-tri-s-universal-quick-refil-kuraray",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}
