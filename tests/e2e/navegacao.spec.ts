@@ -89,6 +89,8 @@ for (const url of INEXISTENTES) {
 test("G-01: Voltar/Avançar entre home → categoria → produto", async ({ page }) => {
   await page.goto("/");
   await page.locator('main a[href="/sistemas-adesivos/convencionais/2-passos"]').first().click();
+  // a home também linka ficticio-ambar (Melhores preços): esperar a categoria antes do 2º clique
+  await expect(page).toHaveURL("/sistemas-adesivos/convencionais/2-passos");
   await page.locator('main a[href="/produto/ficticio-ambar"]').first().click();
   await expect(page).toHaveURL("/produto/ficticio-ambar");
   await page.goBack();
