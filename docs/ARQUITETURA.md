@@ -28,6 +28,7 @@ data/
   materiais/
     sistemas-adesivos/
       categorias.json                # textos explicativos por grupo/subcategoria (com fonte)
+      destaques.json                 # { produtos: [ids] } curadoria "Em destaque", na ordem exibida
       produtos/<id>.json             # 1 arquivo por produto  ← Bula
       ofertas/<id>.json              # preços por loja/apresentação ← Bula (curadoria manual)
 public/
@@ -166,6 +167,6 @@ Regra do cliente (2026-10-06): **sem Pull Requests e sem esperar aprovação.**
 
 ## 9. Em aberto
 
-- **"Produtos mais consultados"**: não há dado de acesso num site estático. Proposta v1: curadoria manual (`data/materiais/sistemas-adesivos/destaques.json`) com o rótulo honesto "Em destaque"; medir com Vercel Web Analytics e só então trocar para "mais consultados". Decisão do produto.
+- **"Produtos mais consultados"** — DECIDIDO v1: curadoria manual (`data/materiais/sistemas-adesivos/destaques.json`) com o rótulo honesto "Em destaque"; medir com Vercel Web Analytics e só então trocar para "mais consultados". Contrato: `Destaques` em `conteudo.ts`; `catalogo().destaques[material]` (ids visíveis, na ordem).
 - Formato do Guia rápido (Markdown com frontmatter de fontes, provavelmente).
 - Direitos de uso das fotos dos frascos.

@@ -3,6 +3,7 @@ import path from "node:path";
 import type { z } from "zod";
 import {
   ConteudoCategorias,
+  Destaques,
   ESQUEMA_POR_MATERIAL,
   MATERIAIS,
   OfertasDoProduto,
@@ -27,6 +28,8 @@ export interface Catalogo {
   /** produtoId → ofertas */
   ofertas: Map<string, OfertasDoProduto["ofertas"]>;
   categorias: Partial<Record<MaterialId, ConteudoCategorias>>;
+  /** Ids em destaque por material, na ordem da curadoria; só produtos visíveis. */
+  destaques: Partial<Record<MaterialId, string[]>>;
 }
 
 export function dirDados() {
@@ -68,6 +71,7 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
   const produtos: Produto[] = [];
   const ofertas = new Map<string, OfertasDoProduto["ofertas"]>();
   const categorias: Catalogo["categorias"] = {};
+  const destaques: Catalogo["destaques"] = {};
 
   for (const material of MATERIAIS) {
     const base = path.join(raiz, "materiais", material);
@@ -91,6 +95,19 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
       if (r.data.material !== material)
         erros.push({ arquivo: rel(arq), mensagem: `material "${r.data.material}" na pasta de "${material}"` });
       produtos.push(r.data);
+    }
+
+    const arqDestaques = path.join(base, "destaques.json");
+    if (fs.existsSync(arqDestaques)) {
+      const r = Destaques.safeParse(lerJson(arqDestaques));
+      if (!r.success) erros.push(...formatarErros(rel(arqDestaques), r.error));
+      else {
+        r.data.produtos.forEach((id, i) => {
+          if (!produtos.some((p) => p.id === id && p.material === material))
+            erros.push({ arquivo: rel(arqDestaques), mensagem: `produtos.${i}: produto "${id}" não existe em ${material}` });
+        });
+        destaques[material] = r.data.produtos;
+      }
     }
 
     for (const arq of jsonsEm(path.join(base, "ofertas"))) {
@@ -122,7 +139,7 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
   for (const [id, n] of ids)
     if (n > 1) erros.push({ arquivo: "data/", mensagem: `id de produto duplicado: ${id}` });
 
-  return { catalogo: { produtos, ofertas, categorias }, erros };
+  return { catalogo: { produtos, ofertas, categorias, destaques }, erros };
 }
 
 let cache: Catalogo | undefined;
@@ -141,6 +158,9 @@ export function catalogo(): Catalogo {
   const ids = new Set(visiveis.map((p) => p.id));
   // Ofertas seguem o produto: rascunho oculto ⇒ ofertas ocultas (senão vazam p/ "Melhores preços").
   const ofertas = new Map([...c.ofertas].filter(([id]) => ids.has(id)));
-  cache = { ...c, produtos: visiveis, ofertas };
+  const destaques = Object.fromEntries(
+    Object.entries(c.destaques).map(([m, lista]) => [m, lista.filter((id) => ids.has(id))]),
+  ) as Catalogo["destaques"];
+  cache = { ...c, produtos: visiveis, ofertas, destaques };
   return cache;
 }
