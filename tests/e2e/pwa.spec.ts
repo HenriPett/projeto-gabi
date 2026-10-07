@@ -32,6 +32,8 @@ test("PWA-02: head tem manifest, theme-color igual ao manifest, apple-touch-icon
   await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
   await expect(page.locator('link[rel="manifest"]')).toHaveCount(1);
   await expect(page.locator('link[rel="apple-touch-icon"]').first()).toHaveAttribute("href", /.+/);
+  // nome do ícone na tela inicial do iOS (não usa o manifest)
+  await expect(page.locator('meta[name="apple-mobile-web-app-title"]')).toHaveAttribute("content", "Adesivologia");
   const m = await (await request.get("/manifest.webmanifest")).json();
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", new RegExp(m.theme_color, "i"));
 });
