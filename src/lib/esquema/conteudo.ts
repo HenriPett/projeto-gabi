@@ -12,6 +12,15 @@ export const ConteudoCategorias = z.object({
   fontes: z.array(Fonte),
   grupos: z.partialRecord(z.enum(GRUPOS), z.object({ explicacao: TextoComFonte })),
   subcategorias: z.partialRecord(z.enum(SUBCATEGORIAS), z.object({ explicacao: TextoComFonte })),
+}).superRefine((c, ctx) => {
+  const ids = new Set<string>();
+  c.fontes.forEach((f, i) => {
+    if (ids.has(f.id)) ctx.addIssue({ code: "custom", path: ["fontes", i, "id"], message: `fonte duplicada: ${f.id}` });
+    ids.add(f.id);
+  });
+  for (const { path, id } of referenciasDeFonte({ grupos: c.grupos, subcategorias: c.subcategorias })) {
+    if (!ids.has(id)) ctx.addIssue({ code: "custom", path, message: `fonte "${id}" não declarada em "fontes"` });
+  }
 });
 export type ConteudoCategorias = z.infer<typeof ConteudoCategorias>;
 

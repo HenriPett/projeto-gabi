@@ -47,3 +47,14 @@ describe("catalogo().guia", () => {
     expect(catalogo().guia["sistemas-adesivos"]!.map((a) => a.slug)).toEqual(["exemplo-rascunho", "exemplo-publicado"]);
   });
 });
+
+describe("esquema de categorias", async () => {
+  const { ConteudoCategorias } = await import("@/lib/esquema");
+  const fonte = { id: "a", tipo: "literatura", titulo: "x", url: "https://doi.org/10.0/x", acessadoEm: "2026-10-01" };
+  it("aceita referência declarada e rejeita não declarada", () => {
+    const ok = { fontes: [fonte], grupos: { universal: { explicacao: { texto: "t", fontes: ["a"] } } }, subcategorias: {} };
+    expect(ConteudoCategorias.safeParse(ok).success).toBe(true);
+    const ruim = { ...ok, subcategorias: { "convencional-2-passos": { explicacao: { texto: "t", fontes: ["b"] } } } };
+    expect(ConteudoCategorias.safeParse(ruim).success).toBe(false);
+  });
+});
