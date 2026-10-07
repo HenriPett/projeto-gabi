@@ -1,0 +1,608 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Prime & Bond Universal",
+    "Prime&Bond Universal ST",
+    "Prime Bond Universal"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações de compômero e compósito fotopolimerizáveis diretos.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Facetas de resina fotopolimerizável cimentadas.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparações em compósito, cerâmica e amálgama.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Verniz cavitário para uso com amálgama recém-preparada.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Restaurações indiretas e pinos endodônticos cimentados com Calibra Ceram ou Calibra Universal.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Com o Self Cure Activator: restaurações de compósito autopolimerizável/dual, falsos cotos e cimentação com cimentos auto/dual.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Pacientes com história conhecida de alergia a resinas de (met)acrilatos ou a qualquer componente.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Aplicação direta na polpa dentária (proteção pulpar direta).",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Autocondicionante (Self-Etch)",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Limpeza",
+          "descricao": "Isolar (dique de borracha). Limpar esmalte e dentina não preparados com taça de borracha e pedra-pomes ou pasta profilática sem flúor. Lavar com spray de água e secar com papel ou pouco ar, sem desidratar a dentina.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Dispensar 1-2 gotas (CliXdish fechado: usar em até 30 min; recipiente padrão: usar imediatamente). Com aplicador novo, molhar completamente as superfícies, remolhando se necessário e evitando acúmulos. Agitar ligeiramente o adesivo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "agitar ligeiramente 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "1 aplicação"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do solvente",
+          "descricao": "Espalhar o adesivo e remover o solvente com jato de ar limpo e seco, tratando cada superfície até formar camada brilhante e uniforme. Evitar pontos secos e jato muito forte.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "fluxo moderado, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo imediatamente.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · irradiância mínima 800 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "pelo menos 20 s · 550–800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "O esmalte não preparado deve ser condicionado com ácido fosfórico antes da aplicação do adesivo.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo do esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Limpeza",
+          "descricao": "Isolar (dique de borracha). Limpar esmalte e dentina não preparados com taça de borracha e pedra-pomes ou pasta profilática sem flúor. Lavar com spray de água e secar com papel ou pouco ar, sem desidratar a dentina.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento do esmalte",
+          "descricao": "Aplicar ácido fosfórico (p. ex., Conditioner 36) com cuidado somente nas superfícies de esmalte (margens). Contato acidental com a dentina deve ficar limitado a 15 s ou menos.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte pelo menos 15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o gel com aspirador e/ou jato forte de água, enxaguando bem.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "pelo menos 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Secagem",
+          "descricao": "Remover completamente a água secando gentilmente com seringa de ar ou papel. Não dessecar a dentina. Aplicar o adesivo imediatamente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Dispensar 1-2 gotas (CliXdish fechado: usar em até 30 min; recipiente padrão: usar imediatamente). Com aplicador novo, molhar completamente as superfícies, remolhando se necessário e evitando acúmulos. Agitar ligeiramente o adesivo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "agitar ligeiramente 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "1 aplicação"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do solvente",
+          "descricao": "Espalhar o adesivo e remover o solvente com jato de ar limpo e seco, tratando cada superfície até formar camada brilhante e uniforme. Evitar pontos secos e jato muito forte.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "fluxo moderado, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo imediatamente.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · irradiância mínima 800 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "pelo menos 20 s · 550–800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Contaminação salivar após o condicionamento: lavar com jato forte de água, secar e aplicar o adesivo, sem repetir o condicionamento.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total (Etch-and-rinse)",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Limpeza",
+          "descricao": "Isolar (dique de borracha). Limpar esmalte e dentina não preparados com taça de borracha e pedra-pomes ou pasta profilática sem flúor. Lavar com spray de água e secar com papel ou pouco ar, sem desidratar a dentina.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar ácido fosfórico (p. ex., Conditioner 36) nas superfícies da cavidade, começando pelas margens de esmalte.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte pelo menos 15 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina 15 s ou menos"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o gel com aspirador e/ou jato forte de água, enxaguando bem.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "pelo menos 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Secagem",
+          "descricao": "Remover completamente a água secando gentilmente com seringa de ar ou papel. Não desidratar a dentina. Aplicar o adesivo imediatamente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Dispensar 1-2 gotas (CliXdish fechado: usar em até 30 min; recipiente padrão: usar imediatamente). Com aplicador novo, molhar completamente as superfícies, remolhando se necessário e evitando acúmulos. Agitar ligeiramente o adesivo.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "agitar ligeiramente 20 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "1 aplicação"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do solvente",
+          "descricao": "Espalhar o adesivo e remover o solvente com jato de ar limpo e seco, tratando cada superfície até formar camada brilhante e uniforme. Evitar pontos secos e jato muito forte.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "fluxo moderado, pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o adesivo imediatamente.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · irradiância mínima 800 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "pelo menos 20 s · 550–800 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Contaminação salivar após o condicionamento: lavar com jato forte de água, secar e aplicar o adesivo, sem repetir o condicionamento.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "composicao.mdp",
+      "descricao": "A IFU vigente lista PENTA como monômero ácido e não cita MDP; o Scientific Compendium do fabricante afirma a combinação de MDP com PENTA.",
+      "versoes": [
+        {
+          "valor": "Não citado na composição da IFU",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "valor": "Contém MDP",
+          "fontes": [
+            "compendio"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Imagens pendentes."
+  },
+  "id": "prime-bond-universal",
+  "nomeComercial": "Prime&Bond universal",
+  "fabricante": {
+    "id": "dentsply-sirona",
+    "nome": "Dentsply Sirona"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"adesivo combinado Etch&Rinse (Total-Etch), Self-Etch e Selective-Etch\". O SSCP do fabricante lista Prime&Bond active e Prime&Bond universal como nomes comerciais do mesmo dispositivo (mesmo Basic UDI-DI), com indicações não idênticas."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal de frasco único; condicionamento com ácido fosfórico opcional (seletivo em esmalte ou total).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Acrilato multifuncional",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Isopropanol",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Acrilato acídico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Resina acrílica modificada com ácido fosfórico (PENTA)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Acrilato bifuncional",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Canforquinona (fotoiniciador)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Iniciador",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "4-(dimetilamino)benzonitrilo (fotoacelerador)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Estabilizador",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "Divergente: a IFU não lista MDP; o Scientific Compendium do fabricante declara MDP (ver divergências)."
+    },
+    "hema": {
+      "valor": "nao",
+      "fontes": [
+        "compendio"
+      ],
+      "observacao": "Compêndio: \"free of HEMA, UDMA, TEGDMA and Bisphenol-based chemistry\"; a IFU também não lista HEMA."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não lista silano; para cerâmica vítrea indica silanização em etapa separada."
+    },
+    "solventes": {
+      "valor": [
+        "isopropanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Polimerização dual/autopolimerização somente com o Self Cure Activator (vendido à parte)."
+    },
+    "outros": [
+      {
+        "rotulo": "pH",
+        "valor": "> 2,5 (mild-etch)",
+        "fontes": [
+          "compendio"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-4ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 4 mL com tampa articulada (flip-top)",
+      "quantidade": 1,
+      "volumeMl": 4,
+      "ean": "7893628086920",
+      "fontes": [
+        "loja-speed",
+        "ifu"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-4ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Prime&Bond universal — Instruções de uso (multilíngue; seção Português (Brasil))",
+      "url": "https://www.dentsplysirona.com/content/dam/master/product-procedure-brand-categories/restorative/product-categories/direct-restoration/adhesives/universal-adhesives/ifu/RES-IFU-PrimeBond-universal-multilingual-WEB-2023-02-27-F.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "© Dentsply Sirona 2023-02-27 · ANVISA nº 80196889049",
+      "observacao": "Obtida na Central de Downloads oficial. A IFU descreve \"Frasco de três camadas com tampa articulada\", sem volume. Cópia mais antiga (2019-04-16, Rev01) circula em loja e difere na composição e no texto de fotopolimerização."
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Prime&Bond universal — Dentsply Sirona Brasil",
+      "url": "https://www.dentsplysirona.com/pt-br/explore/restauracoes/brands/prime-bond-universal.html",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "compendio",
+      "tipo": "ficha-tecnica",
+      "titulo": "Prime&Bond universal — Scientific Compendium (Dentsply Sirona)",
+      "url": "https://www.dentsplysirona.com/content/dam/master/product-procedure-brand-categories/restorative/product-categories/direct-restoration/adhesives/universal-adhesives/prime-bond-universal/scientific-support-clinical-education/RES-scientific-information-Prime-and-Bond-universal-Scientific-Compendium.pdf",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "sscp",
+      "tipo": "outro",
+      "titulo": "SSCP Prime&Bond active / Prime&Bond universal (2026-04-28)",
+      "url": "https://www.dentsplysirona.com/content/dam/master/product-procedure-brand-categories/restorative/product-categories/direct-restoration/adhesives/universal-adhesives/sscp/RES-SSCP-Prime-Bond-Active-Universal-Multilingual-2026-04-28.pdf",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "loja-speed",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Adesivo Prime & Bond Universal ST 4ml - Dentsply Sirona",
+      "url": "https://www.dentalspeed.com/adesivo-prime-universal-st-dentsply-sirona.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Volume de 4 mL e EAN só encontrados em loja. \"ST\" não aparece na IFU (provável nome de loja)."
+    }
+  ]
+}

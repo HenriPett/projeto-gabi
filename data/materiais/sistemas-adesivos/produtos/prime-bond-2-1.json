@@ -1,0 +1,336 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Prime&Bond 2.1",
+    "Prime Bond 2.1",
+    "Prime & Bond"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Agente de união para restaurações diretas com compósitos e compômeros, cimentação de restaurações indiretas e reparos adesivos.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Verniz adesivo sob restaurações de amálgama.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Verniz protetor para hipersensibilidade cervical.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Pacientes com histórico de reação alérgica severa a resinas de metacrilato; aplicação direta sobre a polpa (capeamento pulpar direto). Não usar com materiais que contenham eugenol.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas-compositos",
+      "titulo": "Restaurações diretas com compósitos",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar o condicionador começando pelo esmalte e em seguida na dentina.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte pelo menos 15 s"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina no máximo 15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar as áreas condicionadas.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "no mínimo 15 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Remover o excesso de umidade com bolinha de algodão úmida, sem esfregar; a dentina deve ficar úmida e brilhante, sem empoçamento.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Dispensar na ponta aplicadora (ou 2 a 3 gotas em pote dappen e fechar o frasco). Aplicar quantidade generosa, molhando todas as superfícies; podem ser necessárias aplicações adicionais.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "superfícies molhadas por 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Remoção do excesso",
+          "descricao": "Remover os excessos com breve jato de ar. A superfície deve ter brilho uniforme; se não, repetir a aplicação.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "5 s no máximo"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o Prime & Bond 2.1. A bula não informa intensidade de luz.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "Segunda camada",
+          "descricao": "Aplicar uma segunda camada sobre toda a cavidade e remover imediatamente os excessos com jato de ar. Aplicar o compósito sobre a camada não polimerizada.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "2ª camada, não polimerizada"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Restaurações extensas, com múltiplas faces e sujeitas a grande esforço mastigatório: polimerizar a segunda camada antes do restaurador.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "Se houver contaminação por saliva, repetir todo o condicionamento ácido.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "protocolos.restauracoes-diretas-compositos.etapas.4",
+      "descricao": "Na mesma bula, o texto em português manda remover o excesso com jato de ar de no máximo 5 s; o texto em espanhol diz pelo menos 5 s.",
+      "versoes": [
+        {
+          "valor": "5 segundos no máximo (pt)",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "valor": "al menos 5 segundos (es)",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 2. Bula disponível apenas como cópia hospedada em loja. Imagens pendentes."
+  },
+  "id": "prime-bond-2-1",
+  "nomeComercial": "Prime & Bond 2.1",
+  "fabricante": {
+    "id": "dentsply-sirona",
+    "nome": "Dentsply Sirona"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: agente de união de frasco único; \"Quando usado com o agente de união para resinas compósitas é recomendado a utilização de condicionamento ácido total\". A bula admite, alternativamente, condicionamento só do esmalte marginal (mín. 15 s)."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de agente de união de frasco único.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Resina UDMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "PENTA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Resina R5-62-1",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Canforoquinona",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "EDAB (etil dimetil aminobenzoato)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "BHT (butil hidroxitolueno)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bisfenol A dimetacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fluoridrato de cetilamina",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Acetona PA",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita MDP."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita HEMA."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita silano na composição (apesar do subtítulo \"Agente de Adesão/Silanização\")."
+    },
+    "solventes": {
+      "valor": [
+        "acetona"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-4ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 4 mL",
+      "quantidade": 1,
+      "volumeMl": 4,
+      "codigoFabricante": "06131580000",
+      "ean": "7893628020191",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-4ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Bula Prime & Bond 2.1 — Dentsply Indústria e Comércio (pt/es)",
+      "url": "https://cdn.dentalcremer.com.br/conteudos/Bula%20do%20Prime%26Bond%202.1%20da%20Dentsply%20Sirona.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "1100-PIR-DFU 0081 - 06.21.435-0000 - Rev. 01 · ANVISA 10186370053",
+      "observacao": "Bula do fabricante hospedada pela Dental Cremer; o produto não consta na Central de Downloads oficial da Dentsply Sirona (06/10/2026). Metadados do PDF dizem \"Rev00\"; o rodapé impresso diz Rev. 01. A seção em espanhol difere do português no jato de ar (\"al menos 5 segundos\")."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Prime & Bond 2.1 - Dentsply Sirona",
+      "url": "https://www.dentalcremer.com.br/adesivo-prime-bond-2-1-dentsply-277470.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN."
+    }
+  ]
+}

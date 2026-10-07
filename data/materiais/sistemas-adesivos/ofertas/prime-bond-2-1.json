@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "prime-bond-2-1",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-prime-bond-2-1-dentsply-277470.html",
+      "tituloNaLoja": "Adesivo Prime & Bond 2.1 - Dentsply Sirona",
+      "skuLoja": "277470",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 4599,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 4461,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/prime-bond-21-dentsply.html",
+      "tituloNaLoja": "Adesivo Prime & Bond 2.1 - Dentsply Sirona",
+      "skuLoja": "DEN3439A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 5599,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 5431,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-prime-bond-dentsply",
+      "tituloNaLoja": "Adesivo Prime & Bond - Dentsply",
+      "skuLoja": "25.2948",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 4599,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 4461,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Título da loja é só \"Prime & Bond\"; a descrição da página diz Prime & Bond 2.1, embalagem com 4ml."
+    }
+  ]
+}
