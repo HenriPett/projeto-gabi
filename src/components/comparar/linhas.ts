@@ -1,5 +1,5 @@
 import { SUBCATEGORIA, type PassoVisual, type SubcategoriaId } from "@/lib/esquema/taxonomia";
-import { ESTRATEGIA_CURTA, GRUPO_SINGULAR } from "../rotulos";
+import { ESTRATEGIA_CURTA, GRUPO_SINGULAR, notacaoTexto, numeroDePassos } from "../rotulos";
 import type { ColunaComparador, DivergenciaDTO, ValorSimNao } from "../tipos";
 
 /**
@@ -9,6 +9,8 @@ import type { ColunaComparador, DivergenciaDTO, ValorSimNao } from "../tipos";
 
 export type Celula =
   | { tipo: "texto"; texto: string }
+  /** [R2] "2 · Ác + (P·Ad)"; universais: um item por estratégia indicada. */
+  | { tipo: "passos"; itens: { estrategia?: string; n: number; subcategoria: SubcategoriaId }[] }
   | { tipo: "simnao"; valor: ValorSimNao }
   | { tipo: "preco"; centavos?: number; produtoId: string };
 
@@ -25,10 +27,6 @@ export interface Linha {
 
 const t = (texto: string): Celula => ({ tipo: "texto", texto });
 
-const passos = (id: SubcategoriaId) => {
-  const n = SUBCATEGORIA[id].sequencia.length;
-  return `${n} ${n === 1 ? "passo" : "passos"}`;
-};
 
 /** Para universais, junta por estratégia: "Total: 2 passos · Autocond.: 1 passo". */
 function porEstrategia(subs: SubcategoriaId[], f: (id: SubcategoriaId) => string): string {
@@ -39,7 +37,7 @@ function porEstrategia(subs: SubcategoriaId[], f: (id: SubcategoriaId) => string
 }
 
 const CONDICIONAMENTO = (id: SubcategoriaId) =>
-  ({ sim: "Ácido em frasco separado", nao: "Sem ácido separado", opcional: "Opcional" })[SUBCATEGORIA[id].condicionamentoAcidoSeparado];
+  ({ sim: "Ácido aplicado separadamente", nao: "Sem ácido separado", opcional: "Opcional" })[SUBCATEGORIA[id].condicionamentoAcidoSeparado];
 
 function primerDe(seq: PassoVisual[]): string {
   if (seq.includes("primer")) return "Frasco separado";
@@ -80,7 +78,20 @@ export function montarLinhas(colunas: ColunaComparador[]): Linha[] {
       ),
       divergencias: semDiv,
     },
-    { atributo: "passos", rotulo: "Número de passos", grupo: "Classificação", celulas: colunas.map((c) => t(porEstrategia(subs(c), passos))), divergencias: semDiv },
+    {
+      atributo: "passos",
+      rotulo: "Número de passos",
+      grupo: "Classificação",
+      celulas: colunas.map((c) => ({
+        tipo: "passos",
+        itens: subs(c).map((id) => ({
+          estrategia: subs(c).length > 1 ? ESTRATEGIA_CURTA[id] : undefined,
+          n: numeroDePassos(id),
+          subcategoria: id,
+        })),
+      })),
+      divergencias: semDiv,
+    },
     { atributo: "condicionamento", rotulo: "Condicionamento", grupo: "Etapas", celulas: colunas.map((c) => t(porEstrategia(subs(c), CONDICIONAMENTO))), divergencias: semDiv },
     { atributo: "primer", rotulo: "Primer", grupo: "Etapas", celulas: colunas.map((c) => t(porEstrategia(subs(c), (id) => primerDe(seq(id))))), divergencias: semDiv },
     { atributo: "adesivo", rotulo: "Adesivo", grupo: "Etapas", celulas: colunas.map((c) => t(porEstrategia(subs(c), (id) => adesivoDe(seq(id))))), divergencias: semDiv },
@@ -113,7 +124,14 @@ export function montarLinhas(colunas: ColunaComparador[]): Linha[] {
   ];
 }
 
-const chave = (c: Celula) => (c.tipo === "texto" ? c.texto : c.tipo === "simnao" ? c.valor : String(c.centavos));
+const chave = (c: Celula) =>
+  c.tipo === "texto"
+    ? c.texto
+    : c.tipo === "simnao"
+      ? c.valor
+      : c.tipo === "passos"
+        ? c.itens.map((i) => `${i.estrategia}:${notacaoTexto(i.subcategoria)}`).join("|")
+        : String(c.centavos);
 
 /** true quando todas as colunas têm o mesmo valor (para "Destacar diferenças"). */
 export function linhaIgual(l: Linha): boolean {

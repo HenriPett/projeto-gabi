@@ -5,6 +5,7 @@ import { GRUPO, SUBCATEGORIA, type GrupoId } from "@/lib/esquema/taxonomia";
 import { formatarBRL, formatarData } from "@/lib/formato";
 import { maioresEconomias } from "@/lib/precos";
 import { Frasco, IconeLivro, IconeMoeda } from "@/components/Icones";
+import { LegendaNotacao, Notacao } from "@/components/Notacao";
 import { MiniDiagram } from "@/components/StepDiagram";
 import { urlSubcategoria } from "@/components/rotulos";
 
@@ -79,6 +80,7 @@ export default function Home() {
                       data-subcategoria={id}
                     >
                       <span className="subcard__label">{SUBCATEGORIA[id].rotulo}</span>
+                      <Notacao subcategoria={id} />
                       <MiniDiagram subcategoria={id} />
                       <span className="caption">{plural(n)}</span>
                       <span className="subcard__arrow" aria-hidden="true">
@@ -92,6 +94,7 @@ export default function Home() {
           );
         })}
       </section>
+      <LegendaNotacao />
 
       {/* TODO: "Em destaque" (DESIGN §4.1 item 4) entra quando destaques.json tiver contrato no carregador. */}
 

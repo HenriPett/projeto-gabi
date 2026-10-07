@@ -32,9 +32,15 @@ describe("linhas do comparador (DESIGN §4.6, PLANO CS-01/02)", () => {
   it("número de passos e etapas derivados da taxonomia; universal por estratégia", () => {
     const [classe, , passos, cond, primer] = montarLinhas([coluna("ficticio-ambar"), coluna("exemplo-universal")]);
     expect(classe.celulas[0]).toEqual({ tipo: "texto", texto: "Convencional" });
-    expect(passos.celulas[0]).toEqual({ tipo: "texto", texto: "2 passos" });
-    expect(passos.celulas[1]).toEqual({ tipo: "texto", texto: "Total: 2 passos · Autocond.: 1 passo" });
-    expect(cond.celulas[1]).toEqual({ tipo: "texto", texto: "Total: Ácido em frasco separado · Autocond.: Sem ácido separado" });
+    expect(passos.celulas[0]).toEqual({ tipo: "passos", itens: [{ estrategia: undefined, n: 2, subcategoria: "convencional-2-passos" }] });
+    expect(passos.celulas[1]).toEqual({
+      tipo: "passos",
+      itens: [
+        { estrategia: "Total", n: 2, subcategoria: "universal-condicionamento-total" },
+        { estrategia: "Autocond.", n: 1, subcategoria: "universal-autocondicionante" },
+      ],
+    });
+    expect(cond.celulas[1]).toEqual({ tipo: "texto", texto: "Total: Ácido aplicado separadamente · Autocond.: Sem ácido separado" });
     expect(primer.celulas[0]).toEqual({ tipo: "texto", texto: "Junto com o adesivo" });
   });
 
@@ -72,6 +78,9 @@ describe("<Comparador>", () => {
     expect(within(tabela.querySelector("thead")!).getAllByRole("columnheader").length).toBe(3);
     expect(within(tabela).getByRole("rowheader", { name: "MDP" })).toBeTruthy();
     expect(screen.getByText(/não existe mais e foi ignorado/)).toBeTruthy();
+    // [R2] número + notação compacta
+    const passos = screen.getAllByTestId("compare-row").find((r) => r.dataset.atributo === "passos")!;
+    expect(passos).toHaveTextContent("2 passos · Ác + (P·Ad)");
     await userEvent.click(screen.getByRole("button", { name: "Remover Âmbar Fictício" }));
     expect(replace).toHaveBeenCalledWith("/comparar?ids=ficticio-tudo-em-um", { scroll: false });
   });

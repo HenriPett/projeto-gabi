@@ -1,12 +1,29 @@
 import type { CSSProperties } from "react";
 import { SUBCATEGORIA, type SubcategoriaId } from "@/lib/esquema/taxonomia";
-import { IconeSetaBaixo } from "./Icones";
-import { ESTRATEGIA_CURTA, ESTRATEGIAS_UNIVERSAIS, etapasVisuais, leituraDiagrama } from "./rotulos";
+import { IconeFechar, IconeSetaBaixo } from "./Icones";
+import { LegendaNotacao, Notacao } from "./Notacao";
+import { ESTRATEGIA_CURTA, ESTRATEGIAS_UNIVERSAIS, etapasVisuais, leituraDiagrama, semAcidoSeparado, substratoAcido } from "./rotulos";
+import { SubstrateGlyph } from "./SubstrateGlyph";
 
-function Etapas({ id, contador }: { id: SubcategoriaId; contador: boolean }) {
+/** [R2] Bloco fantasma riscado: não conta como passo. */
+function EtapaAusente() {
+  return (
+    <>
+      <li className="step-ghost">
+        <IconeFechar />
+        <s>Ácido fosfórico separado</s>
+        <em>não usa</em>
+      </li>
+      <li className="ghost-link" />
+    </>
+  );
+}
+
+function Etapas({ id, contador, substratoNoAcido }: { id: SubcategoriaId; contador: boolean; substratoNoAcido: boolean }) {
   const etapas = etapasVisuais(id);
   return (
     <ol className="diagram__steps" aria-hidden="true">
+      {semAcidoSeparado(id) && <EtapaAusente />}
       {etapas.flatMap((e, i) => [
         i > 0 && (
           <li key={`seta-${i}`} className="arrow">
@@ -19,7 +36,14 @@ function Etapas({ id, contador }: { id: SubcategoriaId; contador: boolean }) {
             {e.rotulo}
             {e.sub && <span className="step__sub">{e.sub}</span>}
           </span>
-          {contador && <span className="step__count">frasco {i + 1}</span>}
+          {e.tipo === "acid" && substratoNoAcido ? (
+            <span className="step__count step__substrato">
+              <SubstrateGlyph substrato={substratoAcido(id)} />
+              {contador && <span>passo {i + 1}</span>}
+            </span>
+          ) : (
+            contador && <span className="step__count">passo {i + 1}</span>
+          )}
         </li>,
       ])}
     </ol>
@@ -27,8 +51,8 @@ function Etapas({ id, contador }: { id: SubcategoriaId; contador: boolean }) {
 }
 
 /**
- * Diagrama "Como identificar?" — DESIGN §3.7. Vertical; blocos aria-hidden e
- * leitura completa no figcaption.
+ * Diagrama "Como identificar?" — DESIGN §3.7 (R2). Vertical; blocos aria-hidden
+ * e leitura completa no figcaption. Passo = aplicação clínica, não frasco.
  */
 export function StepDiagram({ subcategoria, compacto = false }: { subcategoria: SubcategoriaId; compacto?: boolean }) {
   const s = SUBCATEGORIA[subcategoria];
@@ -42,15 +66,18 @@ export function StepDiagram({ subcategoria, compacto = false }: { subcategoria: 
       <figcaption>
         <span className="sobretitulo">Como identificar?</span>
         <span className="sr-only"> {leituraDiagrama(subcategoria)}</span>
+        <Notacao subcategoria={subcategoria} className="notacao--diagrama" />
       </figcaption>
-      <Etapas id={subcategoria} contador />
+      <Etapas id={subcategoria} contador substratoNoAcido={s.grupo === "convencional"} />
+      <LegendaNotacao />
     </figure>
   );
 }
 
 /**
  * Universais: os três caminhos lado a lado (≥640) ou empilhados com "OU",
- * com o atual destacado. `indicadas` marca as não indicadas para o produto.
+ * com o atual destacado e o substrato de cada um. `indicadas` marca as não
+ * indicadas para o produto.
  */
 export function UniversalPaths({
   atual,
@@ -87,14 +114,17 @@ export function UniversalPaths({
           ),
           <div key={id} className={`path${id === atual ? " is-current" : ""}`}>
             <div className="path__title">
-              {ESTRATEGIA_CURTA[id]}
+              <span>
+                {ESTRATEGIA_CURTA[id]} <Notacao subcategoria={id} />
+              </span>
               {indicadas && !indicadas.includes(id) && <small>não indicado</small>}
             </div>
-            <Etapas id={id} contador={false} />
-            {id === "universal-autocondicionante" && <p className="caption mt-1.5">sem ácido separado</p>}
+            <SubstrateGlyph substrato={substratoAcido(id)} />
+            <Etapas id={id} contador={false} substratoNoAcido={false} />
           </div>,
         ])}
       </div>
+      <LegendaNotacao />
     </figure>
   );
 }

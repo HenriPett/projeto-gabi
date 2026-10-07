@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { buscar } from "@/lib/busca";
 import { formatarBRL } from "@/lib/formato";
 import { ClassBadge } from "../ClassBadge";
+import { LegendaNotacao, Notacao } from "../Notacao";
 import { EstadoVazio } from "../EstadoVazio";
 import { Frasco, IconeAlerta, IconeFechar } from "../Icones";
 import type { ColunaComparador, ItemIndice, ValorSimNao } from "../tipos";
@@ -31,6 +32,20 @@ function SimNao({ valor }: { valor: ValorSimNao }) {
 
 function ValorCelula({ c }: { c: Celula }) {
   if (c.tipo === "simnao") return <SimNao valor={c.valor} />;
+  if (c.tipo === "passos")
+    return (
+      <ul className="list-none p-0 m-0">
+        {c.itens.map((i) => (
+          <li key={i.subcategoria}>
+            {i.estrategia && <span className="muted">{i.estrategia}: </span>}
+            <span className="num">{i.n}</span>
+            <span className="sr-only"> {i.n === 1 ? "passo" : "passos"}</span>
+            <span aria-hidden="true"> · </span>
+            <Notacao subcategoria={i.subcategoria} />
+          </li>
+        ))}
+      </ul>
+    );
   if (c.tipo === "preco")
     return c.centavos !== undefined ? (
       <>
@@ -247,6 +262,7 @@ export function Comparador({ colunas, indice }: { colunas: ColunaComparador[]; i
           ))}
         </table>
       </div>
+      <LegendaNotacao className="text-left" />
       {adicionar}
     </>
   );

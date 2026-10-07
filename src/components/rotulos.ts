@@ -47,7 +47,7 @@ export interface EtapaVisual {
 }
 
 const ETAPA: Record<PassoVisual, EtapaVisual> = {
-  acido: { tipo: "acid", glifo: "H⁺", rotulo: "Ácido", leitura: "ácido, em frasco separado" },
+  acido: { tipo: "acid", glifo: "H⁺", rotulo: "Ácido", leitura: "ácido fosfórico, aplicado separadamente" },
   primer: { tipo: "primer", glifo: "P", rotulo: "Primer", leitura: "primer" },
   adesivo: { tipo: "adh", glifo: "A", rotulo: "Adesivo", leitura: "adesivo" },
   "primer+adesivo": {
@@ -68,8 +68,8 @@ const ETAPA: Record<PassoVisual, EtapaVisual> = {
     tipo: "apa",
     glifo: "H⁺PA",
     rotulo: "Ácido + Primer + Adesivo",
-    sub: "um único frasco",
-    leitura: "ácido, primer e adesivo em um único frasco",
+    sub: "uma única aplicação",
+    leitura: "ácido, primer e adesivo em uma única aplicação",
   },
 };
 
@@ -83,7 +83,7 @@ export function etapasVisuais(id: SubcategoriaId): EtapaVisual[] {
   return SUBCATEGORIA[id].sequencia.map((p) => {
     const e = ETAPA[p];
     const nota = p === "acido" ? NOTA_ACIDO[id] : undefined;
-    return nota ? { ...e, sub: nota, leitura: `ácido (${nota})` } : e;
+    return nota ? { ...e, sub: nota, leitura: `ácido fosfórico (${nota})` } : e;
   });
 }
 
@@ -91,6 +91,56 @@ export function etapasVisuais(id: SubcategoriaId): EtapaVisual[] {
 export function leituraDiagrama(id: SubcategoriaId): string {
   const etapas = etapasVisuais(id);
   const passos = etapas.map((e, i) => `${i + 1}. ${e.leitura}`).join("; ");
-  const extra = id === "universal-autocondicionante" ? " (sem ácido separado)" : "";
+  const extra = semAcidoSeparado(id) ? " (sem condicionamento ácido separado)" : "";
   return `${rotuloClassificacao(id)}: ${passos}${extra}.`;
+}
+
+/** [R2] Autocondicionantes e universal autocond.: abrem com o bloco fantasma riscado. */
+export function semAcidoSeparado(id: SubcategoriaId): boolean {
+  return SUBCATEGORIA[id].condicionamentoAcidoSeparado === "nao";
+}
+
+/**
+ * [R2] Substrato condicionado pelo ácido (DESIGN §3.7, <SubstrateGlyph>).
+ * TODO(Molar): trocar pelo campo `substratoAcido` da taxonomia quando existir.
+ */
+export type SubstratoAcido = "esmalte" | "esmalte-e-dentina" | null;
+
+export function substratoAcido(id: SubcategoriaId): SubstratoAcido {
+  if (semAcidoSeparado(id)) return null;
+  return id === "universal-condicionamento-seletivo" ? "esmalte" : "esmalte-e-dentina";
+}
+
+/** [R2] Notação compacta: `+` separa passos; `( )` agrupa o que é aplicado junto. */
+export interface TokenNotacao {
+  t: string;
+  sub?: string;
+}
+
+const N = (t: string, sub?: string): TokenNotacao => ({ t, sub });
+
+export const NOTACAO: Record<SubcategoriaId, TokenNotacao[]> = {
+  "convencional-3-passos": [N("Ác + P + Ad")],
+  "convencional-2-passos": [N("Ác + (P·Ad)")],
+  "autocondicionante-2-passos": [N("P", "ac"), N(" + Ad")],
+  "autocondicionante-1-passo": [N("(Ác·P·Ad)")],
+  "universal-condicionamento-seletivo": [N("Ác", "esm"), N(" + U")],
+  "universal-condicionamento-total": [N("Ác + U")],
+  "universal-autocondicionante": [N("U")],
+};
+
+export const notacaoTexto = (id: SubcategoriaId) => NOTACAO[id].map((x) => x.t + (x.sub ? `_${x.sub}` : "")).join("");
+
+export const LEGENDA_NOTACAO = [
+  "Ác = ácido fosfórico",
+  "P = primer",
+  "Ad = adesivo",
+  "U = adesivo universal",
+  "esm = só esmalte",
+  "ac = autocondicionante",
+  "( ) = aplicados juntos",
+];
+
+export function numeroDePassos(id: SubcategoriaId): number {
+  return SUBCATEGORIA[id].sequencia.length;
 }
