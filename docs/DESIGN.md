@@ -214,10 +214,10 @@ Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo)
   | Convencional 2 passos | `Ác + (P·Ad)` |
   | Autocondicionante 2 passos | `P_ac + Ad` (P_ac = primer autocondicionante; renderizar "P" com subscrito "ac") |
   | Autocondicionante 1 passo | `(Ác·P·Ad)` |
-  | Universal seletivo | `Ác_esmalte + U` |
+  | Universal seletivo | `Ác_esm + U` (subscrito "esm") |
   | Universal total | `Ác + U` |
   | Universal autocondicionante | `U` |
-  Legenda fixa uma vez por página (caption muted): "Ác = ácido fosfórico · P = primer · Ad = adesivo · U = adesivo universal · ( ) = aplicados juntos".
+  Legenda fixa uma vez por página (caption muted): "Ác = ácido fosfórico · P = primer · Ad = adesivo · U = adesivo universal · esm = só esmalte · ( ) = aplicados juntos".
 - **[R2] Etapa ausente riscada** (ensino por contraste, como a seringa riscada em Perdigão p. 5): nos autocondicionantes e no universal autocondicionante, o diagrama abre com um bloco fantasma **"Ácido fosfórico separado"**: altura 40px, borda 1.5px tracejada `--gray-500`, fundo transparente, texto `--gray-600` 14px com `text-decoration: line-through`, ícone ✕ 16px `--red-700` à esquerda, rótulo à direita "não usa". Ele não conta como passo (sem contador) e o figcaption diz "sem condicionamento ácido separado". Sem seta saindo dele: um traço tracejado de 16px liga ao primeiro passo real.
 - **[R2] Etapa opcional** (só se o conteúdo, com fonte, confirmar para aquela subcategoria): bloco tracejado `--lilac-400` com rótulo "Condicionamento seletivo do esmalte" e selo "opcional". Aparece no lugar do bloco fantasma, nunca junto com ele. Não entra na notação compacta.
 - Universais: três colunas (≥640) ou três linhas empilhadas com divisor "OU" em pílula (mobile) — ver §4.4.
