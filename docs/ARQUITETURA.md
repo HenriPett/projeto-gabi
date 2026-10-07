@@ -106,7 +106,7 @@ data/materiais/<material>/guia/<slug>.json
 ```
 Leitura: `catalogo().guia[material]` — artigos visíveis, ordenados por `ordem`; relacionados ocultos (rascunho) são removidos para não virar link 404. O slug `glossario` é reservado. **Trilha de leitura (DESIGN §4.9) = ordem crescente de `ordem`**; não há arquivo de trilha separado.
 
-Glossário (`Glossario`, `data/materiais/<material>/glossario.json`): `{ fontes[Fonte], termos[{ id, termo, sigla?, nomeCompleto?, sinonimos[], definicao, fontes[ids], artigos[slugs do guia], relacionados[ids de termos] }], revisao }`. Leitura: `catalogo().glossario[material]` (oculto em produção se rascunho; links para artigos ocultos removidos). Ordem alfabética é da UI. Rota: `/guia/glossario`.
+Glossário (`Glossario`, `data/materiais/<material>/glossario.json`): `{ fontes[Fonte], termos[{ id, termo, sigla?, nomeCompleto?, sinonimos[], definicao, fontes[ids], artigos[slugs do guia], relacionados[ids de termos] }], revisao }`. Leitura: `catalogo().glossario[material]` (oculto em produção se rascunho; links para artigos ocultos removidos). Ordem alfabética é da UI. **Sem rota própria:** o glossário é renderizado em `/guia`, abaixo dos cartões (DESIGN §4.9), com âncora `#termo-{id}`; links de artigos e da busca apontam para `/guia#termo-{id}`.
 
 ### 3.4 Ofertas (`OfertasDoProduto`)
 ```
@@ -136,7 +136,7 @@ ofertas[{
 | `/produto/{id}` (+ `#precos`, `?estrategia={slug}`) | `app/produto/[id]/page.tsx` | Produto, modo de uso, preços (§4.3, §4.7) |
 | `/comparar?ids=a,b,c` | `app/comparar/page.tsx` | Comparador (§4.6) — ler `ids` no cliente para manter rota estática |
 | `/busca?q=` | `app/busca/page.tsx` | Resultados (§4.8) — idem, no cliente |
-| `/guia`, `/guia/{slug}`, `/guia/glossario` | `app/guia/…` | Guia rápido e glossário (§3.3) |
+| `/guia` (+ glossário, `#termo-{id}`), `/guia/{slug}` | `app/guia/…` | Guia rápido e glossário (§3.3) |
 | `/metodologia` | `app/metodologia/page.tsx` | Fontes e metodologia (rodapé) |
 
 Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `2-passos | 3-passos | 1-passo | condicionamento-seletivo | condicionamento-total | autocondicionante`. O prefixo `/sistemas-adesivos/` é intencional (próximos materiais ganham o próprio prefixo); diverge do `/[grupo]/[sub]` e `/produto/[slug]` sugeridos no DESIGN/Plano de testes — **vale esta tabela**.
