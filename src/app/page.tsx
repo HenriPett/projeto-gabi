@@ -4,6 +4,7 @@ import { GRUPO, SUBCATEGORIA, type GrupoId } from "@/lib/esquema/taxonomia";
 import { formatarBRL, formatarData } from "@/lib/formato";
 import { maioresEconomias } from "@/lib/precos";
 import { Carrossel } from "@/components/Carrossel";
+import { CartoesGuia } from "@/components/guia/CartoesGuia";
 import { cardDe } from "@/components/dados-de-tela";
 import { IconeEstrela, IconeLivro, IconeMoeda } from "@/components/Icones";
 import { Miniatura } from "@/components/MidiaProduto";
@@ -12,20 +13,12 @@ import { LegendaNotacao, Notacao } from "@/components/Notacao";
 import { MiniDiagram } from "@/components/StepDiagram";
 import { urlSubcategoria } from "@/components/rotulos";
 
-const GUIA = [
-  "Como escolher a estratégia adesiva?",
-  "Convencional x autocondicionante",
-  "O que é adesivo universal?",
-  "O que é MDP?",
-  "Esmalte x dentina",
-  "Condicionamento seletivo",
-  "Camada híbrida",
-];
 
 const plural = (n: number) => `${n} ${n === 1 ? "produto" : "produtos"}`;
 
 export default function Home() {
-  const { produtos, ofertas, categorias, destaques: curadoria } = catalogo();
+  const { produtos, ofertas, categorias, destaques: curadoria, guia: artigosGuia } = catalogo();
+  const guia = artigosGuia["sistemas-adesivos"] ?? [];
   // Curadoria manual: o rótulo é "Em destaque", nunca "mais consultados" (DESIGN §4.1 item 4).
   const destaques = (curadoria["sistemas-adesivos"] ?? []).flatMap((id) => {
     const p = produtos.find((x) => x.id === id);
@@ -178,19 +171,7 @@ export default function Home() {
             Guia rápido
           </h2>
         </div>
-        <ul className="guide">
-          {GUIA.map((t) => (
-            <li key={t}>
-              <div className="gcard gcard--pendente">
-                <IconeLivro />
-                <div>
-                  <h3>{t}</h3>
-                  <p className="caption">Em preparação</p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <CartoesGuia artigos={guia} />
       </section>
     </div>
   );
