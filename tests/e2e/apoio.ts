@@ -47,25 +47,57 @@ export async function irPara(page: import("@playwright/test").Page, url: string)
 }
 
 /** G-08: erro de console ou exceção não tratada = falha em qualquer teste E2E. */
-export const test = base.extend<{ errosDeConsole: string[] }>({
+export const test = base.extend<{
+  errosDeConsole: string[];
+  /**
+   * Erro esperado pelo próprio teste (fonte abortada, 404 proposital, offline).
+   * Registrar ANTES de provocar o erro: o listener descarta na chegada — eventos de
+   * console são assíncronos e podem chegar depois do fim do corpo do teste.
+   * O padrão é testado contra a URL do recurso e contra o texto da mensagem.
+   */
+  ignorarErrosDe: (padrao: RegExp) => void;
+}>({
   errosDeConsole: [
-    async ({ page }, use) => {
+    async ({ page }, usar) => {
       const erros: string[] = [];
       page.on("console", (m) => {
-        // P-02: a fixture ficticio-multiuso-3p aponta de propósito para uma foto inexistente
-        if (m.type() === "error" && m.location().url.includes("frasco-inexistente")) return;
-        if (m.type() === "error") erros.push(`console: ${m.text()}`);
+        if (m.type() !== "error") return;
+        if (ignorados(page).some((re) => re.test(m.location().url) || re.test(m.text()))) return;
+        erros.push(`console: ${m.text()}`);
       });
       page.on("pageerror", (e) => {
-        // WebKit reporta como pageerror o prefetch RSC abortado por uma navegação rápida (page.goto em sequência)
-        if (/_rsc=.*due to access control checks/.test(e.message)) return;
+        if (ignorados(page).some((re) => re.test(e.message))) return;
         erros.push(`pageerror: ${e.message}`);
       });
-      await use(erros);
+      await usar(erros);
       expect(erros, "erros no console do navegador").toEqual([]);
     },
     { auto: true },
   ],
+  ignorarErrosDe: async ({ page }, usar) => {
+    await usar((padrao) => ignorados(page).push(padrao));
+  },
 });
+
+const PADROES = new WeakMap<import("@playwright/test").Page, RegExp[]>();
+/** Padrões ignorados por página; já começam com os ruídos conhecidos de toda a suíte. */
+function ignorados(page: import("@playwright/test").Page): RegExp[] {
+  let lista = PADROES.get(page);
+  if (!lista) {
+    lista = [
+      // P-02: a fixture ficticio-multiuso-3p aponta de propósito para uma foto inexistente
+      /frasco-inexistente/,
+      // WebKit reporta como pageerror o prefetch RSC abortado por uma navegação rápida
+      /_rsc=.*due to access control checks/,
+    ];
+    PADROES.set(page, lista);
+  }
+  return lista;
+}
+
+/** Fontes abortadas de propósito (MOB-01b). */
+export const FONTES = /\.(woff2?|ttf|otf)(\?.*)?$/;
+/** Recursos que falham porque o teste pôs o navegador offline. */
+export const OFFLINE = /ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/;
 
 export { expect };

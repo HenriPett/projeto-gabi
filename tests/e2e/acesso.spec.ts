@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { expect, test } from "./apoio";
+import { expect, OFFLINE, test } from "./apoio";
 import { ARQ_SESSAO, CHAVE_LOCAL, COOKIE_SESSAO, SEM_SESSAO, SENHA_E2E } from "./sessao";
 
 // PLANO §14 — login por senha (contrato do Molar: src/proxy.ts, POST /api/login, POST /api/logout).
@@ -250,7 +250,8 @@ test.describe("LOG-06: Sair", () => {
 test.describe("LOG-09: service worker não serve página protegida depois de sair", () => {
   test.skip(({ browserName }) => browserName !== "chromium", "SW verificado no Chromium");
 
-  test("logar, cachear produto, sair, ficar offline → sem conteúdo do produto", async ({ page, context, errosDeConsole }) => {
+  test("logar, cachear produto, sair, ficar offline → sem conteúdo do produto", async ({ page, context, ignorarErrosDe }) => {
+    ignorarErrosDe(OFFLINE);
     await page.goto("/login?next=/produto/ficticio-ambar");
     await entrar(page);
     await page.evaluate(() => navigator.serviceWorker.ready);
@@ -273,7 +274,6 @@ test.describe("LOG-09: service worker não serve página protegida depois de sai
     await expect(page.locator("body")).not.toContainText("Âmbar Fictício");
     await expect(page.locator("body")).not.toContainText("89,90");
     await context.setOffline(false);
-    errosDeConsole.splice(0, errosDeConsole.length, ...errosDeConsole.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e)));
   });
 });
 

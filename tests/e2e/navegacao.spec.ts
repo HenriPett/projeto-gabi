@@ -44,7 +44,8 @@ test("U-04: universal sem indicação para seletivo não aparece em seletivo", a
   await expect(page.locator('main a[href^="/produto/exemplo-universal"]')).toHaveCount(0);
 });
 
-test("rascunho nunca aparece com INCLUIR_RASCUNHOS=0 (BUG-005)", async ({ page, errosDeConsole }) => {
+test("rascunho nunca aparece com INCLUIR_RASCUNHOS=0 (BUG-005)", async ({ page, ignorarErrosDe }) => {
+  ignorarErrosDe(/\/produto\/ficticio-rascunho$/); // o 404 do documento é o esperado
   for (const url of ["/", "/sistemas-adesivos/convencionais/2-passos"]) {
     await irPara(page, url);
     await expect(page.locator('a[href="/produto/ficticio-rascunho"]')).toHaveCount(0);
@@ -52,7 +53,6 @@ test("rascunho nunca aparece com INCLUIR_RASCUNHOS=0 (BUG-005)", async ({ page, 
   }
   const r = await page.goto("/produto/ficticio-rascunho");
   expect(r?.status()).toBe(404);
-  errosDeConsole.length = 0; // o 404 do documento gera "Failed to load resource" — esperado aqui
 });
 
 for (const id of PRODUTOS_PUBLICADOS) {
@@ -76,13 +76,13 @@ const INEXISTENTES = [
   "/%E0",
 ];
 for (const url of INEXISTENTES) {
-  test(`C-06/D-05/G-10: ${url} → 404 amigável, nunca 500`, async ({ page, errosDeConsole }) => {
+  test(`C-06/D-05/G-10: ${url} → 404 amigável, nunca 500`, async ({ page, ignorarErrosDe }) => {
+    ignorarErrosDe(new RegExp(`${url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`)); // o 404/500 do documento é o esperado
     // BUG-007: URI malformada em segmento dinâmico responde 500 (PLANO §12)
     test.fail(url === "/produto/%E0", "BUG-007");
     const r = await page.goto(url);
     expect(r?.status()).toBe(404);
     await expect(page.locator('a[href="/"]').first()).toBeVisible();
-    errosDeConsole.length = 0;
   });
 }
 

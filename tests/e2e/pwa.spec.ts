@@ -1,8 +1,4 @@
-import { expect, test } from "./apoio";
-
-/** Offline, recursos que o navegador tenta buscar falham com ERR_INTERNET_DISCONNECTED — ruído esperado. */
-const semRuidoOffline = (erros: string[]) =>
-  erros.splice(0, erros.length, ...erros.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e)));
+import { expect, OFFLINE, test } from "./apoio";
 
 // PLANO §6. O SW só registra em build de produção (playwright.config usa next start).
 
@@ -54,7 +50,8 @@ test.describe("service worker", () => {
     expect(sw.script).toContain("/sw.js");
   });
 
-  test("PWA-05/06: offline abre página já visitada; não visitada cai em /offline", async ({ page, context, errosDeConsole }) => {
+  test("PWA-05/06: offline abre página já visitada; não visitada cai em /offline", async ({ page, context, ignorarErrosDe }) => {
+    ignorarErrosDe(OFFLINE);
     await page.goto("/");
     await page.evaluate(() => navigator.serviceWorker.ready);
     await page.reload(); // garante que a página passou pelo SW controlador
@@ -70,10 +67,10 @@ test.describe("service worker", () => {
     await page.goto("/produto/ficticio-tudo-em-um"); // nunca visitada
     await expect(page.locator("h1")).toContainText(/sem conexão/i);
     await context.setOffline(false);
-    semRuidoOffline(errosDeConsole);
   });
 
-  test("PWA-10: volta online → conteúdo da rede", async ({ page, context, errosDeConsole }) => {
+  test("PWA-10: volta online → conteúdo da rede", async ({ page, context, ignorarErrosDe }) => {
+    ignorarErrosDe(OFFLINE);
     await page.goto("/");
     await page.evaluate(() => navigator.serviceWorker.ready);
     await context.setOffline(true);
@@ -82,6 +79,5 @@ test.describe("service worker", () => {
     await context.setOffline(false);
     await page.goto("/sistemas-adesivos/convencionais/3-passos");
     await expect(page.locator("h1")).toContainText(/3 passos/i);
-    semRuidoOffline(errosDeConsole);
   });
 });
