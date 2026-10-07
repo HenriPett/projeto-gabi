@@ -309,7 +309,8 @@
     .grp__body, .grp--universal .grp__body { grid-template-columns: 1fr; align-content: start; }
   }
   /* Contador do grupo some onde não cabe ao lado do título (a contagem está em cada subcategoria). */
-  @media (max-width: 639px), (min-width: 1024px) and (max-width: 1279px) { .grp__count { display: none; } }
+  /* Com 3 colunas (≥1024) cada uma tem ~365px em QUALQUER largura (container de 1200px): "AUTOCONDICIONANTES" invadia o contador a 1280/1920. */
+  @media (max-width: 639px), (min-width: 1024px) { .grp__count { display: none; } }
 
   /* Cabeçalhos de seção */
   .sechead { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); flex-wrap: wrap; }
@@ -545,7 +546,9 @@
   .tray__thumb svg.bottle { width: 16px; height: 30px; }
   .tray__thumb button { position: absolute; inset: 0; border: 0; background: transparent; display: grid; place-items: start end; padding: 1px 4px; font-weight: 700; color: var(--color-text); font-size: 14px; line-height: 1; }
   .tray__thumb button:hover { background: rgb(255 255 255 / 0.6); }
-  .tray__count { font-size: 14px; color: var(--color-text-muted); margin-right: auto; }
+  /* < 360px: 4 miniaturas de 44px (alvo de toque do ×) + botão não cabem numa linha — botão desce, largura total. */
+  @media (max-width: 359px) { .tray__inner { flex-wrap: wrap; row-gap: var(--space-2); } .tray__inner > .btn { flex: 1 0 100%; } }
+  .tray__count { font-size: 14px; color: var(--color-text-muted); margin-right: auto; white-space: nowrap; }
   body:has(.tray) { padding-bottom: 88px; }
   .toast { position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 70; background: var(--ink-900); color: #fff; padding: 10px 16px; border-radius: var(--radius-md); font-size: var(--text-small); box-shadow: var(--shadow-3); max-width: calc(100vw - 32px); }
 
