@@ -1,6 +1,7 @@
 import "server-only";
 import type { Oferta, Produto } from "@/lib/esquema";
 import { itemDeBusca } from "@/lib/busca";
+import { formatarVolume } from "@/lib/formato";
 import { apresentacaoParaComparar, apresentacoesComOferta, compararPrecos } from "@/lib/precos";
 import type {
   CardProduto,
@@ -28,16 +29,6 @@ const TIPO_APRESENTACAO: Record<Apresentacao["tipo"], string> = {
 };
 
 export const rotuloTipoApresentacao = (a: Apresentacao) => TIPO_APRESENTACAO[a.tipo];
-
-// TODO(Molar): mover para src/lib/formato.ts (formatarVolume) se aprovado.
-const decimal = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 });
-
-/** "5 mL", "3 g", "50 × 0,1 mL"; kit → descrição do fabricante. */
-export function volumeDe(a: Apresentacao): string {
-  if (a.tipo === "kit") return a.descricao;
-  const unidade = a.volumeMl !== undefined ? `${decimal.format(a.volumeMl)} mL` : a.massaG !== undefined ? `${decimal.format(a.massaG)} g` : a.descricao;
-  return a.quantidade > 1 ? `${a.quantidade} × ${unidade}` : unidade;
-}
 
 export function apresentacaoPrincipal(p: Produto): Apresentacao {
   return p.apresentacoes.find((a) => a.id === p.apresentacaoPrincipal) ?? p.apresentacoes[0];
@@ -90,7 +81,7 @@ export function cardDe(p: Produto, ofertas: readonly Oferta[] = []): CardProduto
     fabricante: p.fabricante.nome,
     grupo: p.classificacao.grupo,
     subcategorias: p.classificacao.subcategorias.map((s) => s.id),
-    apresentacao: a.tipo === "kit" ? a.descricao : `${rotuloTipoApresentacao(a)} · ${volumeDe(a)}`,
+    apresentacao: a.tipo === "kit" ? a.descricao : `${rotuloTipoApresentacao(a)} · ${formatarVolume(a)}`,
     estrategia: p.estrategiaAdesiva?.texto,
     componentes: componentesChave(p),
     mdp: p.composicao.mdp.valor === "sim",
@@ -134,7 +125,7 @@ export function colunaComparador(p: Produto, ofertas: readonly Oferta[] = []): C
     silano: c.silano.valor,
     solventes: c.solventes.valor === "nao-informado" ? "nao-informado" : c.solventes.valor.map(capitalizar),
     polimerizacao: c.polimerizacao.valor === "nao-informado" ? "nao-informado" : POLIMERIZACAO[c.polimerizacao.valor],
-    volume: volumeDe(apresentacaoPrincipal(p)),
+    volume: formatarVolume(apresentacaoPrincipal(p)),
     divergencias: divergenciasDe(p),
   };
 }

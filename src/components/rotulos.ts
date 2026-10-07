@@ -3,6 +3,7 @@ import {
   SUBCATEGORIA,
   type GrupoId,
   type PassoVisual,
+  type Subcategoria,
   type SubcategoriaId,
 } from "@/lib/esquema/taxonomia";
 
@@ -73,16 +74,14 @@ const ETAPA: Record<PassoVisual, EtapaVisual> = {
   },
 };
 
-/** Nota de substrato do ácido nos caminhos universais (§3.7, mapa de diagramas). */
-const NOTA_ACIDO: Partial<Record<SubcategoriaId, string>> = {
-  "universal-condicionamento-seletivo": "só em esmalte",
-  "universal-condicionamento-total": "esmalte + dentina",
-};
+/** Nota do bloco Ácido nos caminhos universais (mapa de diagramas, §3.7). */
+const NOTA_SUBSTRATO = { esmalte: "só em esmalte", "esmalte-e-dentina": "esmalte + dentina" } as const;
 
 export function etapasVisuais(id: SubcategoriaId): EtapaVisual[] {
   return SUBCATEGORIA[id].sequencia.map((p) => {
     const e = ETAPA[p];
-    const nota = p === "acido" ? NOTA_ACIDO[id] : undefined;
+    const s = SUBCATEGORIA[id];
+    const nota = p === "acido" && s.grupo === "universal" && s.substratoAcido ? NOTA_SUBSTRATO[s.substratoAcido] : undefined;
     return nota ? { ...e, sub: nota, leitura: `ácido fosfórico (${nota})` } : e;
   });
 }
@@ -100,16 +99,10 @@ export function semAcidoSeparado(id: SubcategoriaId): boolean {
   return SUBCATEGORIA[id].condicionamentoAcidoSeparado === "nao";
 }
 
-/**
- * [R2] Substrato condicionado pelo ácido (DESIGN §3.7, <SubstrateGlyph>).
- * TODO(Molar): trocar pelo campo `substratoAcido` da taxonomia quando existir.
- */
-export type SubstratoAcido = "esmalte" | "esmalte-e-dentina" | null;
+/** [R2] Substrato condicionado pelo ácido (taxonomia; <SubstrateGlyph>). */
+export type SubstratoAcido = Subcategoria["substratoAcido"];
 
-export function substratoAcido(id: SubcategoriaId): SubstratoAcido {
-  if (semAcidoSeparado(id)) return null;
-  return id === "universal-condicionamento-seletivo" ? "esmalte" : "esmalte-e-dentina";
-}
+export const substratoAcido = (id: SubcategoriaId): SubstratoAcido => SUBCATEGORIA[id].substratoAcido;
 
 /** [R2] Notação compacta: `+` separa passos; `( )` agrupa o que é aplicado junto. */
 export interface TokenNotacao {
