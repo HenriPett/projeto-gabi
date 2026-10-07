@@ -25,3 +25,13 @@ test("A11Y-09/MOB: botão Comparar do header mantém nome acessível em qualquer
   // ≥ 360 px o nome inclui os parênteses do contador visível: "Comparar (0) produtos selecionados" (BUG-014, S4)
   await expect(page.getByRole("link", { name: /^comparar \(?0\)? produtos selecionados$/i }).first()).toBeVisible();
 });
+
+test("MOB-01b: /guia sem scroll horizontal com a fonte reserva (webfont não carregou)", async ({ page, errosDeConsole }) => {
+  await page.route(/\.(woff2?|ttf|otf)(\?.*)?$/, (r) => r.abort());
+  await page.goto("/guia");
+  const largura = page.viewportSize()!.width;
+  const scroll = await page.evaluate(() => document.documentElement.scrollWidth);
+  expect(scroll).toBeLessThanOrEqual(largura);
+  // as fontes foram abortadas de propósito
+  errosDeConsole.splice(0, errosDeConsole.length, ...errosDeConsole.filter((e) => !/net::ERR_FAILED/.test(e)));
+});
