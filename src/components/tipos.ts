@@ -18,6 +18,8 @@ export interface FonteDTO {
   url: string;
   acessadoEm: string;
   versao?: string;
+  /** Nota da curadoria sobre a fonte (ex.: "Texto adaptado de PT-PT; valores intactos."). */
+  observacao?: string;
 }
 
 export interface CardProduto {

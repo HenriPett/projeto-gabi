@@ -15,6 +15,11 @@ export function SourceLink({ fontes }: { fontes: FonteDTO[] }) {
             <span className="sr-only"> (abre em nova aba)</span>
           </a>{" "}
           · acesso em {formatarData(f.acessadoEm)} <span aria-hidden>↗</span>
+          {f.observacao && (
+            <span className="block" data-testid="source-note">
+              {f.observacao}
+            </span>
+          )}
         </li>
       ))}
     </ul>

@@ -98,6 +98,12 @@ export function ModoDeUso({
               </a>
             </p>
           )}
+          {/* Obrigatório aqui: o texto das etapas pode não ser literal da IFU. */}
+          {protocolo && ifu?.observacao && (
+            <p className="caption mt-1" data-testid="source-note">
+              {ifu.observacao}
+            </p>
+          )}
           {ctx && (
             <p className="sr-only" aria-live="polite">
               {protocolo ? `Protocolo: ${nomeEstrategia}, ${protocolo.etapas.length} etapas` : `Protocolo: ${nomeEstrategia}, não localizado`}

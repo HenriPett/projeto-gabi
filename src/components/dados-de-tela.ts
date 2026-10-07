@@ -38,7 +38,7 @@ export function apresentacaoPrincipal(p: Produto): Apresentacao {
 export function fontesDe(p: Produto, ids: readonly string[] = []): FonteDTO[] {
   return ids.flatMap((id) => {
     const f = p.fontes.find((x) => x.id === id);
-    return f ? [{ id: f.id, tipo: f.tipo, titulo: f.titulo, url: f.url, acessadoEm: f.acessadoEm, versao: f.versao }] : [];
+    return f ? [{ id: f.id, tipo: f.tipo, titulo: f.titulo, url: f.url, acessadoEm: f.acessadoEm, versao: f.versao, observacao: f.observacao }] : [];
   });
 }
 
