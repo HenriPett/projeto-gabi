@@ -1,0 +1,154 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "convencional-x-autocondicionante",
+  "titulo": "Convencional x autocondicionante",
+  "resumo": "O que muda entre condicionar e lavar e usar um primer ácido, e o que significam 1, 2 e 3 passos.",
+  "ordem": 2,
+  "secoes": [
+    {
+      "titulo": "Convencionais: condicionar e lavar",
+      "paragrafos": [
+        {
+          "texto": "Os adesivos que incluem uma etapa de condicionamento com ácido fosfórico são chamados convencionais, ou etch-and-rinse. O ácido dissolve e remove a smear layer, a camada de resíduos deixada pelo preparo.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "O ácido fosfórico usado (32–37%, pH 0,1–0,4) condiciona esmalte e dentina ao mesmo tempo.",
+          "fontes": [
+            "pashley-2011"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Convencional de 3 passos e de 2 passos",
+      "paragrafos": [
+        {
+          "texto": "Na versão de 3 passos há condicionamento ácido, primer e um adesivo aplicado separadamente.",
+          "fontes": [
+            "pashley-2011"
+          ]
+        },
+        {
+          "texto": "O primer é uma solução hidrofílica de monômeros resinosos, solvente orgânico (álcool ou acetona), água e estabilizantes. O adesivo (bond) é uma resina hidrofóbica de baixa viscosidade, sem solvente, aplicada sobre o primer e fotopolimerizada.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "No convencional de 2 passos, primer e resina adesiva não são separados. Sem a camada hidrofóbica própria, a interface com a dentina fica mais suscetível à degradação, e os resultados clínicos são piores que os dos de 3 passos.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Autocondicionantes: sem etapa de ácido separada",
+      "paragrafos": [
+        {
+          "texto": "Os autocondicionantes não removem a smear layer: eles a incorporam à interface adesiva. Como dispensam o condicionamento e a lavagem separados, condicionam e preparam (fazem o priming de) esmalte e dentina ao mesmo tempo.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "A diferença entre o autocondicionante de 1 passo e o de 2 passos é a resina hidrofóbica extra aplicada sobre o primer ácido no de 2 passos. O autocondicionante de 2 passos é considerado o padrão-ouro da estratégia.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Os autocondicionantes 'suaves' (mild) desmineralizam a dentina só parcialmente e deixam hidroxiapatita ao redor do colágeno. Isso permite somar uma interação química à retenção micromecânica.",
+          "fontes": [
+            "yoshida-2004",
+            "van-meerbeek-2003"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Vantagens e limites de cada estratégia",
+      "paragrafos": [
+        {
+          "texto": "Sem a etapa de condicionar e lavar, o tempo de aplicação e a sensibilidade da técnica diminuem bastante. Os autocondicionantes 'mild' de 2 passos chegam perto do desempenho dos convencionais de 3 passos.",
+          "fontes": [
+            "van-meerbeek-2003"
+          ]
+        },
+        {
+          "texto": "Por outro lado, o primer ácido é menos ácido que o ácido fosfórico e não condiciona o esmalte na mesma profundidade. Em laboratório, os autocondicionantes testados tiveram resistência de união ao esmalte menor que a dos sistemas com ácido fosfórico.",
+          "fontes": [
+            "perdigao-2020",
+            "erickson-2009"
+          ]
+        },
+        {
+          "texto": "Os convencionais produzem uniões à dentina mais altas e mais duráveis que a maioria dos adesivos de 1 e 2 passos. Entre os simplificados, os autocondicionantes de passo único foram os menos duráveis.",
+          "fontes": [
+            "pashley-2011",
+            "breschi-2008"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "pashley-2011",
+      "tipo": "literatura",
+      "titulo": "Pashley DH, Tay FR, Breschi L, et al. State of the art etch-and-rinse adhesives. Dent Mater. 2011;27(1):1-16.",
+      "url": "https://doi.org/10.1016/j.dental.2010.10.016",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2004",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Nagakane K, Fukuda R, et al. Comparative study on adhesive performance of functional monomers. J Dent Res. 2004;83(6):454-458.",
+      "url": "https://doi.org/10.1177/154405910408300604",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "van-meerbeek-2003",
+      "tipo": "literatura",
+      "titulo": "Van Meerbeek B, De Munck J, Yoshida Y, et al. Buonocore memorial lecture. Adhesion to enamel and dentin: current status and future challenges. Oper Dent. 2003;28(3):215-235.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12760693/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Artigo sem DOI registrado; link para o PubMed (PMID 12760693)."
+    },
+    {
+      "id": "erickson-2009",
+      "tipo": "literatura",
+      "titulo": "Erickson RL, Barkmeier WW, Latta MA. The role of etching in bonding to enamel: a comparison of self-etching and etch-and-rinse adhesive systems. Dent Mater. 2009;25(11):1459-1467.",
+      "url": "https://doi.org/10.1016/j.dental.2009.07.002",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "breschi-2008",
+      "tipo": "literatura",
+      "titulo": "Breschi L, Mazzoni A, Ruggeri A, et al. Dental adhesion review: aging and stability of the bonded interface. Dent Mater. 2008;24(1):90-101.",
+      "url": "https://doi.org/10.1016/j.dental.2007.02.009",
+      "acessadoEm": "2026-10-06"
+    }
+  ],
+  "relacionados": [
+    "como-escolher-estrategia",
+    "condicionamento-seletivo",
+    "camada-hibrida"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
