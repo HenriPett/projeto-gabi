@@ -264,7 +264,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/one-coat-7-universal/frasco.webp",
+      "alt": "Frasco de One Coat 7 Universal — Coltene",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -394,6 +403,14 @@
       "titulo": "Dental Cremer — Adesivo Universal One Coat 7 5ml - Coltene",
       "url": "https://www.dentalcremer.com.br/adesivo-universal-one-coat-7-coltene-123860.html",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo One Coat 7 Universal — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-universal-one-coat-7-coltene-123860.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/adesivo-universal-one-coat-7-vigodent-123860-1.jpg"
     }
   ]
 }

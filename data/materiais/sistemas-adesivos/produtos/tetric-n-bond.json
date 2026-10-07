@@ -136,7 +136,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/tetric-n-bond/frasco.webp",
+      "alt": "Frasco de Tetric N-Bond — Ivoclar",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [
     {
       "campo": "apresentacoes.frasco-6g",
@@ -305,6 +314,14 @@
       "titulo": "Dental Med Sul — Adesivo Tetric N-Bond - Ivoclar",
       "url": "https://www.dentalmedsul.com.br/adesivo-tetric-n-bond-ivoclar",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Tetric N-Bond — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-ivoclar-vivadent-354072.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/frasco-adesivo-tetric-n-bond-ivoclar-vivadent-354072.jpg"
     }
   ]
 }

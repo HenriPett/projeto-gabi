@@ -269,7 +269,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/optibond-universal-360/frasco.webp",
+      "alt": "Frasco de OptiBond Universal 360 — Kerr",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Kerr"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -448,6 +457,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-optibond-universal-360-bottle-refill-row-kerr-157317.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte do código KER36822."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "OptiBond Universal 360 — Kerr Brasil (foto do frasco)",
+      "url": "https://kerrdental.com.br/produtos/optibond-universal-360/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://kerrdental.com.br/wp-content/uploads/2026/04/Bottle-Alone.png"
     }
   ]
 }

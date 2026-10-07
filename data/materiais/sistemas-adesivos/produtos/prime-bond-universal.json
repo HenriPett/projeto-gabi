@@ -383,7 +383,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/prime-bond-universal/frasco.webp",
+      "alt": "Frasco de Prime&Bond universal — Dentsply Sirona",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Dentsply Sirona"
+    }
+  ],
   "divergencias": [
     {
       "campo": "composicao.mdp",
@@ -603,6 +612,14 @@
       "url": "https://www.dentalspeed.com/adesivo-prime-universal-st-dentsply-sirona.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Volume de 4 mL e EAN só encontrados em loja. \"ST\" não aparece na IFU (provável nome de loja)."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Prime&Bond universal — Dentsply Sirona (foto do frasco)",
+      "url": "https://www.dentsplysirona.com/pt-br/explore/restauracoes/brands/prime-bond-universal.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://www.dentsplysirona.com/content/dam/master/product-procedure-brand-categories/restorative/product-categories/direct-restoration/adhesives/universal-adhesives/prime-bond-universal/images/RES-Product-Image-tb-PrimeBonduniversal-Bottle.png"
     }
   ]
 }

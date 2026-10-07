@@ -312,7 +312,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/clearfil-tri-s-bond-universal-quick/frasco.webp",
+      "alt": "Frasco de Clearfil Tri-S Bond Universal Quick — Kuraray Noritake",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Kuraray Noritake"
+    }
+  ],
   "divergencias": [
     {
       "campo": "apresentacoes",
@@ -546,6 +555,14 @@
       "titulo": "Dental Med Sul — Adesivo Clearfil Tri-S Universal Quick Refil - Kuraray",
       "url": "https://www.dentalmedsul.com.br/adesivo-clearfil-tri-s-universal-quick-refil-kuraray",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Clearfil Tri-S Bond Universal Quick — Kuraray Noritake (foto do frasco)",
+      "url": "https://www.kuraraynoritake.com.br/clearfil-s3-universal-bond-quick",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://www.kuraraynoritake.eu/media/catalog/product/c/l/clearfil_s3_bond_universal_quick_br_.png"
     }
   ]
 }

@@ -145,7 +145,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/adper-single-bond-2/frasco.webp",
+      "alt": "Frasco de Adper Single Bond 2 — Solventum (3M)",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -307,6 +316,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-adper-single-bond-2-3g-3m-solventum.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Apresentação de 3 g não listada na página oficial pt-BR consultada."
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Adper Single Bond 2 6 g — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-adpertm-single-bond-2-3m-solventum-267013.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/adesivo-adper-single-bond-2-3m-dental-cremer.jpg"
     }
   ]
 }

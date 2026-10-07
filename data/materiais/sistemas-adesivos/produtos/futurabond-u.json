@@ -330,7 +330,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/futurabond-u/frasco.webp",
+      "alt": "Embalagem SingleDose do Futurabond U — VOCO",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: VOCO"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -517,6 +526,14 @@
       "url": "https://www.voco.dental/us/products/direct-restoration/self-etch-adhesive/futurabond-u",
       "acessadoEm": "2026-10-06",
       "observacao": "\"REF 1571 pack 50 x 0.1 ml SingleDose, accessories\"."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Futurabond U — VOCO (foto da embalagem SingleDose)",
+      "url": "https://www.voco.dental/br/produtos/restaura%C3%A7%C3%B5es-diretas/adesivos/futurabond-u.aspx",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://www.voco.dental/br/portaldata/1/resources/products/pacshots/gb/futurabond-u_pac_gb.jpg"
     }
   ]
 }

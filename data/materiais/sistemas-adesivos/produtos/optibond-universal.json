@@ -286,7 +286,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/optibond-universal/frasco.webp",
+      "alt": "Frasco de OptiBond Universal — Kerr",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Kerr"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -417,6 +426,14 @@
       "titulo": "Folheto OptiBond Universal — Kerr Brasil",
       "url": "https://kerrdental.com.br/wp-content/uploads/2021/06/OptiBond_Universal.pdf",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "OptiBond Universal — Kerr Brasil (foto do frasco)",
+      "url": "https://kerrdental.com.br/produtos/optibond-universal/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://kerrdental.com.br/wp-content/uploads/2021/06/produto-site-universal-1-1024x904.png"
     }
   ]
 }

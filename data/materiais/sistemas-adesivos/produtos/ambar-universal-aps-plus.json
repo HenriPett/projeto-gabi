@@ -353,7 +353,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/ambar-universal-aps-plus/frasco.webp",
+      "alt": "Frasco de Ambar Universal APS Plus — FGM",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: FGM"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -528,6 +537,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-ambar-universal-aps-plus-fgm-145075.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte do EAN 7899633831043 (o mesmo exibido na Dental Speed)."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar Universal APS Plus — FGM (foto do frasco)",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar-universal-aps-plus/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://fgmdentalgroup.com/wp-content/uploads/2024/01/Frasco_Ambar_Universal_APS_Plus_Sombra.png"
     }
   ]
 }

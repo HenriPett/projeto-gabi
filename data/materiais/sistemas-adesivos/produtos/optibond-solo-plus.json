@@ -123,7 +123,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/optibond-solo-plus/frasco.webp",
+      "alt": "Frasco de OptiBond Solo Plus — Kerr",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Kerr"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -245,6 +254,14 @@
       "url": "https://kerrdental.com.br/wp-content/uploads/2025/10/KERR-Folheto-OptiBond-Solo-Plus-2025-v2.pdf",
       "acessadoEm": "2026-10-06",
       "observacao": "\"De: KER34614 OptiBond S - 1 refil de 6 ml / Para: KER29692 OptiBond Solo Plus - 1 refil de 5 ml\"."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "OptiBond Solo Plus — Kerr Brasil (foto do frasco)",
+      "url": "https://kerrdental.com.br/produtos/optibond-s/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://kerrdental.com.br/wp-content/uploads/2021/06/3320_REV00_OPTIBOND_SOLO_PLUS_BOTTLE_LABEL.png"
     }
   ]
 }

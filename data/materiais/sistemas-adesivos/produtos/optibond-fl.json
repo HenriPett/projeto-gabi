@@ -167,7 +167,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/optibond-fl/frasco.webp",
+      "alt": "Frascos de Primer e Adesivo do OptiBond FL — Kerr",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Kerr"
+    }
+  ],
   "divergencias": [
     {
       "campo": "classificacao",
@@ -345,6 +354,14 @@
       "titulo": "Dental Cremer — Kit Adesivo e Primer Optibond FL - Kerr",
       "url": "https://www.dentalcremer.com.br/kit-optibond-fl-primer-adesivo-kerr-141109.html",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "OptiBond FL — Kerr Brasil (foto dos frascos)",
+      "url": "https://kerrdental.com.br/produtos/optibond-fl/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://kerrdental.com.br/wp-content/uploads/2021/06/OptiBond-FL-1.png.webp"
     }
   ]
 }

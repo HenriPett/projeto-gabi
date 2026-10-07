@@ -334,7 +334,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/ambar-universal-aps/frasco.webp",
+      "alt": "Frasco de Ambar Universal APS — FGM",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: FGM"
+    }
+  ],
   "divergencias": [
     {
       "campo": "apresentacoes.frasco-5ml.ean",
@@ -476,6 +485,14 @@
       "titulo": "Dental Speed — Ambar Universal APS 5ml - FGM",
       "url": "https://www.dentalspeed.com/ambar-universal-aps-5ml-fgm.html",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar Universal APS — FGM (foto do frasco)",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar-universal-aps/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://fgmdentalgroup.com/wp-content/uploads/2024/02/FRASCO_AMBAR_UNIVERSAL_APS.png"
     }
   ]
 }

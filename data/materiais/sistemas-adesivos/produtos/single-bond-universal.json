@@ -328,7 +328,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/single-bond-universal/frasco.webp",
+      "alt": "Frasco de Single Bond Universal — Solventum (3M)",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -541,6 +550,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-single-bonde-universal-3m-solventum-116860.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte de volume, código do fabricante e EAN."
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Single Bond Universal 5 mL — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-single-bond-universal-3m-solventum-475326.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/adesivo-single-bond-universal-3m-dental-cremer-lab-475326.jpg"
     }
   ]
 }

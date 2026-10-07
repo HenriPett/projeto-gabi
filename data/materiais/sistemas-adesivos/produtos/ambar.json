@@ -153,7 +153,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/ambar/frasco.webp",
+      "alt": "Frasco de Ambar — FGM",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: FGM"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -293,6 +302,14 @@
       "acessadoEm": "2026-10-06",
       "versao": "PDF criado em 30/10/2019 (publicado no site FGM em 11/2022)",
       "observacao": "Documento técnico oficial do fabricante; a IFU do Ambar não está publicada no portal ifu.fgm.ind.br (06/10/2026). Protocolo transcrito da seção \"Instruções de Uso\" do perfil técnico."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar — FGM (foto do frasco)",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://fgmdentalgroup.com/wp-content/uploads/2024/04/Frasco_Ambar_Sombra.png"
     }
   ],
   "estrategiaAdesiva": {

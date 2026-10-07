@@ -373,7 +373,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/tetric-n-bond-universal/frasco.webp",
+      "alt": "Frasco de Tetric N-Bond Universal — Ivoclar",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [
     {
       "campo": "apresentacoes.frasco-6g",
@@ -625,6 +634,14 @@
       "titulo": "Dental Cremer — Adesivo Tetric N-Bond Universal Vivapen Refil - Ivoclar",
       "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-universal-vivapen-ivoclar-147043.html",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Tetric N-Bond Universal 6 g — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-universal-ivoclar-vivadent-706727.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/detalhes-adesivo-tetric-n-bond-universal-ivoclar-vivadent-706727.jpg"
     }
   ]
 }

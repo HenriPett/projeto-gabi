@@ -163,7 +163,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/prime-bond-2-1/frasco.webp",
+      "alt": "Frasco de Prime & Bond 2.1 — Dentsply Sirona",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [
     {
       "campo": "protocolos.restauracoes-diretas-compositos.etapas.4",
@@ -331,6 +340,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-prime-bond-2-1-dentsply-277470.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte do EAN."
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Prime & Bond 2.1 — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-prime-bond-2-1-dentsply-277470.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/adesivo-prime-bond-2-1-dentsply-277470.jpg"
     }
   ]
 }

@@ -321,7 +321,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/scotchbond-universal-plus/frasco.webp",
+      "alt": "Frasco de Scotchbond Universal Plus — Solventum (3M)",
+      "fontes": [
+        "img-loja"
+      ],
+      "credito": "Imagem: Dental Cremer"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -520,6 +529,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-scotchbond-universal-plus-3m-solventum-127037.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Fonte de volume, código do fabricante e EAN."
+    },
+    {
+      "id": "img-loja",
+      "tipo": "loja",
+      "titulo": "Adesivo Scotchbond Universal Plus — Dental Cremer (foto)",
+      "url": "https://www.dentalcremer.com.br/adesivo-scotchbond-universal-plus-3m-solventum-127037.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://cdn.dentalcremer.com.br/produtos/550/adesivo-scotchbond-universal-plus-3m-127037.jpg"
     }
   ]
 }

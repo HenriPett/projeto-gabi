@@ -156,7 +156,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/clearfil-se-bond/frasco.webp",
+      "alt": "Frascos de Primer e Bond do Clearfil SE Bond — Kuraray Noritake",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Kuraray Noritake"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -352,6 +361,14 @@
       "titulo": "Clearfil SE Bond — Kuraray Noritake Brasil",
       "url": "https://www.kuraraynoritake.com.br/clearfil-se-bond",
       "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Clearfil SE Bond — Kuraray Noritake (foto dos frascos)",
+      "url": "https://www.kuraraynoritake.com.br/clearfil-se-bond",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://www.kuraraynoritake.eu/media/catalog/product/c/l/clearfilt-se-bond_1x.png"
     }
   ]
 }
