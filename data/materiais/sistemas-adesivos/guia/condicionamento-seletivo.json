@@ -1,0 +1,170 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "condicionamento-seletivo",
+  "titulo": "Condicionamento seletivo",
+  "resumo": "Condicionar só o esmalte com ácido fosfórico antes de um autocondicionante ou universal: por que se faz e o que os estudos clínicos mostram.",
+  "ordem": 6,
+  "secoes": [
+    {
+      "titulo": "O que é",
+      "paragrafos": [
+        {
+          "texto": "No condicionamento seletivo do esmalte, só o esmalte recebe ácido fosfórico, e a dentina não. Depois, o adesivo autocondicionante ou universal é aplicado sobre todo o preparo. Com um universal, isso equivale a usá-lo como autocondicionante na dentina e como convencional no esmalte.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Por que condicionar só o esmalte",
+      "paragrafos": [
+        {
+          "texto": "O primer ácido dos autocondicionantes é menos ácido que o ácido fosfórico e não condiciona o esmalte na mesma profundidade. Condicionar o esmalte é uma forma simples de melhorar a união desses adesivos.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "A química também conta: a menor eficácia dos autocondicionantes 'mild' no esmalte se deve, em parte, à menor reatividade química com a hidroxiapatita do esmalte. Em laboratório, a ligação química presente em alguns autocondicionantes não bastou para igualar a união obtida com ácido fosfórico no esmalte.",
+          "fontes": [
+            "yoshihara-2011",
+            "erickson-2009"
+          ]
+        },
+        {
+          "texto": "Na dentina, o ácido fosfórico extra exige cautela. Com um adesivo multimodo, ele não reduziu a resistência de união, mas deixou a interface mais vulnerável à biodegradação. Além disso, a dentina condicionada perde o cálcio de que o MDP precisa para se ligar quimicamente.",
+          "fontes": [
+            "hanabusa-2012",
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "O que mostram os estudos",
+      "paragrafos": [
+        {
+          "texto": "Em estudos laboratoriais, condicionar seletivamente o esmalte antes de um universal 'mild' foi considerado uma estratégia recomendável para otimizar a união.",
+          "fontes": [
+            "rosa-2015",
+            "cuevas-suarez-2019"
+          ]
+        },
+        {
+          "texto": "Num ensaio clínico randomizado de 8 anos com um autocondicionante 'mild' de 2 passos em lesões classe V não cariosas, a retenção foi de 97% com e sem condicionamento seletivo. O condicionamento teve só um efeito positivo menor na integridade e na descoloração das margens em esmalte.",
+          "fontes": [
+            "peumans-2010"
+          ]
+        },
+        {
+          "texto": "Os resultados clínicos sobre a retenção divergem. Uma meta-análise de ensaios em lesões cervicais encontrou significativamente menos perda de retenção aos 3 anos com o condicionamento seletivo, mas pede estudos de longo prazo para confirmar. Já uma revisão sistemática de 2014 não viu influência significativa do condicionamento seletivo na retenção dos autocondicionantes.",
+          "fontes": [
+            "szesz-2016",
+            "peumans-2014"
+          ]
+        },
+        {
+          "texto": "Uma revisão de 2020 aponta o condicionamento seletivo do esmalte combinado com um autocondicionante de 2 passos como a via adesiva preferida.",
+          "fontes": [
+            "van-meerbeek-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Na prática",
+      "paragrafos": [
+        {
+          "texto": "Use o condicionamento seletivo apenas com produtos cujo fabricante o recomenda e siga a IFU para o tempo de ácido e as etapas seguintes. Nas páginas dos adesivos universais deste site, essa é a estratégia 'Condicionamento seletivo'.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "yoshihara-2011",
+      "tipo": "literatura",
+      "titulo": "Yoshihara K, Yoshida Y, Hayakawa S, et al. Nanolayering of phosphoric acid ester monomer on enamel and dentin. Acta Biomater. 2011;7(8):3187-3195.",
+      "url": "https://doi.org/10.1016/j.actbio.2011.04.026",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "erickson-2009",
+      "tipo": "literatura",
+      "titulo": "Erickson RL, Barkmeier WW, Latta MA. The role of etching in bonding to enamel: a comparison of self-etching and etch-and-rinse adhesive systems. Dent Mater. 2009;25(11):1459-1467.",
+      "url": "https://doi.org/10.1016/j.dental.2009.07.002",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "hanabusa-2012",
+      "tipo": "literatura",
+      "titulo": "Hanabusa M, Mine A, Kuboki T, et al. Bonding effectiveness of a new 'multi-mode' adhesive to enamel and dentine. J Dent. 2012;40(6):475-484.",
+      "url": "https://doi.org/10.1016/j.jdent.2012.02.012",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "rosa-2015",
+      "tipo": "literatura",
+      "titulo": "Rosa WL, Piva E, Silva AF. Bond strength of universal adhesives: a systematic review and meta-analysis. J Dent. 2015;43(7):765-776.",
+      "url": "https://doi.org/10.1016/j.jdent.2015.04.003",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "cuevas-suarez-2019",
+      "tipo": "literatura",
+      "titulo": "Cuevas-Suárez CE, da Rosa WLO, Lund RG, et al. Bonding performance of universal adhesives: an updated systematic review and meta-analysis. J Adhes Dent. 2019;21(1):7-26.",
+      "url": "https://doi.org/10.3290/j.jad.a41975",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "peumans-2010",
+      "tipo": "literatura",
+      "titulo": "Peumans M, De Munck J, Van Landuyt KL, et al. Eight-year clinical evaluation of a 2-step self-etch adhesive with and without selective enamel etching. Dent Mater. 2010;26(12):1176-1184.",
+      "url": "https://doi.org/10.1016/j.dental.2010.08.190",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "szesz-2016",
+      "tipo": "literatura",
+      "titulo": "Szesz A, Parreiras S, Reis A, Loguercio A. Selective enamel etching in cervical lesions for self-etch adhesives: a systematic review and meta-analysis. J Dent. 2016;53:1-11.",
+      "url": "https://doi.org/10.1016/j.jdent.2016.05.009",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "peumans-2014",
+      "tipo": "literatura",
+      "titulo": "Peumans M, De Munck J, Mine A, Van Meerbeek B. Clinical effectiveness of contemporary adhesives for the restoration of non-carious cervical lesions. A systematic review. Dent Mater. 2014;30(10):1089-1103.",
+      "url": "https://doi.org/10.1016/j.dental.2014.07.007",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "van-meerbeek-2020",
+      "tipo": "literatura",
+      "titulo": "Van Meerbeek B, Yoshihara K, Van Landuyt K, et al. From Buonocore's pioneering acid-etch technique to self-adhering restoratives. A status perspective of rapidly advancing dental adhesive technology. J Adhes Dent. 2020;22(1):7-34.",
+      "url": "https://doi.org/10.3290/j.jad.a43994",
+      "acessadoEm": "2026-10-06"
+    }
+  ],
+  "relacionados": [
+    "esmalte-x-dentina",
+    "adesivo-universal",
+    "como-escolher-estrategia"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
