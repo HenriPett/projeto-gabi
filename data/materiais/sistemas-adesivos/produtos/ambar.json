@@ -25,14 +25,141 @@
     }
   ],
   "contraindicacoes": [],
-  "protocolos": [],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Aplicação em esmalte e dentina",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "perfil"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Após a limpeza, condicionar esmalte e dentina com ácido fosfórico.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o ácido com água em abundância.",
+          "parametros": [],
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Secar a superfície deixando o substrato ligeiramente úmido. Se estiver muito seca, aplicar uma bolinha de algodão umedecida.",
+          "parametros": [],
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "1ª camada do adesivo",
+          "descricao": "Dispensar uma gota em microaplicador (p. ex., Cavibrush) e aplicar a primeira camada de modo vigoroso.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "aplicação vigorosa 10 s"
+            },
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            }
+          ],
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada do adesivo",
+          "descricao": "Aplicar a segunda camada utilizando nova gota de adesivo.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar leve jato de ar para evaporar o solvente.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, 10 s"
+            }
+          ],
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotoativar com luz azul.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · mínimo 400 mW/cm²"
+            },
+            {
+              "tipo": "luz",
+              "texto": "20 s em aplicação intracanal"
+            }
+          ],
+          "fontes": [
+            "perfil"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Protocolo do perfil técnico do fabricante (não da IFU). A aplicação deve ser precedida pelos passos de cada indicação.",
+          "fontes": [
+            "perfil"
+          ]
+        },
+        {
+          "texto": "Não é necessário agitar o frasco antes do uso.",
+          "fontes": [
+            "perfil"
+          ]
+        }
+      ]
+    }
+  ],
   "imagens": [],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
     "atualizadoEm": "2026-10-06",
     "responsavel": "Bula",
-    "notas": "Lote 1. Sem protocolo: IFU não localizada (o site não informa tempos). Imagens pendentes. Publicado por Molar em 2026-10-06 pelo critério ARQUITETURA §3.1.5 (classificação com fonte técnica + apresentação com fonte)."
+    "notas": "Lote 1. Sem protocolo: IFU não localizada (o site não informa tempos). Imagens pendentes. Publicado por Molar em 2026-10-06 pelo critério ARQUITETURA §3.1.5 (classificação com fonte técnica + apresentação com fonte). Protocolo adicionado a partir do Perfil Técnico oficial FGM (não é a IFU); substituir pela IFU quando publicada."
   },
   "id": "ambar",
   "nomeComercial": "Ambar",
@@ -46,24 +173,43 @@
       {
         "id": "convencional-2-passos",
         "fontes": [
-          "site"
+          "site",
+          "perfil"
         ]
       }
     ],
-    "observacao": "Site do fabricante: \"primer + adesivo em um só frasco\", com as etapas \"Condicionamento ácido. Aplicação do adesivo. Restauração final.\" Confirmar na IFU (não localizada no portal de IFUs da FGM em 06/10/2026)."
+    "observacao": "Perfil técnico FGM: \"sistema monocomponente fotopolimerizável de dois passos clínicos: condicionamento ácido total de esmalte e dentina (remoção total da smear layer) seguido de aplicação do adesivo (frasco contendo primer+adesivo)\"."
   },
   "composicao": {
     "componentes": [
       {
-        "nome": "MDP",
+        "nome": "MDP (10-metacriloiloxidecil dihidrogenofosfato)",
         "fontes": [
-          "site"
+          "perfil"
         ]
       },
       {
-        "nome": "Nanopartículas de sílica tratada",
+        "nome": "Monômeros metacrilatos",
         "fontes": [
-          "site"
+          "perfil"
+        ]
+      },
+      {
+        "nome": "Fotoiniciadores, co-iniciadores e estabilizantes",
+        "fontes": [
+          "perfil"
+        ]
+      },
+      {
+        "nome": "Carga inerte (nanopartículas de sílica)",
+        "fontes": [
+          "perfil"
+        ]
+      },
+      {
+        "nome": "Etanol (veículo)",
+        "fontes": [
+          "perfil"
         ]
       }
     ],
@@ -75,22 +221,35 @@
     },
     "hema": {
       "valor": "nao-informado",
-      "observacao": "Não informado no site; IFU não localizada."
+      "observacao": "O perfil técnico não cita HEMA na composição básica."
     },
     "silano": {
       "valor": "nao-informado",
       "observacao": "Não informado no site."
     },
     "solventes": {
-      "valor": "nao-informado",
-      "observacao": "Não informado no site; IFU não localizada."
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "perfil"
+      ]
     },
     "polimerizacao": {
       "valor": "fotopolimerizavel",
       "fontes": [
         "site"
       ]
-    }
+    },
+    "outros": [
+      {
+        "rotulo": "BPA",
+        "valor": "BPA Free (declarado pelo fabricante)",
+        "fontes": [
+          "perfil"
+        ]
+      }
+    ]
   },
   "apresentacoes": [
     {
@@ -100,7 +259,8 @@
       "quantidade": 1,
       "volumeMl": 4,
       "fontes": [
-        "site"
+        "site",
+        "perfil"
       ]
     },
     {
@@ -110,7 +270,8 @@
       "quantidade": 1,
       "volumeMl": 6,
       "fontes": [
-        "site"
+        "site",
+        "perfil"
       ]
     }
   ],
@@ -123,6 +284,21 @@
       "url": "https://fgmdentalgroup.com/produtos-estetica/ambar/",
       "acessadoEm": "2026-10-06",
       "observacao": "O site não traz tempos de protocolo; IFU não localizada no portal ifu.fgm.ind.br em 06/10/2026."
+    },
+    {
+      "id": "perfil",
+      "tipo": "ficha-tecnica",
+      "titulo": "Perfil Técnico Ambar — FGM",
+      "url": "https://fgmdentalgroup.com/wp-content/uploads/2022/11/Perfil_Tecnico-Ambar.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "PDF criado em 30/10/2019 (publicado no site FGM em 11/2022)",
+      "observacao": "Documento técnico oficial do fabricante; a IFU do Ambar não está publicada no portal ifu.fgm.ind.br (06/10/2026). Protocolo transcrito da seção \"Instruções de Uso\" do perfil técnico."
     }
-  ]
+  ],
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de primer + adesivo em frasco único.",
+    "fontes": [
+      "perfil"
+    ]
+  }
 }
