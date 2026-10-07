@@ -77,7 +77,9 @@ const ETAPA: Record<PassoVisual, EtapaVisual> = {
   "primer-autocondicionante": {
     tipo: "primer",
     glifo: "P",
-    rotulo: "Primer autocondicionante",
+    // Rótulo curto + sub: "AUTOCONDICIONANTE" em caixa-alta não cabe numa linha a 320–390px
+    rotulo: "Primer",
+    sub: "autocondicionante",
     leitura: "primer autocondicionante",
   },
   "adesivo-universal": { tipo: "adh", glifo: "A", rotulo: "Adesivo universal", leitura: "adesivo universal" },

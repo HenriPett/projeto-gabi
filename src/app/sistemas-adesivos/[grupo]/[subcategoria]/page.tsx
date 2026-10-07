@@ -63,7 +63,8 @@ export default async function PaginaSubcategoria(props: PageProps<"/sistemas-ade
         </nav>
       </header>
 
-      <div className="split">
+      {/* Universais: 3 caminhos lado a lado não cabem na coluna 5/12 — diagrama em largura total (DESIGN §4.4) */}
+      <div className={`split${universal ? " split--full" : ""}`}>
         <StepDiagram subcategoria={sub.id} />
         <section aria-labelledby="titulo-caracteriza" className="prose">
           <h2 id="titulo-caracteriza">O que caracteriza</h2>
@@ -79,7 +80,7 @@ export default async function PaginaSubcategoria(props: PageProps<"/sistemas-ade
             <p className="mt-4 flex flex-wrap gap-x-4">
               {irmas.map((id) => (
                 <Link key={id} href={urlSubcategoria(id)} className="inline-flex min-h-11 items-center">
-                  Comparar com {SUBCATEGORIA[id].rotulo.toLowerCase()} →
+                  Comparar com {SUBCATEGORIA[id].rotulo.toLowerCase()}{"\u00a0"}→
                 </Link>
               ))}
             </p>
