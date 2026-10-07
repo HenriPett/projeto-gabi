@@ -123,7 +123,16 @@
       "observacoes": []
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/astra-mono/frasco.webp",
+      "alt": "Caixa e frasco de Astra Mono — Yller",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Yller"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -252,6 +261,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-astra-mono-5ml-yller-157035.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Volume, código do fabricante e EAN."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Astra — Yller (foto da embalagem do Astra Mono)",
+      "url": "https://yller.com.br/astra/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://yller.com.br/wp-content/uploads/2026/02/kv-astra-mono.png"
     }
   ]
 }

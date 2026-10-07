@@ -317,7 +317,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/astra-universal/frasco.webp",
+      "alt": "Caixa e frasco de Astra Universal — Yller",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: Yller"
+    }
+  ],
   "divergencias": [],
   "revisao": {
     "status": "publicado",
@@ -464,6 +473,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-astra-universal-6ml-yller-157034.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Volume, código do fabricante e EAN."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Astra — Yller (foto da embalagem do Astra Universal)",
+      "url": "https://yller.com.br/astra/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://yller.com.br/wp-content/uploads/2026/02/kv-astra-universal.png"
     }
   ]
 }
