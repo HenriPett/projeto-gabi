@@ -48,3 +48,9 @@ next-env.d.ts
 
 # gerado no build (scripts/gerar-versao.mjs)
 /public/version.json
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
