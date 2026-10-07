@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../../schemas/ofertas.schema.json",
+  "$schema": "../../../schemas/ofertas.schema.json",
   "produtoId": "clearfil-se-bond",
   "ofertas": [
     {

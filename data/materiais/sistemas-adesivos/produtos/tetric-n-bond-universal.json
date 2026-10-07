@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
   "material": "sistemas-adesivos",
   "aliases": [
     "Tetric N Bond Universal",
