@@ -1,0 +1,142 @@
+{
+  "$schema": "../../../schemas/artigo-guia.schema.json",
+  "slug": "adesivo-universal",
+  "titulo": "O que é adesivo universal?",
+  "resumo": "Um frasco, mais de uma estratégia: o que define um adesivo universal (ou multimodo) e o que a evidência diz sobre cada modo de uso.",
+  "ordem": 3,
+  "secoes": [
+    {
+      "titulo": "Um frasco, várias estratégias",
+      "paragrafos": [
+        {
+          "texto": "Os adesivos universais formam uma família lançada a partir de 2011. São adesivos de frasco único que podem ser aplicados conforme a estratégia escolhida pelo dentista, entre as recomendadas pelo fabricante: como convencional, como autocondicionante ou com condicionamento seletivo do esmalte (autocondicionante na dentina e convencional no esmalte).",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Também são chamados de adesivos multimodo (multi-mode). Um dos primeiros estudos com eles testou justamente se um adesivo de passo único podia ser aplicado nas abordagens autocondicionante e convencional, de forma total ou seletiva.",
+          "fontes": [
+            "perdigao-loguercio-2014",
+            "hanabusa-2012"
+          ]
+        },
+        {
+          "texto": "Por isso, neste site, um mesmo universal aparece em cada estratégia para a qual tem indicação oficial. São modos de uso do mesmo produto, e não três produtos diferentes.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Composição e indicações",
+      "paragrafos": [
+        {
+          "texto": "O que distingue os universais dos autocondicionantes clássicos de 1 passo é a adição de monômeros ácidos funcionais, como o MDP. Alguns também contêm silano, e as indicações vão de restaurações diretas a indiretas, como primer para zircônia e cerâmicas vítreas.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Segundo Perdigão (2020), o silano incorporado ao adesivo não melhora a união a cerâmicas vítreas, e uma solução de silano separada continua necessária. Além disso, a maioria dos universais precisa de um ativador dual quando usada com materiais de presa química ou dual.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "O que a evidência diz sobre cada modo",
+      "paragrafos": [
+        {
+          "texto": "No esmalte, o condicionamento prévio com ácido fosfórico melhorou a união dos universais. Esse resultado apareceu em duas meta-análises de estudos laboratoriais e no estudo pioneiro com adesivo multimodo.",
+          "fontes": [
+            "rosa-2015",
+            "cuevas-suarez-2019",
+            "hanabusa-2012"
+          ]
+        },
+        {
+          "texto": "Na dentina, com universais 'mild', não houve diferença significativa de resistência de união entre os modos convencional e autocondicionante. Ainda assim, o ácido fosfórico extra na dentina gerou uma interface ultraestruturalmente mais vulnerável à biodegradação.",
+          "fontes": [
+            "rosa-2015",
+            "hanabusa-2012"
+          ]
+        },
+        {
+          "texto": "Os universais 'mild' foram os mais estáveis nas duas estratégias. Os 'intermediately strong' perderam resistência de união após o envelhecimento, qualquer que fosse a estratégia.",
+          "fontes": [
+            "cuevas-suarez-2019"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Pontos de atenção",
+      "paragrafos": [
+        {
+          "texto": "Como não têm a resina hidrofóbica como último passo, os universais podem ser mais propensos à degradação da interface que os autocondicionantes de 2 passos. A evaporação do solvente é crítica, porque a água retida resulta em nanoinfiltração.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        },
+        {
+          "texto": "Os tempos de aplicação, fricção, evaporação e fotopolimerização variam entre produtos e entre estratégias de um mesmo produto. Por isso, confira sempre o protocolo do produto (IFU) na página dele.",
+          "fontes": [
+            "perdigao-2020"
+          ]
+        }
+      ]
+    }
+  ],
+  "fontes": [
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    },
+    {
+      "id": "perdigao-loguercio-2014",
+      "tipo": "literatura",
+      "titulo": "Perdigão J, Loguercio AD. Universal or multi-mode adhesives: why and how? J Adhes Dent. 2014;16(2):193-194.",
+      "url": "https://doi.org/10.3290/j.jad.a31871",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Editorial."
+    },
+    {
+      "id": "hanabusa-2012",
+      "tipo": "literatura",
+      "titulo": "Hanabusa M, Mine A, Kuboki T, et al. Bonding effectiveness of a new 'multi-mode' adhesive to enamel and dentine. J Dent. 2012;40(6):475-484.",
+      "url": "https://doi.org/10.1016/j.jdent.2012.02.012",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "rosa-2015",
+      "tipo": "literatura",
+      "titulo": "Rosa WL, Piva E, Silva AF. Bond strength of universal adhesives: a systematic review and meta-analysis. J Dent. 2015;43(7):765-776.",
+      "url": "https://doi.org/10.1016/j.jdent.2015.04.003",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "cuevas-suarez-2019",
+      "tipo": "literatura",
+      "titulo": "Cuevas-Suárez CE, da Rosa WLO, Lund RG, et al. Bonding performance of universal adhesives: an updated systematic review and meta-analysis. J Adhes Dent. 2019;21(1):7-26.",
+      "url": "https://doi.org/10.3290/j.jad.a41975",
+      "acessadoEm": "2026-10-06"
+    }
+  ],
+  "relacionados": [
+    "mdp",
+    "condicionamento-seletivo",
+    "como-escolher-estrategia"
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Dentina"
+  }
+}
