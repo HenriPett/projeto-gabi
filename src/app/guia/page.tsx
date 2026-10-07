@@ -1,10 +1,17 @@
-// /guia (§21 Guia rápido). Conteúdo com fonte; formato definido quando a spec da Esmalte sair.
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { EstadoVazio } from "@/components/EstadoVazio";
+
+// /guia — Guia rápido. Conteúdo (com fonte) ainda em definição de formato (ARQUITETURA §9).
 export const metadata = { title: "Guia rápido" };
 
 export default function Pagina() {
   return (
-    <main className="mx-auto w-full max-w-5xl p-4">
-      <h1 className="text-3xl font-bold">Guia rápido</h1>
-    </main>
+    <div className="pagina">
+      <Breadcrumb itens={[{ rotulo: "Sistemas Adesivos", href: "/" }, { rotulo: "Guia rápido" }]} />
+      <h1 className="pb-6">Guia rápido</h1>
+      <EstadoVazio titulo="Conteúdo em preparação.">
+        <p className="muted">Os temas do guia serão publicados com as respectivas fontes.</p>
+      </EstadoVazio>
+    </div>
   );
 }

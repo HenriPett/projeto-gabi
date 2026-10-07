@@ -1,10 +1,28 @@
-// /comparar?ids=a,b,c (§11). Ler ids no cliente (useSearchParams) para manter a rota estática.
+import { Suspense } from "react";
+import { catalogo } from "@/lib/dados/carregar";
+import { Comparador } from "@/components/comparar/Comparador";
+import { colunaComparador, indiceDeBusca } from "@/components/dados-de-tela";
+
+// /comparar?ids=a,b,c — DESIGN §4.6. ids lidos no cliente (rota estática).
 export const metadata = { title: "Comparar sistemas" };
 
-export default function Pagina() {
+function Carregando() {
   return (
-    <main className="mx-auto w-full max-w-5xl p-4">
-      <h1 className="text-3xl font-bold">Comparar sistemas</h1>
-    </main>
+    <div aria-busy="true" aria-label="Carregando comparação">
+      <h1 className="pt-4 pb-6">Comparar sistemas</h1>
+      <div className="skeleton h-96 w-full" />
+    </div>
+  );
+}
+
+export default function Pagina() {
+  const { produtos, ofertas } = catalogo();
+  const colunas = produtos.map((p) => colunaComparador(p, ofertas.get(p.id)));
+  return (
+    <div className="pagina pt-4">
+      <Suspense fallback={<Carregando />}>
+        <Comparador colunas={colunas} indice={indiceDeBusca(produtos)} />
+      </Suspense>
+    </div>
   );
 }

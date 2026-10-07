@@ -1,10 +1,16 @@
 import Link from "next/link";
+import { EstadoVazio } from "@/components/EstadoVazio";
 
 export default function NotFound() {
   return (
-    <main className="mx-auto w-full max-w-5xl p-4">
-      <h1 className="text-2xl font-bold">Página não encontrada</h1>
-      <Link className="underline" href="/">Voltar ao início</Link>
-    </main>
+    <div className="pagina section">
+      <h1 className="sr-only">Página não encontrada</h1>
+      <EstadoVazio titulo="Página não encontrada">
+        <p className="muted">O endereço pode ter mudado ou não existe.</p>
+        <Link className="btn btn--primary" href="/">
+          Voltar ao início
+        </Link>
+      </EstadoVazio>
+    </div>
   );
 }
