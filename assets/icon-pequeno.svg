@@ -1,7 +1,1 @@
-<!-- Marca Adesivologia — versão pequena (favicon 16/32/48 e monograma do header): ladrilho laranja + "A" preto, sem camadas (somem abaixo de ~48px). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#DE811D"/>
-  <g transform="translate(256 256) scale(1.25) translate(-256 -236)">
-    <path fill-rule="evenodd" fill="#151515" d="M226 104h60l92 236h22v28h-104v-28h22l-17-46h-90l-17 46h22v28H112v-28h22zM256 160l-34 104h68z"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#DE811D" rx="112"/><g><path fill="#151515" fill-rule="evenodd" d="M226 104h60l92 236h22v28h-104v-28h22l-17-46h-90l-17 46h22v28H112v-28h22zM256 160l-34 104h68z" transform="translate(256 256) scale(1.25) translate(-256 -236)"/></g></svg>
