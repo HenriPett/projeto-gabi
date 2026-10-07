@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
 import { ClassBadge } from "../ClassBadge";
-import { Frasco, IconeBusca, IconeFechar } from "../Icones";
+import { IconeBusca, IconeFechar } from "../Icones";
+import { Miniatura } from "../MidiaProduto";
 import type { ItemIndice } from "../tipos";
 import { destacar, sugerir, TITULO_GRUPO, type Sugestao } from "./sugestoes";
 
@@ -174,7 +174,7 @@ export function SearchBox({ indice }: { indice: ItemIndice[] }) {
                   >
                     {s.tipo === "produto" && (
                       <span className="suggest__thumb" aria-hidden="true">
-                        {s.item.imagem ? <Image src={s.item.imagem.arquivo} alt="" fill sizes="32px" style={{ objectFit: "contain" }} /> : <Frasco />}
+                        <Miniatura imagem={s.item.imagem} sizes="32px" />
                       </span>
                     )}
                     <span className="min-w-0 flex-1">

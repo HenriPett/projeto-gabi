@@ -14,7 +14,7 @@ export function Header({ indice }: { indice: ItemIndice[] }) {
             <span className="logo__mark" aria-hidden="true">
               SA
             </span>
-            Sistemas Adesivos
+            <span className="logo__txt">Sistemas Adesivos</span>
           </Link>
           <LinkComparar className="btn btn--secondary compare-link" />
         </div>

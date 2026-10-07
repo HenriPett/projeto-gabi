@@ -15,7 +15,7 @@ export default function Pagina() {
         </p>
         <p>
           Quando fontes discordam, mostramos todas as versões lado a lado, sem escolher uma. Quando um dado não foi
-          encontrado em fonte confiável, ele aparece como “Não informado”.
+          encontrado em fonte confiável, ele aparece como “Informação ainda não verificada” — o que não significa que o produto não tenha aquela característica. “Não” só aparece quando a fonte afirma a ausência.
         </p>
         <h2 id="precos">Como comparamos preços</h2>
         <p>

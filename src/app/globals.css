@@ -129,14 +129,20 @@
   .header__nav { display: none; gap: var(--space-6); }
   .header__nav a { text-decoration: none; font-weight: 500; font-size: var(--text-small); color: var(--color-text); min-height: 44px; display: inline-flex; align-items: center; }
   .header__nav a:hover { color: var(--color-primary); }
-  .compare-link { min-height: 44px; font-size: 13px; white-space: nowrap; padding: 0 12px; }
-  .logo { white-space: nowrap; }
-  .compare-link__n { display: none; }
+  .compare-link { position: relative; min-height: 44px; font-size: 13px; white-space: nowrap; padding: 0 12px; flex-shrink: 0; }
+  .logo { white-space: nowrap; min-width: 0; flex-shrink: 1; }
+  .logo__mark { flex: none; }
+  .logo__txt { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .compare-link__n, .compare-link__icone { display: none; }
+  /* < 360px (Android 320px): botão só com ícone + contador; texto fica para leitor de tela.
+     Não depende da métrica da fonte (Linux × macOS). */
   @media (max-width: 359px) {
     .header__row { gap: var(--space-2); }
-    .logo { font-size: 14px; gap: 6px; }
+    .logo { font-size: 16px; gap: 6px; }
     .logo__mark { width: 24px; height: 24px; font-size: 11px; }
-    .compare-link { padding: 0 8px; gap: 6px; font-size: 12px; }
+    .compare-link { padding: 0 8px; gap: 6px; min-width: 44px; }
+    .compare-link__icone { display: block; width: 20px; height: 20px; }
+    .compare-link__txt, .compare-link .compare-link__paren { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .compare-link .compare-link__paren { display: none; }
     .compare-link__n { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-on-primary); font-size: 12px; }
   }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { catalogo } from "@/lib/dados/carregar";
 import { GRUPO, SUBCATEGORIA, type GrupoId } from "@/lib/esquema/taxonomia";
@@ -6,7 +5,8 @@ import { formatarBRL, formatarData } from "@/lib/formato";
 import { maioresEconomias } from "@/lib/precos";
 import { Carrossel } from "@/components/Carrossel";
 import { cardDe } from "@/components/dados-de-tela";
-import { Frasco, IconeEstrela, IconeLivro, IconeMoeda } from "@/components/Icones";
+import { IconeEstrela, IconeLivro, IconeMoeda } from "@/components/Icones";
+import { Miniatura } from "@/components/MidiaProduto";
 import { ProductCard } from "@/components/ProductCard";
 import { LegendaNotacao, Notacao } from "@/components/Notacao";
 import { MiniDiagram } from "@/components/StepDiagram";
@@ -139,7 +139,7 @@ export default function Home() {
                 <li key={p.id} data-testid="best-prices-item" data-produto-id={p.id} data-economia-centavos={comparacao.economiaCentavos}>
                   <Link href={`/produto/${p.id}#precos`}>
                     <span className="deals__img" aria-hidden="true">
-                      {p.imagens[0] ? <Image src={p.imagens[0].arquivo} alt="" fill sizes="48px" style={{ objectFit: "contain" }} /> : <Frasco />}
+                      <Miniatura imagem={p.imagens[0]} sizes="48px" />
                     </span>
                     <span className="min-w-0">
                       <strong className="block font-semibold">{p.nomeComercial}</strong>

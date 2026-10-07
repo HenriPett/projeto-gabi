@@ -66,7 +66,7 @@ test("E2E-02: … → selos de estratégia → comparar produtos → comparar pr
   ]);
   // CS-02: ausência de dado ≠ "Não"
   await expect(page.locator('[data-testid="compare-row"][data-atributo="hema"]')).toContainText(/sim/i);
-  await expect(page.locator('[data-testid="compare-row"][data-atributo="silano"]')).toContainText(/não informado/i);
+  await expect(page.locator('[data-testid="compare-row"][data-atributo="silano"]')).toContainText(/informação ainda não verificada/i);
   await page.reload();
   await expect(page.getByTestId("compare-table")).toBeVisible();
   // preços: 3 mL × 5 mL nunca se comparam (PR-02)

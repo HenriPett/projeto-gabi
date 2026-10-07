@@ -1,15 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { buscar } from "@/lib/busca";
 import { formatarBRL } from "@/lib/formato";
 import { ClassBadge } from "../ClassBadge";
+import { Miniatura } from "../MidiaProduto";
+import { NAO_VERIFICADA } from "../rotulos";
 import { LegendaNotacao, Notacao } from "../Notacao";
 import { EstadoVazio } from "../EstadoVazio";
-import { Frasco, IconeAlerta, IconeFechar } from "../Icones";
+import { IconeAlerta, IconeFechar } from "../Icones";
 import type { ColunaComparador, ItemIndice, ValorSimNao } from "../tipos";
 import { GRUPOS_LINHA, idsDaUrl, linhaIgual, montarLinhas, type Celula } from "./linhas";
 import { definirComparacao, LIMITE_COMPARACAO } from "./selecao";
@@ -27,7 +28,7 @@ function SimNao({ valor }: { valor: ValorSimNao }) {
         <span aria-hidden="true">— </span>Não
       </span>
     );
-  return <span className="ni">Não informado</span>;
+  return <span className="ni">{NAO_VERIFICADA}</span>;
 }
 
 function ValorCelula({ c }: { c: Celula }) {
@@ -216,7 +217,7 @@ export function Comparador({ colunas, indice }: { colunas: ColunaComparador[]; i
                 <th key={card.id} scope="col" data-produto-id={card.id}>
                   <div className="cmphead">
                     <span className="cmphead__img" aria-hidden="true">
-                      {card.imagem ? <Image src={card.imagem.arquivo} alt="" fill sizes="64px" style={{ objectFit: "contain" }} /> : <Frasco />}
+                      <Miniatura imagem={card.imagem} sizes="64px" />
                     </span>
                     <Link href={`/produto/${card.id}`}>{card.nome}</Link>
                     <span className="caption">{card.fabricante}</span>

@@ -5,6 +5,7 @@ import { ClassBadge, SeloRascunho } from "./ClassBadge";
 import { CompareToggle } from "./comparar/CompareToggle";
 import { MidiaProduto } from "./MidiaProduto";
 import { EstrategiasIndicadas } from "./EstrategiasIndicadas";
+import { NAO_VERIFICADA } from "./rotulos";
 import type { CardProduto, PrecoCard } from "./tipos";
 
 const MAX_CHIPS = 3;
@@ -79,7 +80,7 @@ export function ProductCard({ card, subcategoriaAtual }: { card: CardProduto; su
             )}
           </ul>
         ) : (
-          <p className="caption">Componentes: não informado pelo fabricante</p>
+          <p className="caption">Componentes: {NAO_VERIFICADA.toLowerCase()}</p>
         )}
         <PrecoResumo preco={card.preco} />
       </div>
