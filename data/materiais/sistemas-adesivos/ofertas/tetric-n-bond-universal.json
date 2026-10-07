@@ -1,0 +1,134 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "tetric-n-bond-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-universal-ivoclar-vivadent-706727.html",
+      "tituloNaLoja": "Adesivo Tetric N-Bond Universal 6g - Ivoclar",
+      "skuLoja": "706727",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 23999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 23279,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6g",
+      "status": "indisponivel",
+      "url": "https://www.dentalspeed.com/adesivo-tetric-n-bond-universal-6g-ivoclar-vivadent.html",
+      "tituloNaLoja": "Adesivo Tetric N-Bond Universal 6g - Ivoclar",
+      "skuLoja": "IVO11036A",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Esgotado em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-autocondicionante-tetric-n-bond-universal-ivoclar",
+      "tituloNaLoja": "Adesivo Autocondicionante Tetric N-Bond Universal - Ivoclar",
+      "skuLoja": "26.4597",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 23999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 23279,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: embalagem unitária com 6g."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "vivapen-2ml-40-canulas",
+      "status": "indisponivel",
+      "url": "https://www.dentalcremer.com.br/kit-adesivo-universal-tetric-n-bond-vivapen-1x2ml-40-ivoclar-156695.html",
+      "tituloNaLoja": "Kit Adesivo Universal Tetric N-Bond Vivapen 1x2ml/40 - Ivoclar",
+      "skuLoja": "156695",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Sem estoque em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "vivapen-2ml-40-canulas",
+      "status": "indisponivel",
+      "url": "https://www.dentalspeed.com/kit-adesivo-universal-tetric-n-bond-vivapen-1x2ml-40-ivoclar-ivo38221a.html",
+      "tituloNaLoja": "Kit Adesivo Universal Tetric N-Bond Vivapen 1x2ml/40 - Ivoclar",
+      "skuLoja": "IVO38221A",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Esgotado em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "vivapen-2ml-40-canulas",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-tetric-n-bond-universal-vivapen-pontas-ivoclar",
+      "tituloNaLoja": "Adesivo Tetric N-Bond Universal Vivapen + Pontas - Ivoclar",
+      "skuLoja": "27.7874",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 26990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 26180,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 2ml + 40 pontas."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "vivapen-2ml-refil",
+      "status": "indisponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-universal-vivapen-ivoclar-147043.html",
+      "tituloNaLoja": "Adesivo Tetric N-Bond Universal Vivapen Refil - Ivoclar",
+      "skuLoja": "147043",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Sem estoque em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "vivapen-2ml-refil",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "VivaPen refil sem cânulas não encontrado na loja."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "vivapen-2ml-refil",
+      "status": "indisponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-tetric-n-bond-universal-vivapen-ivoclar",
+      "tituloNaLoja": "Adesivo Tetric N-Bond Universal Vivapen - Ivoclar",
+      "skuLoja": "26.4596",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 Vivapen 2ml, sem ponta. Sem estoque."
+    }
+  ]
+}

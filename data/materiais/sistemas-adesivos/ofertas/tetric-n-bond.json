@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "tetric-n-bond",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-tetric-n-bond-ivoclar-vivadent-354072.html",
+      "tituloNaLoja": "Adesivo Tetric N-Bond 6g - Ivoclar",
+      "skuLoja": "354072",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 15199,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 14743,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/tetric-n-bond-6g-ivoclar-vivadent.html",
+      "tituloNaLoja": "Adesivo Tetric N-Bond 6g - Ivoclar",
+      "skuLoja": "IVO5145A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 15199,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 14743,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6g",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-tetric-n-bond-ivoclar",
+      "tituloNaLoja": "Adesivo Tetric N-Bond - Ivoclar",
+      "skuLoja": "26.6819",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 15199,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 14743,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio diz \"Embalagem com 6ml\" (ver divergência)."
+    }
+  ]
+}
