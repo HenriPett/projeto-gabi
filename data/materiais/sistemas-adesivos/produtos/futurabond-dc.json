@@ -129,7 +129,16 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/futurabond-dc/frasco.webp",
+      "alt": "Embalagem SingleDose do Futurabond DC — VOCO",
+      "fontes": [
+        "img-fabricante"
+      ],
+      "credito": "Imagem: VOCO"
+    }
+  ],
   "divergencias": [
     {
       "campo": "protocolos.restauracoes-diretas.etapas.2",
@@ -311,6 +320,14 @@
       "url": "https://www.dentalcremer.com.br/adesivo-futurabond-dc-voco-623048.html",
       "acessadoEm": "2026-10-06",
       "observacao": "Anúncio: 50 blísteres + 50 pincéis."
+    },
+    {
+      "id": "img-fabricante",
+      "tipo": "site-fabricante",
+      "titulo": "Futurabond DC — VOCO (foto da embalagem SingleDose)",
+      "url": "https://www.voco.dental/br/produtos/restaura%C3%A7%C3%B5es-diretas/adesivos/futurabond-dc.aspx",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Foto do produto usada só para identificação. Arquivo de origem: https://www.voco.dental/br/portaldata/1/resources/products/pacshots/gb/futurabond-dc_pac_gb.jpg"
     }
   ]
 }
