@@ -1,0 +1,97 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "palfique-bond",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-palfique-bond-tokuyama-129564.html",
+      "tituloNaLoja": "Adesivo Palfique Bond 5ml - Tokuyama",
+      "skuLoja": "129564",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 29999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 29099,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-palfique-bond-5ml-tokuyama-dental.html",
+      "tituloNaLoja": "Adesivo Palfique Bond 5ml - Tokuyama",
+      "skuLoja": "TOK13739A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 29999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 29099,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-palfique-bond-tokuyama",
+      "tituloNaLoja": "Adesivo Palfique Bond - Tokuyama",
+      "skuLoja": "27.1050",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 44390,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 43058,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 5ml (marca na loja: PHS)."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "mini-kit-1ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Mini-Kit não encontrado na loja."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "mini-kit-1ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Mini-Kit não encontrado na loja."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "mini-kit-1ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalmedsul.com.br/kit-adesivo-palfique-bond-mini-tokuyama",
+      "tituloNaLoja": "Kit Adesivo Palfique Bond Mini - Tokuyama",
+      "skuLoja": "27.1051",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 frasco 1ml + 25 pincéis; sem estoque."
+    }
+  ]
+}

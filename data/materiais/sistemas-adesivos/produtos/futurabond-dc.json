@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Futurabond DC SingleDose"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas e reconstrução de núcleos com compósito auto ou dual.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Restaurações diretas com compósito/compômero/ORMOCER fotopolimerizáveis.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Fixação de pinos intrarradiculares com cimentos auto ou dual.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Restaurações indiretas (inlays, onlays, coroas e pontes) com cimentos auto ou dual.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Hipersensibilidade (alergia) conhecida a ácidos orgânicos, metacrilatos ou BHT.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas",
+      "aplicaA": [
+        "autocondicionante-1-passo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Isolamento e preparo",
+          "descricao": "Isolar (dique de borracha recomendado). Preparar e lavar a cavidade. Em dente não preparado (p. ex., defeito cervical), limpar e desgastar levemente a margem de esmalte com broca diamantada. Proteger áreas próximas da polpa com base de hidróxido de cálcio.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Controle da umidade",
+          "descricao": "Remover o excesso de umidade com jato de ar fraco, sem secar a dentina completamente: ela deve ficar ligeiramente úmida.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "outro",
+          "titulo": "Mistura (SingleDose)",
+          "descricao": "Com o material em temperatura ambiente, ativar o SingleDose pressionando a zona azul (\"press here\"), furar a capa com o Single Tim e misturar até obter mistura homogênea. Aplicar logo após a mistura.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação",
+          "descricao": "Aplicar uma camada não muito fina no esmalte e na dentina e massagear na superfície. Reduzir a luz operatória.",
+          "parametros": [
+            {
+              "tipo": "friccao",
+              "texto": "massagear 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Secagem",
+          "descricao": "Secar a camada de adesivo com jato de ar.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Polimerizar com luz azul (halógena ou LED). A IFU não informa a intensidade.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Adesivos autocondicionantes são menos eficazes no esmalte não preparado; em classes III, IV, V e fechamento de diastema, o esmalte deve ser previamente preparado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [
+    {
+      "campo": "protocolos.restauracoes-diretas.etapas.2",
+      "descricao": "Na versão em frascos, o texto em inglês diz que a mistura dos dois líquidos \"produces a self-etching adhesive\"; o texto em português diz \"produz um adesivo autopolimerizável\".",
+      "versoes": [
+        {
+          "valor": "self-etching adhesive (EN)",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "valor": "adesivo autopolimerizável (PT)",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3. Só a apresentação SingleDose 50 un. foi encontrada nas lojas."
+  },
+  "id": "futurabond-dc",
+  "nomeComercial": "Futurabond DC",
+  "fabricante": {
+    "id": "voco",
+    "nome": "VOCO"
+  },
+  "classificacao": {
+    "grupo": "autocondicionante",
+    "subcategorias": [
+      {
+        "id": "autocondicionante-1-passo",
+        "fontes": [
+          "ifu",
+          "catalogo"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"adesivo autocondicionante, de polimerização dual… Este adesivo 'tudo-em-um' consiste em dois componentes, eliminando a necessidade de ataque ácido prévio\". Os dois líquidos são misturados e aplicados em uma única etapa."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo autocondicionante \"tudo-em-um\" de dois componentes misturados, sem condicionamento ácido prévio.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Éster de ácido fosfórico metacrilato",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "HEMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "TEGDMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "TMPTMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Iniciadores",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Estabilizadores",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU cita \"éster de ácido fosfórico metacrilato\", sem nomear MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "dual",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "singledose-50",
+      "tipo": "kit",
+      "descricao": "SingleDose — 50 unidades + acessórios (REF 1164)",
+      "quantidade": 1,
+      "codigoFabricante": "1164",
+      "itens": [
+        "50 SingleDose",
+        "acessórios (pincéis Single Tim)"
+      ],
+      "fontes": [
+        "catalogo",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "singledose-50",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Futurabond DC — Instruções de utilização (multilíngue, inclui PT)",
+      "url": "https://www.voco.dental/en/portaldata/1/resources/products/instructions-for-use/e1/futurabond-dc_ifu_e1.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "VC 60 AA1163 E1 0226 99 · revisão 2026-02",
+      "observacao": "Texto adaptado de PT-PT; valores intactos."
+    },
+    {
+      "id": "catalogo",
+      "tipo": "ficha-tecnica",
+      "titulo": "VOCO — Catálogo de produtos (EN, 2026)",
+      "url": "https://www.voco.dental/portaldata/1/Resources/graphics/pdf/catalog/en_catalog.pdf",
+      "acessadoEm": "2026-10-06",
+      "observacao": "\"Futurabond DC self-etch\"; REF 1163 frascos 2 × 4 ml; REF 1164 SingleDose 50 pcs.; REF 1165 SingleDose 200 pcs."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Futurabond DC - Voco",
+      "url": "https://www.dentalcremer.com.br/adesivo-futurabond-dc-voco-623048.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Anúncio: 50 blísteres + 50 pincéis."
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Tokuyama Palfique Bond"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Adesão de compósitos de foto/dupla polimerização a esmalte preparado/não preparado, dentina preparada/não preparada e reparação de compósito/porcelana.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Pacientes com alergia ou hipersensibilidade a monômeros de metacrilato ou relacionados, solventes orgânicos ou ácidos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes",
+      "titulo": "Restaurações com compósito",
+      "aplicaA": [
+        "autocondicionante-1-passo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Limpeza, isolamento e preparo",
+          "descricao": "Limpar com taça de borracha e pasta sem flúor; isolar com dique de borracha; preparar a cavidade e lavar. Se houver esmalte não preparado na superfície de adesão, fazer o condicionamento ácido desse esmalte.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem",
+          "descricao": "Secar a cavidade com seringa de ar, sem desidratar o dente vital.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação",
+          "descricao": "Dispensar 1 a 2 gotas e aplicar com aplicador descartável sobre toda a superfície a ser aderida; proteger da luz e completar a aplicação em até 5 minutos após dispensar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "aguardar 10 s ou mais"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Secagem do adesivo",
+          "descricao": "Aplicar ar suave e contínuo até a camada de adesivo deixar de se mover; usar aspirador para evitar salpicos.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "suave, normalmente 5 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar com a ponta a 2 mm da superfície; em cavidades grandes, por segmentos.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s ou mais · > 300 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Não use resinas compostas autopolimerizáveis com o Palfique Bond.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3."
+  },
+  "id": "palfique-bond",
+  "nomeComercial": "Palfique Bond",
+  "fabricante": {
+    "id": "tokuyama",
+    "nome": "Tokuyama Dental"
+  },
+  "classificacao": {
+    "grupo": "autocondicionante",
+    "subcategorias": [
+      {
+        "id": "autocondicionante-1-passo",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"PALFIQUE BOND é um sistema adesivo auto-condicionante, fotopolimerizavel, de componente único\" (título em inglês: \"One Component Self-Etching Light-Cured Dental Adhesive\")."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo autocondicionante de componente único, aplicado sem condicionamento ácido prévio (exceto em esmalte não preparado).",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Monômero de ácido fosfórico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Trietileno glicol dimetacrilato (TEGDMA)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "HEMA (2-hidroxietil metacrilato)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Canforoquinona",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Álcool",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água purificada",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU cita \"monômero de ácido fosfórico\", sem nomear MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado (para reparos de porcelana a IFU indica silano à parte)."
+    },
+    "solventes": {
+      "valor": [
+        "álcool",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "outros": [
+      {
+        "rotulo": "pH",
+        "valor": "aproximadamente 2,8 (logo após a dispensa)",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "codigoFabricante": "14881",
+      "ean": "4548190148813",
+      "fontes": [
+        "ifu",
+        "loja-speed"
+      ]
+    },
+    {
+      "id": "mini-kit-1ml",
+      "tipo": "kit",
+      "descricao": "Mini-Kit: frasco 1 mL + poço dispensador + 25 aplicadores",
+      "quantidade": 1,
+      "codigoFabricante": "14888",
+      "itens": [
+        "1 frasco de 1 mL",
+        "1 poço dispensador",
+        "25 aplicadores descartáveis"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso PALFIQUE BOND (pt-BR) — Tokuyama Dental",
+      "url": "https://tokuyama-dental.com/cms/wp-content/uploads/P254312305-PFB.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "P254312305 PFB · ANVISA 80117580452"
+    },
+    {
+      "id": "loja-speed",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Adesivo Palfique Bond 5ml - Tokuyama",
+      "url": "https://www.dentalspeed.com/adesivo-palfique-bond-5ml-tokuyama-dental.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN."
+    }
+  ]
+}

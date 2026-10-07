@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "fl-bond-ii",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "kit-primer-5ml-bond-5ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalcremer.com.br/kit-adesivo-fl-bond-5ml-primer-shofu-126443.html",
+      "tituloNaLoja": "Kit Adesivo FL-Bond 5ml + Primer 5ml e Micropincéis - Shofu",
+      "skuLoja": "126443",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Sem estoque em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "kit-primer-5ml-bond-5ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalspeed.com/kit-adesivo-fl-bond-5ml-primer-5ml-e-micropinceis-shofu.html",
+      "tituloNaLoja": "Kit Adesivo FL-Bond 5ml + Primer 5ml e Micropincéis - Shofu",
+      "skuLoja": "SHO29514A",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Esgotado em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "kit-primer-5ml-bond-5ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "FL-Bond II não encontrado no sitemap da loja em 06/10/2026."
+    }
+  ]
+}

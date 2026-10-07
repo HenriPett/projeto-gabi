@@ -1,0 +1,306 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "FL-Bond",
+    "FL Bond II"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Adesão de resina composta à estrutura dental; pré-tratamento para cimento resinoso; reparo de restaurações.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Não usar em pacientes com alergia ou hipersensibilidade conhecida aos componentes.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes",
+      "titulo": "Restaurações com compósito",
+      "aplicaA": [
+        "autocondicionante-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Proteção pulpar",
+          "descricao": "Proteger a dentina próxima da polpa com hidróxido de cálcio.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento (opcional)",
+          "descricao": "Se a cavidade for majoritariamente esmalte, é preferível aplicar o ETCHANT em toda a cavidade antes do primer; depois lavar com água e secar com ar.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s (opcional)"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-primer",
+          "titulo": "PRIMER",
+          "descricao": "Aplicar o PRIMER em toda a cavidade com MicroBrush e deixar agir.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "secagem",
+          "titulo": "Secagem do primer",
+          "descricao": "Secar completamente com ar isento de óleo.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "BONDING AGENT",
+          "descricao": "Aplicar o BONDING AGENT uniformemente com MicroBrush. Não aplicar ar após o bonding agent e não misturar primer e bond no pote; camada muito fina reduz a adesão.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar imediatamente o BONDING AGENT. A IFU não informa a intensidade.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · luz halógena"
+            },
+            {
+              "tipo": "luz",
+              "texto": "5 s · LED de alta potência"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": []
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3. Indisponível nas lojas em 06/10/2026."
+  },
+  "id": "fl-bond-ii",
+  "nomeComercial": "FL-Bond II",
+  "fabricante": {
+    "id": "shofu",
+    "nome": "Shofu"
+  },
+  "classificacao": {
+    "grupo": "autocondicionante",
+    "subcategorias": [
+      {
+        "id": "autocondicionante-2-passos",
+        "fontes": [
+          "folheto"
+        ]
+      }
+    ],
+    "observacao": "Brochura Shofu: \"FL-Bond II is a self-etching fluoride releasing two-step adhesive system\" (Step 1 – Priming / Step 2 – Bonding). A IFU descreve primer + bonding agent, com condicionamento ácido opcional."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Primer autocondicionante seguido de bonding agent (frascos separados); ácido opcional quando a cavidade é majoritariamente esmalte.",
+    "fontes": [
+      "ifu",
+      "folheto"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Monômero de ácido carboxílico",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Monômero de ácido fosfórico",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Iniciador",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Carga S-PRG (vidro de fluoroboroaluminossilicato)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "UDMA",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "TEGDMA",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "2-HEMA",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "Iniciador",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita MDP."
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "HEMA listado no bonding agent."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "No primer."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "outros": [
+      {
+        "rotulo": "Flúor",
+        "valor": "Liberação e recarga de flúor (carga S-PRG)",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ]
+  },
+  "apresentacoes": [
+    {
+      "id": "kit-primer-5ml-bond-5ml",
+      "tipo": "kit",
+      "descricao": "Kit: Primer 5 mL + Bonding Agent 5 mL + 50 MicroBrush + acessórios",
+      "quantidade": 1,
+      "codigoFabricante": "1306",
+      "itens": [
+        "Primer 5 mL",
+        "Bonding Agent 5 mL",
+        "MicroBrush rosa e amarelo, 25 de cada",
+        "1 pote descartável",
+        "1 cobertura plástica"
+      ],
+      "fontes": [
+        "folheto"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "kit-primer-5ml-bond-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "FL-BOND II — Instructions for Use (EN) — Shofu",
+      "url": "https://www.shofu.de/downloads/Produkte/S0037//FL-Bond-II-IFU-EN-633.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "04.0:2020-09 · 72402",
+      "observacao": "Tradução livre do EN pelo time; valores intactos. A Shofu não publica IFU em português (apenas SDS)."
+    },
+    {
+      "id": "folheto",
+      "tipo": "ficha-tecnica",
+      "titulo": "FL-Bond II — Brochura (EN) — Shofu",
+      "url": "https://www.shofu.de/downloads/Produkte/S0037//FL-Bond-II-BRO-EN-633.pdf",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Kit PN 1306; Primer 5 ml PN 1307; Bonding Agent 5 ml PN 1308; Etchant 6 ml PN 1309."
+    },
+    {
+      "id": "loja-speed",
+      "tipo": "loja",
+      "titulo": "Dental Speed — Kit Adesivo FL-Bond 5ml + Primer 5ml e Micropincéis - Shofu",
+      "url": "https://www.dentalspeed.com/kit-adesivo-fl-bond-5ml-primer-5ml-e-micropinceis-shofu.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "A descrição da página identifica o produto como FL-Bond II."
+    }
+  ]
+}

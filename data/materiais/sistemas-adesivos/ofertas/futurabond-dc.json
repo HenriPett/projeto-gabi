@@ -1,0 +1,57 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "futurabond-dc",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "singledose-50",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-futurabond-dc-voco-623048.html",
+      "tituloNaLoja": "Adesivo Futurabond DC - Voco",
+      "skuLoja": "623048",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 39999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 38799,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "singledose-50",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/futurabond-dc-voco.html",
+      "tituloNaLoja": "Adesivo Futurabond DC - Voco",
+      "skuLoja": "VFB5078A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 39999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 38799,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Anúncio: 50 unidoses."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "singledose-50",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Futurabond DC não encontrado no sitemap da loja em 06/10/2026."
+    }
+  ]
+}
