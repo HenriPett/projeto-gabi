@@ -123,12 +123,8 @@
         {
           "tipo": "condicionamento-acido",
           "titulo": "Condicionamento ácido",
-          "descricao": "Condicionar o esmalte com agente à base de ácido fosfórico. Seguir as instruções do ácido fosfórico (tempo não informado nesta IFU).",
+          "descricao": "Condicionar o esmalte com agente à base de ácido fosfórico. Seguir as instruções do ácido fosfórico.",
           "parametros": [
-            {
-              "tipo": "tempo",
-              "texto": "conforme instruções do ácido (não informado na IFU)"
-            },
             {
               "tipo": "substrato",
               "texto": "somente esmalte"
@@ -210,6 +206,12 @@
           "fontes": [
             "ifu"
           ]
+        },
+        {
+          "texto": "A IFU do adesivo não informa o tempo de condicionamento ácido; seguir as instruções do ácido utilizado.",
+          "fontes": [
+            "ifu"
+          ]
         }
       ]
     },
@@ -235,12 +237,8 @@
         {
           "tipo": "condicionamento-acido",
           "titulo": "Condicionamento ácido",
-          "descricao": "Condicionar esmalte e dentina com agente à base de ácido fosfórico. Seguir as instruções do ácido fosfórico (tempo não informado nesta IFU).",
+          "descricao": "Condicionar esmalte e dentina com agente à base de ácido fosfórico. Seguir as instruções do ácido fosfórico.",
           "parametros": [
-            {
-              "tipo": "tempo",
-              "texto": "conforme instruções do ácido (não informado na IFU)"
-            },
             {
               "tipo": "substrato",
               "texto": "esmalte e dentina"
@@ -319,6 +317,12 @@
       "observacoes": [
         {
           "texto": "O condicionamento ácido prévio é opcional; só é necessário em esmalte não preparado.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "A IFU do adesivo não informa o tempo de condicionamento ácido; seguir as instruções do ácido utilizado.",
           "fontes": [
             "ifu"
           ]
@@ -487,7 +491,7 @@
       "url": "https://www.voco.dental/en/portaldata/1/resources/products/instructions-for-use/e1/futurabond-u_ifu_e1.pdf",
       "acessadoEm": "2026-10-06",
       "versao": "VC 60 AA1571 E1 0226 99 · revisão 2026-02",
-      "observacao": "Português europeu. A IFU não informa tempo de condicionamento ácido (remete às instruções do ácido)."
+      "observacao": "Texto adaptado de PT-PT; valores intactos. A IFU não informa tempo de condicionamento ácido (remete às instruções do ácido)."
     },
     {
       "id": "ifu-frasco",
@@ -495,7 +499,8 @@
       "titulo": "Futurabond U bottle — Instruções de utilização",
       "url": "https://www.voco.dental/en/portaldata/1/resources/products/instructions-for-use/e1/futurabond-u-bottle_ifu_e1.pdf",
       "acessadoEm": "2026-10-06",
-      "versao": "VC 60 AA1577 E1 0426 99 · revisão 2026-04"
+      "versao": "VC 60 AA1577 E1 0426 99 · revisão 2026-04",
+      "observacao": "Texto adaptado de PT-PT; valores intactos."
     },
     {
       "id": "site-br",

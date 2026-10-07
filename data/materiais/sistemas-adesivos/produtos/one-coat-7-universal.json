@@ -118,10 +118,6 @@
           "descricao": "Condicionar somente as áreas de esmalte com gel de ácido fosfórico, conforme as instruções do gel; enxaguar e secar.",
           "parametros": [
             {
-              "tipo": "tempo",
-              "texto": "conforme instruções do gel (não informado na IFU)"
-            },
-            {
               "tipo": "substrato",
               "texto": "somente esmalte"
             }
@@ -173,7 +169,14 @@
           ]
         }
       ],
-      "observacoes": []
+      "observacoes": [
+        {
+          "texto": "A IFU do adesivo não informa o tempo de condicionamento ácido; seguir as instruções do ácido utilizado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
     },
     {
       "id": "condicionamento-total",
@@ -199,10 +202,6 @@
           "titulo": "Condicionamento ácido",
           "descricao": "Aplicar gel de ácido fosfórico (p. ex., Etchant Gel S, Coltene) conforme as instruções do fabricante do gel. Enxaguar bem com água e secar com ar sem óleo, sem secar demais a dentina.",
           "parametros": [
-            {
-              "tipo": "tempo",
-              "texto": "conforme instruções do gel (não informado na IFU)"
-            },
             {
               "tipo": "substrato",
               "texto": "esmalte e dentina"
@@ -255,7 +254,14 @@
           ]
         }
       ],
-      "observacoes": []
+      "observacoes": [
+        {
+          "texto": "A IFU do adesivo não informa o tempo de condicionamento ácido; seguir as instruções do ácido utilizado.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
     }
   ],
   "imagens": [],
@@ -380,7 +386,7 @@
       "url": "https://products.coltene.com/EN/PT/media/DOC_IFU_30005506-03-25-OneCoat7-UNIVERSAL-A4_IND.pdf?sprache=PT",
       "acessadoEm": "2026-10-06",
       "versao": "30005506 · REV-03-2025",
-      "observacao": "Português europeu. A IFU não informa volumes nem tempo de condicionamento ácido (remete às instruções do gel)."
+      "observacao": "Texto adaptado de PT-PT; valores intactos. A IFU não informa volumes nem tempo de condicionamento ácido (remete às instruções do gel)."
     },
     {
       "id": "loja-cremer",
