@@ -457,28 +457,21 @@ Problema (cliente): no desktop a grade de 7 cartões em 3 colunas termina em ~1/
 - Rodapé da tabela (caption muted): a legenda da notação (`<LegendaNotacao>`), uma vez só.
 - Tudo vem da taxonomia + `categorias.json` + contagem do catálogo. **Nada digitado à mão.**
 
-**③ Glossário**: página própria `/guia/glossario` + índice em `/guia`
-Contrato do Molar (ARQUITETURA §3.3): `glossario.json` = `{ fontes[], termos[{ id, termo, sigla?, nomeCompleto?, sinonimos[], definicao, fontes[ids], artigos[slugs], relacionados[ids] }], revisao }`, lido com `catalogo().glossario["sistemas-adesivos"]`. A ordem alfabética fica com a UI. Conteúdo: Dentina (~20 termos).
+**③ Glossário**: só em `/guia`, abaixo dos cartões (decisão do Molar, ARQUITETURA §3.3; **não existe `/guia/glossario`**)
+Contrato: `glossario.json` = `{ fontes[], termos[{ id, termo, sigla?, nomeCompleto?, sinonimos[], definicao, fontes[ids], artigos[slugs], relacionados[ids] }], revisao }`, lido com `catalogo().glossario["sistemas-adesivos"]`. A ordem alfabética é da UI. Conteúdo: Dentina (~20 termos). **URL canônica de um termo: `/guia#termo-{id}`.** Artigos ("Veja também"), busca e termos relacionados apontam para ela. Os ids existem uma única vez na página.
 
-*No `/guia` (main, abaixo dos cartões): bloco "Glossário"*
-- h2 "Glossário" + overline "TERMOS" + contagem ("20 termos") + link "Abrir glossário →" (alinhado à direita no desktop).
-- **Índice de termos**: só os nomes, em ordem alfabética, como lista de links em **colunas CSS** (`columns: 3` a partir de 1024px, 2 de 640 a 1023px, 1 abaixo; `break-inside: avoid`). Cada item: termo 15px 600 + sigla muted ("MDP · 10‑MDP"), mín. 44px de alvo, levando a `/guia/glossario#termo-{id}`. **Não repetir as definições aqui**: elas existem num lugar só.
+- Cabeçalho do bloco: overline "TERMOS", h2 "Glossário", contagem caption ("20 termos").
+- **Barra de navegação do glossário** (abaixo do h2): input "Filtrar termos" (44px, `type="search"`, largura máx. 320px) + **índice A–Z** em chips de 32×32px (13px 700, só as letras com termos, cada um levando à âncora `#letra-{x}`). Abaixo de 640px, os chips ficam numa linha com scroll horizontal (`overflow-x: auto`, `scroll-snap`). O filtro busca em termo, sigla e sinônimo, sem distinguir acento ou caixa; quando vazio mostra "Nenhum termo para “x”."; `aria-live="polite"` anuncia "n termos". Não é sticky (o header já é).
+- **Lista**: agrupada por letra. O separador tem `id="letra-{x}"`, letra em serif 24px 700 `--purple-900` + filete `--lilac-200`. Os termos de cada letra ficam numa grade de **2 colunas a partir de 1024px** (`minmax(0,1fr)`, gap 24px) e 1 coluna abaixo. Cada termo é um `<article id="termo-{id}">` com `scroll-margin-top: 96px` (header sticky):
+  - Título h3: sigla + termo ("MDP — 10‑metacriloiloxidecil di‑hidrogenofosfato", ou só o termo), 16px 700.
+  - Sinônimos: caption muted "Também: lama dentinária, smear layer".
+  - Definição: `--text-small` `--color-text`, 1–2 frases.
+  - "Relacionados:" chips-link (28px, 13px) para outros termos (`relacionados` → `#termo-{id}`).
+  - Rodapé: `<SourceLink>` compacto (Autor Ano, DOI ↗) + "Leia mais: <título do artigo> →" por artigo (link sublinhado).
+  - `:target`: fundo `--lilac-100` que some em 1,5s (sem animação em reduced-motion); com filtro ativo, o termo-alvo nunca é escondido.
 - Sem dado (ou só rascunho em produção): o bloco não aparece.
 
-*Página `/guia/glossario`*
-- Breadcrumb Sistemas Adesivos › Guia rápido › Glossário; overline "PARA ESTUDAR", h1 "Glossário", lead "Termos de adesão em uma ou duas frases, cada um com a fonte."
-- Layout ≥1024px: mesmo grid 8/12 + 4/12 do /guia. O aside sticky traz o **índice A–Z** em grade de letras (36×36px, 13px 700; só as letras com termos; a letra da seção visível ganha fundo `--lilac-100` via IntersectionObserver, como progressivo e opcional) e, abaixo, o link "← Voltar ao Guia rápido". Abaixo de 1024px, o A–Z vira uma linha de chips com scroll horizontal (`overflow-x: auto`, `scroll-snap`), fixa abaixo do header (`position: sticky; top: 64px`).
-- Filtro: input "Filtrar termos" (44px, `type="search"`) no topo do main. Filtra por termo, sigla e sinônimo, sem distinguir acento ou caixa; quando vazio mostra "Nenhum termo para “x”."; `aria-live="polite"` anuncia "n termos".
-- **Lista**: agrupada por letra (separador: letra em serif 24px 700 `--purple-900` + filete `--lilac-200`), **1 coluna** (leitura de definição; 68ch máx.). Cada termo é um `<article id="termo-{id}">` com `scroll-margin-top: 96px` (128px abaixo de 1024, por causa do A–Z sticky):
-  - Título h3: sigla + termo ("MDP — 10‑metacriloiloxidecil di‑hidrogenofosfato", ou só o termo), 18px 600.
-  - Sinônimos: caption muted "Também: lama dentinária, smear layer".
-  - Definição: `--text-body`, 1–2 frases.
-  - "Relacionados:" chips-link para outros termos (`relacionados`), 28px, levando a `#termo-{id}`.
-  - Rodapé: `<SourceLink>` (Autor Ano, DOI ↗) + "Leia mais: <título do artigo> →" por artigo relacionado (link sublinhado).
-  - `:target` com fundo `--lilac-100` que some em 1,5s (sem animação em reduced-motion).
-- URL canônica de um termo: **`/guia/glossario#termo-{id}`** (ex.: `/guia/glossario#termo-mdp`). Artigos e outras páginas linkam para ela.
-
-**Acessibilidade:** ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → índice do glossário). No desktop, `grid-template-areas` põe cartões e glossário no main e trilha e cola no aside. O leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha funciona como introdução. `aside` com `aria-label`, tabela com `caption`, um h2 por bloco.
+**Acessibilidade:** ordem do DOM = ordem mobile (h1 → trilha → cartões → cola → glossário). No desktop, `grid-template-areas` põe cartões e glossário no main e trilha e cola no aside. O leitor de tela lê trilha → cartões → cola → glossário, o que é aceitável porque a trilha funciona como introdução. `aside` com `aria-label`, tabela com `caption`, um h2 por bloco.
 
 **Larguras de aceite:** 320, 390, 768, 1280, 1920. Sem scroll horizontal, a tabela da cola cabe sem rolagem a partir de 320px (Notação `nowrap`; a 320 as colunas somam ~290px: Subcategoria 90 · Notação 90 · Passos 44 · Produtos 56) e a lateral não ultrapassa a altura da viewport sem rolar internamente.
 
