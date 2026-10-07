@@ -2,7 +2,7 @@ import type { SubstratoAcido } from "./rotulos";
 
 const COROA = "M8 34V16c0-7 5-12 12-12s12 5 12 12v18z";
 const NUCLEO = "M13 34V17c0-4.5 3-7.5 7-7.5s7 3 7 7.5v17z";
-const CONDICIONADO = "rgb(168 35 110 / 0.45)"; // --magenta-600 a 45%
+const CONDICIONADO = "rgb(222 129 29 / 0.55)"; // --orange-500 (cor do ácido no diagrama) a 55%
 
 export const LEGENDA_SUBSTRATO: Record<"esmalte" | "esmalte-e-dentina" | "nenhum", string> = {
   esmalte: "esmalte",
@@ -12,7 +12,7 @@ export const LEGENDA_SUBSTRATO: Record<"esmalte" | "esmalte-e-dentina" | "nenhum
 
 /**
  * [R2] Corte de dente simplificado: anel = esmalte, núcleo = dentina; a área
- * condicionada pelo ácido fica em magenta (DESIGN §3.7). Decorativo + legenda.
+ * condicionada pelo ácido fica em laranja (DESIGN §3.7). Decorativo + legenda.
  */
 export function SubstrateGlyph({ substrato }: { substrato: SubstratoAcido }) {
   const esmalte = substrato !== null;

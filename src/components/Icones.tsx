@@ -69,7 +69,7 @@ export const IconeFiltro = (p: P) => (
   <svg {...base} {...p}><path d="M4 6h16M7 12h10M10 18h4" /></svg>
 );
 
-/** Silhueta neutra de frasco (placeholder de foto, DESIGN §3.8 item 1: --lilac-200). */
+/** Silhueta neutra de frasco (placeholder de foto, DESIGN §3.8 item 1: --gray-300). */
 export function Frasco({ className = "bottle", rotulo }: { className?: string; rotulo?: string }) {
   return (
     <svg
@@ -79,10 +79,10 @@ export function Frasco({ className = "bottle", rotulo }: { className?: string; r
       aria-label={rotulo}
       aria-hidden={rotulo ? undefined : true}
     >
-      <rect x="30" y="4" width="20" height="22" rx="3" fill="var(--lilac-200)" />
-      <rect x="26" y="24" width="28" height="10" rx="2" fill="var(--lilac-200)" />
-      <path d="M20 40c0-4 4-6 8-6h24c4 0 8 2 8 6v88c0 5-4 8-8 8H28c-4 0-8-3-8-8z" fill="#fff" stroke="var(--lilac-200)" strokeWidth="3" />
-      <rect x="20" y="62" width="40" height="44" fill="var(--lilac-50)" />
+      <rect x="30" y="4" width="20" height="22" rx="3" fill="var(--gray-300)" />
+      <rect x="26" y="24" width="28" height="10" rx="2" fill="var(--gray-300)" />
+      <path d="M20 40c0-4 4-6 8-6h24c4 0 8 2 8 6v88c0 5-4 8-8 8H28c-4 0-8-3-8-8z" fill="#fff" stroke="var(--gray-300)" strokeWidth="3" />
+      <rect x="20" y="62" width="40" height="44" fill="var(--gray-75)" />
     </svg>
   );
 }
