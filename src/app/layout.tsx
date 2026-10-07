@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   title: { default: "Sistemas Adesivos", template: "%s · Sistemas Adesivos" },
   description: "Classificação, protocolos e comparação de preços de sistemas adesivos odontológicos.",
   appleWebApp: { capable: true, title: "Adesivos", statusBarStyle: "default" },
-  // Previews e dev não são indexados (ver também src/app/robots.ts).
-  robots: process.env.VERCEL_ENV === "production" ? undefined : { index: false, follow: false },
+  // Site fechado por senha: nunca indexar (ver também src/app/robots.ts e o X-Robots-Tag do proxy).
+  robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {

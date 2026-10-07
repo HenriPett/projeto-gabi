@@ -3,6 +3,7 @@ import { catalogo } from "@/lib/dados/carregar";
 import { CompareTray } from "@/components/comparar/CompareTray";
 import { indiceDeBusca } from "@/components/dados-de-tela";
 import { Header } from "@/components/Header";
+import { MarcadorSessao } from "@/auth/MarcadorSessao";
 
 /** Páginas do site (protegidas por senha no proxy): header com busca, rodapé e barra de comparação. */
 export default function LayoutSite({ children }: LayoutProps<"/">) {
@@ -29,6 +30,7 @@ export default function LayoutSite({ children }: LayoutProps<"/">) {
         </div>
       </footer>
       <CompareTray indice={indice} />
+      <MarcadorSessao />
     </>
   );
 }

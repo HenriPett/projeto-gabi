@@ -2,12 +2,16 @@
  * Service worker do PWA (manual, sem Serwist — ver docs/DEPLOY.md §2.3). Dono: Ponte.
  * Fica em public/: não passa pelo bundler, funciona igual com Turbopack e na Vercel.
  *
- *  - precache do shell: "/", "/offline", manifest e ícones
+ *  - precache do shell: "/offline", manifest e ícones ("/" não: exige login)
  *  - páginas (navegação): network-first → cache → /offline
  *  - /_next/static/* (nome com hash, imutável): cache-first
  *  - imagens: stale-while-revalidate, até LIMITE_IMAGENS entradas
  *  - payloads RSC e o resto: rede direto (sem SW). Se a navegação suave falhar
  *    offline, o Next faz navegação completa e cai na regra de páginas.
+ *
+ * Login (src/proxy.ts): páginas só entram no cache se vieram 200 SEM redirect.
+ * Se a rede redireciona para /login, a sessão acabou: o cache de páginas é
+ * apagado e nada protegido é servido offline. O logout também limpa os caches.
  *
  * Versão: registrado como /sw.js?v=<commit>. Mudou o commit, muda a URL, o SW
  * novo assume (skipWaiting + clients.claim) e apaga os caches das versões antigas.
@@ -24,7 +28,6 @@ const CACHES_ATUAIS = [CACHE_SHELL, CACHE_PAGINAS, CACHE_ESTATICOS, CACHE_IMAGEN
 const LIMITE_IMAGENS = 80;
 
 const SHELL = [
-  "/",
   "/offline",
   "/manifest.webmanifest",
   "/icons/icon-192.png",
@@ -68,10 +71,9 @@ self.addEventListener("fetch", (event) => {
 
 async function paginaNetworkFirst(req) {
   const cache = await caches.open(CACHE_PAGINAS);
+  let resp;
   try {
-    const resp = await fetch(req);
-    if (resp.ok) cache.put(req, resp.clone());
-    return resp;
+    resp = await fetch(req);
   } catch {
     return (
       (await cache.match(req, { ignoreSearch: true })) ||
@@ -80,6 +82,15 @@ async function paginaNetworkFirst(req) {
       Response.error()
     );
   }
+  const destino = new URL(resp.url || req.url);
+  // navegação usa redirect "manual": o 307 do proxy chega como opaqueredirect
+  if (resp.type === "opaqueredirect" || resp.redirected || destino.pathname === "/login") {
+    // sem sessão: nada protegido pode continuar disponível offline
+    await caches.delete(CACHE_PAGINAS);
+    return resp;
+  }
+  if (resp.ok) cache.put(req, resp.clone());
+  return resp;
 }
 
 async function cacheFirst(req, nome) {

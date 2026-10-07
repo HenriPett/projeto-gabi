@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SearchBox } from "./busca/SearchBox";
 import { LinkComparar } from "./comparar/CompareTray";
 import { HeaderRetratil } from "./HeaderRetratil";
+import { BotaoSair } from "@/auth/BotaoSair";
 import type { ItemIndice } from "./tipos";
 
 /** Header + busca fixa — DESIGN §3.1. */
@@ -23,6 +24,8 @@ export function Header({ indice }: { indice: ItemIndice[] }) {
           <Link href="/#classificacao">Classificação</Link>
           <LinkComparar />
           <Link href="/guia">Guia</Link>
+          {/* TODO(Pulpa): posição/estilo do Sair (discreto) */}
+          <BotaoSair className="link-sair" />
         </nav>
       </div>
     </HeaderRetratil>

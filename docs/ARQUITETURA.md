@@ -8,10 +8,11 @@
 | Tema | Decisão | Motivo |
 |---|---|---|
 | Framework | **Next.js 16.4 (App Router) + TypeScript strict**, Turbopack | Pedido do briefing; deploy nativo na Vercel. |
-| Renderização | **100% estático (SSG)**: `generateStaticParams` + `dynamicParams = false` em toda rota dinâmica. Sem Server Actions, sem API routes, sem runtime. | Dados mudam por commit, não por requisição. Mais rápido, mais barato, funciona offline no PWA. |
+| Renderização | **Páginas 100% SSG**: `generateStaticParams` + `dynamicParams = false` em toda rota dinâmica. Runtime só no portão de acesso: `src/proxy.ts` e `/api/login`, `/api/logout` (§4.1). Sem Server Actions. | Dados mudam por commit, não por requisição. Mais rápido, mais barato, funciona offline no PWA. |
 | Cache Components | **Desligado** | Não há dado de runtime; ele exige `generateStaticParams` não vazio (quebraria build com catálogo vazio). |
 | Dados | **JSON versionado em `data/`**, validado com **zod** no build, no CI e por `pnpm validar:dados`. Sem banco na v1. | Rastreabilidade (cada dado tem fonte + data; git dá histórico e revisão por PR), zero infra. Catálogo é de dezenas de produtos. |
 | Preços | Arquivo separado por produto (`ofertas/`), em **centavos inteiros**. | Preços são curados manualmente (Bula) — decisão do cliente: sem coleta automática. Revisão por diff só nesses arquivos. Nada de float. |
+| Acesso | **Senha única** (pedido do cliente) conferida no **servidor** por `src/proxy.ts` (Next 16 Proxy, runtime Node). Cookie `sa_sessao` HttpOnly, SameSite=Lax, Secure em https, 1 ano, valor HMAC-SHA256 (nunca a senha). Login/logout por Route Handlers `POST /api/login` e `/api/logout` (funcionam sem JS). | Páginas são SSG: um portão só em JS deixaria o HTML acessível. O proxy roda antes do arquivo estático, então nada protegido sai sem cookie. |
 | Estilo | **Tailwind v4** + tokens CSS do DESIGN.md §1 em `globals.css`. | Padrão do create-next-app; tokens são a ponte com o design. |
 | Busca | Índice gerado no build (`itemDeBusca`) + filtro no cliente (`buscar`). Sem biblioteca. | Dezenas de itens; substring normalizada (sem acento, `&`, espaços) basta. |
 | PWA | `app/manifest.ts` nativo + **service worker manual** `public/sw.js` (Ponte). Sem Serwist. | Menos acoplamento com o bundler; o site é estático, o SW é simples. |
@@ -131,7 +132,8 @@ ofertas[{
 
 | Rota | Arquivo | Conteúdo |
 |---|---|---|
-| `/` | `app/page.tsx` | Home (DESIGN §4.1) |
+| `/login` | `app/login/page.tsx` | Senha de acesso (livre; §4.1) |
+| `/` | `app/(protegido)/page.tsx` | Home (DESIGN §4.1) |
 | `/sistemas-adesivos/{grupo}/{subcategoria}` | `app/sistemas-adesivos/[grupo]/[subcategoria]/page.tsx` | Categoria / estratégia universal (§4.2, §4.4) |
 | `/produto/{id}` (+ `#precos`, `?estrategia={slug}`) | `app/produto/[id]/page.tsx` | Produto, modo de uso, preços (§4.3, §4.7) |
 | `/comparar?ids=a,b,c` | `app/comparar/page.tsx` | Comparador (§4.6) — ler `ids` no cliente para manter rota estática |
@@ -140,6 +142,17 @@ ofertas[{
 | `/metodologia` | `app/metodologia/page.tsx` | Fontes e metodologia (rodapé) |
 
 Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `2-passos | 3-passos | 1-passo | condicionamento-seletivo | condicionamento-total | autocondicionante`. O prefixo `/sistemas-adesivos/` é intencional (próximos materiais ganham o próprio prefixo); diverge do `/[grupo]/[sub]` e `/produto/[slug]` sugeridos no DESIGN/Plano de testes — **vale esta tabela**.
+
+## 4.1 Acesso (login)
+
+- **Livres sem sessão** (`rotaLivre`): `/login`, `/api/login`, `/api/logout`, `/offline`, `/sw.js`, `/version.json`, `/health.json` e arquivos públicos por extensão (imagens, ícones, `manifest.webmanifest`, `robots.txt`, fontes). `_next/static` e `_next/image` ficam fora do matcher. Todo o resto → `307 /login?next=<rota>`.
+- **Senha:** env `SENHA_ACESSO`; sem ela, compara com o SHA-256 embutido em `src/auth/sessao.ts` (texto puro nunca no repo nem no bundle). Comparação em tempo constante, sobre hashes. Senha errada: atraso de ~700 ms.
+- **Cookie:** `v1.<HMAC(chave, msg)>`, com chave = `SEGREDO_SESSAO` → `SENHA_ACESSO` → senha validada. Sem env, o proxy confere pelo hash do token embutido. Trocar a chave ou a senha desloga todos.
+- **Layouts:** o layout raiz **não** carrega dados do catálogo (renderiza `/login`, `/offline`, 404). Header, busca (índice), CompareTray e rodapé moram em `app/(protegido)/layout.tsx`. Nunca leve `catalogo()` para o layout raiz nem para `/login`.
+- **localStorage `sa:sessao`:** só UX ("sessão expirou" no login). Não é fonte de verdade.
+- **Service worker:** páginas só entram no cache se vierem 200 sem redirect; um redirect para `/login` apaga o cache de páginas. O logout limpa a flag local e os caches (JS) e manda `Clear-Site-Data: "cache", "storage"`.
+- **noindex** em tudo: metadata do layout raiz, `robots.txt` com disallow total e `X-Robots-Tag` no proxy.
+- **Limite conhecido:** sem `SEGREDO_SESSAO`, o valor do cookie é fixo para a senha (logout apaga o cookie do aparelho, mas um cookie copiado continua válido até trocar a senha ou o segredo). A senha é curta e o SHA-256 dela está num repo público, o que permite ataque offline por força bruta. Para proteção real, defina `SENHA_ACESSO` (forte) e `SEGREDO_SESSAO` na Vercel.
 
 ## 5. Regras para quem escreve código
 
