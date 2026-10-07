@@ -1,0 +1,150 @@
+{
+  "$schema": "../../schemas/categorias.schema.json",
+  "fontes": [
+    {
+      "id": "pashley-2011",
+      "tipo": "literatura",
+      "titulo": "Pashley DH, Tay FR, Breschi L, et al. State of the art etch-and-rinse adhesives. Dent Mater. 2011;27(1):1-16.",
+      "url": "https://doi.org/10.1016/j.dental.2010.10.016",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "hanabusa-2012",
+      "tipo": "literatura",
+      "titulo": "Hanabusa M, Mine A, Kuboki T, et al. Bonding effectiveness of a new 'multi-mode' adhesive to enamel and dentine. J Dent. 2012;40(6):475-484.",
+      "url": "https://doi.org/10.1016/j.jdent.2012.02.012",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "rosa-2015",
+      "tipo": "literatura",
+      "titulo": "Rosa WL, Piva E, Silva AF. Bond strength of universal adhesives: a systematic review and meta-analysis. J Dent. 2015;43(7):765-776.",
+      "url": "https://doi.org/10.1016/j.jdent.2015.04.003",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "cuevas-suarez-2019",
+      "tipo": "literatura",
+      "titulo": "Cuevas-Suárez CE, da Rosa WLO, Lund RG, et al. Bonding performance of universal adhesives: an updated systematic review and meta-analysis. J Adhes Dent. 2019;21(1):7-26.",
+      "url": "https://doi.org/10.3290/j.jad.a41975",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "yoshida-2004",
+      "tipo": "literatura",
+      "titulo": "Yoshida Y, Nagakane K, Fukuda R, et al. Comparative study on adhesive performance of functional monomers. J Dent Res. 2004;83(6):454-458.",
+      "url": "https://doi.org/10.1177/154405910408300604",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "breschi-2008",
+      "tipo": "literatura",
+      "titulo": "Breschi L, Mazzoni A, Ruggeri A, et al. Dental adhesion review: aging and stability of the bonded interface. Dent Mater. 2008;24(1):90-101.",
+      "url": "https://doi.org/10.1016/j.dental.2007.02.009",
+      "acessadoEm": "2026-10-06"
+    },
+    {
+      "id": "perdigao-2020",
+      "tipo": "literatura",
+      "titulo": "Perdigão J. Current perspectives on dental adhesion: (1) Dentin adhesion – not there yet. Jpn Dent Sci Rev. 2020;56(1):190-207.",
+      "url": "https://doi.org/10.1016/j.jdsr.2020.08.004",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Acesso aberto (PMC8216299)."
+    }
+  ],
+  "grupos": {
+    "convencional": {
+      "explicacao": {
+        "texto": "Adesivos com uma etapa separada de condicionamento com ácido fosfórico, seguida de lavagem (em inglês, etch-and-rinse). O ácido condiciona esmalte e dentina ao mesmo tempo e remove a smear layer.",
+        "fontes": [
+          "perdigao-2020",
+          "pashley-2011"
+        ]
+      }
+    },
+    "autocondicionante": {
+      "explicacao": {
+        "texto": "Adesivos sem etapa separada de condicionamento ácido (self-etch). Monômeros ácidos condicionam e preparam (primam) esmalte e dentina ao mesmo tempo e incorporam a smear layer à interface, em vez de removê-la.",
+        "fontes": [
+          "perdigao-2020"
+        ]
+      }
+    },
+    "universal": {
+      "explicacao": {
+        "texto": "Adesivos de frasco único, também chamados multimodo, que podem ser usados como convencional, como autocondicionante ou com condicionamento seletivo do esmalte, conforme as estratégias recomendadas pelo fabricante. O que os distingue dos autocondicionantes clássicos de 1 passo é a adição de monômeros ácidos funcionais, como o MDP.",
+        "fontes": [
+          "perdigao-2020",
+          "hanabusa-2012"
+        ]
+      }
+    }
+  },
+  "subcategorias": {
+    "convencional-3-passos": {
+      "explicacao": {
+        "texto": "Três etapas separadas: condicionamento com ácido fosfórico, primer e adesivo. O primer é uma solução hidrofílica com solvente. O adesivo é uma resina hidrofóbica sem solvente, que torna a interface menos permeável. É a versão com o histórico mais longo e é considerada de referência pelo desempenho clínico.",
+        "fontes": [
+          "pashley-2011",
+          "perdigao-2020",
+          "breschi-2008"
+        ]
+      }
+    },
+    "convencional-2-passos": {
+      "explicacao": {
+        "texto": "Condicionamento com ácido fosfórico seguido de um único frasco que reúne primer e adesivo. Sem a resina hidrofóbica separada, a interface com a dentina degrada mais depressa, e a retenção clínica é menor que a dos convencionais de 3 passos.",
+        "fontes": [
+          "perdigao-2020"
+        ]
+      }
+    },
+    "autocondicionante-2-passos": {
+      "explicacao": {
+        "texto": "Um primer ácido, que condiciona e prima ao mesmo tempo, seguido de uma resina adesiva hidrofóbica. Nas versões 'mild', a desmineralização é parcial e preserva hidroxiapatita, o que permite somar união química à micromecânica. É considerado o padrão-ouro da estratégia autocondicionante.",
+        "fontes": [
+          "perdigao-2020",
+          "yoshida-2004"
+        ]
+      }
+    },
+    "autocondicionante-1-passo": {
+      "explicacao": {
+        "texto": "Condicionamento, primer e adesivo num único componente, sem a resina hidrofóbica extra do sistema de 2 passos. É a opção mais simples, mas, em revisões, os adesivos de passo único foram os menos duráveis, e a evaporação do solvente exige atenção.",
+        "fontes": [
+          "perdigao-2020",
+          "breschi-2008"
+        ]
+      }
+    },
+    "universal-condicionamento-seletivo": {
+      "explicacao": {
+        "texto": "O ácido fosfórico é aplicado só no esmalte, e o adesivo universal vai sobre todo o preparo. Assim, ele funciona como convencional no esmalte e como autocondicionante na dentina. Em meta-análises laboratoriais, condicionar o esmalte melhorou a união dos universais a esse substrato.",
+        "fontes": [
+          "perdigao-2020",
+          "rosa-2015",
+          "cuevas-suarez-2019"
+        ]
+      }
+    },
+    "universal-condicionamento-total": {
+      "explicacao": {
+        "texto": "O ácido fosfórico é aplicado em esmalte e dentina antes do adesivo universal, que passa a ser usado como convencional. No esmalte, a união melhora. Na dentina, com universais 'mild', a resistência de união não diferiu da do modo autocondicionante, mas o ácido extra deixou a interface mais vulnerável e retira o cálcio de que o MDP depende para a ligação química.",
+        "fontes": [
+          "rosa-2015",
+          "hanabusa-2012",
+          "perdigao-2020"
+        ]
+      }
+    },
+    "universal-autocondicionante": {
+      "explicacao": {
+        "texto": "O adesivo universal é aplicado sem ácido fosfórico separado, como um autocondicionante de 1 passo. É o modo mais simples, mas nele a união ao esmalte é significativamente menor que no modo convencional, e estudos clínicos relatam retenção inferior à do condicionamento total ou seletivo.",
+        "fontes": [
+          "perdigao-2020",
+          "cuevas-suarez-2019"
+        ]
+      }
+    }
+  }
+}
