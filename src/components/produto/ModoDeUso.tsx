@@ -24,6 +24,13 @@ const ICONE_PARAMETRO: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = 
 
 const dois = (n: number) => String(n).padStart(2, "0");
 
+/** Etapas do protocolo que são ácido / primer / adesivo recebem a cor da etapa (DESIGN §1.4). */
+const COR_ETAPA: Partial<Record<string, string>> = {
+  "condicionamento-acido": " ustep--acid",
+  "aplicacao-primer": " ustep--primer",
+  "aplicacao-adesivo": " ustep--adh",
+};
+
 function Etapas({ protocolo }: { protocolo: ProtocoloDTO }) {
   return (
     <ol className="usteps usteps--fade" key={protocolo.id} data-testid="protocol" data-protocolo-id={protocolo.id}>
@@ -33,7 +40,7 @@ function Etapas({ protocolo }: { protocolo: ProtocoloDTO }) {
             <IconeSetaBaixo />
           </li>
         ),
-        <li key={i} className="ustep" data-testid="protocol-step" data-step={dois(i + 1)}>
+        <li key={i} className={`ustep${COR_ETAPA[e.tipo] ?? ""}`} data-testid="protocol-step" data-step={dois(i + 1)}>
           <span className="ustep__n" aria-hidden="true">
             {dois(i + 1)}
           </span>

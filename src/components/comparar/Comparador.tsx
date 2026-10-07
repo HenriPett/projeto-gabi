@@ -31,6 +31,9 @@ function SimNao({ valor }: { valor: ValorSimNao }) {
   return <span className="ni">{NAO_VERIFICADA}</span>;
 }
 
+/** Linhas "Etapas" do comparador com o quadradinho da cor da etapa (Ácido azul, Primer amarelo, Adesivo laranja). */
+const MARCA_ETAPA: Partial<Record<string, "acid" | "primer" | "adh">> = { condicionamento: "acid", primer: "primer", adesivo: "adh" };
+
 function ValorCelula({ c }: { c: Celula }) {
   if (c.tipo === "simnao") return <SimNao valor={c.valor} />;
   if (c.tipo === "passos")
@@ -244,6 +247,7 @@ export function Comparador({ colunas, indice }: { colunas: ColunaComparador[]; i
                   return (
                     <tr key={l.atributo} className={soDiferencas ? (igual ? "same" : "diff") : undefined} data-testid="compare-row" data-atributo={l.atributo}>
                       <th scope="row">
+                        {MARCA_ETAPA[l.atributo] && <span className={`etapa-marca etapa-marca--${MARCA_ETAPA[l.atributo]}`} aria-hidden="true" />}
                         {l.rotulo}
                         {soDiferencas && !igual && <span className="sr-only"> (diferente)</span>}
                       </th>

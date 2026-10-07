@@ -9,6 +9,8 @@
   /* primitivas — paleta "frascos" (ref.: docs/ref-paleta, OptiBond Universal / FL; DESIGN.md §1.1).
      Valores de marca medidos na imagem (mediana): preto #151515, grafite #373430, laranja #DE811D, amarelo #E9CA06. */
   --ink-900: #151515; --ink-800: #252525; --ink-700: #373430;
+  /* azul = cor da etapa Ácido (pedido do cliente, 07/10/2026); não é cor de marca */
+  --blue-800: #1e40af; --blue-600: #2563eb; --blue-100: #dceafb; --blue-50: #eff5fe;
   --orange-800: #7a3d04; --orange-700: #a65308; --orange-600: #c46a0e; --orange-500: #de811d;
   --orange-100: #fcebd7; --orange-50: #fef6ec;
   --yellow-800: #5c4a00; --yellow-600: #c9a800; --yellow-400: #e9ca06; --yellow-100: #fbf3c2; --yellow-50: #fffbe6;
@@ -24,10 +26,11 @@
   --grp-auto-solid: var(--ink-700); --grp-auto-on: #ffffff; --grp-auto-tint: var(--gray-100); --grp-auto-ink: var(--ink-900);
   --grp-univ-solid: var(--orange-500); --grp-univ-on: var(--ink-900); --grp-univ-tint: var(--orange-100); --grp-univ-ink: var(--orange-800);
 
-  /* etapas do diagrama "Como identificar?": fundo / filete / texto do glifo */
-  --step-acid-bg: var(--orange-100); --step-acid-line: var(--orange-500); --step-acid-ink: var(--orange-800);
+  /* etapas (diagrama, mini-diagrama, notação, legenda, Modo de Uso, comparador): fundo / filete / texto.
+     Ácido = AZUL, Primer = AMARELO, Adesivo = LARANJA (o grafite NÃO representa etapa; é só do grupo Autocond.). */
+  --step-acid-bg: var(--blue-100); --step-acid-line: var(--blue-600); --step-acid-ink: var(--blue-800);
   --step-primer-bg: var(--yellow-100); --step-primer-line: var(--yellow-600); --step-primer-ink: var(--yellow-800);
-  --step-adh-bg: var(--gray-100); --step-adh-line: var(--ink-700); --step-adh-ink: var(--ink-900);
+  --step-adh-bg: var(--orange-100); --step-adh-line: var(--orange-500); --step-adh-ink: var(--orange-800);
 
   /* tipografia (escala responsiva) */
   --text-display: 32px; --text-h1: 28px; --text-h2: 22px; --text-h3: 18px;
@@ -435,6 +438,7 @@
   .step--adh .step__glyph { color: var(--step-adh-ink); border-color: var(--step-adh-line); }
   .step--pa { background: linear-gradient(90deg, var(--step-primer-bg), var(--step-adh-bg)); box-shadow: inset 2px 0 0 var(--step-primer-line), inset 4px 0 0 var(--step-adh-line); }
   .step--pa .step__glyph { color: var(--ink-900); border-color: var(--step-adh-line); font-size: 11px; }
+  .step__glyph .g-acid { color: var(--step-acid-ink); } .step__glyph .g-primer { color: var(--step-primer-ink); } .step__glyph .g-adh { color: var(--step-adh-ink); }
   .step--apa { background: linear-gradient(90deg, var(--step-acid-bg), var(--step-primer-bg), var(--step-adh-bg)); box-shadow: inset 2px 0 0 var(--step-acid-line), inset 4px 0 0 var(--step-primer-line), inset 6px 0 0 var(--step-adh-line); }
   .step--apa .step__glyph { color: var(--ink-900); border-color: var(--step-adh-line); font-size: 10px; }
   .arrow { display: flex; justify-content: center; height: 28px; }
@@ -449,6 +453,9 @@
   /* [R2] Notação compacta, etapa ausente riscada e substrato — §3.7 */
   .notacao { font-size: var(--text-small); font-weight: 600; color: var(--ink-900); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; text-transform: none; white-space: nowrap; }
   .notacao sub { font-size: 0.7em; }
+  /* letras da notação e da legenda na cor (escura, AA) da etapa: Ác azul, P amarelo, Ad/U laranja */
+  .n-acid { color: var(--step-acid-ink); } .n-primer { color: var(--step-primer-ink); } .n-adh { color: var(--step-adh-ink); }
+  .legenda-notacao .n-acid, .legenda-notacao .n-primer, .legenda-notacao .n-adh { font-weight: 700; }
   .notacao--diagrama { display: block; margin-top: 4px; }
   .subcard .notacao { margin-top: -4px; }
   .legenda-notacao { font-size: var(--text-caption); color: var(--color-text-muted); margin-top: var(--space-3); text-align: center; }
@@ -589,8 +596,14 @@
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   .ustep { display: grid; grid-template-columns: 48px 1fr; gap: var(--space-3); background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-1); padding: var(--space-4); }
   /* número em texto: laranja escuro (5,4:1); o laranja da marca tem 2,9:1 e não serve como texto */
-  .ustep__n { font: 700 28px/1 var(--font-serif); color: var(--color-primary); font-variant-numeric: tabular-nums; }
+  .ustep__n { font: 700 28px/1 var(--font-serif); color: var(--ink-700); font-variant-numeric: tabular-nums; }
   .ustep h3 { margin-bottom: 4px; }
+  /* etapas do protocolo que SÃO ácido / primer / adesivo ganham o filete e o número na cor da etapa */
+  .ustep--acid { box-shadow: var(--shadow-1), inset 4px 0 0 var(--step-acid-line); } .ustep--acid .ustep__n { color: var(--step-acid-ink); }
+  .ustep--primer { box-shadow: var(--shadow-1), inset 4px 0 0 var(--step-primer-line); } .ustep--primer .ustep__n { color: var(--step-primer-ink); }
+  .ustep--adh { box-shadow: var(--shadow-1), inset 4px 0 0 var(--step-adh-line); } .ustep--adh .ustep__n { color: var(--step-adh-ink); }
+  .etapa-marca { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: 0; }
+  .etapa-marca--acid { background: var(--step-acid-line); } .etapa-marca--primer { background: var(--step-primer-line); } .etapa-marca--adh { background: var(--step-adh-line); }
   .params { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 10px 0 0; }
   .params li { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 4px 10px; border-radius: var(--radius-sm); background: var(--gray-100); color: var(--ink-900); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
   .params svg { width: 16px; height: 16px; flex: none; }

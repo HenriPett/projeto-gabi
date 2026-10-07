@@ -38,12 +38,15 @@ Pedido do cliente: usar as cores dos frascos OptiBond Universal / OptiBond FL (K
 |---|---|---|---|
 | `--ink-900` | `#151515` | tampa preta (medido) | **texto principal**, header, toast |
 | `--ink-800` | `#252525` | logo "Kerr" (medido) | reserva |
-| `--ink-700` | `#373430` | faixa "Adhesive" (medido) | sólido de Autocondicionantes, filete da etapa Adesivo, borda do header |
-| `--orange-500` | `#DE811D` | faixa "Universal" (medido) | **cor de marca**: fundo do CTA, sólido de Universais, filete da etapa Ácido, marca do logo, foco sobre o header |
+| `--ink-700` | `#373430` | faixa "Adhesive" (medido) | sólido de Autocondicionantes, borda do header, números neutros do Modo de Uso. **Não representa etapa** |
+| `--orange-500` | `#DE811D` | faixa "Universal" (medido) | **cor de marca**: fundo do CTA, sólido de Universais, filete da etapa **Adesivo**, marca do logo, foco sobre o header |
+| `--blue-600` | `#2563EB` | pedido do cliente (07/10/2026) | filete/preenchimento da etapa **Ácido** (5.2:1 em branco). Azul só representa o ácido; não é cor de marca nem de ação |
+| `--blue-800` | `#1E40AF` | derivado (AA) | texto/glifo do Ácido (8.7:1 em branco, 7.2:1 sobre `--blue-100`) |
+| `--blue-100` / `--blue-50` | `#DCEAFB` / `#EFF5FE` | derivado | fundo da etapa Ácido |
 | `--orange-600` | `#C46A0E` | derivado | hover do CTA |
 | `--orange-700` | `#A65308` | derivado (AA) | **primário**: links, botões primários (texto branco), foco, chips ativos |
 | `--orange-800` | `#7A3D04` | derivado (AA) | hover do primário, texto sobre tinta laranja |
-| `--orange-100` / `--orange-50` | `#FCEBD7` / `#FEF6EC` | derivado | tinta de Universais / etapa Ácido |
+| `--orange-100` / `--orange-50` | `#FCEBD7` / `#FEF6EC` | derivado | tinta de Universais / fundo da etapa Adesivo |
 | `--yellow-400` | `#E9CA06` | faixa "FL" (medido) | **acento**: selo MENOR PREÇO, sólido de Convencionais |
 | `--yellow-600` | `#C9A800` | derivado | filete da etapa Primer |
 | `--yellow-800` | `#5C4A00` | derivado (AA) | texto sobre tinta amarela, glifo do Primer |
@@ -96,16 +99,24 @@ Cada grupo tem 4 tokens (sólido / **texto sobre o sólido** / tinta / texto-sob
 
 Antes: roxo `#5E2280` / magenta `#A8236E` / índigo `#3D3A8F`, todos com texto branco. **Agora o texto sobre o sólido depende do grupo (`--grp-*-on`)**, e cabeçalhos de grupo, `.badge--solid` e marcadores usam `currentColor`.
 
-### 1.4 Cor — etapas do diagrama "Como identificar?"
+### 1.4 Cor — etapas (Ácido = azul, Primer = amarelo, Adesivo = laranja; 07/10/2026)
 
-| Etapa | Fundo | Filete 4px | Glifo (texto) | Texto do rótulo |
+Vale em **todo lugar que representa as etapas**: diagrama "Como identificar?" (blocos, filetes e glifos H⁺/P/A), mini-diagramas da Home, desenho do dente, notação compacta, legenda, Modo de Uso e comparador. **O grafite não representa etapa** (ficou só como cor do grupo Autocondicionantes). Antes: Ácido laranja, Primer amarelo, Adesivo grafite.
+
+| Etapa | Fundo | Filete 4px / preenchimento | Texto (glifo, sigla, número) | Texto do rótulo |
 |---|---|---|---|---|
-| Ácido | `--orange-100` | `--orange-500` | `--orange-800` (8.4:1) | `--ink-900` |
-| Primer | `--yellow-100` | `--yellow-600` | `--yellow-800` (8.6:1) | `--ink-900` |
-| Adesivo | `--gray-100` | `--ink-700` | `--ink-900` | `--ink-900` |
-| Combinados (P+A, Ác+P+A) | gradiente dos fundos | filetes empilhados | `--ink-900` | `--ink-900` |
+| Ácido | `--blue-100` `#DCEAFB` | `--blue-600` `#2563EB` | `--blue-800` `#1E40AF` (8.7:1) | `--ink-900` (15.0:1 no fundo) |
+| Primer | `--yellow-100` `#FBF3C2` | `--yellow-600` `#C9A800` | `--yellow-800` `#5C4A00` (8.6:1) | `--ink-900` |
+| Adesivo (inclui U, adesivo universal) | `--orange-100` `#FCEBD7` | `--orange-500` `#DE811D` | `--orange-800` `#7A3D04` (8.4:1) | `--ink-900` |
+| Combinados (P+A, Ác+P+A) | gradiente dos fundos | filetes empilhados | cada letra do glifo na cor da sua etapa | `--ink-900` |
 
-O glifo **não usa mais a cor do filete como cor de texto**: laranja e amarelo não passam AA como texto. A borda do círculo continua com o filete. Desenho do dente: a área condicionada usa `--orange-500` a 55%. Mini-diagramas da Home: as barras usam os filetes.
+Onde a cor aparece fora do diagrama:
+- **Notação compacta e legenda:** as siglas `Ác` / `P` / `Ad`, `U` em `--step-*-ink`, e os sinais `+ ( ) ·` em `--ink-900`. Na legenda, a sigla antes do "=" fica em negrito e na cor da etapa.
+- **Modo de Uso:** etapas do protocolo do tipo `condicionamento-acido`, `aplicacao-primer` e `aplicacao-adesivo` ganham o filete esquerdo de 4px e o número na cor da etapa. As demais (lavagem, secagem, fotopolimerização…) ficam com o número em `--ink-700`, neutro: o número laranja deixou de ser padrão porque laranja agora significa Adesivo.
+- **Comparador:** as linhas "Condicionamento", "Primer" e "Adesivo" do grupo ETAPAS têm um quadrado de 10px na cor do filete antes do rótulo.
+- **Desenho do dente:** a área condicionada usa `--blue-600` a 50%.
+
+Texto nunca usa o filete (`--yellow-600` e `--orange-500` não passam AA). O azul `--blue-600` passaria, mas por consistência o texto usa sempre `--step-*-ink`.
 
 ### 1.5 Tipografia
 

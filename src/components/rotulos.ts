@@ -140,6 +140,10 @@ export const NOTACAO: Record<SubcategoriaId, TokenNotacao[]> = {
   "universal-autocondicionante": [N("U")],
 };
 
+/** Cor de etapa de cada sigla (Ác azul, P amarelo, Ad/U laranja — DESIGN §1.4). Glifos: H⁺ / P / A. */
+export const CLASSE_SIGLA: Record<string, "n-acid" | "n-primer" | "n-adh"> = { "Ác": "n-acid", P: "n-primer", Ad: "n-adh", U: "n-adh" };
+export const CLASSE_GLIFO: Record<string, "g-acid" | "g-primer" | "g-adh"> = { "H⁺": "g-acid", P: "g-primer", A: "g-adh" };
+
 export const notacaoTexto = (id: SubcategoriaId) => NOTACAO[id].map((x) => x.t + (x.sub ? `_${x.sub}` : "")).join("");
 
 export const LEGENDA_NOTACAO = [

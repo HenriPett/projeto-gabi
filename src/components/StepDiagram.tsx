@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import { SUBCATEGORIA, type SubcategoriaId } from "@/lib/esquema/taxonomia";
 import { IconeFechar, IconeSetaBaixo } from "./Icones";
 import { LegendaNotacao, Notacao } from "./Notacao";
-import { ESTRATEGIA_CURTA, ESTRATEGIAS_UNIVERSAIS, etapasVisuais, leituraDiagrama, semAcidoSeparado, substratoAcido } from "./rotulos";
+import { CLASSE_GLIFO, ESTRATEGIA_CURTA, ESTRATEGIAS_UNIVERSAIS, etapasVisuais, leituraDiagrama, semAcidoSeparado, substratoAcido } from "./rotulos";
 import { LEGENDA_SUBSTRATO, SubstrateGlyph } from "./SubstrateGlyph";
 
 /** [R2] Bloco fantasma riscado: não conta como passo. */
@@ -31,7 +31,15 @@ function Etapas({ id, contador, substratoNoAcido }: { id: SubcategoriaId; contad
           </li>
         ),
         <li key={i} className={`step step--${e.tipo}`} style={{ "--i": i * 2 } as CSSProperties}>
-          <span className="step__glyph">{e.glifo}</span>
+          <span className="step__glyph">
+            {/* glifos combinados ("P+A", "H⁺PA"): cada letra na cor da sua etapa */}
+            {/* um único filho: o .step__glyph é grid e empilharia cada letra numa linha */}
+            {e.glifo.length > 2 ? (
+              <span>{e.glifo.split(/(H⁺|P|A)/).map((g, j) => (CLASSE_GLIFO[g] ? <span key={j} className={CLASSE_GLIFO[g]}>{g}</span> : g))}</span>
+            ) : (
+              e.glifo
+            )}
+          </span>
           <span className="step__label">
             {e.rotulo}
             {e.sub && <span className="step__sub">{e.sub}</span>}
