@@ -1,0 +1,128 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Âmbar"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Todas as classes de restaurações diretas com compósitos (classes I, II, III, IV e V).",
+      "fontes": [
+        "site"
+      ]
+    },
+    {
+      "texto": "Cimentação adesiva (em adição ao cimento resinoso) de peças protéticas (pinos/núcleos, coroas, onlays/inlays, facetas etc.) feitas de fibra de vidro, cerômero, cerâmica, resina e metal.",
+      "fontes": [
+        "site"
+      ]
+    },
+    {
+      "texto": "Reparos adesivos em cerâmica e compósitos.",
+      "fontes": [
+        "site"
+      ]
+    }
+  ],
+  "contraindicacoes": [],
+  "protocolos": [],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 1. Sem protocolo: IFU não localizada (o site não informa tempos). Imagens pendentes."
+  },
+  "id": "ambar",
+  "nomeComercial": "Ambar",
+  "fabricante": {
+    "id": "fgm",
+    "nome": "FGM"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "site"
+        ]
+      }
+    ],
+    "observacao": "Site do fabricante: \"primer + adesivo em um só frasco\", com as etapas \"Condicionamento ácido. Aplicação do adesivo. Restauração final.\" Confirmar na IFU (não localizada no portal de IFUs da FGM em 06/10/2026)."
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "MDP",
+        "fontes": [
+          "site"
+        ]
+      },
+      {
+        "nome": "Nanopartículas de sílica tratada",
+        "fontes": [
+          "site"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "site"
+      ]
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "Não informado no site; IFU não localizada."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não informado no site."
+    },
+    "solventes": {
+      "valor": "nao-informado",
+      "observacao": "Não informado no site; IFU não localizada."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "site"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-4ml",
+      "tipo": "frasco",
+      "descricao": "Frasco único 4 mL (primer + adesivo)",
+      "quantidade": 1,
+      "volumeMl": 4,
+      "fontes": [
+        "site"
+      ]
+    },
+    {
+      "id": "frasco-6ml",
+      "tipo": "frasco",
+      "descricao": "Frasco único 6 mL (primer + adesivo)",
+      "quantidade": 1,
+      "volumeMl": 6,
+      "fontes": [
+        "site"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-4ml",
+  "fontes": [
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Ambar — FGM",
+      "url": "https://fgmdentalgroup.com/produtos-estetica/ambar/",
+      "acessadoEm": "2026-10-06",
+      "observacao": "O site não traz tempos de protocolo; IFU não localizada no portal ifu.fgm.ind.br em 06/10/2026."
+    }
+  ]
+}

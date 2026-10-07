@@ -1,0 +1,357 @@
+{
+  "$schema": "../../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Clearfil SE",
+    "SE Bond"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas com compósitos ou compômeros fotopolimerizáveis.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Selamento de cavidades, como pré-tratamento de restaurações indiretas.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Tratamento de superfícies hipersensíveis e/ou superfícies radiculares expostas.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Reparos intraorais de coroas de porcelana, cerâmica híbrida ou resina composta, com compósito fotopolimerizável.",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    {
+      "texto": "Tratamento de superfícies de próteses de porcelana, cerâmica híbrida e resina composta polimerizada.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Pacientes com hipersensibilidade a monômeros de metacrilatos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes-diretas",
+      "titulo": "Restaurações diretas, selamento de cavidades e superfícies hipersensíveis",
+      "aplicaA": [
+        "autocondicionante-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "outro",
+          "titulo": "Condicionamento do esmalte não preparado (se houver)",
+          "descricao": "Se a resina puder se estender sobre esmalte não preparado, aplicar K-ETCHANT GEL no esmalte, aguardar, lavar com água e secar. O PRIMER por si só não é suficiente para tratar esmalte não preparado.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "10 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte não preparado"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-primer",
+          "titulo": "Aplicação do PRIMER",
+          "descricao": "Dispensar o PRIMER no prato de mistura imediatamente antes do uso (proteger da luz e usar em até 3 minutos). Aplicar em todas as paredes da cavidade com pincel descartável e deixar reagir, evitando contato com saliva.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "deixar reagir 20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação dos voláteis",
+          "descricao": "Evaporar os ingredientes voláteis com leve jato de ar isento de óleo. Não lavar. Evitar acúmulo de PRIMER.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar leve"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do BOND",
+          "descricao": "Dispensar o BOND (proteger da luz e usar em até 3 minutos) e aplicar em toda a superfície da cavidade com pincel descartável.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "jato-de-ar",
+          "titulo": "Uniformização da película",
+          "descricao": "Obter uma película de adesivo o mais uniforme possível com leve jato de ar isento de óleo. Jato forte dispersa o adesivo e prejudica a adesão.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "jato de ar leve"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar o BOND.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 400-515 nm · > 300 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Se a superfície tratada for contaminada, lavar com água e secar (ou limpar com álcool) e tratar novamente com PRIMER.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "Armazenar refrigerado (2-8 °C) e levar à temperatura ambiente antes do uso.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "rascunho",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 1. Imagens pendentes."
+  },
+  "id": "clearfil-se-bond",
+  "nomeComercial": "Clearfil SE Bond",
+  "fabricante": {
+    "id": "kuraray-noritake",
+    "nome": "Kuraray Noritake"
+  },
+  "classificacao": {
+    "grupo": "autocondicionante",
+    "subcategorias": [
+      {
+        "id": "autocondicionante-2-passos",
+        "fontes": [
+          "ifu",
+          "site"
+        ]
+      }
+    ],
+    "observacao": "IFU: \"consiste de um primer autocondicionante e um agente de união\". Site BR: \"Adesivo autocondicionante de dois passos\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Primer autocondicionante seguido de agente de união (bond), em frascos separados.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "MDP (10-metacriloiloxidecil dihidrogeno fosfato)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "HEMA (metacrilato de 2-hidroxietilo)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Dimetacrilato alifático hidrófilo",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "dl-Canforquinona",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "N,N-dietanol-p-toluidina",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "Água",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "primer"
+      },
+      {
+        "nome": "MDP (10-metacriloiloxidecil dihidrogeno fosfato)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "Bis-GMA",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "HEMA (metacrilato de 2-hidroxietilo)",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "Dimetacrilato alifático hidrófobo",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "dl-Canforquinona",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "N,N-dietanol-p-toluidina",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      },
+      {
+        "nome": "Sílica coloidal",
+        "fontes": [
+          "ifu"
+        ],
+        "frasco": "bond"
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A IFU não cita silano (silanização exige o ativador Clearfil Porcelain Bond Activator, vendido à parte)."
+    },
+    "solventes": {
+      "valor": [
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "observacao": "Água listada no primer; nenhum solvente listado no bond."
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "kit-primer-6ml-bond-5ml",
+      "tipo": "kit",
+      "descricao": "Kit: Primer 6 mL + Bond 5 mL + acessórios",
+      "quantidade": 1,
+      "itens": [
+        "Primer 6 mL",
+        "Bond 5 mL",
+        "50 pontas aplicadoras tipo pincel descartáveis",
+        "2 cabos para ponta aplicadora",
+        "Prato de mistura",
+        "Placa de bloqueio de luz",
+        "Estojo exterior"
+      ],
+      "fontes": [
+        "site",
+        "ifu"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "kit-primer-6ml-bond-5ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso CLEARFIL SE BOND (BR)",
+      "url": "https://www.kuraraynoritake.com.br/file/instrucoes-de-uso-clearfiltm-se-bond-br",
+      "acessadoEm": "2026-10-06",
+      "versao": "003 1563R574R"
+    },
+    {
+      "id": "site",
+      "tipo": "site-fabricante",
+      "titulo": "Clearfil SE Bond — Kuraray Noritake Brasil",
+      "url": "https://www.kuraraynoritake.com.br/clearfil-se-bond",
+      "acessadoEm": "2026-10-06"
+    }
+  ]
+}

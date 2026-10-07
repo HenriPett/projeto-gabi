@@ -1,7 +1,7 @@
 # DESIGN.md — Plataforma de Sistemas Adesivos
 
 > Autor: Esmalte (Product Designer). Fonte de verdade visual e de interação para o Frontend.
-> Base: `docs/BRIEFING.md`. Rotas e modelo de dados: `docs/ARQUITETURA.md` (prevalece em caso de divergência). A imagem de referência **ainda não chegou** — esta spec segue a descrição textual. Quando chegar em `docs/referencia/`, reviso só tokens de cor/ilustração; a estrutura não deve mudar.
+> Base: `docs/BRIEFING.md`. Rotas e modelo de dados: `docs/ARQUITETURA.md` (prevalece em caso de divergência). O cliente **não vai enviar** a imagem de referência; o time reuniu referências próprias em `docs/referencia/` (ver README de lá). **Revisão 2 (06/10/2026)** incorporou essas referências; as mudanças estão marcadas com **[R2]** e resumidas no §8.
 > Protótipo navegável: `docs/prototipo/index.html` (abrir direto no navegador, sem build). **Todos os dados do protótipo são fictícios** (Produto Exemplo A, Fabricante 1, R$ fictício) — nunca copiar valores dele para o banco.
 
 ---
@@ -206,7 +206,20 @@ Vertical em todos os breakpoints (é o formato do atlas; lê de cima para baixo)
 - Cada **etapa** = bloco de altura 56px (mobile) / 64px, largura 100% (máx. 360px, centralizado), raio `--radius-md`, cores da tabela 1.4, glifo em círculo 32px à esquerda (bg branco, borda 1.5px da cor da etapa), rótulo `--text-h3` uppercase.
 - **Seta** entre etapas: SVG 24×28px, traço 2px `--lilac-400`, ponta em "V". `aria-hidden`.
 - Etapa combinada (ex.: Primer + Adesivo num frasco) = um único bloco com rótulo "PRIMER + ADESIVO" e glifo "P+A"; abaixo, legenda caption "mesmo frasco".
-- Contador à direita do bloco: "frasco 1", "frasco 2" — reforça que **número de passos = número de frascos/aplicações**, que é o que o estudante precisa identificar.
+- **[R2]** Contador à direita do bloco: **"passo 1", "passo 2"**, nunca "frasco N". **Passo = aplicação clínica, não frasco.** O kit de convencional 3 passos tem 2 frascos + ácido em seringa; o autocondicionante de 1 passo pode ter 2 frascos que se misturam e são aplicados uma vez (Silva e Souza Jr. 2010, Fig. 9). Textos de leitura: o ácido é "aplicado separadamente" (não "em frasco separado"); o bloco tudo-em-um é "uma única aplicação" (não "um único frasco"). "Mesmo frasco" continua válido só no bloco combinado Primer + Adesivo do convencional de 2 passos.
+- **[R2] Notação compacta** sob o título do diagrama, em `--text-small` 600 `--purple-900`, fonte tabular, com `aria-hidden` (a leitura completa já está no figcaption). `+` separa passos e `(…)` agrupa o que é aplicado junto (adaptado de Perdigão 2022):
+  | Subcategoria | Notação |
+  |---|---|
+  | Convencional 3 passos | `Ác + P + Ad` |
+  | Convencional 2 passos | `Ác + (P·Ad)` |
+  | Autocondicionante 2 passos | `P_ac + Ad` (P_ac = primer autocondicionante; renderizar "P" com subscrito "ac") |
+  | Autocondicionante 1 passo | `(Ác·P·Ad)` |
+  | Universal seletivo | `Ác_esm + U` (subscrito "esm") |
+  | Universal total | `Ác + U` |
+  | Universal autocondicionante | `U` |
+  Legenda fixa uma vez por página (caption muted): "Ác = ácido fosfórico · P = primer · Ad = adesivo · U = adesivo universal · esm = só esmalte · ( ) = aplicados juntos".
+- **[R2] Etapa ausente riscada** (ensino por contraste, como a seringa riscada em Perdigão p. 5): nos autocondicionantes e no universal autocondicionante, o diagrama abre com um bloco fantasma **"Ácido fosfórico separado"**: altura 40px, borda 1.5px tracejada `--gray-500`, fundo transparente, texto `--gray-600` 14px com `text-decoration: line-through`, ícone ✕ 16px `--red-700` à esquerda, rótulo à direita "não usa". Ele não conta como passo (sem contador) e o figcaption diz "sem condicionamento ácido separado". Sem seta saindo dele: um traço tracejado de 16px liga ao primeiro passo real.
+- **[R2] Etapa opcional** (só se o conteúdo, com fonte, confirmar para aquela subcategoria): bloco tracejado `--lilac-400` com rótulo "Condicionamento seletivo do esmalte" e selo "opcional". Aparece no lugar do bloco fantasma, nunca junto com ele. Não entra na notação compacta.
 - Universais: três colunas (≥640) ou três linhas empilhadas com divisor "OU" em pílula (mobile) — ver §4.4.
 - Acessibilidade: `<figure>`; os blocos visuais ficam `aria-hidden="true"` e o `<figcaption>` traz a leitura completa em texto (visualmente oculto além do overline): "Convencional de 2 passos: 1. Ácido, em frasco separado; 2. Primer e adesivo no mesmo frasco."
 - Animação de entrada: etapas aparecem em sequência (opacity+translateY 8px, 80ms de stagger). Desligada em reduced-motion.
@@ -220,7 +233,15 @@ Mapa de diagramas (conteúdo fixo do produto, revisado pelo time de conteúdo):
 | Autocondicionante 1 passo | Ácido + Primer + Adesivo (um único frasco/componente) |
 | Universal — cond. seletivo | Ácido (só em esmalte) ↓ Adesivo universal |
 | Universal — cond. total | Ácido (esmalte + dentina) ↓ Adesivo universal |
-| Universal — autocondicionante | Adesivo universal (sem ácido separado) |
+| Universal — autocondicionante | ~~Ácido fosfórico separado~~ ↓ Adesivo universal |
+
+Autocondicionante 1 e 2 passos também começam pelo bloco fantasma ~~Ácido fosfórico separado~~ **[R2]**.
+
+**[R2] Pictograma de substrato** (`<SubstrateGlyph>`), obrigatório nos três caminhos do universal e no bloco Ácido dos convencionais. É um corte de dente simplificado em SVG de 40×40: a coroa tem um anel externo (esmalte, traço 1.5px `--gray-600`) e um núcleo (dentina, preenchimento `--gray-100`). A área condicionada recebe preenchimento `--magenta-600` com 45% de opacidade:
+- seletivo: só o anel de esmalte;
+- total / convencionais: anel e núcleo;
+- autocondicionante: nenhuma área, com o rótulo "sem ácido".
+Abaixo dele vem uma legenda caption ("esmalte" / "esmalte + dentina" / "sem ácido"). É isso que diferencia visualmente seletivo × total, que têm a mesma sequência de passos (referência: Unichristus p. 35, Perdigão p. 6). Precisa de um campo na taxonomia: `substratoAcido: "esmalte" | "esmalte-e-dentina" | null`, a validar com o Molar.
 
 ### 3.8 Card de produto (`<ProductCard>`)
 Mobile: **horizontal compacto** (lista); ≥640: **vertical** em grade (2 col ≥640, 3 col ≥1024, 4 col ≥1280).
@@ -257,7 +278,7 @@ Ordem (mobile, uma coluna):
    - Bloco: raio `--radius-lg`, borda 1px `--grp-*-tint` escurecida (`--lilac-200`), overflow hidden.
    - **Cabeçalho do grupo**: faixa `--grp-*-solid`, altura 56px, texto branco `--text-h3` uppercase tracking .06em: "● CONVENCIONAIS". À direita, contador "12 produtos" caption branco 85% — **oculto < 640px** (não cabe ao lado de "AUTOCONDICIONANTES" em 375px; a contagem já aparece em cada subcategoria). Botão "?" (44×44, `aria-label="O que são sistemas convencionais?"`) abre popover com 2 linhas de definição.
    - **Corpo**: bg `--grp-*-tint`, padding 12px, grade de **cards de subcategoria**: mobile = 2 colunas (Universais: 1 coluna com 3 linhas — os rótulos são longos); ≥768 = 1 linha com todas as subcategorias.
-   - **Card de subcategoria** (é um `<a>` inteiro): bg branco, raio `--radius-md`, min-height 96px, padding 16px. Conteúdo: rótulo grande `--text-h3` uppercase ("2 PASSOS"), **mini-diagrama** (até 3 blocos coloridos de 8px de altura empilhados — versão miniatura do §3.7, `aria-hidden`), caption "{n} produtos", seta "→" no canto. Hover/foco: §2. `aria-label="Convencionais, 2 passos — 5 produtos"`.
+   - **Card de subcategoria** (é um `<a>` inteiro): bg branco, raio `--radius-md`, min-height 96px, padding 16px. Conteúdo: rótulo grande `--text-h3` uppercase ("2 PASSOS"), **[R2] notação compacta** logo abaixo (`Ác + (P·Ad)`, `--text-small` 600 `--purple-900`, `aria-hidden`), **mini-diagrama** (até 3 blocos coloridos de 8px de altura empilhados — versão miniatura do §3.7, `aria-hidden`), caption "{n} produtos", seta "→" no canto. Hover/foco: §2. `aria-label="Convencionais, 2 passos — 5 produtos"`.
    - ≥1024: os três grupos lado a lado em 3 colunas (como colunas da tabela de referência), cards de subcategoria empilhados verticalmente em cada coluna. Isso reproduz a estrutura de tabela da referência, mas interativa.
 4. **⭐ Em destaque** (v1; o briefing chama de "Produtos mais consultados") — h2 serif + link "Ver todos". Curadoria manual em `destaques.json`; o título só vira "Mais consultados" quando houver dado real de analytics. Nunca rotular curadoria como popularidade. Mobile: carrossel horizontal com scroll-snap (cards verticais 240px de largura, 1.2 cards visíveis para indicar rolagem), sem autoplay; setas ‹ › em ≥1024. `role="region" aria-roledescription="carrossel"`.
 5. **💰 Melhores preços** — h2 + subtítulo caption: "Produtos com maior diferença de preço entre as três dentais (mesma apresentação)." Lista de até 5 linhas: miniatura · nome + apresentação · "economia de **R$ 00,00**" em `--color-best` · chevron. Só entram produtos com ≥2 preços comparáveis. Rodapé: "Preços consultados em DD/MM/AAAA."
@@ -343,7 +364,7 @@ Problema: o mesmo adesivo aparece em 3 listas; o usuário não pode achar que s�
   - Primeira coluna (atributos) **sticky à esquerda**, largura 132px mobile / 200px desktop, bg branco, sombra à direita quando houver scroll.
   - Colunas de produto: min 160px; mobile rola horizontalmente dentro de um container `overflow-x:auto` com `tabindex="0"` e `role="region" aria-label="Tabela de comparação, role para os lados"`. Indicador "→ arraste" na primeira visita.
   - Linhas (nesta ordem, agrupadas com sub-cabeçalhos overline):
-    - **CLASSIFICAÇÃO**: Classificação · Estratégia · Número de passos
+    - **CLASSIFICAÇÃO**: Classificação · Estratégia · Número de passos (**[R2]** número + notação compacta, ex.: "2 · Ác + (P·Ad)")
     - **ETAPAS**: Condicionamento · Primer · Adesivo
     - **COMPOSIÇÃO**: MDP · HEMA · Silano · Solvente
     - **USO**: Fotopolimerização
@@ -407,5 +428,22 @@ Ver §3.1. Está presente em **todas** as telas no header. Página `/busca?q=` l
 
 - [x] Tokens, estados, componentes e telas (este arquivo).
 - [x] Protótipo HTML estático: `docs/prototipo/` — `index.html` (Home), `categoria.html` (Convencional 2 passos), `produto.html` (produto + Modo de Uso + preços), `universal.html` (produto universal com seletor de estratégia + preços com apresentações diferentes/indisponível), `comparar.html` (tabela). `tokens.css` contém os tokens da §1 prontos para copiar.
-- [ ] Revisar paleta quando a imagem de referência chegar em `docs/referencia/`.
+- [x] Referências reunidas em `docs/referencia/` e incorporadas (§8).
 - [ ] Revisão de implementação do Frontend contra esta spec (Esmalte).
+
+---
+
+## 8. Revisão 2: o que mudou com as referências (06/10/2026)
+
+Fontes e análise: `docs/referencia/README.md`. As referências **confirmaram** a estrutura: blocos com faixa de título sólida, classificação em caixa-alta, produtos agrupados por subcategoria e Modo de Uso em etapas numeradas com seta. A paleta (roxo/magenta/lilás) **não muda**; as referências usam azul-marinho/amarelo, mas o briefing fixa a paleta. Mudanças:
+
+| # | Mudança | Onde | Motivo (referência) |
+|---|---|---|---|
+| R2.1 | Contador "frasco N" → **"passo N"**; textos sem "frasco" para ácido e tudo-em-um | §3.7 | Passos ≠ frascos (Silva e Souza Jr. Fig. 9; Unichristus p. 18) |
+| R2.2 | **Notação compacta** `Ác + (P·Ad)` + legenda | §3.7, §4.1 card de subcategoria, §4.6 linha "Número de passos" | Perdigão p. 5 |
+| R2.3 | **Etapa ausente riscada** nos autocondicionantes / universal autocond. | §3.7 | Perdigão p. 5 (seringa riscada); Unichristus p. 26 vs p. 18 |
+| R2.4 | **Pictograma de substrato** esmalte/dentina | §3.7, §4.4, §4.5 | Unichristus p. 35; Perdigão p. 6 |
+| R2.5 | Etapa opcional tracejada "Condicionamento seletivo do esmalte" (condicionada a fonte) | §3.7 | Unichristus p. 26 |
+| R2.6 | No comparador, a linha "Número de passos" mostra o número **e** a notação ("2 · `Ác + (P·Ad)`") | §4.6 | Perdigão p. 5 |
+
+Fora do escopo v1, registrado para depois: corte de dentina animado por etapa (lama dentinária → fibras colágenas → camada híbrida, Unichristus p. 18/26) como modo "Estudar" do diagrama; caixa "Por que essa etapa?" no Modo de Uso (Unichristus p. 20).

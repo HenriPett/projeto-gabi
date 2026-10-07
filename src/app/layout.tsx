@@ -1,18 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
+import { Inter, Source_Serif_4 } from "next/font/google";
+import { catalogo } from "@/lib/dados/carregar";
+import { CompareTray } from "@/components/comparar/CompareTray";
+import { indiceDeBusca } from "@/components/dados-de-tela";
+import { Header } from "@/components/Header";
 import "./globals.css";
 import { RegistrarServiceWorker } from "@/pwa/RegistrarServiceWorker";
 import { urlDoSite } from "@/lib/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+const serif = Source_Serif_4({ variable: "--font-source-serif", subsets: ["latin"], weight: ["600", "700"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(urlDoSite()),
@@ -25,16 +23,34 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#5E2280", // --purple-700 (DESIGN.md §1.1); manter igual a src/app/manifest.ts
+  viewportFit: "cover", // safe areas da CompareTray e da barra sticky (DESIGN §6)
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const indice = indiceDeBusca(catalogo().produtos);
   return (
-    <html
-      lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        {children}
+    <html lang="pt-BR" className={`${inter.variable} ${serif.variable} antialiased`}>
+      <body className="min-h-dvh flex flex-col">
+        <a className="skip" href="#conteudo">
+          Pular para o conteúdo
+        </a>
+        <Header indice={indice} />
+        <main id="conteudo" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </main>
+        <footer className="footer">
+          <div className="pagina">
+            <p>
+              Conteúdo de consulta e estudo. Sempre siga as instruções de uso (IFU) do fabricante. Preços sujeitos a
+              alteração nas lojas.
+            </p>
+            <nav aria-label="Rodapé">
+              <Link href="/metodologia">Sobre</Link>
+              <Link href="/metodologia">Fontes e metodologia</Link>
+            </nav>
+          </div>
+        </footer>
+        <CompareTray indice={indice} />
         <RegistrarServiceWorker />
       </body>
     </html>

@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "ambar-universal-aps-plus",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-ambar-universal-aps-plus-fgm-145075.html",
+      "tituloNaLoja": "Adesivo Ambar Universal APS Plus 3ml - FGM",
+      "skuLoja": "145075",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 17299,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 16780,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-ambar-universal-aps-plus-fgm-fgm34579a.html",
+      "tituloNaLoja": "Adesivo Âmbar Universal Aps Plus - FGM",
+      "skuLoja": "FGM34579A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 17299,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 16780,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-3ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-ambar-universal-plus-aps-fgm",
+      "tituloNaLoja": "Adesivo Ambar Universal Plus APS - FGM",
+      "skuLoja": "27.4576",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 17299,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 16780,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    }
+  ]
+}

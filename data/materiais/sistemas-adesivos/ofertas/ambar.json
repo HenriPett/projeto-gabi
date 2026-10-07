@@ -1,0 +1,134 @@
+{
+  "$schema": "../../../../schemas/ofertas.schema.json",
+  "produtoId": "ambar",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-ambar-fgm-370942.html",
+      "tituloNaLoja": "Adesivo Ambar 4ml - FGM",
+      "skuLoja": "370942",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 6799,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 6595,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/ambar-4ml-fgm.html",
+      "tituloNaLoja": "Adesivo Ambar 4ml - FGM",
+      "skuLoja": "FGA4241B",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 6799,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 6595,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-ambar-4ml-fgm",
+      "tituloNaLoja": "Adesivo Ambar 4ml - FGM",
+      "skuLoja": "25.7171",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 6499,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 6304,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-ambar-fgm-356588.html",
+      "tituloNaLoja": "Adesivo Ambar 6ml - FGM",
+      "skuLoja": "356588",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8499,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8244,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/ambar-6ml-fgm.html",
+      "tituloNaLoja": "Adesivo Ambar 6ml - FGM",
+      "skuLoja": "FGA4241A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8499,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8244,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-6ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-ambar-6ml-fgm",
+      "tituloNaLoja": "Adesivo Ambar 6ml - FGM",
+      "skuLoja": "25.6213",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8999,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8729,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    }
+  ]
+}

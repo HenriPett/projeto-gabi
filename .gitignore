@@ -54,3 +54,7 @@ next-env.d.ts
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# referências com direitos reservados: só locais, nunca no repo (público)
+/docs/referencia/unichristus-*.png
+/docs/referencia/perdigao-*.png
