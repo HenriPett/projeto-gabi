@@ -1,0 +1,485 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Theros Universal",
+    "Adesivo Universal Theros"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Restaurações diretas que requeiram sistemas adesivos; restaurações indiretas, em cimentações adesivas; reparos em porcelanas/cerâmicas e compósitos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Contraindicado para pessoas com relatada sensibilidade a algum dos componentes do produto.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "autocondicionante",
+      "titulo": "Técnica de autocondicionamento",
+      "aplicaA": [
+        "universal-autocondicionante"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "lavagem",
+          "titulo": "Preparo e lavagem",
+          "descricao": "Preparar a cavidade e lavar abundantemente com água.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Remoção do excesso de água",
+          "descricao": "Remover a água em excesso com papel absorvente ou leve jato de ar, sem desidratar a dentina.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, 1 a 2 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo (2 camadas)",
+          "descricao": "Dispensar 1 a 2 gotas em pote dappen e tampar o frasco. Aplicar duas camadas alternadas, friccionando sobre o preparo; não fotopolimerizar entre as camadas.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "10 a 15 s por camada"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar. A superfície deve ficar brilhante e uniforme.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Procedimentos adesivos devem ocorrer em cavidades limpas, sob isolamento absoluto.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-seletivo",
+      "titulo": "Condicionamento seletivo em esmalte",
+      "aplicaA": [
+        "universal-condicionamento-seletivo"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento do esmalte",
+          "descricao": "Preparar a cavidade, lavar e condicionar somente o esmalte com agente condicionador (p. ex., Attaque Gel).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "somente esmalte"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Remoção do excesso de água",
+          "descricao": "Remover a água em excesso com papel absorvente ou leve jato de ar, sem desidratar a dentina.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, 1 a 2 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo (2 camadas)",
+          "descricao": "Dispensar 1 a 2 gotas em pote dappen e tampar o frasco. Aplicar duas camadas alternadas, friccionando sobre o preparo; não fotopolimerizar entre as camadas.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "10 a 15 s por camada"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar. A superfície deve ficar brilhante e uniforme.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Procedimentos adesivos devem ocorrer em cavidades limpas, sob isolamento absoluto.",
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "texto": "O condicionamento seletivo do esmalte é recomendado, especialmente em dentes anteriores, para evitar manchamento marginal.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condicionamento-total",
+      "titulo": "Condicionamento total",
+      "aplicaA": [
+        "universal-condicionamento-total"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Preparar a cavidade, lavar e condicionar esmalte e dentina com agente condicionador (p. ex., Attaque Gel).",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "15 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Lavar abundantemente.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Remoção do excesso de água",
+          "descricao": "Remover a água em excesso com papel absorvente ou leve jato de ar, sem desidratar a dentina.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "leve, 1 a 2 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo (2 camadas)",
+          "descricao": "Dispensar 1 a 2 gotas em pote dappen e tampar o frasco. Aplicar duas camadas alternadas, friccionando sobre o preparo; não fotopolimerizar entre as camadas.",
+          "parametros": [
+            {
+              "tipo": "camadas",
+              "texto": "2 camadas"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "10 a 15 s por camada"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Evaporar o solvente com jato de ar. A superfície deve ficar brilhante e uniforme.",
+          "parametros": [
+            {
+              "tipo": "jato-de-ar",
+              "texto": "pelo menos 10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "20 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Procedimentos adesivos devem ocorrer em cavidades limpas, sob isolamento absoluto.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3."
+  },
+  "id": "theros-universal",
+  "nomeComercial": "Theros",
+  "fabricante": {
+    "id": "biodinamica",
+    "nome": "Biodinâmica"
+  },
+  "classificacao": {
+    "grupo": "universal",
+    "subcategorias": [
+      {
+        "id": "universal-autocondicionante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-seletivo",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "id": "universal-condicionamento-total",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Bula: \"THEROS ADESIVO AUTOCONDICIONANTE UNIVERSAL\"; \"Pode ser utilizado em 3 diferentes técnicas: autocondicionante em ambos substratos, condicionamento total (esmalte e dentina) e condicionamento seletivo do esmalte\"."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Adesivo universal de frasco único (ácido, primer e adesivo); condicionamento com ácido fosfórico opcional.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Matriz de monômeros metacrílicos",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Monômero ácido fosfatado (10-MDP)",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Álcool etílico",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Água deionizada",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Iniciadores e estabilizador",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "sim",
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita HEMA."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "A bula não cita silano."
+    },
+    "solventes": {
+      "valor": [
+        "etanol",
+        "água"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-4ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 4 mL",
+      "quantidade": 1,
+      "volumeMl": 4,
+      "ean": "7896261377271",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    },
+    {
+      "id": "frasco-5ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 5 mL",
+      "quantidade": 1,
+      "volumeMl": 5,
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-4ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Bula THEROS — Adesivo Autocondicionante Universal (Biodinâmica)",
+      "url": "https://biodinamica.com.br/wp-content/uploads/2024/05/001000_bula_theros_rev.01_26-06-2026.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "EM 001000 Rev.01 · ANVISA 10298559041"
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Universal Theros 4ml - Biodinâmica",
+      "url": "https://www.dentalcremer.com.br/adesivo-universal-theros-4ml-biodinamica-154215.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte do EAN (o mesmo exibido na Dental Speed)."
+    }
+  ]
+}

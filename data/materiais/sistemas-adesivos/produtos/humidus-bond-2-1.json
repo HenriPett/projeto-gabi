@@ -1,0 +1,291 @@
+{
+  "$schema": "../../../schemas/produto-sistema-adesivo.schema.json",
+  "material": "sistemas-adesivos",
+  "aliases": [
+    "Humidus 2.1"
+  ],
+  "indicacoes": [
+    {
+      "texto": "Condicionamento de superfícies de esmalte e dentina para selamento e como superfície de acoplamento para cimentos resinosos e materiais restauradores compatíveis com resinas compostas.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "contraindicacoes": [
+    {
+      "texto": "Não aplicar sobre polpas expostas ou em cavidades muito profundas sem proteção; usar com cautela em pacientes sensíveis a metacrilatos.",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "restauracoes",
+      "titulo": "Preparo e aplicação",
+      "aplicaA": [
+        "convencional-2-passos"
+      ],
+      "fontes": [
+        "ifu"
+      ],
+      "etapas": [
+        {
+          "tipo": "condicionamento-acido",
+          "titulo": "Condicionamento ácido",
+          "descricao": "Aplicar ácido fosfórico 37% primeiro no esmalte; após 40 s, aplicar também na dentina por mais 20 s, mantendo o ácido no esmalte.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "esmalte 60 s (total)"
+            },
+            {
+              "tipo": "tempo",
+              "texto": "dentina 20 s"
+            },
+            {
+              "tipo": "substrato",
+              "texto": "esmalte e dentina"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "lavagem",
+          "titulo": "Lavagem",
+          "descricao": "Remover o ácido lavando copiosamente com água.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "30 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "controle-umidade",
+          "titulo": "Secagem",
+          "descricao": "Secar o esmalte com jato de ar leve e distante; secar a dentina sem desidratar (papel absorvente, pressionando suavemente, sem esfregar).",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "aplicacao-adesivo",
+          "titulo": "Aplicação do adesivo",
+          "descricao": "Agitar bem o frasco, dispensar 1 ou 2 gotas e levar a toda a superfície ácido-atacada com microbrush ou pincel, sem esfregar. Aguardar o completo molhamento.",
+          "parametros": [
+            {
+              "tipo": "tempo",
+              "texto": "aguardar 60 s"
+            },
+            {
+              "tipo": "friccao",
+              "texto": "sem esfregar"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "evaporacao-solvente",
+          "titulo": "Evaporação do solvente",
+          "descricao": "Aplicar leve jato de ar isento de óleo para evaporar o etanol.",
+          "parametros": [],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "fotopolimerizacao",
+          "titulo": "Fotopolimerização",
+          "descricao": "Fotopolimerizar (aparelhos de baixa potência podem requerer 20 s).",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s · 360–490 nm · mínimo 400 mW/cm²"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        },
+        {
+          "tipo": "nova-aplicacao",
+          "titulo": "2ª camada",
+          "descricao": "Aplicar nova camada e polimerizar novamente.",
+          "parametros": [
+            {
+              "tipo": "luz",
+              "texto": "10 s"
+            }
+          ],
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ],
+      "observacoes": [
+        {
+          "texto": "Na cimentação de coroas com cimento resinoso, aplicar uma única e fina camada para não prejudicar o assentamento.",
+          "fontes": [
+            "ifu"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagens": [],
+  "divergencias": [],
+  "revisao": {
+    "status": "publicado",
+    "atualizadoEm": "2026-10-06",
+    "responsavel": "Bula",
+    "notas": "Lote 3."
+  },
+  "id": "humidus-bond-2-1",
+  "nomeComercial": "Humidus Bond 2.1",
+  "fabricante": {
+    "id": "superdont",
+    "nome": "Superdont"
+  },
+  "classificacao": {
+    "grupo": "convencional",
+    "subcategorias": [
+      {
+        "id": "convencional-2-passos",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "observacao": "Instruções de uso: \"Adesivo fotopolimerizável para esmalte e dentina\", aplicado em frasco único após ácido fosfórico 37% em esmalte e dentina."
+  },
+  "estrategiaAdesiva": {
+    "texto": "Condicionamento ácido total seguido de adesivo de frasco único.",
+    "fontes": [
+      "ifu"
+    ]
+  },
+  "composicao": {
+    "componentes": [
+      {
+        "nome": "Dimetacrilatos de alto e baixo peso molecular",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Fotoiniciador",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Agente hidrofílico umectante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Dessensibilizante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Antioxidante",
+        "fontes": [
+          "ifu"
+        ]
+      },
+      {
+        "nome": "Etanol",
+        "fontes": [
+          "ifu"
+        ]
+      }
+    ],
+    "mdp": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "hema": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "silano": {
+      "valor": "nao-informado",
+      "observacao": "Não citado."
+    },
+    "solventes": {
+      "valor": [
+        "etanol"
+      ],
+      "fontes": [
+        "ifu"
+      ]
+    },
+    "polimerizacao": {
+      "valor": "fotopolimerizavel",
+      "fontes": [
+        "ifu"
+      ]
+    }
+  },
+  "apresentacoes": [
+    {
+      "id": "frasco-2ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 2 mL",
+      "quantidade": 1,
+      "volumeMl": 2,
+      "codigoFabricante": "HB212",
+      "ean": "7898648561051",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    },
+    {
+      "id": "frasco-4ml",
+      "tipo": "frasco",
+      "descricao": "Frasco 4 mL",
+      "quantidade": 1,
+      "volumeMl": 4,
+      "codigoFabricante": "HB214",
+      "ean": "7898648561068",
+      "fontes": [
+        "ifu",
+        "loja-cremer"
+      ]
+    }
+  ],
+  "apresentacaoPrincipal": "frasco-4ml",
+  "fontes": [
+    {
+      "id": "ifu",
+      "tipo": "ifu",
+      "titulo": "Instruções de uso HUMIDUS BOND 2.1 — Superdont",
+      "url": "https://superdont.com.br/wp-content/uploads/2024/07/Instrucoes-de-Uso-HUMIDUS-BOND-2.1-versao-00.pdf",
+      "acessadoEm": "2026-10-06",
+      "versao": "Rev. 00 · ANVISA 80103859009",
+      "observacao": "As instruções listam também 5 mL (HB215) e 6 mL (HB216), não encontradas nas lojas."
+    },
+    {
+      "id": "loja-cremer",
+      "tipo": "loja",
+      "titulo": "Dental Cremer — Adesivo Humidus Bond 2,1 - Superdont",
+      "url": "https://www.dentalcremer.com.br/adesivo-humidus-bond-2-1-4ml-superdont-154329.html",
+      "acessadoEm": "2026-10-06",
+      "observacao": "Fonte dos EANs (os mesmos exibidos na Dental Speed)."
+    }
+  ]
+}

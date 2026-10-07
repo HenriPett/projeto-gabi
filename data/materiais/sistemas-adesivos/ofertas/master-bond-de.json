@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "master-bond-de",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-master-bond-refil-biodinamica-382556.html",
+      "tituloNaLoja": "Adesivo Master Bond Refil 5ml - Biodinâmica",
+      "skuLoja": "382556",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 2699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 2618,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/master-bond-refil-5ml-biodinamica.html",
+      "tituloNaLoja": "Adesivo Master Bond Refil 5ml - Biodinâmica",
+      "skuLoja": "BIO4184A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 2699,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 2618,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "refil-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-master-bond-refil-biodinamica",
+      "tituloNaLoja": "Adesivo Master Bond Refil - Biodinâmica",
+      "skuLoja": "25.0034",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 2790,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 2706,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: 1 unidade de 5ml."
+    }
+  ]
+}

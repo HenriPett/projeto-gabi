@@ -1,0 +1,98 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "theros-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-4ml",
+      "status": "indisponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-universal-theros-4ml-biodinamica-154215.html",
+      "tituloNaLoja": "Adesivo Universal Theros 4ml - Biodinâmica",
+      "skuLoja": "154215",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Sem estoque em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-universal-theros-4ml-biodinamica-bio37334a.html",
+      "tituloNaLoja": "Adesivo Universal Theros 4ml - Biodinâmica",
+      "skuLoja": "BIO37334A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 15590,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 15122,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-universal-theros-4ml-biodinamica",
+      "tituloNaLoja": "Adesivo Universal Theros 4ml - Biodinâmica",
+      "skuLoja": "27.8171",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 11492,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 11147,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Apresentação de 5 mL não encontrada na loja."
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Apresentação de 5 mL não encontrada na loja."
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-universal-theros-5ml-biodinamica",
+      "tituloNaLoja": "Adesivo Universal Theros 5ml - Biodinâmica",
+      "skuLoja": "27.8170",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 16212,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 15726,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto."
+    }
+  ]
+}

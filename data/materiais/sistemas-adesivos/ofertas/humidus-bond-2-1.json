@@ -1,0 +1,106 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "humidus-bond-2-1",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-2ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-humidus-bond-2-1-2ml-superdont-154328.html",
+      "tituloNaLoja": "Adesivo Humidus Bond 2,1 2ml - Superdont",
+      "skuLoja": "154328",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 1990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 1930,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-2ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-humidus-bond-2-1-2ml-superdont-sup37373a.html",
+      "tituloNaLoja": "Adesivo Humidus Bond 2.1 2ml - Superdont",
+      "skuLoja": "SUP37373A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 1990,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 1930,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-2ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Humidus Bond 2.1 não encontrado no sitemap da loja em 06/10/2026."
+    },
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-humidus-bond-2-1-4ml-superdont-154329.html",
+      "tituloNaLoja": "Adesivo Humidus Bond 2,1 4ml - Superdont",
+      "skuLoja": "154329",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 2290,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 2221,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-4ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-humidus-bond-2-1-4ml-superdont-sup37374a.html",
+      "tituloNaLoja": "Adesivo Humidus Bond 2.1 4ml - Superdont",
+      "skuLoja": "SUP37374A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 2290,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 2221,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-4ml",
+      "status": "nao-encontrado",
+      "precos": [],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Humidus Bond 2.1 não encontrado no sitemap da loja em 06/10/2026."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "magic-bond-universal",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-magic-bond-universal-5ml-vigodent-145419.html",
+      "tituloNaLoja": "Adesivo Magic Bond Universal 5ml - Vigodent",
+      "skuLoja": "145419",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8632,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-magic-bond-universal-5ml-vigodent-vig34667a.html",
+      "tituloNaLoja": "Adesivo Magic Bond Universal 5ml - Vigodent",
+      "skuLoja": "VIG34667A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8899,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8632,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-autocondicionante-magic-bond-universal-vigodent",
+      "tituloNaLoja": "Adesivo Autocondicionante Magic Bond Universal - Vigodent",
+      "skuLoja": "27.4299",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 8900,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 8633,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: embalagem com 5ml."
+    }
+  ]
+}

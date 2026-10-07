@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/ofertas.schema.json",
+  "produtoId": "magic-bond-de",
+  "ofertas": [
+    {
+      "lojaId": "dental-cremer",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalcremer.com.br/adesivo-magic-bond-de-vigodent-298253.html",
+      "tituloNaLoja": "Adesivo Monocomponente Magic Bond DE 5ml - Vigodent",
+      "skuLoja": "298253",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 4399,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 4267,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-speed",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalspeed.com/adesivo-magic-bond-de-com-fluor-vigodent.html",
+      "tituloNaLoja": "Adesivo Magic Bond DE com Flúor - Vigodent",
+      "skuLoja": "VMB4309A",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 4399,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 4267,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06"
+    },
+    {
+      "lojaId": "dental-med-sul",
+      "apresentacaoId": "frasco-5ml",
+      "status": "disponivel",
+      "url": "https://www.dentalmedsul.com.br/adesivo-magic-bond-de-vigodent",
+      "tituloNaLoja": "Adesivo Magic Bond DE - Vigodent",
+      "skuLoja": "25.1879",
+      "precos": [
+        {
+          "tipo": "padrao",
+          "centavos": 4299,
+          "condicao": "preço no cartão (até Nx sem juros), sem desconto"
+        },
+        {
+          "tipo": "pix",
+          "centavos": 4170,
+          "condicao": "à vista no Pix"
+        }
+      ],
+      "consultadoEm": "2026-10-06",
+      "observacao": "Página aberta em 06/10/2026 e confirmada como página do produto. Anúncio: embalagem com 5ml."
+    }
+  ]
+}
