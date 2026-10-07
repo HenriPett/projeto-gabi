@@ -72,7 +72,59 @@ export const ArtigoGuia = z
     }
     if (a.revisao.status === "publicado" && !a.fontes.some((f) => FONTES_TECNICAS.has(f.tipo)))
       ctx.addIssue({ code: "custom", path: ["fontes"], message: "artigo publicado exige ao menos uma fonte técnica/científica" });
+    if (a.slug === "glossario")
+      ctx.addIssue({ code: "custom", path: ["slug"], message: '"glossario" é reservado para a rota /guia/glossario' });
     if (a.relacionados.includes(a.slug))
       ctx.addIssue({ code: "custom", path: ["relacionados"], message: "artigo relacionado a si mesmo" });
   });
 export type ArtigoGuia = z.infer<typeof ArtigoGuia>;
+
+/**
+ * Glossário de adesão (/guia). Arquivo: data/materiais/<material>/glossario.json.
+ * Ordem alfabética é responsabilidade da UI. `artigos` (slugs do guia) é conferido
+ * no carregador; `relacionados` aponta para ids de termos do mesmo arquivo.
+ */
+export const Glossario = z
+  .object({
+    $schema: z.string().optional(),
+    fontes: z.array(Fonte).min(1),
+    termos: z
+      .array(
+        z.object({
+          id: Slug,
+          termo: z.string().min(1),
+          /** Grafias alternativas, usadas também na busca: "10-MDP", "smear layer". */
+          sinonimos: z.array(z.string().min(1)).default([]),
+          definicao: z.string().min(1),
+          fontes: Fontes,
+          artigos: z.array(Slug).default([]),
+          relacionados: z.array(Slug).default([]),
+        }),
+      )
+      .min(1),
+    revisao: Revisao,
+  })
+  .superRefine((g, ctx) => {
+    const erro = (path: (string | number)[], message: string) => ctx.addIssue({ code: "custom", path, message });
+    const fontes = new Set<string>();
+    g.fontes.forEach((f, i) => {
+      if (fontes.has(f.id)) erro(["fontes", i, "id"], `fonte duplicada: ${f.id}`);
+      fontes.add(f.id);
+    });
+    const termos = new Set<string>();
+    g.termos.forEach((t, i) => {
+      if (termos.has(t.id)) erro(["termos", i, "id"], `termo duplicado: ${t.id}`);
+      termos.add(t.id);
+    });
+    g.termos.forEach((t, i) => {
+      t.fontes.forEach((id, j) => {
+        if (!fontes.has(id)) erro(["termos", i, "fontes", j], `fonte "${id}" não declarada em "fontes"`);
+      });
+      t.relacionados.forEach((id, j) => {
+        if (!termos.has(id) || id === t.id) erro(["termos", i, "relacionados", j], `termo relacionado inválido: ${id}`);
+      });
+    });
+    if (g.revisao.status === "publicado" && !g.fontes.some((f) => FONTES_TECNICAS.has(f.tipo)))
+      erro(["fontes"], "glossário publicado exige ao menos uma fonte técnica/científica");
+  });
+export type Glossario = z.infer<typeof Glossario>;

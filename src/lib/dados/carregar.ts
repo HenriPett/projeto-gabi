@@ -5,6 +5,7 @@ import {
   ArtigoGuia,
   ConteudoCategorias,
   Destaques,
+  Glossario,
   ESQUEMA_POR_MATERIAL,
   MATERIAIS,
   OfertasDoProduto,
@@ -33,6 +34,7 @@ export interface Catalogo {
   destaques: Partial<Record<MaterialId, string[]>>;
   /** Artigos do Guia rápido por material, ordenados por `ordem`. */
   guia: Partial<Record<MaterialId, ArtigoGuia[]>>;
+  glossario: Partial<Record<MaterialId, Glossario>>;
 }
 
 export function dirDados() {
@@ -76,6 +78,7 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
   const categorias: Catalogo["categorias"] = {};
   const destaques: Catalogo["destaques"] = {};
   const guia: Catalogo["guia"] = {};
+  const glossario: Catalogo["glossario"] = {};
 
   for (const material of MATERIAIS) {
     const base = path.join(raiz, "materiais", material);
@@ -132,6 +135,21 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
       });
     if (artigos.length) guia[material] = artigos.sort((a, b) => a.ordem - b.ordem || a.slug.localeCompare(b.slug));
 
+    const arqGlossario = path.join(base, "glossario.json");
+    if (fs.existsSync(arqGlossario)) {
+      const r = Glossario.safeParse(lerJson(arqGlossario));
+      if (!r.success) erros.push(...formatarErros(rel(arqGlossario), r.error));
+      else {
+        r.data.termos.forEach((t, i) =>
+          t.artigos.forEach((s, j) => {
+            if (!artigos.some((a) => a.slug === s))
+              erros.push({ arquivo: rel(arqGlossario), mensagem: `termos.${i}.artigos.${j}: artigo "${s}" não existe` });
+          }),
+        );
+        glossario[material] = r.data;
+      }
+    }
+
     for (const arq of jsonsEm(path.join(base, "ofertas"))) {
       const r = OfertasDoProduto.safeParse(lerJson(arq));
       if (!r.success) {
@@ -161,7 +179,7 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
   for (const [id, n] of ids)
     if (n > 1) erros.push({ arquivo: "data/", mensagem: `id de produto duplicado: ${id}` });
 
-  return { catalogo: { produtos, ofertas, categorias, destaques, guia }, erros };
+  return { catalogo: { produtos, ofertas, categorias, destaques, guia, glossario }, erros };
 }
 
 let cache: Catalogo | undefined;
@@ -191,6 +209,15 @@ export function catalogo(): Catalogo {
       return [m, vis.map((a) => ({ ...a, relacionados: a.relacionados.filter((s) => slugs.has(s)) }))];
     }),
   ) as Catalogo["guia"];
-  cache = { ...c, produtos: visiveis, ofertas, destaques, guia };
+  const glossario = Object.fromEntries(
+    Object.entries(c.glossario)
+      .filter(([, g]) => incluirRascunhos() || g.revisao.status === "publicado")
+      .map(([m, g]) => {
+        // link para artigo oculto (rascunho) não pode virar 404
+        const slugs = new Set((guia[m as MaterialId] ?? []).map((a) => a.slug));
+        return [m, { ...g, termos: g.termos.map((t) => ({ ...t, artigos: t.artigos.filter((s) => slugs.has(s)) })) }];
+      }),
+  ) as Catalogo["glossario"];
+  cache = { ...c, produtos: visiveis, ofertas, destaques, guia, glossario };
   return cache;
 }

@@ -58,3 +58,29 @@ describe("esquema de categorias", async () => {
     expect(ConteudoCategorias.safeParse(ruim).success).toBe(false);
   });
 });
+
+describe("glossário", () => {
+  beforeEach(() => {
+    vi.resetModules();
+    vi.stubEnv("DADOS_DIR", "tests/fixtures/dados");
+  });
+  afterEach(() => vi.unstubAllEnvs());
+
+  it("produção remove links para artigo em rascunho", async () => {
+    vi.stubEnv("INCLUIR_RASCUNHOS", "0");
+    const { catalogo } = await import("@/lib/dados/carregar");
+    const g = catalogo().glossario["sistemas-adesivos"]!;
+    expect(g.termos.find((t) => t.id === "termo-b")!.artigos).toEqual(["exemplo-publicado"]);
+  });
+  it("rejeita relacionado inexistente e fonte não declarada", async () => {
+    const { Glossario } = await import("@/lib/esquema");
+    const base = {
+      fontes: [{ id: "a", tipo: "literatura", titulo: "x", url: "https://doi.org/10.0/x", acessadoEm: "2026-10-01" }],
+      revisao: { status: "publicado", atualizadoEm: "2026-10-01" },
+    };
+    const termo = { id: "t", termo: "T", definicao: "d", fontes: ["a"] };
+    expect(Glossario.safeParse({ ...base, termos: [termo] }).success).toBe(true);
+    expect(Glossario.safeParse({ ...base, termos: [{ ...termo, relacionados: ["x"] }] }).success).toBe(false);
+    expect(Glossario.safeParse({ ...base, termos: [{ ...termo, fontes: ["b"] }] }).success).toBe(false);
+  });
+});

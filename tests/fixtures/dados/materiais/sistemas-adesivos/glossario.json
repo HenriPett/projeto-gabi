@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../../../data/schemas/glossario.schema.json",
+  "fontes": [{ "id": "artigo", "tipo": "literatura", "titulo": "Artigo fictício", "url": "https://doi.org/10.0000/ficticio", "acessadoEm": "2026-10-01" }],
+  "termos": [
+    { "id": "termo-b", "termo": "Termo B fictício", "definicao": "Definição fictícia.", "fontes": ["artigo"], "artigos": ["exemplo-publicado", "exemplo-rascunho"], "relacionados": ["termo-a"] },
+    { "id": "termo-a", "termo": "Termo A fictício", "sinonimos": ["TA"], "definicao": "Definição fictícia.", "fontes": ["artigo"] }
+  ],
+  "revisao": { "status": "publicado", "atualizadoEm": "2026-10-01" }
+}
