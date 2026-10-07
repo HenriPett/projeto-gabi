@@ -62,11 +62,14 @@ export const IconeDente = (p: P) => (
 export const IconeFechar = (p: P) => (
   <svg {...base} {...p}><path d="M6 6l12 12M18 6 6 18" /></svg>
 );
+export const IconeComparar = (p: P) => (
+  <svg {...base} {...p}><rect x="3" y="4" width="7" height="16" rx="1.5" /><rect x="14" y="4" width="7" height="16" rx="1.5" /><path d="M5.5 9h2M16.5 9h2M5.5 13h2M16.5 13h2" /></svg>
+);
 export const IconeFiltro = (p: P) => (
   <svg {...base} {...p}><path d="M4 6h16M7 12h10M10 18h4" /></svg>
 );
 
-/** Silhueta de frasco (placeholder de foto). */
+/** Silhueta neutra de frasco (placeholder de foto, DESIGN §3.8 item 1: --lilac-200). */
 export function Frasco({ className = "bottle", rotulo }: { className?: string; rotulo?: string }) {
   return (
     <svg
@@ -76,13 +79,10 @@ export function Frasco({ className = "bottle", rotulo }: { className?: string; r
       aria-label={rotulo}
       aria-hidden={rotulo ? undefined : true}
     >
-      <rect x="30" y="4" width="20" height="22" rx="3" fill="var(--color-primary)" />
-      <rect x="26" y="24" width="28" height="10" rx="2" fill="var(--color-primary-hover)" />
-      <path d="M20 40c0-4 4-6 8-6h24c4 0 8 2 8 6v88c0 5-4 8-8 8H28c-4 0-8-3-8-8z" fill="#fff" stroke="var(--color-border-accent)" strokeWidth="2" />
-      <rect x="20" y="62" width="40" height="44" fill="var(--lilac-100)" />
-      <rect x="26" y="72" width="28" height="4" rx="2" fill="var(--color-primary)" />
-      <rect x="26" y="82" width="20" height="3" rx="1.5" fill="var(--color-border-accent)" />
-      <rect x="26" y="90" width="24" height="3" rx="1.5" fill="var(--color-border-accent)" />
+      <rect x="30" y="4" width="20" height="22" rx="3" fill="var(--lilac-200)" />
+      <rect x="26" y="24" width="28" height="10" rx="2" fill="var(--lilac-200)" />
+      <path d="M20 40c0-4 4-6 8-6h24c4 0 8 2 8 6v88c0 5-4 8-8 8H28c-4 0-8-3-8-8z" fill="#fff" stroke="var(--lilac-200)" strokeWidth="3" />
+      <rect x="20" y="62" width="40" height="44" fill="var(--lilac-50)" />
     </svg>
   );
 }

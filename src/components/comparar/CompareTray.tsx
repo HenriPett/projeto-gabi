@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Frasco } from "../Icones";
+import { IconeComparar } from "../Icones";
+import { Miniatura } from "../MidiaProduto";
 import type { ItemIndice } from "../tipos";
 import { LIMITE_COMPARACAO, removerDaComparacao, useSelecaoComparar } from "./selecao";
 
@@ -49,7 +49,7 @@ export function CompareTray({ indice }: { indice: ItemIndice[] }) {
             <ul className="tray__thumbs">
               {itens.map((i) => (
                 <li key={i.id} className="tray__thumb" title={i.nome}>
-                  {i.imagem ? <Image src={i.imagem.arquivo} alt="" fill sizes="44px" style={{ objectFit: "contain" }} /> : <Frasco />}
+                  <Miniatura imagem={i.imagem} sizes="44px" />
                   <button type="button" aria-label={`Remover ${i.nome}`} onClick={() => removerDaComparacao(i.id)}>
                     ×
                   </button>
@@ -81,7 +81,9 @@ export function LinkComparar({ className, children }: { className?: string; chil
   const href = ids.length ? `/comparar?ids=${ids.join(",")}` : "/comparar";
   return (
     <Link className={className} href={href}>
-      {children ?? "Comparar"}
+      {/* < 360px: só ícone + contador; o texto continua para leitor de tela */}
+      <IconeComparar className="compare-link__icone" />
+      <span className="compare-link__txt">{children ?? "Comparar"}</span>
       <span className="compare-link__paren"> ({ids.length})</span>
       {/* só um dos dois é exibido (CSS), então o número é lido uma vez */}
       <span className="compare-link__n">{ids.length}</span>
