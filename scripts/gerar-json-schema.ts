@@ -6,7 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { z } from "zod";
-import { ConteudoCategorias, Destaques, OfertasDoProduto, ProdutoSistemaAdesivo } from "../src/lib/esquema";
+import { ArtigoGuia, ConteudoCategorias, Destaques, OfertasDoProduto, ProdutoSistemaAdesivo } from "../src/lib/esquema";
 
 const saida = path.resolve("data/schemas");
 fs.mkdirSync(saida, { recursive: true });
@@ -15,6 +15,7 @@ const alvos = {
   ofertas: OfertasDoProduto,
   categorias: ConteudoCategorias,
   destaques: Destaques,
+  "artigo-guia": ArtigoGuia,
 };
 for (const [nome, esquema] of Object.entries(alvos)) {
   const json = z.toJSONSchema(esquema, { io: "input", unrepresentable: "any" });

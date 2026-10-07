@@ -1,0 +1,11 @@
+{
+  "$schema": "../../../../../../data/schemas/artigo-guia.schema.json",
+  "slug": "exemplo-rascunho",
+  "titulo": "Artigo fictício em rascunho",
+  "resumo": "Resumo fictício.",
+  "ordem": 0,
+  "secoes": [{ "paragrafos": [{ "texto": "Texto fictício.", "fontes": ["artigo"] }] }],
+  "fontes": [{ "id": "artigo", "tipo": "literatura", "titulo": "Artigo fictício", "url": "https://doi.org/10.0000/ficticio", "acessadoEm": "2026-10-01" }],
+  "relacionados": ["exemplo-publicado"],
+  "revisao": { "status": "rascunho", "atualizadoEm": "2026-10-01" }
+}

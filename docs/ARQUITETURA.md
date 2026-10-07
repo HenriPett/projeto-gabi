@@ -29,6 +29,7 @@ data/
     sistemas-adesivos/
       categorias.json                # textos explicativos por grupo/subcategoria (com fonte)
       destaques.json                 # { produtos: [ids] } curadoria "Em destaque", na ordem exibida
+      guia/<slug>.json               # artigos do Guia rápido (parágrafos com fonte) ← Dentina
       produtos/<id>.json             # 1 arquivo por produto  ← Bula
       ofertas/<id>.json              # preços por loja/apresentação ← Bula (curadoria manual)
 public/
@@ -68,8 +69,14 @@ Fonte de verdade: os arquivos em `src/lib/esquema/` (comentados). Exemplo comple
 1. **Toda afirmação tem fonte.** Cada produto declara `fontes: [{ id, tipo, titulo, url, acessadoEm, versao? }]`; cada campo factual referencia ids em `fontes: ["ifu"]`. O validador rejeita referência a fonte inexistente e afirmação sem fonte.
 2. **Ausência explícita.** Atributos da tabela COMPARAR (`mdp`, `hema`, `silano`, `solventes`, `polimerizacao`) são `{ valor, fontes }` ou `{ "valor": "nao-informado" }`. Nunca omitir nem chutar.
 3. **Divergência registrada, não resolvida.** `divergencias: [{ campo, descricao, versoes: [≥2 × { valor, fontes }] }]`. `campo` é o caminho do dado (`"composicao.hema"`); a UI mostra `<DivergenceNote>` junto ao campo.
-4. **Protocolo é do produto.** `protocolos[]` com `aplicaA` (subcategorias), `etapas[]` (`tipo`, `titulo`, `descricao`, `parametros[]`) e fonte **oficial obrigatória** (tipo `ifu`/`ficha-tecnica`/`site-fabricante`/`embalagem`). Produto `publicado` precisa de protocolo para cada subcategoria em que aparece.
+4. **Protocolo é do produto.** `protocolos[]` com `aplicaA` (subcategorias), `etapas[]` (`tipo`, `titulo`, `descricao`, `parametros[]`) e fonte **oficial obrigatória** (tipo `ifu`/`ficha-tecnica`/`site-fabricante`/`embalagem`). Ausência de protocolo **não** impede publicação: a UI mostra "Protocolo oficial não localizado".
 5. **Rascunho não vai para produção.** `revisao.status`: `rascunho` aparece em dev/preview (com selo), nunca quando `VERCEL_ENV=production`. Forçar: `INCLUIR_RASCUNHOS=0|1`.
+6. **Critério objetivo de publicação** (decisão do Tech Lead em 2026-10-06; o cliente não aprova item a item). Um produto pode ser `publicado` quando:
+   - cada subcategoria em `classificacao.subcategorias` cita ao menos uma fonte **técnica** (`ifu`, `ficha-tecnica`, `site-fabricante`, `embalagem`, `literatura`, `fds` — não `loja`/`outro`); e
+   - há ao menos uma apresentação com fonte (qualquer tipo, inclusive `loja`).
+
+   O validador recusa `publicado` fora do critério. **Não bloqueiam**: protocolo, imagem, composição, indicações. A UI exibe a ausência como "Informação ainda não verificada" (protocolo: "Protocolo oficial não localizado"; imagem: silhueta neutra de frasco) e nunca preenche com dado de outro produto. Quem grava um produto que passa no critério já o grava como `publicado`.
+   Artigo do Guia: `publicado` exige ao menos uma fonte técnica/científica; todo parágrafo cita fonte.
 
 ### 3.2 Produto (`ProdutoSistemaAdesivo`)
 ```
@@ -88,7 +95,17 @@ Universais (§7–§8 do briefing): **um único produto** com várias entradas e
 
 Derivados da taxonomia (não ficam no JSON): rótulos, slugs, sequência do diagrama "Como identificar?", colunas Condicionamento/Primer/Adesivo/Número de passos do comparador.
 
-### 3.3 Ofertas (`OfertasDoProduto`)
+### 3.3 Guia rápido (`ArtigoGuia`)
+```
+data/materiais/<material>/guia/<slug>.json
+{ slug (= nome do arquivo), titulo, resumo, ordem,
+  secoes[{ titulo?, paragrafos[{ texto, fontes[ids] }] }],   # todo parágrafo cita fonte
+  fontes[Fonte],                                            # DOI na url (https://doi.org/…)
+  relacionados[slugs], revisao }
+```
+Leitura: `catalogo().guia[material]` — artigos visíveis, ordenados por `ordem`; relacionados ocultos (rascunho) são removidos para não virar link 404.
+
+### 3.4 Ofertas (`OfertasDoProduto`)
 ```
 produtoId
 ofertas[{
@@ -116,7 +133,7 @@ ofertas[{
 | `/produto/{id}` (+ `#precos`, `?estrategia={slug}`) | `app/produto/[id]/page.tsx` | Produto, modo de uso, preços (§4.3, §4.7) |
 | `/comparar?ids=a,b,c` | `app/comparar/page.tsx` | Comparador (§4.6) — ler `ids` no cliente para manter rota estática |
 | `/busca?q=` | `app/busca/page.tsx` | Resultados (§4.8) — idem, no cliente |
-| `/guia`, `/guia/{tema}` | `app/guia/…` | Guia rápido (conteúdo a definir, com fonte) |
+| `/guia`, `/guia/{slug}` | `app/guia/…` | Guia rápido (§3.3) |
 | `/metodologia` | `app/metodologia/page.tsx` | Fontes e metodologia (rodapé) |
 
 Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `2-passos | 3-passos | 1-passo | condicionamento-seletivo | condicionamento-total | autocondicionante`. O prefixo `/sistemas-adesivos/` é intencional (próximos materiais ganham o próprio prefixo); diverge do `/[grupo]/[sub]` e `/produto/[slug]` sugeridos no DESIGN/Plano de testes — **vale esta tabela**.
@@ -168,5 +185,4 @@ Regra do cliente (2026-10-06): **sem Pull Requests e sem esperar aprovação.**
 ## 9. Em aberto
 
 - **"Produtos mais consultados"** — DECIDIDO v1: curadoria manual (`data/materiais/sistemas-adesivos/destaques.json`) com o rótulo honesto "Em destaque"; medir com Vercel Web Analytics e só então trocar para "mais consultados". Contrato: `Destaques` em `conteudo.ts`; `catalogo().destaques[material]` (ids visíveis, na ordem).
-- Formato do Guia rápido (Markdown com frontmatter de fontes, provavelmente).
-- Direitos de uso das fotos dos frascos.
+- Direitos de uso das fotos dos frascos (repo público): baixadas para `public/img/produtos/<id>/`, foto de produto para identificação, com fonte e crédito "Imagem: <fabricante>"; prefere fonte do fabricante. **Pendente validação do cliente.**

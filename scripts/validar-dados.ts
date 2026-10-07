@@ -14,4 +14,5 @@ if (erros.length) {
   process.exit(1);
 }
 const rascunhos = catalogo.produtos.filter((p) => p.revisao.status === "rascunho").length;
-console.log(`✓ ${n} produto(s) (${rascunhos} rascunho), ${nOfertas} oferta(s) — dados válidos.`);
+const nGuia = Object.values(catalogo.guia).reduce((s, g) => s + (g?.length ?? 0), 0);
+console.log(`✓ ${n} produto(s) (${rascunhos} rascunho), ${nOfertas} oferta(s), ${nGuia} artigo(s) do guia — dados válidos.`);

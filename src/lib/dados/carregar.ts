@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { z } from "zod";
 import {
+  ArtigoGuia,
   ConteudoCategorias,
   Destaques,
   ESQUEMA_POR_MATERIAL,
@@ -30,6 +31,8 @@ export interface Catalogo {
   categorias: Partial<Record<MaterialId, ConteudoCategorias>>;
   /** Ids em destaque por material, na ordem da curadoria; só produtos visíveis. */
   destaques: Partial<Record<MaterialId, string[]>>;
+  /** Artigos do Guia rápido por material, ordenados por `ordem`. */
+  guia: Partial<Record<MaterialId, ArtigoGuia[]>>;
 }
 
 export function dirDados() {
@@ -72,6 +75,7 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
   const ofertas = new Map<string, OfertasDoProduto["ofertas"]>();
   const categorias: Catalogo["categorias"] = {};
   const destaques: Catalogo["destaques"] = {};
+  const guia: Catalogo["guia"] = {};
 
   for (const material of MATERIAIS) {
     const base = path.join(raiz, "materiais", material);
@@ -110,6 +114,24 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
       }
     }
 
+    const artigos: ArtigoGuia[] = [];
+    for (const arq of jsonsEm(path.join(base, "guia"))) {
+      const r = ArtigoGuia.safeParse(lerJson(arq));
+      if (!r.success) {
+        erros.push(...formatarErros(rel(arq), r.error));
+        continue;
+      }
+      if (path.basename(arq, ".json") !== r.data.slug)
+        erros.push({ arquivo: rel(arq), mensagem: `nome do arquivo deve ser "${r.data.slug}.json"` });
+      artigos.push(r.data);
+    }
+    for (const a of artigos)
+      a.relacionados.forEach((s, i) => {
+        if (!artigos.some((x) => x.slug === s))
+          erros.push({ arquivo: `guia/${a.slug}.json`, mensagem: `relacionados.${i}: artigo "${s}" não existe` });
+      });
+    if (artigos.length) guia[material] = artigos.sort((a, b) => a.ordem - b.ordem || a.slug.localeCompare(b.slug));
+
     for (const arq of jsonsEm(path.join(base, "ofertas"))) {
       const r = OfertasDoProduto.safeParse(lerJson(arq));
       if (!r.success) {
@@ -139,7 +161,7 @@ export function lerCatalogo(): { catalogo: Catalogo; erros: ErroDeDados[] } {
   for (const [id, n] of ids)
     if (n > 1) erros.push({ arquivo: "data/", mensagem: `id de produto duplicado: ${id}` });
 
-  return { catalogo: { produtos, ofertas, categorias, destaques }, erros };
+  return { catalogo: { produtos, ofertas, categorias, destaques, guia }, erros };
 }
 
 let cache: Catalogo | undefined;
@@ -161,6 +183,14 @@ export function catalogo(): Catalogo {
   const destaques = Object.fromEntries(
     Object.entries(c.destaques).map(([m, lista]) => [m, lista.filter((id) => ids.has(id))]),
   ) as Catalogo["destaques"];
-  cache = { ...c, produtos: visiveis, ofertas, destaques };
+  const guia = Object.fromEntries(
+    Object.entries(c.guia).map(([m, lista]) => {
+      const vis = incluirRascunhos() ? lista : lista.filter((a) => a.revisao.status === "publicado");
+      const slugs = new Set(vis.map((a) => a.slug));
+      // relacionado oculto (rascunho) não pode virar link 404
+      return [m, vis.map((a) => ({ ...a, relacionados: a.relacionados.filter((s) => slugs.has(s)) }))];
+    }),
+  ) as Catalogo["guia"];
+  cache = { ...c, produtos: visiveis, ofertas, destaques, guia };
   return cache;
 }

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../../../data/schemas/artigo-guia.schema.json",
+  "slug": "exemplo-publicado",
+  "titulo": "Artigo fictício publicado",
+  "resumo": "Resumo fictício para testes.",
+  "ordem": 1,
+  "secoes": [
+    { "titulo": "Seção fictícia", "paragrafos": [{ "texto": "Parágrafo fictício.", "fontes": ["artigo"] }] },
+    { "paragrafos": [{ "texto": "Outro parágrafo fictício.", "fontes": ["artigo", "ifu"] }] }
+  ],
+  "fontes": [
+    { "id": "artigo", "tipo": "literatura", "titulo": "Artigo fictício", "url": "https://doi.org/10.0000/ficticio", "acessadoEm": "2026-10-01" },
+    { "id": "ifu", "tipo": "ifu", "titulo": "IFU fictícia", "url": "https://example.com/ifu.pdf", "acessadoEm": "2026-10-01" }
+  ],
+  "relacionados": ["exemplo-rascunho"],
+  "revisao": { "status": "publicado", "atualizadoEm": "2026-10-01" }
+}
