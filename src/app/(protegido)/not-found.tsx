@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { EstadoVazio } from "@/components/EstadoVazio";
 
-// URL que não casa com nenhuma rota (fora do layout do site, sem header).
 export default function NotFound() {
   return (
-    <main id="conteudo" className="pagina section flex-1">
+    <div className="pagina section">
       <h1 className="sr-only">Página não encontrada</h1>
       <EstadoVazio nivel={2} titulo="Página não encontrada">
         <p className="muted">O endereço pode ter mudado ou não existe.</p>
@@ -12,6 +11,6 @@ export default function NotFound() {
           Voltar ao início
         </Link>
       </EstadoVazio>
-    </main>
+    </div>
   );
 }
