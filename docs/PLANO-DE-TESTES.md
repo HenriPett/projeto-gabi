@@ -91,7 +91,7 @@ Formato de bug (obrigatório): **passos exatos · esperado · obtido · severida
 - **P-01** Card contém: imagem do frasco, nome comercial, fabricante, apresentação, volume, categoria, estratégia, principais componentes, **VER PRODUTO**, **COMPARAR PREÇOS**.
 - **P-02** Imagem com `alt` = "Frasco de {nome} — {fabricante}". Falha de carregamento → placeholder, sem ícone quebrado nem layout pulando.
 - **P-03** Nome muito longo (fixture com 80 caracteres) não estoura o card nem empurra botões para fora.
-- **P-04** Componentes ausentes → "Não informado pelo fabricante", nunca vazio nem inventado.
+- **P-04** Componentes ausentes → "Informação ainda não verificada" (texto único de ausência, decisão do Molar em `308375f`), nunca vazio nem inventado.
 
 ### 1.4 Página do produto (§5, §20)
 - **D-01** Nome + fabricante, imagem grande, Classificação, Estratégia, Apresentação, Composição, Indicações.
@@ -424,6 +424,7 @@ Provados por `tests/unit/cenarios-fixtures.test.ts` (bug aberto = `it.fails`; qu
 | BUG-011 | S3 | ✅ Corrigido `2ac25e8` — reverificado | |
 | BUG-012 | S2 | ✅ Corrigido `2ac25e8` — reverificado | Card e comparador só mostram "a partir de" com apresentação comparável (e dizem qual); senão "Apresentações diferentes" / "Preço em uma só loja" + ver preços. `test.fail` removido. |
 | BUG-013 | S3 | ✅ Corrigido `2ac25e8` — reverificado | Lista todas as apresentações ("5 mL · 3 mL"). |
+| BUG-014 | S4 | 🔴 Aberto (Pulpa) | Nome acessível do Comparar no header varia: 320 px "Comparar 0 produtos selecionados"; ≥ 360 px "Comparar (0) produtos selecionados" (leitor de tela lê os parênteses). |
 
 **Fixtures novas:** URLs de compra devem seguir a forma da loja (`https://www.dentalcremer.com.br/<slug>.html`, `https://www.dentalspeed.com/<slug>.html`, `https://www.dentalmedsul.com.br/<slug>`).
 
@@ -503,3 +504,7 @@ Decisão de UI validada (Pulpa): com 3 preços iguais (PR-11), nenhuma loja rece
 
 ### Reexecução — front `2ac25e8`
 `pnpm e2e` (4 projetos): **297 passed, 3 skipped** (SW/offline só no Chromium). BUG-007 segue como `test.fail` (wontfix no app). Corrigida uma corrida no próprio teste G-01/E2E-01: a home também linka `ficticio-ambar` (Melhores preços), então o 2º clique podia acontecer ainda na home no WebKit — agora espera a URL da categoria (48/48 em 8 repetições, mobile-chrome + mobile-safari).
+
+### Ajustes — main `308375f`
+- Texto de ausência agora é "Informação ainda não verificada" (Pulpa ajustou E2E-02). Onde o plano diz "Não informado", ler este texto.
+- **P-02** coberto: a fixture `ficticio-multiuso-3p` aponta de propósito para `frasco-inexistente.webp`; o teste exige "Imagem ainda não disponível" e nenhuma `<img>` quebrada visível. O 404 dessa foto é o único erro de console tolerado (`apoio.ts`).

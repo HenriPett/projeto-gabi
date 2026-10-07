@@ -101,3 +101,16 @@ test("G-01: Voltar/Avançar entre home → categoria → produto", async ({ page
   await expect(page).toHaveURL("/sistemas-adesivos/convencionais/2-passos");
   await expect(page.locator('main a[href="/produto/ficticio-ambar"]').first()).toBeVisible();
 });
+
+test("P-02: foto que falha ao carregar vira placeholder, sem ícone de imagem quebrada", async ({ page }) => {
+  // ficticio-multiuso-3p aponta para um arquivo inexistente (fixture)
+  await page.goto("/produto/ficticio-multiuso-3p");
+  await expect(page.getByText("Imagem ainda não disponível").first()).toBeVisible();
+  const quebradas = await page.locator("main img").evaluateAll((imgs) =>
+    imgs.filter((i) => {
+      const img = i as HTMLImageElement;
+      return img.complete && img.naturalWidth === 0 && img.getBoundingClientRect().width > 0 && getComputedStyle(img).visibility !== "hidden";
+    }).length,
+  );
+  expect(quebradas).toBe(0);
+});

@@ -10,7 +10,15 @@
       ]
     }
   ],
-  "imagens": [],
+  "imagens": [
+    {
+      "arquivo": "/img/produtos/ficticio-multiuso-3p/frasco-inexistente.webp",
+      "alt": "Frasco do Multiuso Fictício",
+      "fontes": [
+        "ficha"
+      ]
+    }
+  ],
   "fontes": [
     {
       "id": "ifu",

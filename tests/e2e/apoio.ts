@@ -42,6 +42,8 @@ export const test = base.extend<{ errosDeConsole: string[] }>({
     async ({ page }, use) => {
       const erros: string[] = [];
       page.on("console", (m) => {
+        // P-02: a fixture ficticio-multiuso-3p aponta de propósito para uma foto inexistente
+        if (m.type() === "error" && m.location().url.includes("frasco-inexistente")) return;
         if (m.type() === "error") erros.push(`console: ${m.text()}`);
       });
       page.on("pageerror", (e) => {
