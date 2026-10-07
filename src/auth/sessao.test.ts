@@ -50,6 +50,9 @@ describe("rotas e destino", () => {
     ["//evil.com", "/"],
     ["https://evil.com", "/"],
     ["/\\evil.com", "/"],
+    ["/%2F%2Fevil.com", "/"],
+    ["/%5Cevil.com", "/"],
+    ["/%E0", "/"],
     ["/login", "/"],
     [null, "/"],
   ])("destinoSeguro(%s) = %s", (de, para) => expect(destinoSeguro(de)).toBe(para));

@@ -35,7 +35,13 @@ const LIVRES = [
 /** Conteúdo das fixtures que nunca pode sair sem sessão. */
 const CONTEUDO_PROTEGIDO = ["Âmbar Fictício", "Fabricante Alfa", "89,90", "Universal Triplo Fictício"];
 
-const nextDe = (location: string) => new URL(location, "http://x").searchParams.get("next");
+// O Next normaliza a query (ex.: "," → "%2C"): compara caminho + parâmetros já decodificados.
+const normalizar = (rota: string | null) => {
+  if (rota === null) return null;
+  const u = new URL(rota, "http://x");
+  return u.pathname + "?" + JSON.stringify([...u.searchParams.entries()]);
+};
+const nextDe = (location: string) => normalizar(new URL(location, "http://x").searchParams.get("next"));
 
 async function entrar(page: import("@playwright/test").Page, senha = SENHA_E2E) {
   await page.getByLabel(/senha/i).fill(senha);
@@ -52,7 +58,7 @@ test.describe("LOG-01/08: sem cookie, nada protegido é entregue", () => {
       expect(r.status()).toBe(307);
       const location = r.headers()["location"];
       expect(new URL(location, "http://x").pathname).toBe("/login");
-      expect(nextDe(location)).toBe(rota); // caminho + query exatamente como pedido
+      expect(nextDe(location)).toBe(normalizar(rota)); // caminho + query exatamente como pedido
       const corpo = await r.text();
       for (const t of CONTEUDO_PROTEGIDO) expect(corpo).not.toContain(t);
     });
@@ -61,7 +67,7 @@ test.describe("LOG-01/08: sem cookie, nada protegido é entregue", () => {
   test("navegador: abrir rota protegida termina no /login com next, sem conteúdo", async ({ page }) => {
     await page.goto("/produto/ficticio-ambar#precos");
     await expect(page).toHaveURL(/\/login\?/);
-    expect(nextDe(page.url())).toBe("/produto/ficticio-ambar");
+    expect(nextDe(page.url())).toBe(normalizar("/produto/ficticio-ambar"));
     for (const t of CONTEUDO_PROTEGIDO) await expect(page.locator("body")).not.toContainText(t);
   });
 
@@ -99,7 +105,7 @@ test.describe("LOG-03: senha errada", () => {
     await page.goto("/produto/ficticio-ambar");
     await entrar(page, "senha-errada");
     await expect(page).toHaveURL(/\/login\?.*erro=1/);
-    expect(nextDe(page.url())).toBe("/produto/ficticio-ambar");
+    expect(nextDe(page.url())).toBe(normalizar("/produto/ficticio-ambar"));
     await expect(page.getByRole("alert").or(page.locator('[aria-live]')).first()).toContainText(/senha/i);
     expect(await cookieSessao(page)).toBeUndefined();
   });
@@ -138,7 +144,8 @@ test.describe("LOG-04: senha certa", () => {
     await page.goto("/comparar?ids=ficticio-ambar,ficticio-single-bond-2");
     await expect(page).toHaveURL(/\/login\?/);
     await entrar(page);
-    await expect(page).toHaveURL("/comparar?ids=ficticio-ambar,ficticio-single-bond-2");
+    await expect(page).toHaveURL(/\/comparar\?ids=/);
+    expect(new URL(page.url()).searchParams.get("ids")).toBe("ficticio-ambar,ficticio-single-bond-2");
     await expect(page.getByTestId("compare-table")).toBeVisible();
     const c = await cookieSessao(page);
     expect(c).toBeDefined();
@@ -181,7 +188,7 @@ test.describe("LOG-02: next externo é ignorado", () => {
       const r = await request.post("/api/login", { form: { senha: SENHA_E2E, next }, maxRedirects: 0 });
       expect(r.status()).toBe(303);
       const destino = new URL(r.headers()["location"], "http://localhost");
-      expect(destino.host).toBe("localhost");
+      expect(destino.hostname).toBe("localhost");
       expect(destino.pathname.startsWith("//")).toBe(false);
       expect(destino.pathname.includes("evil")).toBe(false);
     });

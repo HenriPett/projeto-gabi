@@ -18,12 +18,18 @@ export function temSessaoLocal(): boolean {
   }
 }
 
-/** Limpa a flag e os caches do service worker (páginas salvas offline). */
+/**
+ * Limpa a flag e as páginas/imagens salvas pelo service worker. Mantém o shell
+ * ("shell-*": /offline, manifest, ícones) e os estáticos com hash.
+ */
 export async function sairLocal() {
   try {
     localStorage.removeItem(CHAVE_LOCAL);
   } catch {}
   try {
-    if ("caches" in window) await Promise.all((await caches.keys()).map((k) => caches.delete(k)));
+    if ("caches" in window) {
+      const nomes = (await caches.keys()).filter((k) => !k.startsWith("shell-") && k !== "estaticos");
+      await Promise.all(nomes.map((k) => caches.delete(k)));
+    }
   } catch {}
 }

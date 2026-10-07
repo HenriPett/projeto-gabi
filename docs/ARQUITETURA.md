@@ -150,7 +150,7 @@ Slugs: grupos `convencionais | autocondicionantes | universais`; subcategorias `
 - **Cookie:** `v1.<HMAC(chave, msg)>`, com chave = `SEGREDO_SESSAO` → `SENHA_ACESSO` → senha validada. Sem env, o proxy confere pelo hash do token embutido. Trocar a chave ou a senha desloga todos.
 - **Layouts:** o layout raiz **não** carrega dados do catálogo (renderiza `/login`, `/offline`, 404). Header, busca (índice), CompareTray e rodapé moram em `app/(protegido)/layout.tsx`. Nunca leve `catalogo()` para o layout raiz nem para `/login`.
 - **localStorage `sa:sessao`:** só UX ("sessão expirou" no login). Não é fonte de verdade.
-- **Service worker:** páginas só entram no cache se vierem 200 sem redirect; um redirect para `/login` apaga o cache de páginas. O logout limpa a flag local e os caches (JS) e manda `Clear-Site-Data: "cache", "storage"`.
+- **Service worker:** páginas só entram no cache se vierem 200 sem redirect; um redirect para `/login` apaga o cache de páginas. O logout limpa a flag local e os caches do SW (JS, `sairLocal`) e manda `Clear-Site-Data: "cache"` (sem "storage", para o SW e `/offline` continuarem instalados).
 - **noindex** em tudo: metadata do layout raiz, `robots.txt` com disallow total e `X-Robots-Tag` no proxy.
 - **Limite conhecido:** sem `SEGREDO_SESSAO`, o valor do cookie é fixo para a senha (logout apaga o cookie do aparelho, mas um cookie copiado continua válido até trocar a senha ou o segredo). A senha é curta e o SHA-256 dela está num repo público, o que permite ataque offline por força bruta. Para proteção real, defina `SENHA_ACESSO` (forte) e `SEGREDO_SESSAO` na Vercel.
 

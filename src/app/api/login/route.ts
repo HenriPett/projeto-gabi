@@ -3,12 +3,25 @@ import { COOKIE_SESSAO, MAX_AGE_SESSAO, destinoSeguro, emitirToken, senhaCorreta
 
 const ATRASO_ERRO_MS = 700;
 
+/**
+ * Sem JS a página de login (estática) não conhece ?next= e envia "/": recupera
+ * o next da própria URL do /login que enviou o form (mesma origem).
+ */
+function nextDoReferer(req: Request, url: URL): string {
+  try {
+    const ref = new URL(req.headers.get("referer") ?? "");
+    if (ref.origin === url.origin && ref.pathname === "/login") return ref.searchParams.get("next") ?? "/";
+  } catch {}
+  return "/";
+}
+
 /** POST de formulário (funciona sem JS): campos `senha` e `next`. */
 export async function POST(req: Request) {
   const url = new URL(req.url);
   const form = await req.formData().catch(() => new FormData());
   const senha = String(form.get("senha") ?? "");
-  const next = destinoSeguro(String(form.get("next") ?? "/"));
+  const enviado = String(form.get("next") ?? "");
+  const next = destinoSeguro(enviado && enviado !== "/" ? enviado : nextDoReferer(req, url));
 
   if (!senha || !(await senhaCorreta(senha))) {
     await new Promise((r) => setTimeout(r, ATRASO_ERRO_MS));

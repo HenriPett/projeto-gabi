@@ -63,6 +63,14 @@ export async function tokenValido(token: string | undefined, env: Env = process.
 /** Destino pós-login: só caminho interno; qualquer outra coisa vira "/". */
 export function destinoSeguro(next: string | null | undefined): string {
   if (!next || !next.startsWith("/") || next.startsWith("//") || next.startsWith("/\\")) return "/";
+  let decodificado: string;
+  try {
+    decodificado = decodeURIComponent(next);
+  } catch {
+    return "/";
+  }
+  // "/%2F%2Fevil.com", "/%5Cevil.com": barra/contrabarra codificada no início
+  if (/^\/[\\/]/.test(decodificado)) return "/";
   if (next.startsWith("/login") || next.startsWith("/api/")) return "/";
   return next;
 }
